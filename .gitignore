@@ -2,3 +2,7 @@
 .godot/
 /android/
 /pokemon-assets
+.import/
+.export/
+.godot/
+*.import
