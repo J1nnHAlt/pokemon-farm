@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="pokemon-farm"
-run/main_scene="uid://ddn488ymhtduf"
+run/main_scene="uid://28dg4xqw1xgm"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -23,6 +23,10 @@ window/size/window_width_override=1280
 window/size/window_height_override=960
 window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
+
+[gui]
+
+theme/custom="uid://bjs7wtt6ir1xs"
 
 [input]
 
