@@ -27,7 +27,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Volume"
 
-[node name="volumn" type="HSlider" parent="MarginContainer/VBoxContainer"]
+[node name="volume" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="mute_label" type="Label" parent="MarginContainer/VBoxContainer"]
@@ -53,6 +53,6 @@ stream = ExtResource("2_7i3iu")
 volume_db = -10.0
 autoplay = true
 
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/volumn" to="." method="_on_volumn_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/volume" to="." method="_on_volume_value_changed"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/mute" to="." method="_on_mute_toggled"]
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/Resolutions" to="." method="_on_resolutions_item_selected"]
