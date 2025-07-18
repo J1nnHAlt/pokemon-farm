@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv2pon43imfed"]
+
+[ext_resource type="Texture2D" uid="uid://0b5udp0f8yh" path="res://scenes/characters/dark_pokemon/arbok.png" id="1_epl2t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hwl6"]
+atlas = ExtResource("1_epl2t")
+region = Rect2(0, 62, 30, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvl6o"]
+atlas = ExtResource("1_epl2t")
+region = Rect2(0, 93, 30, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wmr00"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hwl6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvl6o")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Arbok" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wmr00")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.583934
