@@ -66,7 +66,6 @@ shape = SubResource("CircleShape2D_4gkuy")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 radius = 5.0
-debug_enabled = true
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
 script = ExtResource("2_3hwl6")
