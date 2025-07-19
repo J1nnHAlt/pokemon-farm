@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://cruirr1gmx6cc"]
+
+[ext_resource type="Script" uid="uid://dk4auj3egk5ub" path="res://scenes/characters/water_pokemon/lapras.gd" id="1_byxnj"]
+[ext_resource type="Texture2D" uid="uid://c8m05qq5u2eoc" path="res://scenes/characters/water_pokemon/lapras.png" id="1_gyyif"]
+[ext_resource type="Script" uid="uid://bm540rrfyyxui" path="res://scripts/state_machine/node_state_machine.gd" id="3_iqdg7"]
+[ext_resource type="Script" uid="uid://fewxkuu5ado4" path="res://scenes/characters/water_pokemon/idle_state.gd" id="4_xx3kd"]
+[ext_resource type="Script" uid="uid://b2whne5ncd64d" path="res://scenes/characters/water_pokemon/walk_state.gd" id="5_nh0y2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byxnj"]
+atlas = ExtResource("1_gyyif")
+region = Rect2(0, 62, 31, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqdg7"]
+atlas = ExtResource("1_gyyif")
+region = Rect2(0, 93, 31, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xx3kd"]
+atlas = ExtResource("1_gyyif")
+region = Rect2(31, 62, 31, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nh0y2"]
+atlas = ExtResource("1_gyyif")
+region = Rect2(31, 93, 31, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uyung"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_byxnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqdg7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xx3kd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nh0y2")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gyyif"]
+radius = 8.0
+
+[node name="Lapras" type="CharacterBody2D"]
+script = ExtResource("1_byxnj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_uyung")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.52019
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_gyyif")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("3_iqdg7")
+initial_node_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("character", "animated_sprite_2d")]
+script = ExtResource("4_xx3kd")
+character = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="Walk" type="Node" parent="StateMachine" node_paths=PackedStringArray("character", "animated_sprite_2d", "navigation_agent_2d")]
+script = ExtResource("5_nh0y2")
+character = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+navigation_agent_2d = NodePath("../../NavigationAgent2D")
