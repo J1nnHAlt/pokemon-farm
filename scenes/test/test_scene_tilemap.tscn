@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=4 uid="uid://ddn488ymhtduf"]
+[gd_scene load_steps=6 format=4 uid="uid://ddn488ymhtduf"]
 
 [ext_resource type="TileSet" uid="uid://dq7x0bsl7faum" path="res://Tilesets/test_scene_tilemap.tres" id="2_j2mka"]
+[ext_resource type="PackedScene" uid="uid://yvg6vobd2rc0" path="res://scenes/characters/grass_pokemon/victreebel.tscn" id="3_6k3gh"]
 [ext_resource type="PackedScene" uid="uid://cv2pon43imfed" path="res://scenes/characters/dark_pokemon/arbok.tscn" id="3_inwy8"]
 [ext_resource type="PackedScene" uid="uid://dheba8g1u8uj8" path="res://scenes/characters/player/player.tscn" id="3_o1akv"]
 
@@ -29,20 +30,8 @@ position = Vector2(272, 160)
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="Pokemons"]
 navigation_polygon = SubResource("NavigationPolygon_o1akv")
 
+[node name="Victreebel" parent="Pokemons" instance=ExtResource("3_6k3gh")]
+position = Vector2(445, 171)
+
 [node name="Arbok" parent="Pokemons" instance=ExtResource("3_inwy8")]
 position = Vector2(381, 187)
-
-[node name="Arbok2" parent="Pokemons" instance=ExtResource("3_inwy8")]
-position = Vector2(392, 149)
-
-[node name="Arbok3" parent="Pokemons" instance=ExtResource("3_inwy8")]
-position = Vector2(440, 171)
-
-[node name="Arbok4" parent="Pokemons" instance=ExtResource("3_inwy8")]
-position = Vector2(421, 212)
-
-[node name="Arbok5" parent="Pokemons" instance=ExtResource("3_inwy8")]
-position = Vector2(415, 174)
-
-[node name="Arbok6" parent="Pokemons" instance=ExtResource("3_inwy8")]
-position = Vector2(379, 213)
