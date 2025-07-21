@@ -4,7 +4,7 @@ extends NodeState
 @export var animated_sprite_2d: AnimatedSprite2D
 @export var speed: int = 100
 
-@export var tile_size: int = 32
+@export var tile_size: int = 16
 var is_moving: bool = false
 var target_position: Vector2
 
