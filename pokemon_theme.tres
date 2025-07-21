@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bjs7wtt6ir1xs"]
+
+[ext_resource type="FontFile" uid="uid://be0jfr8cbeqfu" path="res://pokemon-assets/Fonts/power clear bold.ttf" id="1_8df5g"]
+[ext_resource type="FontFile" uid="uid://sd66o6t4xgj5" path="res://pokemon-assets/Fonts/power green.ttf" id="1_8u0ir"]
+
+[resource]
+default_font = ExtResource("1_8u0ir")
+Label/font_sizes/font_size = 40
+Label/fonts/font = ExtResource("1_8df5g")
+Label/styles/normal = null

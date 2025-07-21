@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhoqpgmu3qxgi"]
+
+[ext_resource type="Script" uid="uid://bwueacypwd50e" path="res://scripts/menus/settings_menu.gd" id="1_hayap"]
+[ext_resource type="AudioStream" uid="uid://bfw0m8rs5a11p" path="res://pokemon-assets/Audio/BGM/Battle trainer.ogg" id="2_7i3iu"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hayap")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Audio and Video Settings"
+horizontal_alignment = 1
+
+[node name="volume_label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Volume"
+
+[node name="volume" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="mute_label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mute"
+
+[node name="mute" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Resolutions" type="OptionButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+selected = 2
+item_count = 3
+popup/item_0/text = "1920*1080"
+popup/item_0/id = 0
+popup/item_1/text = "1600*900"
+popup/item_1/id = 1
+popup/item_2/text = "1280*960"
+popup/item_2/id = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_7i3iu")
+volume_db = -10.0
+autoplay = true
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/mute" to="." method="_on_mute_toggled"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/Resolutions" to="." method="_on_resolutions_item_selected"]

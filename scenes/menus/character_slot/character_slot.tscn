@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dunle2w8l3gx7"]
+
+[ext_resource type="Texture2D" uid="uid://c2nkvcsfipmuy" path="res://scenes/menus/character_slot/girl_sprites02.png" id="1_0q3j0"]
+
+[node name="Character1" type="Panel"]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_0q3j0")
