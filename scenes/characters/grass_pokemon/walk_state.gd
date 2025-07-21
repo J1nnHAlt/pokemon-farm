@@ -15,7 +15,8 @@ func _ready() -> void:
 
 func character_setup() -> void:
 	await get_tree().physics_frame
-	
+	#	delay to ensure navmesh is baked, else all pokemon NPCs gonna move same direction at start
+	await get_tree().create_timer(0.1).timeout
 	set_movement_target()
 
 func set_movement_target() -> void:

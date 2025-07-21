@@ -65,6 +65,7 @@ position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_gyyif")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+navigation_layers = 4
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
 script = ExtResource("3_iqdg7")

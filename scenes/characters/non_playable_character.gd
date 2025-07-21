@@ -6,3 +6,9 @@ extends CharacterBody2D
 
 var walk_cycles: int
 var current_walk_cycle: int
+
+var rng := RandomNumberGenerator.new()
+
+func _ready() -> void:
+	rng.randomize()
+	walk_cycles = rng.randi_range(min_walk_cycle, max_walk_cycle)

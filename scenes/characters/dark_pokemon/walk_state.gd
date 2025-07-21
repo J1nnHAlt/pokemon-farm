@@ -15,13 +15,16 @@ func _ready() -> void:
 
 func character_setup() -> void:
 	await get_tree().physics_frame
-	
+#	delay to ensure navmesh is baked, else all pokemon NPCs gonna move same direction at start
+	await get_tree().create_timer(0.1).timeout
 	set_movement_target()
 
 func set_movement_target() -> void:
 	var target_position: Vector2 = NavigationServer2D.map_get_random_point(navigation_agent_2d.get_navigation_map(), navigation_agent_2d.navigation_layers, false)
+	print(character.name, " -> Target: ", target_position)
 	navigation_agent_2d.target_position = target_position
 	speed = randf_range(min_speed, max_speed)
+	
 	
 func _on_process(_delta : float) -> void:
 	pass

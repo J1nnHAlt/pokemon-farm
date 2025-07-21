@@ -45,18 +45,26 @@ navigation_polygon = SubResource("NavigationPolygon_pbksc")
 [node name="Arbok" parent="Arboks" instance=ExtResource("3_0jr7y")]
 position = Vector2(104, 61)
 
+[node name="Arbok2" parent="Arboks" instance=ExtResource("3_0jr7y")]
+position = Vector2(134, 86)
+
 [node name="Lapras" type="Node2D" parent="."]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="Lapras"]
 navigation_polygon = SubResource("NavigationPolygon_0jr7y")
+navigation_layers = 4
 
 [node name="Lapras" parent="Lapras" instance=ExtResource("4_d72nt")]
 position = Vector2(437, 80)
+
+[node name="Lapras2" parent="Lapras" instance=ExtResource("4_d72nt")]
+position = Vector2(485, 98)
 
 [node name="Victreebels" type="Node2D" parent="."]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="Victreebels"]
 navigation_polygon = SubResource("NavigationPolygon_d72nt")
+navigation_layers = 2
 
 [node name="Victreebel" parent="Victreebels" instance=ExtResource("5_l26td")]
 position = Vector2(233, 77)

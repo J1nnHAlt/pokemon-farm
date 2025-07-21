@@ -56,7 +56,9 @@ walk_left={
 
 [layer_names]
 
-2d_navigation/layer_1="Pokemon Navigation"
+2d_navigation/layer_1="Arbok Navigation"
+2d_navigation/layer_2="Victreebels Navigation"
+2d_navigation/layer_3="Lapras Navigation"
 
 [rendering]
 
