@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="pokemon-farm"
-run/main_scene="uid://28dg4xqw1xgm"
+run/main_scene="uid://bnhb2uqm5wm8p"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -56,7 +56,7 @@ walk_left={
 
 [layer_names]
 
-2d_navigation/layer_1="Arbok Navigation"
+2d_navigation/layer_1="Pokemon Navigation"
 
 [rendering]
 
