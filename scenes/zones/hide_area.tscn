@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwrwntq7ufv6k"]
+
+[ext_resource type="Script" uid="uid://bi2k1eb31rsjo" path="res://scripts/zones/hide_area.gd" id="1_ece0x"]
+
+[node name="HideArea" type="Area2D"]
+script = ExtResource("1_ece0x")

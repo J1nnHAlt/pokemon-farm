@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://dkxajelubqv35" path="res://scenes/characters/player/player.gd" id="1_hss88"]
 [ext_resource type="Script" uid="uid://bm540rrfyyxui" path="res://scripts/state_machine/node_state_machine.gd" id="2_686vu"]
 [ext_resource type="Script" uid="uid://wxadvdscqr3r" path="res://scenes/characters/player/idle_state.gd" id="3_hss88"]
-[ext_resource type="Texture2D" uid="uid://cwcvelar5iu08" path="res://assets/characters/girl_running_spritesheet.png" id="3_mk55u"]
-[ext_resource type="Texture2D" uid="uid://cv3j2ynige1g" path="res://assets/characters/girl_walking_spritesheet.png" id="4_xuses"]
+[ext_resource type="Texture2D" uid="uid://bamoeg0fbyp73" path="res://assets/characters/girl_running_spritesheet.png" id="3_mk55u"]
+[ext_resource type="Texture2D" uid="uid://dc2swh4sekvxj" path="res://assets/characters/girl_walking_spritesheet.png" id="4_xuses"]
 [ext_resource type="Script" uid="uid://puwqwjq1engw" path="res://scenes/characters/player/walk_state.gd" id="5_qd3e3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6avc5"]
