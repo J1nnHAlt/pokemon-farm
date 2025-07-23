@@ -23,6 +23,10 @@ window/size/window_width_override=1280
 window/size/window_height_override=960
 window/stretch/mode="canvas_items"
 
+[dotnet]
+
+project/assembly_name="pokemon-farm"
+
 [gui]
 
 theme/custom="uid://bjs7wtt6ir1xs"
