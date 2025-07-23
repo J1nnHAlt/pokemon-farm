@@ -4,15 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://dheba8g1u8uj8" path="res://scenes/characters/player/player.tscn" id="1_rpym6"]
 [ext_resource type="PackedScene" uid="uid://c2pjo27juf5" path="res://scenes/zones/fade_area.tscn" id="2_yw5ox"]
 [ext_resource type="PackedScene" uid="uid://cwrwntq7ufv6k" path="res://scenes/zones/hide_area.tscn" id="3_4ntyr"]
+[ext_resource type="PackedScene" uid="uid://c7mvvd3ocvl7d" path="res://scenes/shops/pokemon_shop.tscn" id="4_6ejb6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yw5ox"]
 size = Vector2(234, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ejb6"]
-size = Vector2(235, 135)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ntyr"]
-size = Vector2(64, 22)
+size = Vector2(235, 120.5)
 
 [node name="TestTransformarea" type="Node2D"]
 
@@ -40,20 +38,11 @@ shape = SubResource("RectangleShape2D_yw5ox")
 [node name="HideArea" parent="houseTile/Roof" instance=ExtResource("3_4ntyr")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="houseTile/Roof/HideArea"]
-position = Vector2(407.5, 292.5)
+position = Vector2(409, 285.75)
 shape = SubResource("RectangleShape2D_6ejb6")
+
+[node name="PokemonShop" parent="." instance=ExtResource("4_6ejb6")]
+position = Vector2(421, 658)
 
 [node name="Player" parent="." instance=ExtResource("1_rpym6")]
 position = Vector2(238, 271)
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 324.0
-offset_top = 88.0
-offset_right = 364.0
-offset_bottom = 128.0
-
-[node name="FadeArea" parent="ColorRect" instance=ExtResource("2_yw5ox")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/FadeArea"]
-position = Vector2(22, 1)
-shape = SubResource("RectangleShape2D_4ntyr")

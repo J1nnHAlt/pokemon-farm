@@ -61,6 +61,7 @@ esc={
 
 [layer_names]
 
+2d_physics/layer_1="Wall"
 2d_navigation/layer_1="Arbok Navigation"
 2d_navigation/layer_2="Victreebels Navigation"
 2d_navigation/layer_3="Lapras Navigation"
