@@ -1,7 +1,73 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhoqpgmu3qxgi"]
+[gd_scene load_steps=8 format=3 uid="uid://dhoqpgmu3qxgi"]
 
 [ext_resource type="Script" uid="uid://bwueacypwd50e" path="res://scripts/menus/settings_menu.gd" id="1_hayap"]
 [ext_resource type="AudioStream" uid="uid://bfw0m8rs5a11p" path="res://pokemon-assets/Audio/BGM/Battle trainer.ogg" id="2_7i3iu"]
+[ext_resource type="Shader" uid="uid://dvag5yigl0pfq" path="res://scenes/menus/settings_menu.gdshader" id="2_s2d1y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ojvp1"]
+shader = ExtResource("2_s2d1y")
+shader_parameter/lod = 0.0
+
+[sub_resource type="Animation" id="Animation_ojvp1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_s2d1y"]
+resource_name = "blur"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.833]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ojvp1"]
+_data = {
+&"RESET": SubResource("Animation_ojvp1"),
+&"blur": SubResource("Animation_s2d1y")
+}
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -12,7 +78,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hayap")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ojvp1")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="PanelContainer" type="PanelContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 offset_left = 10.0
 offset_top = 10.0
@@ -36,7 +112,8 @@ horizontal_alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/h_separation = 15
+theme_override_constants/h_separation = 200
+theme_override_constants/v_separation = 20
 columns = 2
 
 [node name="volume_label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
@@ -70,7 +147,18 @@ popup/item_1/id = 1
 popup/item_2/text = "1280*960"
 popup/item_2/id = 2
 
+[node name="BackButton" type="Button" parent="PanelContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 25
+text = "Back"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ojvp1")
+}
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_7i3iu")
@@ -80,3 +168,4 @@ autoplay = true
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/volume" to="." method="_on_volume_value_changed"]
 [connection signal="toggled" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/mute" to="." method="_on_mute_toggled"]
 [connection signal="item_selected" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/Resolutions" to="." method="_on_resolutions_item_selected"]
+[connection signal="pressed" from="PanelContainer/BackButton" to="." method="_on_back_button_pressed"]
