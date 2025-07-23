@@ -12,37 +12,54 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hayap")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 1270.0
+offset_bottom = 950.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Audio and Video Settings"
 horizontal_alignment = 1
 
-[node name="volume_label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+columns = 2
+
+[node name="volume_label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 text = "Volume"
 
-[node name="volume" type="HSlider" parent="MarginContainer/VBoxContainer"]
+[node name="volume" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="mute_label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="mute_label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 text = "Mute"
 
-[node name="mute" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+[node name="mute" type="CheckBox" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 
-[node name="Resolutions" type="OptionButton" parent="MarginContainer/VBoxContainer"]
+[node name="resolution_label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Resolution"
+
+[node name="Resolutions" type="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 selected = 2
 item_count = 3
@@ -53,11 +70,13 @@ popup/item_1/id = 1
 popup/item_2/text = "1280*960"
 popup/item_2/id = 2
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_7i3iu")
 volume_db = -10.0
 autoplay = true
 
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/volume" to="." method="_on_volume_value_changed"]
-[connection signal="toggled" from="MarginContainer/VBoxContainer/mute" to="." method="_on_mute_toggled"]
-[connection signal="item_selected" from="MarginContainer/VBoxContainer/Resolutions" to="." method="_on_resolutions_item_selected"]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/mute" to="." method="_on_mute_toggled"]
+[connection signal="item_selected" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/Resolutions" to="." method="_on_resolutions_item_selected"]

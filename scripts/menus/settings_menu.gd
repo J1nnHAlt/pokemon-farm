@@ -1,6 +1,6 @@
 extends Control
 
-@onready var volume_slider: HSlider = $MarginContainer/VBoxContainer/volume
+@onready var volume_slider: HSlider = $PanelContainer/MarginContainer/VBoxContainer/GridContainer/volume
 var default_volume: float = 5.0  # 0–10
 
 func _ready() -> void:
