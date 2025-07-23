@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" load_steps=5 format=3 uid="uid://dq7x0bsl7faum"]
 
-[ext_resource type="Texture2D" uid="uid://jssic0jt7dv5" path="res://pokemon-assets/Graphics/Autotiles/Light grass.png" id="1_kn3eu"]
-[ext_resource type="Texture2D" uid="uid://bhk5dnqym2oog" path="res://assets/tilesets/sea_animated_tileset.png" id="2_g4cty"]
+[ext_resource type="Texture2D" uid="uid://duqmix1e032j5" path="res://pokemon-assets/Graphics/Autotiles/Light grass.png" id="1_kn3eu"]
+[ext_resource type="Texture2D" uid="uid://bekjxt2uobitn" path="res://assets/tilesets/sea_animated_tileset.png" id="2_g4cty"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g4cty"]
 texture = ExtResource("1_kn3eu")
