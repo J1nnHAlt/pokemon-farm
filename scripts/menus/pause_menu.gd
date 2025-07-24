@@ -36,7 +36,13 @@ func _on_restart_pressed() -> void:
 	get_tree().reload_current_scene()
 
 func _on_options_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/menus/settings_menu.tscn")
+	#get_tree().change_scene_to_file("res://scenes/menus/settings_menu.tscn")
+	var settings_menu = preload("res://scenes/menus/settings_menu.tscn").instantiate()
+	settings_menu.opened_from = "pause_menu"
+	settings_menu.pause_menu_ref = self  # Pass reference to pause menu
+	add_child(settings_menu)
+	$AnimationPlayer.play_backwards("blur")  # Hide pause menu while settings is open
+
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
