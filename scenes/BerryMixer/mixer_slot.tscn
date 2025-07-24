@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpsnps7f5hvcd"]
+
+[ext_resource type="Script" uid="uid://bhat8y3o6rm7k" path="res://scenes/BerryMixer/mixer_slot.gd" id="1_kqocl"]
+
+[node name="MixerSlot" type="Control"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_kqocl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.41598, 0.41598, 0.41598, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
