@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bsg4dgrfuedqn"]
+[gd_scene load_steps=5 format=3 uid="uid://bsg4dgrfuedqn"]
 
 [ext_resource type="Theme" uid="uid://bjs7wtt6ir1xs" path="res://pokemon_theme.tres" id="1_hec5c"]
 [ext_resource type="Texture2D" uid="uid://flx1tc8aula0" path="res://scenes/day_night_ui/Sprite sheet for Basic Pack.png" id="2_dqexg"]
+[ext_resource type="Script" uid="uid://dfhkpl6sgtkbk" path="res://scenes/day_night_ui/day_night_panel.gd" id="2_f4v8r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c4mt0"]
 atlas = ExtResource("2_dqexg")
@@ -18,6 +19,7 @@ offset_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_hec5c")
+script = ExtResource("2_f4v8r")
 
 [node name="DayPanel" type="PanelContainer" parent="."]
 layout_mode = 0
@@ -32,7 +34,7 @@ theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="DayPanel/MarginContainer"]
+[node name="DayLabel" type="Label" parent="DayPanel/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"DayAndNightLabel"
@@ -52,11 +54,11 @@ theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="TimePanel/MarginContainer"]
+[node name="TimeLabel" type="Label" parent="TimePanel/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"DayAndNightLabel"
-text = "12:00"
+text = "00:00"
 
 [node name="Control" type="Control" parent="."]
 anchors_preset = 0
@@ -85,14 +87,14 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_c4mt0")
 
-[node name="2xSpeedButton" type="Button" parent="Control"]
+[node name="FastSpeedButton" type="Button" parent="Control"]
 layout_mode = 0
 offset_left = 27.0
 offset_right = 53.0
 offset_bottom = 18.0
 theme_type_variation = &"DayAndNightButton"
 
-[node name="TextureRect" type="TextureRect" parent="Control/2xSpeedButton"]
+[node name="TextureRect" type="TextureRect" parent="Control/FastSpeedButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -107,7 +109,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_c4mt0")
 
-[node name="TextureRect2" type="TextureRect" parent="Control/2xSpeedButton"]
+[node name="TextureRect2" type="TextureRect" parent="Control/FastSpeedButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -122,14 +124,14 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_c4mt0")
 
-[node name="3xSpeedButton" type="Button" parent="Control"]
+[node name="CheetahSpeedButton" type="Button" parent="Control"]
 layout_mode = 0
 offset_left = 54.0
 offset_right = 80.0
 offset_bottom = 18.0
 theme_type_variation = &"DayAndNightButton"
 
-[node name="TextureRect" type="TextureRect" parent="Control/3xSpeedButton"]
+[node name="TextureRect" type="TextureRect" parent="Control/CheetahSpeedButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -144,7 +146,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_c4mt0")
 
-[node name="TextureRect2" type="TextureRect" parent="Control/3xSpeedButton"]
+[node name="TextureRect2" type="TextureRect" parent="Control/CheetahSpeedButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -159,7 +161,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_c4mt0")
 
-[node name="TextureRect3" type="TextureRect" parent="Control/3xSpeedButton"]
+[node name="TextureRect3" type="TextureRect" parent="Control/CheetahSpeedButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -172,3 +174,7 @@ offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_c4mt0")
+
+[connection signal="pressed" from="Control/NormalSpeedButton" to="." method="_on_normal_speed_button_pressed"]
+[connection signal="pressed" from="Control/FastSpeedButton" to="." method="_on_fast_speed_button_pressed"]
+[connection signal="pressed" from="Control/CheetahSpeedButton" to="." method="_on_cheetah_speed_button_pressed"]
