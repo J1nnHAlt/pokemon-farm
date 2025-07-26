@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://bhox53ofckjdr"]
 
 [ext_resource type="Texture2D" uid="uid://dc4vwmngm4ft6" path="res://pokemon-assets/Graphics/Battlebacks/city_night_bg.png" id="1_cnjmm"]
-[ext_resource type="Texture2D" uid="uid://c585w4tod2gln" path="res://pokemon-assets/Graphics/UI/Trainer Card/bg.png" id="2_cdewq"]
+[ext_resource type="Script" uid="uid://ctdhuwcn0gnjv" path="res://scenes/BerryMixer/mixer_content.gd" id="3_7vft3"]
 [ext_resource type="Texture2D" uid="uid://c2qxu3s7tjh3u" path="res://pokemon-assets/Graphics/Items/blender.png" id="3_lh7vl"]
 [ext_resource type="Script" uid="uid://d1b7qp1yqklru" path="res://scenes/BerryMixer/player_berry_list.gd" id="4_cdewq"]
-[ext_resource type="Script" uid="uid://e8h4nxvlbqnc" path="res://scenes/BerryMixer/mixer_container.gd" id="4_lh7vl"]
+[ext_resource type="PackedScene" uid="uid://m2d3g74p375v" path="res://scenes/BerryMixer/slot.tscn" id="4_lh7vl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7vft3"]
 
@@ -16,7 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 z_index = -10
 layout_mode = 1
 anchors_preset = 15
@@ -27,13 +27,17 @@ grow_vertical = 2
 texture = ExtResource("1_cnjmm")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 2
-offset_left = 956.0
-offset_top = 66.0
-offset_right = 1094.0
-offset_bottom = 99.0
-text = "Berries"
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -69.0
+offset_right = 69.0
+offset_bottom = 33.0
+grow_horizontal = 2
+text = "BerriesMixer"
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="Control" parent="."]
 layout_mode = 1
@@ -43,36 +47,126 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlayerRecipeList" type="VBoxContainer" parent="HBoxContainer"]
-layout_mode = 2
-offset_right = 8.0
-offset_bottom = 960.0
+[node name="PlayerRecipePanel" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 400.0
+grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/PlayerRecipeList"]
-layout_mode = 2
-texture = ExtResource("2_cdewq")
+[node name="Label" type="Label" parent="HBoxContainer/PlayerRecipePanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.0
+offset_right = 58.0
+offset_bottom = 33.0
+grow_horizontal = 2
+text = "Recipe"
+horizontal_alignment = 1
 
-[node name="MixerPanel" type="VBoxContainer" parent="HBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/PlayerRecipePanel"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PlayerRecipePanel/ScrollContainer"]
 layout_mode = 2
-offset_left = 397.0
-offset_top = -1.0
-offset_right = 896.0
-offset_bottom = 959.0
-theme_override_constants/separation = 0
+
+[node name="MixerPanel" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(480, 0)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Mixer" type="TextureRect" parent="HBoxContainer/MixerPanel"]
 material = SubResource("ShaderMaterial_7vft3")
-layout_mode = 2
+custom_minimum_size = Vector2(480, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.051
+anchor_right = 0.5
+anchor_bottom = 0.051
+offset_left = -249.5
+offset_right = 249.5
+offset_bottom = 499.0
+grow_horizontal = 2
 texture = ExtResource("3_lh7vl")
 
-[node name="MIxerContainer" type="GridContainer" parent="HBoxContainer/MixerPanel"]
-custom_minimum_size = Vector2(200, 200)
-layout_mode = 2
-columns = 6
-script = ExtResource("4_lh7vl")
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/MixerPanel"]
+custom_minimum_size = Vector2(420, 200)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.653
+anchor_right = 0.5
+anchor_bottom = 0.653
+offset_left = -210.0
+offset_top = -100.0
+offset_right = 210.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="InventoryPanel" type="ScrollContainer" parent="HBoxContainer"]
-clip_contents = false
+[node name="MixerContent" type="GridContainer" parent="HBoxContainer/MixerPanel/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 20
+columns = 4
+script = ExtResource("3_7vft3")
+
+[node name="Slot" parent="HBoxContainer/MixerPanel/PanelContainer/MixerContent" instance=ExtResource("4_lh7vl")]
+layout_mode = 2
+
+[node name="Slot2" parent="HBoxContainer/MixerPanel/PanelContainer/MixerContent" instance=ExtResource("4_lh7vl")]
+layout_mode = 2
+
+[node name="Slot3" parent="HBoxContainer/MixerPanel/PanelContainer/MixerContent" instance=ExtResource("4_lh7vl")]
+layout_mode = 2
+
+[node name="Slot4" parent="HBoxContainer/MixerPanel/PanelContainer/MixerContent" instance=ExtResource("4_lh7vl")]
+layout_mode = 2
+
+[node name="Slot5" parent="HBoxContainer/MixerPanel/PanelContainer/MixerContent" instance=ExtResource("4_lh7vl")]
+layout_mode = 2
+
+[node name="Slot6" parent="HBoxContainer/MixerPanel/PanelContainer/MixerContent" instance=ExtResource("4_lh7vl")]
+layout_mode = 2
+
+[node name="Slot7" parent="HBoxContainer/MixerPanel/PanelContainer/MixerContent" instance=ExtResource("4_lh7vl")]
+layout_mode = 2
+
+[node name="Slot8" parent="HBoxContainer/MixerPanel/PanelContainer/MixerContent" instance=ExtResource("4_lh7vl")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="HBoxContainer/MixerPanel"]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.905
+anchor_right = 0.5
+anchor_bottom = 0.905
+offset_left = -14.0
+offset_top = -26.0
+offset_right = 14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Mix"
+
+[node name="InventoryPanel" type="Panel" parent="HBoxContainer"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 1
 anchors_preset = 11
@@ -82,9 +176,36 @@ anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="PlayerBerryList" type="VBoxContainer" parent="HBoxContainer/InventoryPanel"]
+[node name="Label" type="Label" parent="HBoxContainer/InventoryPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 26.0
+grow_horizontal = 2
+text = "Berries"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/InventoryPanel"]
+clip_contents = false
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.08
+anchor_right = 1.0
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+localize_numeral_system = false
+horizontal_scroll_mode = 0
+
+[node name="PlayerBerryList" type="GridContainer" parent="HBoxContainer/InventoryPanel/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 0
+size_flags_vertical = 4
+localize_numeral_system = false
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 20
+columns = 4
 script = ExtResource("4_cdewq")
