@@ -51,6 +51,7 @@ animations = [{
 radius = 7.0
 
 [node name="Arbok" type="CharacterBody2D"]
+collision_layer = 512
 script = ExtResource("1_eospf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -65,6 +66,9 @@ position = Vector2(0, -9)
 shape = SubResource("CircleShape2D_4gkuy")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 10.0
+path_postprocessing = 1
+avoidance_enabled = true
 radius = 5.0
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]

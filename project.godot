@@ -32,6 +32,10 @@ window/stretch/mode="canvas_items"
 
 project/assembly_name="pokemon-farm"
 
+[global_group]
+
+navigation_polygon_source_geometry_group=""
+
 [gui]
 
 theme/custom="uid://bjs7wtt6ir1xs"
@@ -74,6 +78,7 @@ esc={
 2d_navigation/layer_1="Arbok Navigation"
 2d_navigation/layer_2="Victreebels Navigation"
 2d_navigation/layer_3="Lapras Navigation"
+2d_physics/layer_10="NPC"
 
 [rendering]
 

@@ -51,6 +51,7 @@ animations = [{
 radius = 8.06226
 
 [node name="Victreebel" type="CharacterBody2D"]
+collision_layer = 512
 script = ExtResource("1_8st00")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -65,8 +66,11 @@ position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_g4pve")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 10.0
 navigation_layers = 2
+path_postprocessing = 1
 avoidance_enabled = true
+debug_enabled = true
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
 script = ExtResource("2_2t2ht")
