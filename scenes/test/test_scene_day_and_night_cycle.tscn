@@ -33,6 +33,3 @@ position = Vector2(272, 160)
 [node name="DayNightPanel" parent="CanvasLayer" instance=ExtResource("5_phi53")]
 
 [node name="DayNightCycleComponent" parent="." instance=ExtResource("6_30dha")]
-initial_day = 6
-initial_hour = 14
-initial_minute = 18
