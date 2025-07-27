@@ -33,6 +33,7 @@ func _ready() -> void:
 		if slot.has_method("set_is_mixer_slot"): # A safe check
 			slot.set_is_mixer_slot(true)
 			slot.slot_clicked.connect(_on_mixer_slot_clicked)
+			print("on mixer slot clicked connected")
 
 # --- Public Functions ---
 
@@ -56,6 +57,7 @@ func add_item(data: Dictionary):
 
 # When a mixer slot is clicked, remove the item from it
 func _on_mixer_slot_clicked(data: Dictionary):
+	print("on mixer slot clicked called")
 	for slot in get_children():
 		var slot_data = slot.get_data()
 		if not slot_data.is_empty() and slot_data.name == data.name:

@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhox53ofckjdr"]
+[gd_scene load_steps=9 format=3 uid="uid://bhox53ofckjdr"]
 
-[ext_resource type="Texture2D" uid="uid://7qlc2se74jh" path="res://pokemon-assets/Graphics/Battlebacks/city_night_bg.png" id="1_cnjmm"]
+[ext_resource type="Texture2D" uid="uid://dc4vwmngm4ft6" path="res://pokemon-assets/Graphics/Battlebacks/city_night_bg.png" id="1_cnjmm"]
+[ext_resource type="Script" uid="uid://kkj704dtlanh" path="res://scenes/BerryMixer/berry_mixer.gd" id="1_ruapb"]
 [ext_resource type="Script" uid="uid://ctdhuwcn0gnjv" path="res://scenes/BerryMixer/mixer_content.gd" id="3_7vft3"]
-[ext_resource type="Texture2D" uid="uid://bjnlg4oax4s2x" path="res://pokemon-assets/Graphics/Items/blender.png" id="3_lh7vl"]
+[ext_resource type="Texture2D" uid="uid://c2qxu3s7tjh3u" path="res://pokemon-assets/Graphics/Items/blender.png" id="3_lh7vl"]
 [ext_resource type="Script" uid="uid://d1b7qp1yqklru" path="res://scenes/BerryMixer/player_berry_list.gd" id="4_cdewq"]
 [ext_resource type="PackedScene" uid="uid://m2d3g74p375v" path="res://scenes/BerryMixer/slot.tscn" id="4_lh7vl"]
+[ext_resource type="Script" uid="uid://r1fdyor1fjyv" path="res://scenes/BerryMixer/mix_button.gd" id="5_7vft3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7vft3"]
 
@@ -15,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ruapb")
 
 [node name="Background" type="TextureRect" parent="."]
 z_index = -10
@@ -128,29 +131,37 @@ script = ExtResource("3_7vft3")
 
 [node name="Slot" parent="HBoxContainer/MixerPanel/PanelContainer/MixerContent" instance=ExtResource("4_lh7vl")]
 layout_mode = 2
+is_mixer_slot = true
 
 [node name="Slot2" parent="HBoxContainer/MixerPanel/PanelContainer/MixerContent" instance=ExtResource("4_lh7vl")]
 layout_mode = 2
+is_mixer_slot = true
 
 [node name="Slot3" parent="HBoxContainer/MixerPanel/PanelContainer/MixerContent" instance=ExtResource("4_lh7vl")]
 layout_mode = 2
+is_mixer_slot = true
 
 [node name="Slot4" parent="HBoxContainer/MixerPanel/PanelContainer/MixerContent" instance=ExtResource("4_lh7vl")]
 layout_mode = 2
+is_mixer_slot = true
 
 [node name="Slot5" parent="HBoxContainer/MixerPanel/PanelContainer/MixerContent" instance=ExtResource("4_lh7vl")]
 layout_mode = 2
+is_mixer_slot = true
 
 [node name="Slot6" parent="HBoxContainer/MixerPanel/PanelContainer/MixerContent" instance=ExtResource("4_lh7vl")]
 layout_mode = 2
+is_mixer_slot = true
 
 [node name="Slot7" parent="HBoxContainer/MixerPanel/PanelContainer/MixerContent" instance=ExtResource("4_lh7vl")]
 layout_mode = 2
+is_mixer_slot = true
 
 [node name="Slot8" parent="HBoxContainer/MixerPanel/PanelContainer/MixerContent" instance=ExtResource("4_lh7vl")]
 layout_mode = 2
+is_mixer_slot = true
 
-[node name="Button" type="Button" parent="HBoxContainer/MixerPanel"]
+[node name="MixButton" type="Button" parent="HBoxContainer/MixerPanel"]
 custom_minimum_size = Vector2(200, 60)
 layout_mode = 1
 anchors_preset = -1
@@ -165,6 +176,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 40
 text = "Mix"
+script = ExtResource("5_7vft3")
 
 [node name="InventoryPanel" type="Panel" parent="HBoxContainer"]
 custom_minimum_size = Vector2(400, 0)

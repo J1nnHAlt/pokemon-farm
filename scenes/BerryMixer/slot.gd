@@ -40,7 +40,6 @@ func update_display():
 func _gui_input(event: InputEvent):
 	# Handle left-click
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_released():
-		print("Slot clicked! Slot name:", self.name, ", is_mixer_slot:", is_mixer_slot, ", item_data:", item_data)
 		if not item_data.is_empty():
 			# Emit the signal with its data when clicked
 			slot_clicked.emit(item_data)
@@ -68,3 +67,16 @@ func add_amount(amount_to_add: int):
 		item_data.amount += amount_to_add
 		# The existing update_display function will now show the new amount
 		update_display()
+
+
+func set_is_mixer_slot(value):
+	self.is_mixer_slot = value
+
+
+func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
+	return data is Dictionary and data.has("name")
+	
+@onready var mixer_content = $".."
+func _drop_data(_at_position: Vector2, data: Variant) -> void:
+	# The drop logic is the same as the click logic
+	mixer_content.add_item(data)

@@ -41,7 +41,7 @@ func update_display():
 	# Create a slot for each berry type the player has
 	for berry_name in InventoryManager.player_inventory:
 		var berry_data = InventoryManager.player_inventory[berry_name]
-		if berry_data.amount > 0:
+		if berry_data.amount > 0 and berry_data.texture:
 			var slot = SLOT_SCENE.instantiate()
 			
 			# 1. ADD THE SLOT TO THE SCENE TREE FIRST
