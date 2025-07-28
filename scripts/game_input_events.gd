@@ -16,8 +16,16 @@ static func movement_input() -> Vector2:
 		
 	return direction
 
+static func is_run_pressed() -> bool:
+	return Input.is_action_pressed("run")
+
+static func is_cycle_toggle() -> bool:
+	return Input.is_action_just_pressed("cycle_toggle")
+
 static func is_movement_input() -> bool:
 	if direction == Vector2.ZERO:
+		print("[DEBUG] direction is ZERO in is_movement_input()")
 		return false
 	else:
+		print("[DEBUG] direction is:", direction)
 		return true

@@ -6,7 +6,6 @@ extends NodeState
 func _on_process(_delta : float) -> void:
 	pass
 
-
 func _on_physics_process(_delta : float) -> void:
 	if player.player_direction == Vector2.UP:
 		animated_sprite_2d.play("idle_back")
@@ -18,14 +17,12 @@ func _on_physics_process(_delta : float) -> void:
 		animated_sprite_2d.play("idle_left")
 	else:
 		animated_sprite_2d.play("idle_front")
-	
-	
-
 
 func _on_next_transitions() -> void:
 	GameInputEvents.movement_input()
-	
-	if GameInputEvents.is_movement_input():
+	if GameInputEvents.is_cycle_toggle():
+		transition.emit("CycleIdle")
+	elif GameInputEvents.is_movement_input():
 		transition.emit("Walk")
 
 
