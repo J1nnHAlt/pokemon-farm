@@ -85,8 +85,11 @@ cycle_toggle={
 
 2d_physics/layer_1="Wall"
 2d_navigation/layer_1="Arbok Navigation"
+2d_physics/layer_2="Water"
 2d_navigation/layer_2="Victreebels Navigation"
+2d_physics/layer_3="Land"
 2d_navigation/layer_3="Lapras Navigation"
+2d_physics/layer_4="Player"
 2d_physics/layer_10="NPC"
 
 [rendering]
