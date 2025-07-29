@@ -3,4 +3,5 @@
 [ext_resource type="Script" uid="uid://iohtqov44m6j" path="res://scripts/zones/fade_area.gd" id="1_xs6ms"]
 
 [node name="FadeArea" type="Area2D"]
+collision_mask = 8
 script = ExtResource("1_xs6ms")

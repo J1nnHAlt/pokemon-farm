@@ -6,12 +6,16 @@ func _ready() -> void:
 	self.body_exited.connect(_on_body_exited)
 
 func _on_body_entered(body: Node) -> void:
+	print("Something entered")
 	if is_player(body):
+		print("Playerx entered")
 		var parent = get_parent()
 		_transform(parent)
 
 func _on_body_exited(body: Node) -> void:
+	print("Something exited")
 	if is_player(body):
+		print("Playerx exited")
 		var parent = get_parent()
 		_untransform(parent)
 
@@ -24,4 +28,4 @@ func _untransform(_node: Node) -> void:
 	
 func is_player(node: Node) -> bool:
 	# Basic check — adjust to your player node’s name or type
-	return node.name == "Player"
+	return node.is_in_group("player") or node.name == "Player"

@@ -19,7 +19,7 @@ tile_map_data = PackedByteArray("AAAmAAQABgACAAEAAAAmAAUABgACAAEAAAAmAAYABgACAAE
 tile_set = ExtResource("2_j2mka")
 
 [node name="PokemonShop" parent="." instance=ExtResource("3_inwy8")]
-position = Vector2(448, -64)
+position = Vector2(413, -58)
 
 [node name="Player" parent="." instance=ExtResource("3_o1akv")]
 position = Vector2(192, 192)

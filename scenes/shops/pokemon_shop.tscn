@@ -25,6 +25,7 @@ tile_map_data = PackedByteArray("AAD4/wQACAAAAA4CAAD4/wUACAAAAA8CAAD5/wQACAAHAA4
 tile_set = ExtResource("1_k5ai6")
 
 [node name="HideArea" parent="roof" instance=ExtResource("3_w5ikm")]
+collision_layer = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="roof/HideArea"]
 position = Vector2(0, -20.75)
