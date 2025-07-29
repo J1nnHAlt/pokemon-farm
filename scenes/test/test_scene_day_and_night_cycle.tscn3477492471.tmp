@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://p6xqj3iyxvra"]
+[gd_scene load_steps=8 format=4 uid="uid://p6xqj3iyxvra"]
 
 [ext_resource type="TileSet" uid="uid://dq7x0bsl7faum" path="res://Tilesets/test_scene_tilemap.tres" id="1_2m7t0"]
 [ext_resource type="PackedScene" uid="uid://c7mvvd3ocvl7d" path="res://scenes/shops/pokemon_shop.tscn" id="2_phi53"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bsg4dgrfuedqn" path="res://scenes/day_night_ui/day_night_panel.tscn" id="5_phi53"]
 [ext_resource type="PackedScene" uid="uid://cytdne0aeypsc" path="res://scenes/day_night_ui/day_night_cycle_component.tscn" id="6_30dha"]
 [ext_resource type="PackedScene" uid="uid://bvj88ye74yc0c" path="res://scenes/crops/berry.tscn" id="7_rfbc3"]
-[ext_resource type="PackedScene" uid="uid://ewml2ij05wja" path="res://scenes/crops/test_animation.tscn" id="8_c47tn"]
 
 [node name="TestSceneDayAndNightCycle" type="Node2D"]
 
@@ -32,13 +31,12 @@ position = Vector2(272, 160)
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_rfbc3")]
 
-[node name="DayNightPanel" parent="CanvasLayer" instance=ExtResource("5_phi53")]
-
 [node name="DayNightCycleComponent" parent="." instance=ExtResource("6_30dha")]
 
 [node name="Berry" parent="." instance=ExtResource("7_rfbc3")]
-position = Vector2(153, 75)
+position = Vector2(132, 71)
 
-[node name="Node2D" parent="." instance=ExtResource("8_c47tn")]
-position = Vector2(189, 54)
-scale = Vector2(0.5, 0.5)
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="DayNightPanel" parent="CanvasLayer2" instance=ExtResource("5_phi53")]

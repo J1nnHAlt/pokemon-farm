@@ -1,13 +1,13 @@
 [gd_scene load_steps=75 format=3 uid="uid://dheba8g1u8uj8"]
 
 [ext_resource type="Script" uid="uid://dkxajelubqv35" path="res://scenes/characters/player/player.gd" id="1_hss88"]
-[ext_resource type="Texture2D" uid="uid://cvpxdgalmrwf3" path="res://assets/characters/girl_cycling_spritesheet.png" id="2_42irl"]
+[ext_resource type="Texture2D" uid="uid://cjobwx0h02rln" path="res://assets/characters/girl_cycling_spritesheet.png" id="2_42irl"]
 [ext_resource type="Script" uid="uid://bm540rrfyyxui" path="res://scripts/state_machine/node_state_machine.gd" id="2_686vu"]
-[ext_resource type="Texture2D" uid="uid://f8vad2bgfbtk" path="res://assets/characters/girl_fishing_front_back.png" id="2_xuses"]
-[ext_resource type="Texture2D" uid="uid://dlbu1paw2ljtl" path="res://assets/characters/girl_fishing_left_right.png" id="3_42irl"]
+[ext_resource type="Texture2D" uid="uid://cclunk80t5kdv" path="res://assets/characters/girl_fishing_front_back.png" id="2_xuses"]
+[ext_resource type="Texture2D" uid="uid://dfwxv5p07u6jc" path="res://assets/characters/girl_fishing_left_right.png" id="3_42irl"]
 [ext_resource type="Script" uid="uid://wxadvdscqr3r" path="res://scenes/characters/player/idle_state.gd" id="3_hss88"]
-[ext_resource type="Texture2D" uid="uid://cwcvelar5iu08" path="res://assets/characters/girl_running_spritesheet.png" id="3_mk55u"]
-[ext_resource type="Texture2D" uid="uid://cv3j2ynige1g" path="res://assets/characters/girl_walking_spritesheet.png" id="4_xuses"]
+[ext_resource type="Texture2D" uid="uid://cr5uhafk7oq4q" path="res://assets/characters/girl_running_spritesheet.png" id="3_mk55u"]
+[ext_resource type="Texture2D" uid="uid://d228i3nv15exb" path="res://assets/characters/girl_walking_spritesheet.png" id="4_xuses"]
 [ext_resource type="Script" uid="uid://puwqwjq1engw" path="res://scenes/characters/player/walk_state.gd" id="5_qd3e3"]
 [ext_resource type="Script" uid="uid://bjqc82igcwnl" path="res://scenes/characters/player/run_state.gd" id="10_3xnwo"]
 [ext_resource type="Script" uid="uid://dquodglxcms2b" path="res://scenes/characters/player/cycle_state.gd" id="11_djydg"]
@@ -597,6 +597,7 @@ size = Vector2(14, 14)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_hss88")
+player_direction = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -11)
@@ -642,3 +643,5 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 script = ExtResource("12_bsn6e")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="Watering" type="Node" parent="StateMachine"]

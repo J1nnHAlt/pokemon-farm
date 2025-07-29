@@ -1,17 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvj88ye74yc0c"]
+[gd_scene load_steps=5 format=3 uid="uid://bvj88ye74yc0c"]
 
 [ext_resource type="Texture2D" uid="uid://calld0wyo8oky" path="res://pokemon-assets/Graphics/Characters/berrytree_CHERIBERRY.png" id="1_n8qlo"]
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ejveh"]
-particle_flag_disable_z = true
-angle_min = -180.0
-angle_max = 180.0
-angular_velocity_min = -300.0
-angular_velocity_max = 300.0
-orbit_velocity_min = -1.0
-orbit_velocity_max = 1.0
-gravity = Vector3(0, -50, 0)
-color = Color(0, 0.376471, 1, 1)
+[ext_resource type="PackedScene" uid="uid://bbt04cvqw6sjg" path="res://scenes/crops/watering_particles.tscn" id="2_r2vmc"]
+[ext_resource type="PackedScene" uid="uid://c2vb7n7vmwxn2" path="res://scenes/crops/flowering_particles.tscn" id="3_n20s4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ksasq"]
 size = Vector2(23, 22)
@@ -19,18 +10,19 @@ size = Vector2(23, 22)
 [node name="Berry" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -18)
+position = Vector2(0, -11)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_n8qlo")
 hframes = 4
 vframes = 4
 frame = 1
 
-[node name="WateringParticles" type="GPUParticles2D" parent="."]
-amount = 16
-process_material = SubResource("ParticleProcessMaterial_ejveh")
+[node name="WateringParticles" parent="." instance=ExtResource("2_r2vmc")]
+
+[node name="FloweringParticles" parent="." instance=ExtResource("3_n20s4")]
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1, 1)
+scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_ksasq")
