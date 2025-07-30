@@ -604,7 +604,7 @@ script = ExtResource("1_hss88")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_6nfx3")
-animation = &"fishing_back"
+animation = &"fishing_front"
 autoplay = "idle_front"
 frame = 3
 frame_progress = 1.0
