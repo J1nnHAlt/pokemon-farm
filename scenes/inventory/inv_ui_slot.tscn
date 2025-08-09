@@ -24,9 +24,22 @@ offset_bottom = 16.0
 layout_mode = 2
 
 [node name="item_display" type="TextureRect" parent="CenterContainer/Panel"]
-layout_mode = 0
+layout_mode = 2
 offset_left = -8.0
 offset_top = -8.0
 offset_right = 8.0
 offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
 expand_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/Panel"]
+custom_minimum_size = Vector2(18, 14)
+layout_mode = 0
+offset_left = -2.0
+offset_right = 16.0
+offset_bottom = 14.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 16
+text = "99"
+horizontal_alignment = 2

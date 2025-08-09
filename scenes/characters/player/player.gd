@@ -8,3 +8,7 @@ var player_direction: Vector2
 
 func _ready() -> void:
 	add_to_group("player")
+
+#to be called when collecting item
+func collect(item):
+	inventory.insert(item)

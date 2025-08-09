@@ -6,13 +6,14 @@ var is_open = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	inv.update.connect(update_slots)
 	update_slots()
 	close()
 
 func update_slots():
 #	loop through all slots and update them
-		for i in range(min(inv.items.size(), slots.size())):
-			slots[i].update(inv.items[i])
+		for i in range(min(inv.slots.size(), slots.size())):
+			slots[i].update(inv.slots[i])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
