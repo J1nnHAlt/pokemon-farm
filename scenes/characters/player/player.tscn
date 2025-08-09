@@ -1,17 +1,19 @@
-[gd_scene load_steps=75 format=3 uid="uid://dheba8g1u8uj8"]
+[gd_scene load_steps=77 format=3 uid="uid://dheba8g1u8uj8"]
 
 [ext_resource type="Script" uid="uid://dkxajelubqv35" path="res://scenes/characters/player/player.gd" id="1_hss88"]
-[ext_resource type="Texture2D" uid="uid://cvpxdgalmrwf3" path="res://assets/characters/girl_cycling_spritesheet.png" id="2_42irl"]
+[ext_resource type="Texture2D" uid="uid://cctky85hpksb6" path="res://assets/characters/girl_cycling_spritesheet.png" id="2_42irl"]
 [ext_resource type="Script" uid="uid://bm540rrfyyxui" path="res://scripts/state_machine/node_state_machine.gd" id="2_686vu"]
-[ext_resource type="Texture2D" uid="uid://f8vad2bgfbtk" path="res://assets/characters/girl_fishing_front_back.png" id="2_xuses"]
-[ext_resource type="Texture2D" uid="uid://dlbu1paw2ljtl" path="res://assets/characters/girl_fishing_left_right.png" id="3_42irl"]
+[ext_resource type="Resource" uid="uid://cgdkkxyj1wx0j" path="res://scripts/inventory/player_inv.tres" id="2_blysn"]
+[ext_resource type="Texture2D" uid="uid://iruowrac3l8a" path="res://assets/characters/girl_fishing_front_back.png" id="2_xuses"]
+[ext_resource type="Texture2D" uid="uid://b3daab6k1s1ao" path="res://assets/characters/girl_fishing_left_right.png" id="3_42irl"]
 [ext_resource type="Script" uid="uid://wxadvdscqr3r" path="res://scenes/characters/player/idle_state.gd" id="3_hss88"]
-[ext_resource type="Texture2D" uid="uid://cwcvelar5iu08" path="res://assets/characters/girl_running_spritesheet.png" id="3_mk55u"]
-[ext_resource type="Texture2D" uid="uid://cv3j2ynige1g" path="res://assets/characters/girl_walking_spritesheet.png" id="4_xuses"]
+[ext_resource type="Texture2D" uid="uid://bamoeg0fbyp73" path="res://assets/characters/girl_running_spritesheet.png" id="3_mk55u"]
+[ext_resource type="Texture2D" uid="uid://dc2swh4sekvxj" path="res://assets/characters/girl_walking_spritesheet.png" id="4_xuses"]
 [ext_resource type="Script" uid="uid://puwqwjq1engw" path="res://scenes/characters/player/walk_state.gd" id="5_qd3e3"]
 [ext_resource type="Script" uid="uid://bjqc82igcwnl" path="res://scenes/characters/player/run_state.gd" id="10_3xnwo"]
 [ext_resource type="Script" uid="uid://dquodglxcms2b" path="res://scenes/characters/player/cycle_state.gd" id="11_djydg"]
 [ext_resource type="Script" uid="uid://cl2otscl5yubc" path="res://scenes/characters/player/cycle_idle_state.gd" id="12_bsn6e"]
+[ext_resource type="PackedScene" uid="uid://c1g7wo3i0l6eg" path="res://scenes/inventory/inv_ui.tscn" id="14_hv5x3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_35rnk"]
 atlas = ExtResource("2_42irl")
@@ -600,6 +602,7 @@ z_index = 1
 collision_layer = 8
 collision_mask = 7
 script = ExtResource("1_hss88")
+inventory = ExtResource("2_blysn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -11)
@@ -648,3 +651,5 @@ player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
 [node name="Watering" type="Node" parent="StateMachine"]
+
+[node name="Inv_UI" parent="." instance=ExtResource("14_hv5x3")]

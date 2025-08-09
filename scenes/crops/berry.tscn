@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bvj88ye74yc0c"]
 
-[ext_resource type="Texture2D" uid="uid://calld0wyo8oky" path="res://pokemon-assets/Graphics/Characters/berrytree_CHERIBERRY.png" id="1_n8qlo"]
+[ext_resource type="Texture2D" uid="uid://cu5x5thx7eehv" path="res://pokemon-assets/Graphics/Characters/berrytree_CHERIBERRY.png" id="1_n8qlo"]
 [ext_resource type="PackedScene" uid="uid://bbt04cvqw6sjg" path="res://scenes/crops/watering_particles.tscn" id="2_r2vmc"]
 [ext_resource type="PackedScene" uid="uid://c2vb7n7vmwxn2" path="res://scenes/crops/flowering_particles.tscn" id="3_n20s4"]
 

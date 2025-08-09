@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Inv" load_steps=6 format=3 uid="uid://cgdkkxyj1wx0j"]
+
+[ext_resource type="Script" uid="uid://srnaalrlc73j" path="res://scripts/inventory/inventory_item.gd" id="1_hug62"]
+[ext_resource type="Resource" uid="uid://dn8gujxm2mlfp" path="res://scripts/inventory/items/cheri_berry.tres" id="2_ygjmo"]
+[ext_resource type="Resource" uid="uid://cc7ypp7b0xktf" path="res://scripts/inventory/items/durin_berry.tres" id="3_0vgsv"]
+[ext_resource type="Resource" uid="uid://dx2ktnf5sloc0" path="res://scripts/inventory/items/pamtre_berry.tres" id="4_43woq"]
+[ext_resource type="Script" uid="uid://bhh6xn1tgxjnd" path="res://scripts/inventory/inventory.gd" id="5_r0kbc"]
+
+[resource]
+script = ExtResource("5_r0kbc")
+items = Array[ExtResource("1_hug62")]([ExtResource("2_ygjmo"), ExtResource("3_0vgsv"), ExtResource("4_43woq"), ExtResource("2_ygjmo"), null, null, null, null, null, null, null, null])
+metadata/_custom_type_script = "uid://bhh6xn1tgxjnd"
