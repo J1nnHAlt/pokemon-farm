@@ -1,10 +1,18 @@
 extends Control
 
+@onready var inv: Inv = preload("res://scripts/inventory/player_inv.tres")
+@onready var slots: Array = $NinePatchRect/GridContainer.get_children()
 var is_open = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	update_slots()
 	close()
+
+func update_slots():
+#	loop through all slots and update them
+		for i in range(min(inv.items.size(), slots.size())):
+			slots[i].update(inv.items[i])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

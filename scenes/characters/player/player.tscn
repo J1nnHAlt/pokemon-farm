@@ -653,3 +653,7 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 [node name="Watering" type="Node" parent="StateMachine"]
 
 [node name="Inv_UI" parent="." instance=ExtResource("14_hv5x3")]
+offset_left = -41.0
+offset_top = -86.0
+offset_right = 42.0
+offset_bottom = -23.0
