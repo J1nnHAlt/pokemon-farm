@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bnhb2uqm5wm8p"]
+[gd_scene load_steps=11 format=4 uid="uid://bnhb2uqm5wm8p"]
 
 [ext_resource type="TileSet" uid="uid://dq7x0bsl7faum" path="res://Tilesets/test_scene_tilemap.tres" id="1_pbksc"]
 [ext_resource type="PackedScene" uid="uid://dheba8g1u8uj8" path="res://scenes/characters/player/player.tscn" id="2_0jr7y"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cruirr1gmx6cc" path="res://scenes/characters/water_pokemon/lapras.tscn" id="4_d72nt"]
 [ext_resource type="PackedScene" uid="uid://yvg6vobd2rc0" path="res://scenes/characters/grass_pokemon/victreebel.tscn" id="5_l26td"]
 [ext_resource type="PackedScene" uid="uid://32pfkefqd0i2" path="res://scenes/menus/pause_menu.tscn" id="6_6jwwm"]
+[ext_resource type="PackedScene" uid="uid://d2j5os108d655" path="res://scenes/global/coin.tscn" id="6_veat8"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_pbksc"]
 vertices = PackedVector2Array(170.344, 105.594, 67.8516, 111.469, 59.1875, 35.9063, 165.641, 35.0703)
@@ -71,5 +72,7 @@ navigation_layers = 2
 position = Vector2(233, 77)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("6_veat8")]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("6_6jwwm")]
