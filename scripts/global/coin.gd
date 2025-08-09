@@ -1,7 +1,6 @@
 extends Node
 
-@onready var coins: int = 0
-@onready var coin_label: Label = $PanelContainer/MarginContainer/HBoxContainer/Label
+@onready var coins: int = 12
 
 func add_coins(amount: int):
 	coins += amount
@@ -12,11 +11,21 @@ func spend_coins(amount: int) -> bool:
 		return true
 	return false
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	coin_label.text = str(coins)
+func save_game():
+	var save_data = {"coins": coins}
+#	save under this path
+#	C:\Users\<YourUsername>\AppData\Roaming\Godot\app_userdata\<YourGameName>\savegame.json
+	var file = FileAccess.open("user://savegame.json", FileAccess.WRITE)
+	file.store_string(JSON.stringify(save_data))
+	print("save game success")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func load_game():
+	if FileAccess.file_exists("user://savegame.json"):
+		print("load game success")
+		#load from this path
+#		C:\Users\<YourUsername>\AppData\Roaming\Godot\app_userdata\<YourGameName>\savegame.json
+		var file = FileAccess.open("user://savegame.json", FileAccess.READ)
+		var data = JSON.parse_string(file.get_as_text())
+		coins = data["coins"]
+	print("load game failed")

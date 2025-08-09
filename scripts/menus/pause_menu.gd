@@ -44,4 +44,5 @@ func _on_options_pressed() -> void:
 	$AnimationPlayer.play_backwards("blur")  # Hide pause menu while settings is open
 
 func _on_quit_pressed() -> void:
+	Coin.save_game()
 	get_tree().quit()

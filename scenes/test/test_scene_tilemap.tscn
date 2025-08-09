@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://ddn488ymhtduf"]
+[gd_scene load_steps=6 format=4 uid="uid://ddn488ymhtduf"]
 
 [ext_resource type="TileSet" uid="uid://dq7x0bsl7faum" path="res://Tilesets/test_scene_tilemap.tres" id="2_j2mka"]
 [ext_resource type="PackedScene" uid="uid://c7mvvd3ocvl7d" path="res://scenes/shops/pokemon_shop.tscn" id="3_inwy8"]
 [ext_resource type="PackedScene" uid="uid://dheba8g1u8uj8" path="res://scenes/characters/player/player.tscn" id="3_o1akv"]
 [ext_resource type="PackedScene" uid="uid://32pfkefqd0i2" path="res://scenes/menus/pause_menu.tscn" id="4_inwy8"]
+[ext_resource type="PackedScene" uid="uid://d2j5os108d655" path="res://scenes/global/coin.tscn" id="5_6k3gh"]
 
 [node name="TestSceneTilemap" type="Node2D"]
 
@@ -25,5 +26,7 @@ position = Vector2(413, -58)
 position = Vector2(192, 192)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="coins" parent="CanvasLayer" instance=ExtResource("5_6k3gh")]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_inwy8")]
