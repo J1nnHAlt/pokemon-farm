@@ -7,4 +7,5 @@
 script = ExtResource("1_jubnh")
 name = "CheriBerry"
 texture = ExtResource("2_1gu3f")
+price = 15.0
 metadata/_custom_type_script = "uid://srnaalrlc73j"

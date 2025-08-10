@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cblx6utrafqd5"]
+[gd_scene load_steps=5 format=3 uid="uid://cblx6utrafqd5"]
 
+[ext_resource type="Script" uid="uid://l2segxy0qcav" path="res://scenes/global/shops/shop_item_button.gd" id="1_4aam8"]
 [ext_resource type="Texture2D" uid="uid://b3vwj7o8lfhe5" path="res://pokemon-assets/Graphics/Items/DURINBERRY.png" id="1_r0p58"]
 [ext_resource type="Texture2D" uid="uid://wggvu3k6ks1i" path="res://pokemon-assets/Graphics/Items/GROUNDGEM.png" id="1_ulddo"]
 
@@ -11,6 +12,7 @@ offset_right = 1040.0
 offset_bottom = 95.0
 theme_override_font_sizes/font_size = 40
 theme_override_styles/hover = SubResource("StyleBoxFlat_ulddo")
+script = ExtResource("1_4aam8")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -19,12 +21,12 @@ anchor_bottom = 1.0
 offset_right = 760.0
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+[node name="ItemVisual" type="TextureRect" parent="HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("1_r0p58")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer"]
+[node name="ItemName" type="Label" parent="HBoxContainer"]
 layout_mode = 2
 text = "sdfsdfsdfdfdfdfdfdfdfdfdfdfdfdfdf"
 
@@ -38,11 +40,11 @@ offset_left = -80.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="TextureRect2" type="TextureRect" parent="HBoxContainer2"]
+[node name="GemVisual" type="TextureRect" parent="HBoxContainer2"]
 layout_mode = 2
 texture = ExtResource("1_ulddo")
 expand_mode = 2
 
-[node name="Label2" type="Label" parent="HBoxContainer2"]
+[node name="price" type="Label" parent="HBoxContainer2"]
 layout_mode = 2
 text = "99"
