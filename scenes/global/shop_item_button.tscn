@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://cblx6utrafqd5"]
+
+[ext_resource type="Texture2D" uid="uid://b3vwj7o8lfhe5" path="res://pokemon-assets/Graphics/Items/DURINBERRY.png" id="1_r0p58"]
+[ext_resource type="Texture2D" uid="uid://wggvu3k6ks1i" path="res://pokemon-assets/Graphics/Items/GROUNDGEM.png" id="1_ulddo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ulddo"]
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(1040, 42)
+offset_right = 1040.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_ulddo")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 760.0
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_r0p58")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "sdfsdfsdfdfdfdfdfdfdfdfdfdfdfdfdf"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("1_ulddo")
+expand_mode = 2
+
+[node name="Label2" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+text = "99"

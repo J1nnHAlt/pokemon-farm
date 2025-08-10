@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://dq0x68l6h0d18"]
+
+[ext_resource type="Texture2D" uid="uid://cf6cyjpneu52r" path="res://pokemon-assets/Graphics/Characters/NPC 16.png" id="1_d4fv4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lemv"]
+atlas = ExtResource("1_d4fv4")
+region = Rect2(96, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5d4gj"]
+atlas = ExtResource("1_d4fv4")
+region = Rect2(64, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifx0u"]
+atlas = ExtResource("1_d4fv4")
+region = Rect2(32, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ectr7"]
+atlas = ExtResource("1_d4fv4")
+region = Rect2(0, 96, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l78w7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lemv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5d4gj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifx0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ectr7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4fv4"]
+size = Vector2(17, 31)
+
+[node name="Seller" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_l78w7")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.571356
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 5.5)
+shape = SubResource("RectangleShape2D_d4fv4")
