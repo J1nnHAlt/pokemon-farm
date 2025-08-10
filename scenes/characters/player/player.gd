@@ -11,4 +11,4 @@ func _ready() -> void:
 
 #to be called when collecting item
 func collect(item):
-	inventory.insert(item)
+	return inventory.insert(item)

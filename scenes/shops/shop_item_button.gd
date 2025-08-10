@@ -32,6 +32,7 @@ func _on_pressed() -> void:
 	
 	if Coin.spend_coins(slot.price):
 		if player.collect(slot.item):
+			print("Enough space")
 			shop_inv.remove_item(slot.item)
 			shop_menu.refresh_balance()
 			world_coin_ui.refresh_balance()
