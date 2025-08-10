@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://cblx6utrafqd5"]
+
+[ext_resource type="Script" uid="uid://l2segxy0qcav" path="res://scenes/shops/shop_item_button.gd" id="1_4aam8"]
+[ext_resource type="Texture2D" uid="uid://b3vwj7o8lfhe5" path="res://pokemon-assets/Graphics/Items/DURINBERRY.png" id="1_r0p58"]
+[ext_resource type="Texture2D" uid="uid://wggvu3k6ks1i" path="res://pokemon-assets/Graphics/Items/GROUNDGEM.png" id="1_ulddo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ulddo"]
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(1040, 94)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 8.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_ulddo")
+script = ExtResource("1_4aam8")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="HBoxContainer1" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Item" type="HBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ItemVisual" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer1/Item"]
+layout_mode = 2
+texture = ExtResource("1_r0p58")
+expand_mode = 2
+
+[node name="ItemName" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer1/Item"]
+layout_mode = 2
+text = "sdfsdfsdfdfdfdfdfdfdfdfdfdfdfdfdf"
+
+[node name="Gem" type="HBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer1"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="GemVisual" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer1/Gem"]
+layout_mode = 2
+texture = ExtResource("1_ulddo")
+expand_mode = 2
+
+[node name="price" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer1/Gem"]
+layout_mode = 2
+text = "99"
+
+[node name="Quantity" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="QuantityLabel" type="Label" parent="PanelContainer/VBoxContainer/Quantity"]
+layout_mode = 2
+text = "Quantity:"
+
+[node name="amount" type="Label" parent="PanelContainer/VBoxContainer/Quantity"]
+layout_mode = 2
+text = "12"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
