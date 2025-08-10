@@ -36,7 +36,7 @@ func restock_shop():
 	shop_inv.slots.clear() # Empty the shop
 	for i in range(3): # Give the shop 3 random items
 		var random_item = possible_items.pick_random()
-		var random_price = randf_range(10, 100)
+		var random_price = round(randf_range(10, 100))
 		var random_amount = randi_range(1, 5)
 		shop_inv.add_item(random_item, random_price, random_amount)
 
