@@ -29,5 +29,6 @@ func load_game():
 		var file = FileAccess.open("user://savegame.json", FileAccess.READ)
 		var data = JSON.parse_string(file.get_as_text())
 		coins = data["coins"]
+		coins = 100
 		coins_loaded.emit()
 	#print("load game failed")
