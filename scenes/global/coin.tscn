@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bduio1oo2u3i" path="res://scripts/global/coin_ui.gd" id="1_c48kv"]
 [ext_resource type="Texture2D" uid="uid://wggvu3k6ks1i" path="res://pokemon-assets/Graphics/Items/GROUNDGEM.png" id="1_sghxf"]
 
-[node name="coins" type="Control"]
+[node name="coins" type="Control" groups=["world_coin_ui"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

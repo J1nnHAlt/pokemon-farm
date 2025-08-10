@@ -1,16 +1,20 @@
-extends CanvasLayer
+extends Control
 
 @export var possible_items: Array[InvItem] = []
+@onready var balance_label: Label = $Balance/MarginContainer/HBoxContainer/Label
+@onready var time_remain: Label = $Time/HBoxContainer/TimeLeft
 @onready var shop_inv: ShopInv = preload("res://scripts/global/shop_inventory/shop_inv.tres")
-@onready var items_container: VBoxContainer = $Control/ShopItems/PanelContainer/MarginContainer/VBoxContainer # Or whatever container your buttons go in
+@onready var items_container: VBoxContainer = $ShopItems/PanelContainer/MarginContainer/VBoxContainer # Or whatever container your buttons go in
 var shop_item_button_scene = preload("res://scenes/global/shops/shop_item_button.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#visible = false
+	visible = false
+	refresh_balance()
 	_refresh_ui()
 	# Optional: auto-update when shop inventory changes
 	shop_inv.update.connect(_refresh_ui)
+	Coin.coins_loaded.connect(refresh_balance)
 	pass # Replace with function body.
 
 func _refresh_ui():
@@ -24,6 +28,9 @@ func _refresh_ui():
 		btn.set_slot(slot) # You’ll make this in ShopItemButton.gd
 		items_container.add_child(btn)
 
+func refresh_balance():
+	balance_label.text = str(Coin.coins)
+	
 
 func restock_shop():
 	shop_inv.slots.clear() # Empty the shop
@@ -35,7 +42,7 @@ func restock_shop():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	time_remain.text = str(round($Timer.time_left))
 
 
 func _on_timer_timeout() -> void:

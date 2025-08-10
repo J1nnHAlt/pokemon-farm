@@ -1,6 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dq0x68l6h0d18"]
+[gd_scene load_steps=11 format=3 uid="uid://dq0x68l6h0d18"]
 
+[ext_resource type="Script" uid="uid://bwxbmupbwm8vj" path="res://scenes/characters/seller/seller.gd" id="1_1lemv"]
 [ext_resource type="Texture2D" uid="uid://cf6cyjpneu52r" path="res://pokemon-assets/Graphics/Characters/NPC 16.png" id="1_d4fv4"]
+[ext_resource type="PackedScene" uid="uid://638cvws80rac" path="res://scenes/global/shops/shop_menu.tscn" id="3_5d4gj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1lemv"]
 atlas = ExtResource("1_d4fv4")
@@ -41,7 +43,13 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d4fv4"]
 size = Vector2(17, 31)
 
-[node name="Seller" type="CharacterBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d4fv4"]
+radius = 30.0661
+height = 90.3425
+
+[node name="Seller" type="CharacterBody2D" node_paths=PackedStringArray("shop_menu")]
+script = ExtResource("1_1lemv")
+shop_menu = NodePath("CanvasLayer/ShopMenu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_l78w7")
@@ -52,3 +60,19 @@ frame_progress = 0.571356
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, 5.5)
 shape = SubResource("RectangleShape2D_d4fv4")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(26, 13)
+rotation = 1.64291
+shape = SubResource("CapsuleShape2D_d4fv4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="ShopMenu" parent="CanvasLayer" instance=ExtResource("3_5d4gj")]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

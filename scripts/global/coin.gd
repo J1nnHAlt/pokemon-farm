@@ -1,6 +1,8 @@
 extends Node
 
-@onready var coins: int = 12
+@onready var coins: int = -1
+
+signal coins_loaded
 
 func add_coins(amount: int):
 	coins += amount
@@ -19,7 +21,6 @@ func save_game():
 	file.store_string(JSON.stringify(save_data))
 	print("save game success")
 
-
 func load_game():
 	if FileAccess.file_exists("user://savegame.json"):
 		print("load game success")
@@ -28,4 +29,5 @@ func load_game():
 		var file = FileAccess.open("user://savegame.json", FileAccess.READ)
 		var data = JSON.parse_string(file.get_as_text())
 		coins = data["coins"]
-	print("load game failed")
+		coins_loaded.emit()
+	#print("load game failed")
