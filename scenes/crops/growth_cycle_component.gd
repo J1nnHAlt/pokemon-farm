@@ -1,7 +1,7 @@
 class_name GrowthCycleComponent
 extends Node
 
-@export var current_growth_state: DataTypes.GrowthStates = DataTypes.GrowthStates.Germination
+@export var current_growth_state: DataTypes.GrowthStates = DataTypes.GrowthStates.Seed
 @export_range(5, 365) var days_until_harvest: int = 7
 
 signal crop_maturity
@@ -13,7 +13,6 @@ var current_day: int
 
 func _ready() -> void:
 	DayAndNightCycleManager.time_tick_day.connect(on_time_tick_day)
-
 
 func on_time_tick_day(day: int) -> void:
 	if is_watered:

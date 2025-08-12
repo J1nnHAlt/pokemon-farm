@@ -1,6 +1,6 @@
 extends Node2D
 
-#var corn_harvest_scene = preload("res://pokemon-assets/")
+#var berry_harvest_scene = preload("res://pokemon-assets/")
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var watering_particles: GPUParticles2D = $WateringParticles
@@ -17,7 +17,7 @@ func _ready() -> void:
 	
 	hurt_component.hurt.connect(on_hurt)
 	growth_cycle_component.crop_maturity.connect(on_crop_maturity)
-	#growth_cycle_component.crop_harvesting.connect(on_crop_harvesting)
+	growth_cycle_component.crop_harvesting.connect(on_crop_harvesting)
 
 
 func _process(delta: float) -> void:
@@ -40,8 +40,8 @@ func on_crop_maturity() -> void:
 	flowering_particles.emitting = true
 
 
-#func on_crop_harvesting() -> void:
+func on_crop_harvesting() -> void:
 	#var corn_harvest_instance = corn_harvest_scene.instantiate() as Node2D
 	#corn_harvest_instance.global_position = global_position
 	#get_parent().add_child(corn_harvest_instance)
-	#queue_free()
+	queue_free()

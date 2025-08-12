@@ -741,7 +741,6 @@ z_index = 1
 collision_layer = 8
 collision_mask = 7
 script = ExtResource("1_hss88")
-current_tool = 1
 inventory = ExtResource("2_blysn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

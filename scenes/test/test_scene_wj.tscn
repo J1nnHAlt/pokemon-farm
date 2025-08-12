@@ -39,4 +39,4 @@ position = Vector2(192, 192)
 [node name="DayNightPanel" parent="CanvasLayer" instance=ExtResource("7_oeggr")]
 
 [node name="Berry" parent="." instance=ExtResource("8_2mbbx")]
-position = Vector2(322, 134)
+position = Vector2(293, 137)
