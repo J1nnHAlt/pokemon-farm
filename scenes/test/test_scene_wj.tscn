@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://c7hfx0vlqirpd"]
+[gd_scene load_steps=9 format=4 uid="uid://wqvmwo3lvhxm"]
 
 [ext_resource type="PackedScene" uid="uid://cytdne0aeypsc" path="res://scenes/day_night_ui/day_night_cycle_component.tscn" id="1_6wg1a"]
 [ext_resource type="TileSet" uid="uid://dq7x0bsl7faum" path="res://Tilesets/test_scene_tilemap.tres" id="2_2mbbx"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d2j5os108d655" path="res://scenes/global/coin.tscn" id="5_w0rda"]
 [ext_resource type="PackedScene" uid="uid://32pfkefqd0i2" path="res://scenes/menus/pause_menu.tscn" id="6_blcwd"]
 [ext_resource type="PackedScene" uid="uid://bsg4dgrfuedqn" path="res://scenes/day_night_ui/day_night_panel.tscn" id="7_oeggr"]
+[ext_resource type="PackedScene" uid="uid://bvj88ye74yc0c" path="res://scenes/crops/berry.tscn" id="8_2mbbx"]
 
 [node name="TestSceneTilemap" type="Node2D"]
 
@@ -36,3 +37,6 @@ position = Vector2(192, 192)
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("6_blcwd")]
 
 [node name="DayNightPanel" parent="CanvasLayer" instance=ExtResource("7_oeggr")]
+
+[node name="Berry" parent="." instance=ExtResource("8_2mbbx")]
+position = Vector2(322, 134)

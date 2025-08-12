@@ -1,13 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvj88ye74yc0c"]
+[gd_scene load_steps=8 format=3 uid="uid://bvj88ye74yc0c"]
 
-[ext_resource type="Texture2D" uid="uid://cu5x5thx7eehv" path="res://pokemon-assets/Graphics/Characters/berrytree_CHERIBERRY.png" id="1_n8qlo"]
+[ext_resource type="Texture2D" uid="uid://calld0wyo8oky" path="res://pokemon-assets/Graphics/Characters/berrytree_CHERIBERRY.png" id="1_n8qlo"]
+[ext_resource type="Script" uid="uid://j3mjtuxv4amv" path="res://scenes/crops/berry.gd" id="1_wmgse"]
 [ext_resource type="PackedScene" uid="uid://bbt04cvqw6sjg" path="res://scenes/crops/watering_particles.tscn" id="2_r2vmc"]
 [ext_resource type="PackedScene" uid="uid://c2vb7n7vmwxn2" path="res://scenes/crops/flowering_particles.tscn" id="3_n20s4"]
+[ext_resource type="PackedScene" uid="uid://30ayb03hl4mi" path="res://scenes/crops/growth_cycle_component.tscn" id="5_sv1uy"]
+[ext_resource type="PackedScene" uid="uid://cln3rkgqe2581" path="res://scenes/component/hurt_component.tscn" id="6_k6kri"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ksasq"]
-size = Vector2(23, 22)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6ik6"]
+size = Vector2(13, 10)
 
 [node name="Berry" type="Node2D"]
+script = ExtResource("1_wmgse")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -11)
@@ -21,8 +25,11 @@ frame = 1
 
 [node name="FloweringParticles" parent="." instance=ExtResource("3_n20s4")]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="GrowthCycleComponent" parent="." instance=ExtResource("5_sv1uy")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_ksasq")
+[node name="HurtComponent" parent="." instance=ExtResource("6_k6kri")]
+tool = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_e6ik6")

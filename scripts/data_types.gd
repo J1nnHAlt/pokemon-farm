@@ -3,7 +3,7 @@ class_name DataTypes
 enum Tools{
 	None,
 	WaterCrops,
-	PlantBerries
+	PlantBerries,
 }
 
 enum GrowthStates {

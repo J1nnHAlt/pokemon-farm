@@ -24,6 +24,8 @@ func _on_next_transitions() -> void:
 		transition.emit("CycleIdle")
 	elif GameInputEvents.is_movement_input():
 		transition.emit("Walk")
+	elif player.current_tool == DataTypes.Tools.WaterCrops && GameInputEvents.is_watering_input():
+		transition.emit("Watering")
 
 
 func _on_enter() -> void:

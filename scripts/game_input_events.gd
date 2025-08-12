@@ -29,3 +29,6 @@ static func is_movement_input() -> bool:
 	else:
 		print("[DEBUG] direction is:", direction)
 		return true
+
+static func is_watering_input() -> bool:
+	return Input.is_action_just_pressed("watering")
