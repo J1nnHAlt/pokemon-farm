@@ -1,5 +1,6 @@
 extends Control
 
+@onready var day_night_panel: Control = $"../DayNightPanel"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,10 +14,12 @@ func _process(delta: float) -> void:
 func resume():
 	get_tree().paused = false
 	$AnimationPlayer.play_backwards("blur")
+	day_night_panel.mouse_filter = Control.MOUSE_FILTER_STOP  # re-enable
 
 func pause():
 	get_tree().paused = true
 	$AnimationPlayer.play("blur")
+	day_night_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE  # disable
 
 func testEsc():
 	if Input.is_action_just_pressed("esc") and get_tree().paused == false:
