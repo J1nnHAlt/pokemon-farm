@@ -1,14 +1,14 @@
 [gd_resource type="TileSet" load_steps=19 format=3 uid="uid://dq7x0bsl7faum"]
 
-[ext_resource type="Texture2D" uid="uid://duqmix1e032j5" path="res://pokemon-assets/Graphics/Autotiles/Light grass.png" id="1_kn3eu"]
-[ext_resource type="Texture2D" uid="uid://bhdbetekc24x0" path="res://assets/tilesets/Outside/Land/basic_grass_flower_small_tree.png" id="2_rsiuj"]
-[ext_resource type="Texture2D" uid="uid://fqo17mixeku8" path="res://assets/tilesets/Outside/Land/spur.png" id="3_0u6eo"]
-[ext_resource type="Texture2D" uid="uid://bekjxt2uobitn" path="res://assets/tilesets/sea_animated_tileset.png" id="4_0u6eo"]
-[ext_resource type="Texture2D" uid="uid://ieamqm5n2tio" path="res://assets/tilesets/Outside/Land/hill_and_stair.png" id="5_glu6w"]
-[ext_resource type="Texture2D" uid="uid://dssnfrvbj5bpn" path="res://assets/tilesets/Outside/Land/glass_corner.png" id="6_kw78k"]
-[ext_resource type="Texture2D" uid="uid://c41ytaofn3rdu" path="res://assets/tilesets/Outside/Land/legde_sea.png" id="7_ncq74"]
-[ext_resource type="Texture2D" uid="uid://c1jipomxc83g8" path="res://assets/tilesets/Outside/Land/ledge.png" id="8_64fg8"]
-[ext_resource type="Texture2D" uid="uid://bxk0quxkeki1e" path="res://assets/tilesets/Outside/Land/grass-series.png" id="9_ui57o"]
+[ext_resource type="Texture2D" uid="uid://d4ap6fja0056c" path="res://pokemon-assets/Graphics/Autotiles/Light grass.png" id="1_kn3eu"]
+[ext_resource type="Texture2D" uid="uid://cbhalrxhuvplr" path="res://assets/tilesets/Outside/Land/basic_grass_flower_small_tree.png" id="2_rsiuj"]
+[ext_resource type="Texture2D" uid="uid://ddg7eibsr727l" path="res://assets/tilesets/Outside/Land/spur.png" id="3_0u6eo"]
+[ext_resource type="Texture2D" uid="uid://bt8ci0nwb1u8o" path="res://assets/tilesets/sea_animated_tileset.png" id="4_0u6eo"]
+[ext_resource type="Texture2D" uid="uid://b5jyvfwfg522h" path="res://assets/tilesets/Outside/Land/hill_and_stair.png" id="5_glu6w"]
+[ext_resource type="Texture2D" uid="uid://c8nvfk1paldw4" path="res://assets/tilesets/Outside/Land/glass_corner.png" id="6_kw78k"]
+[ext_resource type="Texture2D" uid="uid://btem2krvs37wj" path="res://assets/tilesets/Outside/Land/legde_sea.png" id="7_ncq74"]
+[ext_resource type="Texture2D" uid="uid://diw0yuvddojc0" path="res://assets/tilesets/Outside/Land/ledge.png" id="8_64fg8"]
+[ext_resource type="Texture2D" uid="uid://b7r4klilu1scx" path="res://assets/tilesets/Outside/Land/grass-series.png" id="9_ui57o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g4cty"]
 texture = ExtResource("1_kn3eu")
