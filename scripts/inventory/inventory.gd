@@ -20,3 +20,12 @@ func insert(item: InvItem):
 			return false
 	update.emit()
 	return true
+
+func remove(index: int):
+	if index >= 0 and index < slots.size():
+		if slots[index].amount > 1:
+			slots[index].amount -= 1
+		else:
+			slots[index].item = null
+			slots[index].amount = 0
+		update.emit()

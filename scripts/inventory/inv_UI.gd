@@ -14,7 +14,7 @@ func _ready() -> void:
 func update_slots():
 #	loop through all slots and update them
 		for i in range(min(inv.slots.size(), slots.size())):
-			slots[i].update(inv.slots[i])
+			slots[i].update(inv.slots[i], i)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

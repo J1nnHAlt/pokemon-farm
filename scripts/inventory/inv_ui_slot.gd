@@ -5,7 +5,14 @@ extends Panel
 @onready var item_visual: TextureRect = $CenterContainer/Panel/item_display
 @onready var amount_text: Label = $CenterContainer/Panel/Label
 
-func update(slot: InvSlot):
+var slot_index: int
+var slot_data: InvSlot
+
+func update(slot: InvSlot, index: int):
+	
+	slot_index = index
+	slot_data = slot
+	
 	if !slot.item:
 		item_visual.visible = false
 		amount_text.visible = false
@@ -16,6 +23,15 @@ func update(slot: InvSlot):
 			amount_text.visible = true
 		amount_text.text = str(slot.amount)
 		
+
+
+func _gui_input(event):
+	print("Event")
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+		GameData.inventory.remove(slot_index) # or decrease amount
+		GameData.save_game()
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

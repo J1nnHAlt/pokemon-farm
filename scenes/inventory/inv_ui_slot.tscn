@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ck5twm5n4m0tt"]
 
 [ext_resource type="Script" uid="uid://djrr8ysgeybb" path="res://scripts/inventory/inv_ui_slot.gd" id="1_i5cy3"]
-[ext_resource type="Texture2D" uid="uid://djtrwo5buo50m" path="res://assets/UI/inventory-slot.png" id="1_sr5mn"]
+[ext_resource type="Texture2D" uid="uid://m3qma7ep3d2p" path="res://assets/UI/inventory-slot.png" id="1_sr5mn"]
 
 [node name="inv_ui_slot" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
@@ -22,6 +22,7 @@ offset_bottom = 16.0
 
 [node name="Panel" type="Panel" parent="CenterContainer"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="item_display" type="TextureRect" parent="CenterContainer/Panel"]
 layout_mode = 2
@@ -31,6 +32,7 @@ offset_right = 8.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 expand_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/Panel"]

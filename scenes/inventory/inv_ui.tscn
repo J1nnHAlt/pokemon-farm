@@ -10,6 +10,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 83.0
 offset_bottom = 63.0
+mouse_filter = 2
 script = ExtResource("1_celo0")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
@@ -35,9 +36,11 @@ offset_right = 39.0
 offset_bottom = 29.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 columns = 4
 
 [node name="inv_ui_slot1" parent="NinePatchRect/GridContainer" instance=ExtResource("3_fuqkw")]
+z_index = 10
 layout_mode = 2
 
 [node name="inv_ui_slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_fuqkw")]
