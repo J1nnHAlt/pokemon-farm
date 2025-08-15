@@ -42,5 +42,5 @@ func _on_pressed() -> void:
 	else:
 		var anim_player = shop_menu.get_node("Balance/AnimationPlayer")
 		anim_player.play("not_enough")
-	print("Coins remaining:", Coin.coins)
+	print("Coins remaining:", GameData.coins)
 	pass # Replace with function body.

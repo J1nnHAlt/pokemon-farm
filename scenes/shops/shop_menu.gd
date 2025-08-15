@@ -14,7 +14,7 @@ func _ready() -> void:
 	_refresh_ui()
 	# Optional: auto-update when shop inventory changes
 	shop_inv.update.connect(_refresh_ui)
-	Coin.coins_loaded.connect(refresh_balance)
+	GameData.coins_loaded.connect(refresh_balance)
 	pass # Replace with function body.
 
 func _refresh_ui():
@@ -29,7 +29,7 @@ func _refresh_ui():
 		items_container.add_child(btn)
 
 func refresh_balance():
-	balance_label.text = str(Coin.coins)
+	balance_label.text = str(GameData.coins)
 	
 
 func restock_shop():

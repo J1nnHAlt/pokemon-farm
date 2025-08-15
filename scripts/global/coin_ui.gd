@@ -13,4 +13,4 @@ func _process(delta: float) -> void:
 	pass
 
 func refresh_balance():
-	coin_label.text = str(Coin.coins)
+	coin_label.text = str(GameData.coins)

@@ -71,7 +71,6 @@ shape = SubResource("CapsuleShape2D_d4fv4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
-visible = false
 
 [node name="ShopMenu" parent="CanvasLayer" instance=ExtResource("3_5d4gj")]
 

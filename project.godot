@@ -22,6 +22,7 @@ InventoryManager="*res://scripts/inventory/inventory_manager.gd"
 RecipeManager="*res://scenes/BerryMixer/RecipeManager.gd"
 Coin="*res://scripts/global/coin.gd"
 PetSpawnerInFarm="*res://scripts/global/PetSpawnerInFarm.gd"
+GameData="*res://scripts/global/game_data.gd"
 
 [display]
 
