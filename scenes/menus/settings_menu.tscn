@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhoqpgmu3qxgi"]
+[gd_scene load_steps=7 format=3 uid="uid://dhoqpgmu3qxgi"]
 
 [ext_resource type="Script" uid="uid://bwueacypwd50e" path="res://scripts/menus/settings_menu.gd" id="1_hayap"]
-[ext_resource type="AudioStream" uid="uid://bfw0m8rs5a11p" path="res://pokemon-assets/Audio/BGM/Battle trainer.ogg" id="2_7i3iu"]
 [ext_resource type="Shader" uid="uid://dvag5yigl0pfq" path="res://scenes/menus/settings_menu.gdshader" id="2_s2d1y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ojvp1"]
@@ -159,11 +158,6 @@ text = "Back"
 libraries = {
 &"": SubResource("AnimationLibrary_ojvp1")
 }
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_7i3iu")
-volume_db = -10.0
-autoplay = true
 
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/volume" to="." method="_on_volume_value_changed"]
 [connection signal="toggled" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/mute" to="." method="_on_mute_toggled"]

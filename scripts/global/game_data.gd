@@ -2,14 +2,17 @@ extends Node
 
 var coins: int = 0
 var inventory: Inv
+var default_volume: float
 
 signal coins_loaded
+signal volume_loaded
 signal game_loaded
 signal inventory_loaded
 
 func save_game():
 	var save_data = {
-		"coins": coins
+		"coins": coins,
+		"volume": default_volume
 		# Later: add more data here like "pokemons": [], "player_pos": Vector2()
 	}
 	# C:\Users\<YourUsername>\AppData\Roaming\Godot\app_userdata\<YourGameName>\savegame.json
@@ -30,9 +33,12 @@ func load_game():
 
 		if typeof(data) == TYPE_DICTIONARY:
 			coins = data.get("coins", 0)
+			default_volume = data.get("volume", 5.0)
 			emit_signal("coins_loaded")
+			emit_signal("volume_loaded")
 			emit_signal("game_loaded")
-			print("Load game success")
+			print("Load game success volume:", default_volume)
+			
 		else:
 			print("Load game failed: invalid format")
 	else:
@@ -58,8 +64,11 @@ func load_game():
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	load_game()
+	volume_loaded.connect(set_volume)
 	pass
 
+func set_volume():
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(default_volume/10))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
