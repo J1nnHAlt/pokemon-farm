@@ -26,5 +26,6 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite_2d.animation == "hit":
+		PetSpawnerInFarm.spawn_pokemon("Arbok")
 		target_pokemon.queue_free()
 		queue_free()
