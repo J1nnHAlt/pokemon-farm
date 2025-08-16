@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=4 uid="uid://ddn488ymhtduf"]
+[gd_scene load_steps=16 format=4 uid="uid://ddn488ymhtduf"]
 
 [ext_resource type="PackedScene" uid="uid://cytdne0aeypsc" path="res://scenes/day_night_ui/day_night_cycle_component.tscn" id="1_7apd7"]
+[ext_resource type="Script" uid="uid://chliixmnjjt78" path="res://scenes/test/test_scene_tilemap.gd" id="1_wyicn"]
 [ext_resource type="TileSet" uid="uid://dq7x0bsl7faum" path="res://Tilesets/test_scene_tilemap.tres" id="2_j2mka"]
 [ext_resource type="PackedScene" uid="uid://c7mvvd3ocvl7d" path="res://scenes/shops/pokemon_shop.tscn" id="3_inwy8"]
 [ext_resource type="PackedScene" uid="uid://dheba8g1u8uj8" path="res://scenes/characters/player/player.tscn" id="3_o1akv"]
@@ -10,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bsg4dgrfuedqn" path="res://scenes/day_night_ui/day_night_panel.tscn" id="6_l1rk5"]
 [ext_resource type="Script" uid="uid://dedqjpuwgfdyg" path="res://scripts/nav_regions/victreebel_region.gd" id="6_m1qrs"]
 [ext_resource type="Script" uid="uid://bj3hh5ql136bt" path="res://scripts/nav_regions/lapras_region.gd" id="6_wyicn"]
+[ext_resource type="AudioStream" uid="uid://3dyht612jfap" path="res://pokemon-assets/Audio/SE/GUI naming tab swap start.ogg" id="12_ksdiy"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_p0x3o"]
 vertices = PackedVector2Array(-110.859, 83.1563, -499.938, 89.8203, -498.047, -262.023, -106.133, -262.969)
@@ -30,6 +32,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(526, 411, 702, 413, 703
 source_geometry_mode = 2
 
 [node name="TestSceneTilemap" type="Node2D"]
+script = ExtResource("1_wyicn")
 
 [node name="DayNightCycleComponent" parent="." instance=ExtResource("1_7apd7")]
 
@@ -79,3 +82,9 @@ mouse_filter = 2
 
 [node name="DayNightPanel" parent="CanvasLayer" instance=ExtResource("6_l1rk5")]
 mouse_filter = 2
+
+[node name="sfx_enter_scene" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_ksdiy")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+autoplay = true
