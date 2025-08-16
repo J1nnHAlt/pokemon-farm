@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cob1q3vvthx7q"]
+[gd_scene load_steps=20 format=4 uid="uid://cob1q3vvthx7q"]
 
 [ext_resource type="PackedScene" uid="uid://dheba8g1u8uj8" path="res://pokemon-assets/Audio/player.tscn" id="1_jew4h"]
 [ext_resource type="Texture2D" uid="uid://bv6khdc6bumic" path="res://pokemon-assets/Graphics/Autotiles/Blue cave floor.png" id="1_qmsn3"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bde20segpoyvk" path="res://pokemon-assets/Graphics/Tilesets/Dungeon cave.png" id="4_8lpd3"]
 [ext_resource type="Texture2D" uid="uid://bcu6g6g6mlgis" path="res://pokemon-assets/Graphics/Autotiles/Gravel.png" id="5_pd8xf"]
 [ext_resource type="Texture2D" uid="uid://b3unl8iqgybf8" path="res://pokemon-assets/Graphics/Autotiles/Red cave highlight.png" id="6_ehi7l"]
+[ext_resource type="PackedScene" uid="uid://d2j5os108d655" path="res://scenes/global/coin.tscn" id="8_k13yk"]
+[ext_resource type="PackedScene" uid="uid://32pfkefqd0i2" path="res://scenes/menus/pause_menu.tscn" id="9_fhrc8"]
+[ext_resource type="PackedScene" uid="uid://bsg4dgrfuedqn" path="res://scenes/day_night_ui/day_night_panel.tscn" id="10_3yp5a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p2khw"]
 texture = ExtResource("1_qmsn3")
@@ -857,3 +860,11 @@ tile_map_data = PackedByteArray("AAAYABEAAAAKAAQAAAAYABIAAAAKAAUAAAAYABMAAAAKAAY
 tile_set = SubResource("TileSet_pd8xf")
 
 [node name="Player" parent="." instance=ExtResource("1_jew4h")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="coins" parent="CanvasLayer" instance=ExtResource("8_k13yk")]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("9_fhrc8")]
+
+[node name="DayNightPanel" parent="CanvasLayer" instance=ExtResource("10_3yp5a")]
