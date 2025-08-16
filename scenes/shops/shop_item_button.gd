@@ -1,5 +1,6 @@
 extends Button
 
+
 @onready var item_visual: TextureRect = $PanelContainer/VBoxContainer/HBoxContainer1/Item/ItemVisual
 @onready var item_name: Label = $PanelContainer/VBoxContainer/HBoxContainer1/Item/ItemName
 @onready var item_price: Label = $PanelContainer/VBoxContainer/HBoxContainer1/Gem/price
@@ -29,10 +30,9 @@ func _process(delta: float) -> void:
 
 func _on_pressed() -> void:
 	var shop_menu = get_parent().get_parent().get_parent().get_parent().get_parent() # climb up as needed
-	
 	if Coin.spend_coins(slot.price):
 		if player.collect(slot.item):
-			print("Enough space")
+			shop_menu.get_node("sfx_purchase").play()
 			shop_inv.remove_item(slot.item)
 			shop_menu.refresh_balance()
 			world_coin_ui.refresh_balance()
@@ -42,5 +42,6 @@ func _on_pressed() -> void:
 	else:
 		var anim_player = shop_menu.get_node("Balance/AnimationPlayer")
 		anim_player.play("not_enough")
+		shop_menu.get_node("sfx_not_enough").play()
 	print("Coins remaining:", GameData.coins)
 	pass # Replace with function body.

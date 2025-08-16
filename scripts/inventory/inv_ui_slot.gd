@@ -4,6 +4,7 @@ extends Panel
 #@onready var item_visual: Sprite2D = $CenterContainer/Panel/item_display
 @onready var item_visual: TextureRect = $CenterContainer/Panel/item_display
 @onready var amount_text: Label = $CenterContainer/Panel/Label
+@onready var sfx_remove_item: AudioStreamPlayer = $sfx_remove_item
 
 var slot_index: int
 var slot_data: InvSlot
@@ -28,6 +29,7 @@ func update(slot: InvSlot, index: int):
 func _gui_input(event):
 	print("Event")
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+		sfx_remove_item.play()
 		GameData.inventory.remove(slot_index) # or decrease amount
 		GameData.save_game()
 
