@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://cob1q3vvthx7q"]
+[gd_scene load_steps=21 format=4 uid="uid://cob1q3vvthx7q"]
 
 [ext_resource type="PackedScene" uid="uid://dheba8g1u8uj8" path="res://pokemon-assets/Audio/player.tscn" id="1_jew4h"]
 [ext_resource type="Texture2D" uid="uid://bv6khdc6bumic" path="res://pokemon-assets/Graphics/Autotiles/Blue cave floor.png" id="1_qmsn3"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d2j5os108d655" path="res://scenes/global/coin.tscn" id="8_k13yk"]
 [ext_resource type="PackedScene" uid="uid://32pfkefqd0i2" path="res://scenes/menus/pause_menu.tscn" id="9_fhrc8"]
 [ext_resource type="PackedScene" uid="uid://bsg4dgrfuedqn" path="res://scenes/day_night_ui/day_night_panel.tscn" id="10_3yp5a"]
+[ext_resource type="PackedScene" uid="uid://dhwu5lbvocbys" path="res://scenes/wild_pokemon/wild_arbok/wild_arbok.tscn" id="11_fhrc8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p2khw"]
 texture = ExtResource("1_qmsn3")
@@ -860,6 +861,9 @@ tile_map_data = PackedByteArray("AAAYABEAAAAKAAQAAAAYABIAAAAKAAUAAAAYABMAAAAKAAY
 tile_set = SubResource("TileSet_pd8xf")
 
 [node name="Player" parent="." instance=ExtResource("1_jew4h")]
+
+[node name="WildArbok" parent="." instance=ExtResource("11_fhrc8")]
+position = Vector2(122, 16)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

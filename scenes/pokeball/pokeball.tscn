@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dihw6ynkxt4hh"]
+[gd_scene load_steps=8 format=3 uid="uid://dihw6ynkxt4hh"]
 
 [ext_resource type="Texture2D" uid="uid://cqvetp6eeamud" path="res://pokemon-assets/Graphics/Battle animations/ball_POKEBALL.png" id="1_5ml1e"]
 [ext_resource type="Script" uid="uid://bfc1avr1yk11v" path="res://scenes/pokeball/pokeball.gd" id="1_gbj38"]
+[ext_resource type="Texture2D" uid="uid://dg3pa43cudy5w" path="res://pokemon-assets/Graphics/Battle animations/ball_BEASTBALL_open.png" id="2_y5gs6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gbj38"]
 atlas = ExtResource("1_5ml1e")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6mka"]
+atlas = ExtResource("2_y5gs6")
 region = Rect2(0, 0, 32, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y5gs6"]
@@ -15,6 +20,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6mka")
+}],
+"loop": false,
+"name": &"hit",
 "speed": 5.0
 }]
 
@@ -28,11 +41,14 @@ script = ExtResource("1_gbj38")
 position = Vector2(0, -1)
 scale = Vector2(0.375, 0.28125)
 sprite_frames = SubResource("SpriteFrames_y5gs6")
-frame_progress = 0.415542
+animation = &"hit"
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_gbj38")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
