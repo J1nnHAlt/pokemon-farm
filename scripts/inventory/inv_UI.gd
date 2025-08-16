@@ -3,6 +3,9 @@ extends Control
 #@onready var inv: Inv = preload("res://scripts/inventory/player_inv.tres")
 @onready var inv: Inv = GameData.inventory
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
+@onready var sfx_open_menu: AudioStreamPlayer = $sfx_open_menu
+@onready var sfx_close_menu: AudioStreamPlayer = $sfx_close_menu
+
 var is_open = false
 
 # Called when the node enters the scene tree for the first time.
@@ -20,8 +23,10 @@ func update_slots():
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_inventory"):
 		if is_open:
+			sfx_close_menu.play()
 			close()
 		else:
+			sfx_open_menu.play()
 			open()
 
 func open():

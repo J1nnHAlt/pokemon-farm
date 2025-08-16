@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://32pfkefqd0i2"]
+[gd_scene load_steps=10 format=3 uid="uid://32pfkefqd0i2"]
 
 [ext_resource type="Script" uid="uid://4dar450ig5b8" path="res://scripts/menus/pause_menu.gd" id="1_7unhi"]
 [ext_resource type="Shader" uid="uid://dt8msqev6kcnq" path="res://scenes/menus/pause_menu.gdshader" id="1_fwndu"]
+[ext_resource type="AudioStream" uid="uid://ck4r1ddyc1ao5" path="res://pokemon-assets/Audio/GUI menu open.ogg" id="3_gsnt3"]
+[ext_resource type="AudioStream" uid="uid://d25hcdffdi3m2" path="res://pokemon-assets/Audio/SE/Battle catch click.ogg" id="4_2wrho"]
+[ext_resource type="AudioStream" uid="uid://d182hm67shkbj" path="res://pokemon-assets/Audio/GUI menu close.ogg" id="4_gh0u6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7unhi"]
 shader = ExtResource("1_fwndu")
@@ -142,6 +145,15 @@ text = "Quit"
 libraries = {
 &"": SubResource("AnimationLibrary_gsnt3")
 }
+
+[node name="sfx_open_menu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gsnt3")
+
+[node name="sfx_close_menu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_gh0u6")
+
+[node name="sfx_click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_2wrho")
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]

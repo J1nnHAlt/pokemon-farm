@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dq0x68l6h0d18"]
+[gd_scene load_steps=13 format=3 uid="uid://dq0x68l6h0d18"]
 
 [ext_resource type="Script" uid="uid://bwxbmupbwm8vj" path="res://scenes/characters/seller/seller.gd" id="1_1lemv"]
 [ext_resource type="Texture2D" uid="uid://cf6cyjpneu52r" path="res://pokemon-assets/Graphics/Characters/NPC 16.png" id="1_d4fv4"]
 [ext_resource type="PackedScene" uid="uid://638cvws80rac" path="res://scenes/shops/shop_menu.tscn" id="3_5d4gj"]
+[ext_resource type="AudioStream" uid="uid://ck4r1ddyc1ao5" path="res://pokemon-assets/Audio/GUI menu open.ogg" id="4_ectr7"]
+[ext_resource type="AudioStream" uid="uid://d182hm67shkbj" path="res://pokemon-assets/Audio/GUI menu close.ogg" id="5_l78w7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1lemv"]
 atlas = ExtResource("1_d4fv4")
@@ -74,6 +76,12 @@ layer = 2
 
 [node name="ShopMenu" parent="CanvasLayer" instance=ExtResource("3_5d4gj")]
 mouse_filter = 2
+
+[node name="sfx_open_menu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ectr7")
+
+[node name="sfx_close_menu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_l78w7")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

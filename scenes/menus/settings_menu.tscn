@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bwueacypwd50e" path="res://scripts/menus/settings_menu.gd" id="1_hayap"]
 [ext_resource type="Shader" uid="uid://dvag5yigl0pfq" path="res://scenes/menus/settings_menu.gdshader" id="2_s2d1y"]
-[ext_resource type="AudioStream" uid="uid://ck4r1ddyc1ao5" path="res://pokemon-assets/Audio/SE/GUI menu open.ogg" id="3_ojvp1"]
-[ext_resource type="AudioStream" uid="uid://d182hm67shkbj" path="res://pokemon-assets/Audio/SE/GUI menu close.ogg" id="4_da10i"]
+[ext_resource type="AudioStream" uid="uid://ck4r1ddyc1ao5" path="res://pokemon-assets/Audio/GUI menu open.ogg" id="3_ojvp1"]
+[ext_resource type="AudioStream" uid="uid://d182hm67shkbj" path="res://pokemon-assets/Audio/GUI menu close.ogg" id="4_da10i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ojvp1"]
 shader = ExtResource("2_s2d1y")

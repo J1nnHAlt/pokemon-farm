@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cytdne0aeypsc" path="res://scenes/day_night_ui/day_night_cycle_component.tscn" id="1_6wg1a"]
 [ext_resource type="TileSet" uid="uid://dq7x0bsl7faum" path="res://Tilesets/test_scene_tilemap.tres" id="2_2mbbx"]
 [ext_resource type="PackedScene" uid="uid://c7mvvd3ocvl7d" path="res://scenes/shops/pokemon_shop.tscn" id="3_8s84d"]
-[ext_resource type="PackedScene" uid="uid://dheba8g1u8uj8" path="res://scenes/characters/player/player.tscn" id="4_og02x"]
+[ext_resource type="PackedScene" uid="uid://dheba8g1u8uj8" path="res://pokemon-assets/Audio/player.tscn" id="4_og02x"]
 [ext_resource type="PackedScene" uid="uid://d2j5os108d655" path="res://scenes/global/coin.tscn" id="5_w0rda"]
 [ext_resource type="PackedScene" uid="uid://32pfkefqd0i2" path="res://scenes/menus/pause_menu.tscn" id="6_blcwd"]
 [ext_resource type="PackedScene" uid="uid://bsg4dgrfuedqn" path="res://scenes/day_night_ui/day_night_panel.tscn" id="7_oeggr"]
