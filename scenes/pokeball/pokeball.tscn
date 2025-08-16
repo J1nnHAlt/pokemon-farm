@@ -28,7 +28,11 @@ script = ExtResource("1_gbj38")
 position = Vector2(0, -1)
 scale = Vector2(0.375, 0.28125)
 sprite_frames = SubResource("SpriteFrames_y5gs6")
-frame_progress = 0.00156839
+frame_progress = 0.415542
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_gbj38")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
