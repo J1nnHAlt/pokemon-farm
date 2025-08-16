@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bsg4dgrfuedqn"]
 
 [ext_resource type="Theme" uid="uid://bjs7wtt6ir1xs" path="res://pokemon_theme.tres" id="1_hec5c"]
-[ext_resource type="Texture2D" uid="uid://flx1tc8aula0" path="res://scenes/day_night_ui/Sprite sheet for Basic Pack.png" id="2_dqexg"]
+[ext_resource type="Texture2D" uid="uid://chvmou8aqssoa" path="res://scenes/day_night_ui/Sprite sheet for Basic Pack.png" id="2_dqexg"]
 [ext_resource type="Script" uid="uid://dfhkpl6sgtkbk" path="res://scenes/day_night_ui/day_night_panel.gd" id="2_f4v8r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c4mt0"]

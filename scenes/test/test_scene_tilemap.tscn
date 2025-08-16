@@ -70,10 +70,12 @@ script = ExtResource("6_wyicn")
 [node name="Player" parent="." instance=ExtResource("3_o1akv")]
 position = Vector2(192, 192)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." groups=["hud_layer"]]
 
 [node name="coins" parent="CanvasLayer" instance=ExtResource("5_6k3gh")]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_inwy8")]
+mouse_filter = 2
 
 [node name="DayNightPanel" parent="CanvasLayer" instance=ExtResource("6_l1rk5")]
+mouse_filter = 2

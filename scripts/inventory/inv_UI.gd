@@ -25,9 +25,15 @@ func _process(delta: float) -> void:
 			open()
 
 func open():
+	var hud_layer = get_tree().get_first_node_in_group("hud_layer")
+	if hud_layer:
+		hud_layer.visible = false
 	visible = true
 	is_open = true
 
 func close():
+	var hud_layer = get_tree().get_first_node_in_group("hud_layer")
+	if hud_layer:
+		hud_layer.visible = true
 	visible = false
 	is_open = false
