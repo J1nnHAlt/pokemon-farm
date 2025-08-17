@@ -1,6 +1,7 @@
 # Pokeball.gd (attached to your Pokeball scene)
 extends Area2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var sfx_hit: AudioStreamPlayer = $sfx_hit
 
 @export var speed: float = 400.0
 var velocity: Vector2
@@ -17,6 +18,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("wild_pokemon") and body.name == "WildArbok":
 #		make it not everytime success
 		animated_sprite_2d.play("hit")
+		sfx_hit.play()
 		velocity = Vector2.ZERO
 		target_pokemon = body
 	else:
