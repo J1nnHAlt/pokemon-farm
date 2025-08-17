@@ -8,7 +8,7 @@ var pet_arbok_amt: int = 0
 var pet_victreebel_amt: int = 0
 var pet_lapras_amt: int = 0
 
-signal arbok_amt_updated
+var next_spawn: String = ""
 
 
 signal coins_loaded

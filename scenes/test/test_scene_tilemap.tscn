@@ -82,6 +82,11 @@ script = ExtResource("8_qbk12")
 position = Vector2(16.375, -256)
 shape = SubResource("RectangleShape2D_ksdiy")
 
+[node name="Spawns" type="Node2D" parent="."]
+
+[node name="DungeonExitSpawn" type="Marker2D" parent="Spawns"]
+position = Vector2(47, -258)
+
 [node name="Player" parent="." instance=ExtResource("3_o1akv")]
 position = Vector2(192, 192)
 
