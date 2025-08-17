@@ -18,6 +18,7 @@ offset_right = 24.0
 offset_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = ExtResource("1_hec5c")
 script = ExtResource("2_f4v8r")
 

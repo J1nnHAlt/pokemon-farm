@@ -27,9 +27,9 @@ func update(slot: InvSlot, index: int):
 
 
 func _gui_input(event):
-	print("Event")
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
 		sfx_remove_item.play()
+		Coin.add_coins(1)
 		GameData.inventory.remove(slot_index) # or decrease amount
 		GameData.save_game()
 

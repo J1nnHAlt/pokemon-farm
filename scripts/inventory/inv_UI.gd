@@ -30,15 +30,26 @@ func _process(delta: float) -> void:
 			open()
 
 func open():
-	var hud_layer = get_tree().get_first_node_in_group("hud_layer")
-	if hud_layer:
-		hud_layer.visible = false
+	#var hud_layer = get_tree().get_first_node_in_group("hud_layer")
+	#if hud_layer:
+		#hud_layer.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		#hud_layer.visible = false
+	set_hud_input(false)
 	visible = true
 	is_open = true
 
 func close():
-	var hud_layer = get_tree().get_first_node_in_group("hud_layer")
-	if hud_layer:
-		hud_layer.visible = true
+	#var hud_layer = get_tree().get_first_node_in_group("hud_layer")
+	#if hud_layer:
+		#hud_layer.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		#hud_layer.visible = true
+	set_hud_input(true)
 	visible = false
 	is_open = false
+	
+func set_hud_input(enabled: bool):
+	var hud_layer = get_tree().get_first_node_in_group("hud_layer")
+	if hud_layer:
+		for child in hud_layer.get_children():
+			if child is Control:
+				child.mouse_filter = Control.MOUSE_FILTER_STOP if enabled else Control.MOUSE_FILTER_IGNORE

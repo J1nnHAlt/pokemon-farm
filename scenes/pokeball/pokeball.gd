@@ -19,6 +19,7 @@ func _on_body_entered(body: Node2D) -> void:
 #		make it not everytime success
 		animated_sprite_2d.play("hit")
 		sfx_hit.play()
+		Coin.add_coins(1)
 		velocity = Vector2.ZERO
 		target_pokemon = body
 	else:

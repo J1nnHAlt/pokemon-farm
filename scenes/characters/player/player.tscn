@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=3 uid="uid://dheba8g1u8uj8"]
+[gd_scene load_steps=97 format=3 uid="uid://dheba8g1u8uj8"]
 
 [ext_resource type="Script" uid="uid://dkxajelubqv35" path="res://scenes/characters/player/player.gd" id="1_hss88"]
 [ext_resource type="Texture2D" uid="uid://cctky85hpksb6" path="res://assets/characters/girl_cycling_spritesheet.png" id="2_42irl"]
@@ -13,7 +13,6 @@
 [ext_resource type="Script" uid="uid://bjqc82igcwnl" path="res://scenes/characters/player/run_state.gd" id="10_3xnwo"]
 [ext_resource type="Script" uid="uid://dquodglxcms2b" path="res://scenes/characters/player/cycle_state.gd" id="11_djydg"]
 [ext_resource type="Script" uid="uid://cl2otscl5yubc" path="res://scenes/characters/player/cycle_idle_state.gd" id="12_bsn6e"]
-[ext_resource type="PackedScene" uid="uid://c1g7wo3i0l6eg" path="res://scenes/inventory/inv_ui.tscn" id="14_hv5x3"]
 [ext_resource type="Script" uid="uid://ckqwbiflu14eh" path="res://scenes/characters/player/watering_state.gd" id="15_4kqyw"]
 [ext_resource type="PackedScene" uid="uid://brqy6oueap7di" path="res://scenes/characters/player/F button/f_button.tscn" id="15_ykrpk"]
 [ext_resource type="AudioStream" uid="uid://c0ukcsombius" path="res://pokemon-assets/Audio/SE/Anim/throw.ogg" id="18_ndqgd"]
@@ -790,12 +789,6 @@ script = ExtResource("15_4kqyw")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 hit_component_collision_shape = NodePath("../../HitComponent/HitComponentCollisionShape2D")
-
-[node name="Inv_UI" parent="." instance=ExtResource("14_hv5x3")]
-offset_left = -41.0
-offset_top = -86.0
-offset_right = 42.0
-offset_bottom = -23.0
 
 [node name="FButton" parent="." instance=ExtResource("15_ykrpk")]
 offset_left = 11.0

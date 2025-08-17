@@ -13,7 +13,6 @@ var next_spawn: String = ""
 
 signal coins_loaded
 signal volume_loaded
-signal game_loaded
 signal inventory_loaded
 
 func save_game():
@@ -49,7 +48,7 @@ func load_game():
 			pet_victreebel_amt = data.get("pet_victreebel", 0)
 			emit_signal("coins_loaded")
 			emit_signal("volume_loaded")
-			emit_signal("game_loaded")
+			
 			print("Load game success volume:", default_volume)
 			
 		else:

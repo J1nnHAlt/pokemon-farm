@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=4 uid="uid://cob1q3vvthx7q"]
 
-[ext_resource type="PackedScene" uid="uid://dheba8g1u8uj8" path="res://pokemon-assets/Audio/player.tscn" id="1_jew4h"]
+[ext_resource type="PackedScene" uid="uid://dheba8g1u8uj8" path="res://scenes/characters/player/player.tscn" id="1_jew4h"]
 [ext_resource type="Texture2D" uid="uid://bv6khdc6bumic" path="res://pokemon-assets/Graphics/Autotiles/Blue cave floor.png" id="1_qmsn3"]
 [ext_resource type="Texture2D" uid="uid://dy140bf5bs1u7" path="res://pokemon-assets/Graphics/Autotiles/Blue cave mud.png" id="2_pd8xf"]
 [ext_resource type="Texture2D" uid="uid://duvwgh5ysm4t0" path="res://pokemon-assets/Graphics/Autotiles/Brown cave sand.png" id="3_ehi7l"]
@@ -845,10 +845,6 @@ position = Vector2(122, 16)
 [node name="coins" parent="CanvasLayer" instance=ExtResource("8_k13yk")]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("9_fhrc8")]
-offset_left = -76.0
-offset_top = 44.0
-offset_right = -76.0
-offset_bottom = 44.0
 
 [node name="DayNightPanel" parent="CanvasLayer" instance=ExtResource("10_3yp5a")]
 

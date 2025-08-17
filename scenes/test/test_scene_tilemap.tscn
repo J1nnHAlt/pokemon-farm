@@ -1,10 +1,10 @@
-[gd_scene load_steps=18 format=4 uid="uid://ddn488ymhtduf"]
+[gd_scene load_steps=19 format=4 uid="uid://ddn488ymhtduf"]
 
 [ext_resource type="PackedScene" uid="uid://cytdne0aeypsc" path="res://scenes/day_night_ui/day_night_cycle_component.tscn" id="1_7apd7"]
 [ext_resource type="Script" uid="uid://chliixmnjjt78" path="res://scenes/test/test_scene_tilemap.gd" id="1_wyicn"]
 [ext_resource type="TileSet" uid="uid://dq7x0bsl7faum" path="res://Tilesets/test_scene_tilemap.tres" id="2_j2mka"]
 [ext_resource type="PackedScene" uid="uid://c7mvvd3ocvl7d" path="res://scenes/shops/pokemon_shop.tscn" id="3_inwy8"]
-[ext_resource type="PackedScene" uid="uid://dheba8g1u8uj8" path="res://pokemon-assets/Audio/player.tscn" id="3_o1akv"]
+[ext_resource type="PackedScene" uid="uid://dheba8g1u8uj8" path="res://scenes/characters/player/player.tscn" id="3_o1akv"]
 [ext_resource type="PackedScene" uid="uid://32pfkefqd0i2" path="res://scenes/menus/pause_menu.tscn" id="4_inwy8"]
 [ext_resource type="Script" uid="uid://cse1n331uhrke" path="res://scripts/nav_regions/arbok_region.gd" id="4_m1qrs"]
 [ext_resource type="PackedScene" uid="uid://d2j5os108d655" path="res://scenes/global/coin.tscn" id="5_6k3gh"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://bj3hh5ql136bt" path="res://scripts/nav_regions/lapras_region.gd" id="6_wyicn"]
 [ext_resource type="Script" uid="uid://bcvhn3txllies" path="res://scenes/test/dungeon_entrance.gd" id="8_qbk12"]
 [ext_resource type="AudioStream" uid="uid://3dyht612jfap" path="res://pokemon-assets/Audio/SE/GUI naming tab swap start.ogg" id="12_ksdiy"]
+[ext_resource type="PackedScene" uid="uid://c1g7wo3i0l6eg" path="res://scenes/inventory/inv_ui.tscn" id="13_l0udy"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_p0x3o"]
 vertices = PackedVector2Array(-110.859, 83.1563, -499.938, 89.8203, -498.047, -262.023, -106.133, -262.969)
@@ -95,10 +96,21 @@ position = Vector2(192, 192)
 [node name="coins" parent="CanvasLayer" instance=ExtResource("5_6k3gh")]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_inwy8")]
-mouse_filter = 2
 
 [node name="DayNightPanel" parent="CanvasLayer" instance=ExtResource("6_l1rk5")]
-mouse_filter = 2
+
+[node name="Inv_UI" parent="CanvasLayer" instance=ExtResource("13_l0udy")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = -301.0
+offset_right = -34.9999
+offset_bottom = -238.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="sfx_enter_scene" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_ksdiy")

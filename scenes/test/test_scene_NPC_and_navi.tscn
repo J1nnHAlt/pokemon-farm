@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://dq7x0bsl7faum" path="res://Tilesets/test_scene_tilemap.tres" id="1_aw2au"]
 [ext_resource type="TileSet" uid="uid://dbh60gno2fnaw" path="res://scenes/test/fences_tile_set.tres" id="2_ert3b"]
-[ext_resource type="PackedScene" uid="uid://dheba8g1u8uj8" path="res://pokemon-assets/Audio/player.tscn" id="2_l7es4"]
+[ext_resource type="PackedScene" uid="uid://dheba8g1u8uj8" path="res://scenes/characters/player/player.tscn" id="2_l7es4"]
 [ext_resource type="PackedScene" uid="uid://cv2pon43imfed" path="res://scenes/characters/dark_pokemon/arbok.tscn" id="3_evfll"]
 [ext_resource type="PackedScene" uid="uid://cruirr1gmx6cc" path="res://scenes/characters/water_pokemon/lapras.tscn" id="4_iatp7"]
 [ext_resource type="PackedScene" uid="uid://yvg6vobd2rc0" path="res://scenes/characters/grass_pokemon/victreebel.tscn" id="5_8o2j5"]

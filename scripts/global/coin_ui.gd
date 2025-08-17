@@ -6,6 +6,7 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#add_to_group("world_coin_ui")
+	GameData.coins_loaded.connect(refresh_balance)
 	refresh_balance()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -28,6 +28,10 @@ func collect(item):
 func set_inventory():
 	inventory = GameData.inventory
 
+#func _unhandled_input(event: InputEvent) -> void:
+	#if event.is_action_pressed("throw_pokeball"):
+		#throw_pokeball()
+
 func throw_pokeball():
 	sfx_throw_pokeball.play()
 	var pokeball = pokeball_scene.instantiate()

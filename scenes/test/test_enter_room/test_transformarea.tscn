@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=4 uid="uid://bm458y1swueno"]
 
 [ext_resource type="TileSet" uid="uid://wa6qo2koo88m" path="res://scenes/test/test_enter_room/mall_tile_set.tres" id="1_kw5k1"]
-[ext_resource type="PackedScene" uid="uid://dheba8g1u8uj8" path="res://pokemon-assets/Audio/player.tscn" id="1_rpym6"]
+[ext_resource type="PackedScene" uid="uid://dheba8g1u8uj8" path="res://scenes/characters/player/player.tscn" id="1_rpym6"]
 [ext_resource type="PackedScene" uid="uid://c2pjo27juf5" path="res://scenes/zones/fade_area.tscn" id="2_yw5ox"]
 [ext_resource type="PackedScene" uid="uid://cwrwntq7ufv6k" path="res://scenes/zones/hide_area.tscn" id="3_4ntyr"]
 [ext_resource type="PackedScene" uid="uid://c7mvvd3ocvl7d" path="res://scenes/shops/pokemon_shop.tscn" id="4_6ejb6"]
