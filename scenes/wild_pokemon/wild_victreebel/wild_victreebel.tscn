@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://52gv6yq52ufh"]
+
+[ext_resource type="Texture2D" uid="uid://cgm0gdr65bvrb" path="res://scenes/characters/grass_pokemon/Victreebel.png" id="1_luwdl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lverg"]
+atlas = ExtResource("1_luwdl")
+region = Rect2(0, 64, 31, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58p7y"]
+atlas = ExtResource("1_luwdl")
+region = Rect2(0, 96, 31, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_80hdp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lverg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58p7y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_luwdl"]
+
+[node name="WildVictreebel" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_80hdp")
+autoplay = "default"
+frame_progress = 0.938338
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_luwdl")

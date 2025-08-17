@@ -14,7 +14,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("wild_pokemon"):
+	if body.is_in_group("wild_pokemon") and body.name == "WildArbok":
 #		make it not everytime success
 		animated_sprite_2d.play("hit")
 		velocity = Vector2.ZERO
@@ -25,7 +25,16 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	if animated_sprite_2d.animation == "hit":
-		GameData.pet_arbok_amt += 1
+	if animated_sprite_2d.animation == "hit" and target_pokemon and is_instance_valid(target_pokemon):
+		match target_pokemon.name:
+			"WildArbok":
+				GameData.pet_arbok_amt += 1
+			"WildVictreebel":
+				GameData.pet_victreebel_amt += 1
+			"WildLapras":
+				GameData.pet_lapras_amt += 1
+			_:
+				print("Unknown Pokémon:", target_pokemon.name)
+		
 		target_pokemon.queue_free()
 		queue_free()

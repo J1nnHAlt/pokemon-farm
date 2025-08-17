@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjbocodjujkhf"]
+
+[ext_resource type="Texture2D" uid="uid://c8m05qq5u2eoc" path="res://scenes/characters/water_pokemon/lapras.png" id="1_ee54e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lexwb"]
+atlas = ExtResource("1_ee54e")
+region = Rect2(0, 62, 31, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lqlo"]
+atlas = ExtResource("1_ee54e")
+region = Rect2(0, 93, 31, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u7kk6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lexwb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lqlo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ee54e"]
+
+[node name="WildLapras" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_u7kk6")
+autoplay = "default"
+frame_progress = 0.525775
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_ee54e")

@@ -45,6 +45,8 @@ func load_game():
 			coins = data.get("coins", 0)
 			default_volume = data.get("volume", 5.0)
 			pet_arbok_amt = data.get("pet_arbok_amt", 0)
+			pet_lapras_amt = data.get("pet_lapras_amt", 0)
+			pet_victreebel_amt = data.get("pet_victreebel", 0)
 			emit_signal("coins_loaded")
 			emit_signal("volume_loaded")
 			emit_signal("game_loaded")
