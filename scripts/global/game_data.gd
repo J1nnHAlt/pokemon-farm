@@ -4,6 +4,13 @@ var coins: int = 0
 var inventory: Inv
 var default_volume: float
 
+var pet_arbok_amt: int = 0
+var pet_victreebel_amt: int = 0
+var pet_lapras_amt: int = 0
+
+signal arbok_amt_updated
+
+
 signal coins_loaded
 signal volume_loaded
 signal game_loaded
@@ -12,7 +19,10 @@ signal inventory_loaded
 func save_game():
 	var save_data = {
 		"coins": coins,
-		"volume": default_volume
+		"volume": default_volume,
+		"pet_arbok_amt": pet_arbok_amt,
+		"pet_victreebel_amt": pet_victreebel_amt,
+		"pet_lapras_amt": pet_lapras_amt
 		# Later: add more data here like "pokemons": [], "player_pos": Vector2()
 	}
 	# C:\Users\<YourUsername>\AppData\Roaming\Godot\app_userdata\<YourGameName>\savegame.json
@@ -34,6 +44,7 @@ func load_game():
 		if typeof(data) == TYPE_DICTIONARY:
 			coins = data.get("coins", 0)
 			default_volume = data.get("volume", 5.0)
+			pet_arbok_amt = data.get("pet_arbok_amt", 0)
 			emit_signal("coins_loaded")
 			emit_signal("volume_loaded")
 			emit_signal("game_loaded")
