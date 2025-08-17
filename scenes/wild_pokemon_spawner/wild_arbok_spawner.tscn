@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnsbf2wm8bxel"]
+
+[ext_resource type="Script" uid="uid://cq2sh1jxk2t7a" path="res://scenes/wild_pokemon_spawner/wild_arbok_spawner.gd" id="1_mb7bg"]
+
+[node name="WildArbokSpawner" type="Node2D"]
+script = ExtResource("1_mb7bg")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
