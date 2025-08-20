@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://cv2pon43imfed"]
 
 [ext_resource type="Script" uid="uid://ctggxhfyjanpo" path="res://scenes/characters/dark_pokemon/arbok.gd" id="1_eospf"]
-[ext_resource type="Texture2D" uid="uid://0b5udp0f8yh" path="res://scenes/characters/dark_pokemon/arbok.png" id="1_epl2t"]
+[ext_resource type="Texture2D" uid="uid://do36uqi4ymoqs" path="res://scenes/characters/dark_pokemon/arbok.png" id="1_epl2t"]
 [ext_resource type="Script" uid="uid://bm540rrfyyxui" path="res://scripts/state_machine/node_state_machine.gd" id="2_3hwl6"]
 [ext_resource type="Script" uid="uid://cc4otw7ic1qd2" path="res://scenes/characters/dark_pokemon/idle_state.gd" id="3_vvl6o"]
 [ext_resource type="Script" uid="uid://de4ahex1jocnn" path="res://scenes/characters/dark_pokemon/walk_state.gd" id="4_wmr00"]
@@ -85,3 +85,34 @@ script = ExtResource("4_wmr00")
 character = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 navigation_agent_2d = NodePath("../../NavigationAgent2D")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Evo" type="Label" parent="Node2D"]
+offset_left = -16.0
+offset_top = -29.0
+offset_right = 57.0
+offset_bottom = 4.0
+scale = Vector2(0.1, 0.1)
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 0
+text = "Evo "
+
+[node name="Lvl" type="Label" parent="Node2D"]
+offset_left = 9.0
+offset_top = -29.0
+offset_right = 64.0
+offset_bottom = 4.0
+scale = Vector2(0.1, 0.1)
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Lvl"
+
+[node name="Exp" type="Label" parent="Node2D"]
+offset_left = -16.0
+offset_top = 1.0
+offset_right = 48.0
+offset_bottom = 34.0
+scale = Vector2(0.1, 0.1)
+size_flags_vertical = 1
+text = "Exp"
