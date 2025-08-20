@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://dedqjpuwgfdyg" path="res://scripts/nav_regions/victreebel_region.gd" id="6_m1qrs"]
 [ext_resource type="Script" uid="uid://bj3hh5ql136bt" path="res://scripts/nav_regions/lapras_region.gd" id="6_wyicn"]
 [ext_resource type="Script" uid="uid://bcvhn3txllies" path="res://scenes/test/dungeon_entrance.gd" id="8_qbk12"]
-[ext_resource type="AudioStream" uid="uid://d0nf0koleuwuk" path="res://pokemon-assets/Audio/SE/GUI naming tab swap start.ogg" id="12_ksdiy"]
+[ext_resource type="AudioStream" uid="uid://mw04hdv38eif" path="res://pokemon-assets/Audio/SE/GUI naming tab swap start.ogg" id="12_ksdiy"]
 [ext_resource type="PackedScene" uid="uid://c1g7wo3i0l6eg" path="res://scenes/inventory/inv_ui.tscn" id="13_l0udy"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_p0x3o"]
@@ -40,6 +40,7 @@ size = Vector2(34.75, 33)
 script = ExtResource("1_wyicn")
 
 [node name="DayNightCycleComponent" parent="." instance=ExtResource("1_7apd7")]
+visible = false
 
 [node name="GameTileMap" type="Node2D" parent="."]
 
@@ -92,6 +93,7 @@ position = Vector2(47, -258)
 position = Vector2(192, 192)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." groups=["hud_layer"]]
+visible = false
 
 [node name="coins" parent="CanvasLayer" instance=ExtResource("5_6k3gh")]
 
