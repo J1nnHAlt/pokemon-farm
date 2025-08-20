@@ -1,30 +1,3 @@
-#extends GridContainer
-#
-#var player_inventory = {
-	#"CheriBerry": {"id": "001", "name": "CheriBerry", "texture": preload("res://pokemon-assets/Graphics/Items/CHERIBERRY.png"), "amount": 3}, 
-	#"PamtreBerry": {"id": "002", "name": "PamtreBerry", "texture": preload("res://pokemon-assets/Graphics/Items/PAMTREBERRY.png"), "amount": 5}, 
-	#"DurinBerry": {"id": "003", "name": "DurinBerry", "texture": preload("res://pokemon-assets/Graphics/Items/DURINBERRY.png"), "amount": 1}
-#}
-#
-## Called when the node enters the scene tree for the first time.
-#func _ready() -> void:
-	#update_inventory()
-#
-#func update_inventory():
-	#for child in self.get_children():
-		#child.queue_free()
-		#
-	#for berry in player_inventory:
-		#var slot = preload("res://scenes/BerryMixer/berry_slot.tscn").instantiate()
-		#slot.set_berry_data(player_inventory[berry])
-		#add_child(slot)
-#
-#func _process(float):
-	#for child in self.get_children():
-		#player_inventory[child.berry_data.name].amount = child.berry_data.amount
-		#if child.berry_data.amount <=0:
-			#self.remove_child(child)
-
 extends GridContainer
 
 const SLOT_SCENE = preload("res://scenes/BerryMixer/slot.tscn") # Path to your new slot scene

@@ -1,28 +1,3 @@
-#extends GridContainer
-#
-#@export var mixer_content = []
-#
-#func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
-	#return typeof(data)==TYPE_DICTIONARY
-	#
-#func _drop_data(at_position: Vector2, data: Variant) -> void:
-	#var mixer_slots = get_children()
-	#
-	#for slot in mixer_slots:
-		#if not slot.get_data():
-			#slot.set_data(data)
-			#mixer_content.append(data.name)
-			#print(mixer_content)
-			#break
-		#elif slot.get_data().name == data.name:
-			#slot.add_amount()
-			#mixer_content.append(data.name)
-			#print(mixer_content)
-			#break
-		#else:
-			#continue
-
-
 extends GridContainer
 
 var mixer_content = []

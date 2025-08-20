@@ -17,6 +17,7 @@ var level: int = 1
 var exp: int = 0
 var rarity:String = "Common"
 var growth_rate: float = 1.0
+var element:String = "None"
 
 const GROWTH_RATES := {
 	"Common": 1.0, 
@@ -29,15 +30,12 @@ const GROWTH_RATES := {
 var rng := RandomNumberGenerator.new()
 
 func _ready() -> void:
-	print("npc ready")
 #	seeds the RNG with a unique value based on the system clock, ensuring different results every run.
 	rng.randomize()
 #	is set to a random integer between min_walk_cycle and max_walk_cycle, determining how long the NPC will walk.
 	walk_cycles = rng.randi_range(min_walk_cycle, max_walk_cycle)
 	growth_rate = GROWTH_RATES.get(rarity, 1.0)
-	print("npc ready")
 	DayAndNightCycleManager.time_tick_day.connect(Callable(self, "_on_new_day"))
-	print("Signal connected")
 
 func gain_exp(amount: int):
 	if level>=10:
@@ -52,8 +50,8 @@ func exp_to_next_level():
 	
 func level_up():
 	if level<10:
+		exp-=exp_to_next_level()
 		level+=1
-		exp = 0
 		print("Level up! Now at level %d (Evolution %d)" % [level, evolution])
 		
 	elif level == 10:
@@ -69,5 +67,4 @@ func evolve() -> void:
 		print("Cannot evolve yet. Must reach level 10 first.")
 
 func _on_new_day(day):
-	print("new day, get exp")
 	gain_exp(5)
