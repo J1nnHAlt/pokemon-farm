@@ -1,17 +1,17 @@
 [gd_resource type="TileSet" load_steps=25 format=3 uid="uid://dq7x0bsl7faum"]
 
-[ext_resource type="Texture2D" uid="uid://d4ap6fja0056c" path="res://pokemon-assets/Graphics/Autotiles/Light grass.png" id="1_kn3eu"]
-[ext_resource type="Texture2D" uid="uid://cbhalrxhuvplr" path="res://assets/tilesets/Outside/Land/basic_grass_flower_small_tree.png" id="2_rsiuj"]
-[ext_resource type="Texture2D" uid="uid://ddg7eibsr727l" path="res://assets/tilesets/Outside/Land/spur.png" id="3_0u6eo"]
-[ext_resource type="Texture2D" uid="uid://dk18nkb64d1qu" path="res://assets/tilesets/Outside/Land/fences.png" id="3_esjam"]
-[ext_resource type="Texture2D" uid="uid://c1u8s26fxuk5b" path="res://pokemon-assets/Graphics/Tilesets/Outside.png" id="3_vww44"]
-[ext_resource type="Texture2D" uid="uid://bt8ci0nwb1u8o" path="res://assets/tilesets/sea_animated_tileset.png" id="4_0u6eo"]
-[ext_resource type="Texture2D" uid="uid://b5jyvfwfg522h" path="res://assets/tilesets/Outside/Land/hill_and_stair.png" id="5_glu6w"]
-[ext_resource type="Texture2D" uid="uid://c8nvfk1paldw4" path="res://assets/tilesets/Outside/Land/glass_corner.png" id="6_kw78k"]
-[ext_resource type="Texture2D" uid="uid://btem2krvs37wj" path="res://assets/tilesets/Outside/Land/legde_sea.png" id="7_ncq74"]
-[ext_resource type="Texture2D" uid="uid://diw0yuvddojc0" path="res://assets/tilesets/Outside/Land/ledge.png" id="8_64fg8"]
-[ext_resource type="Texture2D" uid="uid://b7r4klilu1scx" path="res://assets/tilesets/Outside/Land/grass-series.png" id="9_ui57o"]
-[ext_resource type="Texture2D" uid="uid://bj6tealymn1tl" path="res://pokemon-assets/Graphics/Tilesets/Dungeon cave.png" id="10_k28d2"]
+[ext_resource type="Texture2D" uid="uid://jssic0jt7dv5" path="res://pokemon-assets/Graphics/Autotiles/Light grass.png" id="1_kn3eu"]
+[ext_resource type="Texture2D" uid="uid://dhrlcmahlf0pv" path="res://assets/tilesets/Outside/Land/basic_grass_flower_small_tree.png" id="2_rsiuj"]
+[ext_resource type="Texture2D" uid="uid://heook0jubd1x" path="res://assets/tilesets/Outside/Land/spur.png" id="3_0u6eo"]
+[ext_resource type="Texture2D" uid="uid://btqt0e35oenn1" path="res://assets/tilesets/Outside/Land/fences.png" id="3_esjam"]
+[ext_resource type="Texture2D" uid="uid://d34kyw8ypfr8h" path="res://pokemon-assets/Graphics/Tilesets/Outside.png" id="3_vww44"]
+[ext_resource type="Texture2D" uid="uid://bhk5dnqym2oog" path="res://assets/tilesets/sea_animated_tileset.png" id="4_0u6eo"]
+[ext_resource type="Texture2D" uid="uid://chr8f5pn3jgqe" path="res://assets/tilesets/Outside/Land/hill_and_stair.png" id="5_glu6w"]
+[ext_resource type="Texture2D" uid="uid://c2jgmqnup2mle" path="res://assets/tilesets/Outside/Land/glass_corner.png" id="6_kw78k"]
+[ext_resource type="Texture2D" uid="uid://cs7fq0r4whxr4" path="res://assets/tilesets/Outside/Land/legde_sea.png" id="7_ncq74"]
+[ext_resource type="Texture2D" uid="uid://byadh87546us1" path="res://assets/tilesets/Outside/Land/ledge.png" id="8_64fg8"]
+[ext_resource type="Texture2D" uid="uid://ckneliy1tkr1c" path="res://assets/tilesets/Outside/Land/grass-series.png" id="9_ui57o"]
+[ext_resource type="Texture2D" uid="uid://bde20segpoyvk" path="res://pokemon-assets/Graphics/Tilesets/Dungeon cave.png" id="10_k28d2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g4cty"]
 texture = ExtResource("1_kn3eu")
@@ -346,6 +346,7 @@ texture = ExtResource("3_esjam")
 7:7/0/z_index = 30
 7:7/0/y_sort_origin = -4
 7:7/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -2, 8, -8, 0, -8, 0, -2, -8, -2, -8, 8, 0, 8, 0, 6, 8, 6)
+7:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qs02o"]
 texture = ExtResource("3_vww44")
@@ -1076,7 +1077,7 @@ texture = ExtResource("9_ui57o")
 [resource]
 physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 0
-physics_layer_1/collision_layer = 2
+physics_layer_1/collision_layer = 3
 physics_layer_1/collision_mask = 0
 physics_layer_2/collision_layer = 1
 terrain_set_0/mode = 0
