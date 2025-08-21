@@ -15,6 +15,10 @@ signal coins_loaded
 signal volume_loaded
 signal inventory_loaded
 
+var cheri_berry = load("res://scripts/inventory/items/cheri_berry.tres")
+var durin_berry = load("res://scripts/inventory/items/durin_berry.tres")
+var pamtre_berry = load("res://scripts/inventory/items/pamtre_berry.tres")
+
 func save_game():
 	var save_data = {
 		"coins": coins,
@@ -77,6 +81,11 @@ func load_game():
 func _ready() -> void:
 	load_game()
 	volume_loaded.connect(set_volume)
+	#	seed the inventory
+	for i in range(99):
+		inventory.insert(cheri_berry)
+		inventory.insert(durin_berry)
+		inventory.insert(pamtre_berry)
 	pass
 
 func set_volume():

@@ -131,35 +131,27 @@ script = ExtResource("3_7vft3")
 
 [node name="Slot" parent="HBoxContainer/MixerPanel/PanelContainer/MixerContent" instance=ExtResource("4_lh7vl")]
 layout_mode = 2
-is_mixer_slot = true
 
 [node name="Slot2" parent="HBoxContainer/MixerPanel/PanelContainer/MixerContent" instance=ExtResource("4_lh7vl")]
 layout_mode = 2
-is_mixer_slot = true
 
 [node name="Slot3" parent="HBoxContainer/MixerPanel/PanelContainer/MixerContent" instance=ExtResource("4_lh7vl")]
 layout_mode = 2
-is_mixer_slot = true
 
 [node name="Slot4" parent="HBoxContainer/MixerPanel/PanelContainer/MixerContent" instance=ExtResource("4_lh7vl")]
 layout_mode = 2
-is_mixer_slot = true
 
 [node name="Slot5" parent="HBoxContainer/MixerPanel/PanelContainer/MixerContent" instance=ExtResource("4_lh7vl")]
 layout_mode = 2
-is_mixer_slot = true
 
 [node name="Slot6" parent="HBoxContainer/MixerPanel/PanelContainer/MixerContent" instance=ExtResource("4_lh7vl")]
 layout_mode = 2
-is_mixer_slot = true
 
 [node name="Slot7" parent="HBoxContainer/MixerPanel/PanelContainer/MixerContent" instance=ExtResource("4_lh7vl")]
 layout_mode = 2
-is_mixer_slot = true
 
 [node name="Slot8" parent="HBoxContainer/MixerPanel/PanelContainer/MixerContent" instance=ExtResource("4_lh7vl")]
 layout_mode = 2
-is_mixer_slot = true
 
 [node name="MixButton" type="Button" parent="HBoxContainer/MixerPanel"]
 custom_minimum_size = Vector2(200, 60)
