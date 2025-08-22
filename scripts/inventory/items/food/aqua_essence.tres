@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PetFood" load_steps=3 format=3 uid="uid://bo4uj781h4ovw"]
+
+[ext_resource type="Script" uid="uid://duh47xclnnv37" path="res://scripts/inventory/pet_food.gd" id="1_iavg3"]
+[ext_resource type="Texture2D" uid="uid://b1t5lbl45bqx4" path="res://pokemon-assets/Graphics/Items/AWAKENING.png" id="2_g0hoc"]
+
+[resource]
+script = ExtResource("1_iavg3")
+type = "Growth"
+element = "Water"
+rarity = "Rare"
+name = "Aqua Essence"
+texture = ExtResource("2_g0hoc")
+metadata/_custom_type_script = "uid://duh47xclnnv37"

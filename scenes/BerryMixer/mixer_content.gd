@@ -94,6 +94,6 @@ func _on_mixer_slot_clicked(slot: InvSlot, index: int):
 			#slot = InvSlot.new()
 			slot.item = null
 			slot.amount = 0
-			slot = null
+			#slot = null
 		#else:
 			#slot.set_data(slot, index)

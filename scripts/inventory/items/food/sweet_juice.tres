@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PetFood" load_steps=3 format=3 uid="uid://cf0u4nxjsti0n"]
+
+[ext_resource type="Script" uid="uid://duh47xclnnv37" path="res://scripts/inventory/pet_food.gd" id="1_pg4wm"]
+[ext_resource type="Texture2D" uid="uid://dacg3u6t2n5qy" path="res://pokemon-assets/Graphics/Items/LEMONADE.png" id="2_h88dy"]
+
+[resource]
+script = ExtResource("1_pg4wm")
+type = "Evolve"
+element = "Special"
+rarity = "Common"
+name = "Sweet Juice"
+texture = ExtResource("2_h88dy")
+metadata/_custom_type_script = "uid://duh47xclnnv37"

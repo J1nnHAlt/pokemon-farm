@@ -93,6 +93,9 @@ var slot_index: int
 @onready var texture_rect: TextureRect = $TextureRect
 @onready var amount_label: Label = $Label
 
+func _ready() -> void:
+	GameData.inventory.update.connect(update_display)
+
 func set_data(data: InvSlot, index: int):
 	slot_data = data
 	slot_index = index

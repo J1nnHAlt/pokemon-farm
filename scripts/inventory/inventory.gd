@@ -23,7 +23,7 @@ func insert(item: InvItem):
 
 func remove(index: int):
 	if index >= 0 and index < slots.size():
-		if slots[index].amount > 1:
+		if slots[index].amount > 0:
 			slots[index].amount -= 1
 		else:
 			slots[index].item = null

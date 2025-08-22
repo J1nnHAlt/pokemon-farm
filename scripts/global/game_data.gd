@@ -15,9 +15,11 @@ signal coins_loaded
 signal volume_loaded
 signal inventory_loaded
 
-var cheri_berry = load("res://scripts/inventory/items/cheri_berry.tres")
-var durin_berry = load("res://scripts/inventory/items/durin_berry.tres")
-var pamtre_berry = load("res://scripts/inventory/items/pamtre_berry.tres")
+var cheri_berry = load("res://scripts/inventory/items/berries/cheri_berry.tres")
+var durin_berry = load("res://scripts/inventory/items/berries/durin_berry.tres")
+var pamtre_berry = load("res://scripts/inventory/items/berries/pamtre_berry.tres")
+var custa_berry = load("res://scripts/inventory/items/berries/custa_berry.tres")
+var yache_berry = load("res://scripts/inventory/items/berries/yache_berry.tres")
 
 func save_game():
 	var save_data = {
@@ -74,6 +76,12 @@ func load_game():
 			var slot = InvSlot.new()
 			slot.item = null
 			inventory.slots.append(slot)
+		for i in range(10):
+			inventory.insert(cheri_berry)
+			inventory.insert(durin_berry)
+			inventory.insert(pamtre_berry)
+			inventory.insert(custa_berry)
+			inventory.insert(yache_berry)
 		ResourceSaver.save(inventory, "user://inventory.tres")
 		inventory_loaded.emit()
 
@@ -81,11 +89,6 @@ func load_game():
 func _ready() -> void:
 	load_game()
 	volume_loaded.connect(set_volume)
-	#	seed the inventory
-	for i in range(99):
-		inventory.insert(cheri_berry)
-		inventory.insert(durin_berry)
-		inventory.insert(pamtre_berry)
 	pass
 
 func set_volume():

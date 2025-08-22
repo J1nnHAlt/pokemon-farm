@@ -63,7 +63,7 @@ func update_display():
 	# Create slot for each item in inventory
 	for i in inventory.slots.size():
 		var inv_slot: InvSlot = inventory.slots[i]
-		if inv_slot.item and inv_slot.amount > 0:
+		if inv_slot.item and inv_slot.amount > 0 and inv_slot.item is not PetFood:
 			var slot = SLOT_SCENE.instantiate()
 			add_child(slot)
 
@@ -73,9 +73,10 @@ func update_display():
 func _on_inventory_slot_clicked(slot: InvSlot, index: int):
 	# Remove from main inventory
 	GameData.inventory.remove(index)
-
 	# Add to mixer
 	get_node("/root/BerryMixer/HBoxContainer/MixerPanel/PanelContainer/MixerContent").add_item(slot.item)
+	print("slot.item: ", slot.item)
+	update_display()
 
 
 func _on_inventory_loaded():

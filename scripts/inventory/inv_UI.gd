@@ -10,9 +10,20 @@ var is_open = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	inv.update.connect(update_slots)
-	update_slots()
-	close()
+	if GameData.inventory: 
+		print("after game inventory loaded")
+		inv.update.connect(update_slots)
+		print("update signal connected")
+		update_slots()
+		close()
+	else:
+		await GameData.inventory_loaded	
+		print("after game inventory loaded")
+		inv.update.connect(update_slots)
+		print("update signal connected")
+		update_slots()
+		close()
+	
 
 func update_slots():
 #	loop through all slots and update them
@@ -43,6 +54,7 @@ func close():
 	#if hud_layer:
 		#hud_layer.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		#hud_layer.visible = true
+	print("close")
 	set_hud_input(true)
 	visible = false
 	is_open = false

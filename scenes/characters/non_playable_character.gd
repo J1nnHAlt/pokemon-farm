@@ -11,6 +11,8 @@ extends CharacterBody2D
 var walk_cycles: int
 var current_walk_cycle: int
 
+enum PetStatus { Normal, Super_Growth, Mating, Pregnant }
+
 # Pokemon attributes
 var evolution: int = 1
 var level: int = 1
@@ -18,6 +20,8 @@ var exp: int = 0
 var rarity:String = "Common"
 var growth_rate: float = 1.0
 var element:String = "None"
+var status: Array[PetStatus] = [PetStatus.Normal]
+
 
 const GROWTH_RATES := {
 	"Common": 1.0, 
@@ -68,3 +72,6 @@ func evolve() -> void:
 
 func _on_new_day(day):
 	gain_exp(5)
+
+func consume_pet_food(pet_food: PetFood):
+	RecipeManager.check_food_effect(pet_food.name, rarity, element)

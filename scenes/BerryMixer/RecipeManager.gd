@@ -33,15 +33,25 @@ extends Node
 
 var recipes = {
 	"SpicyJam": {
-		"ingredients": [preload("res://scripts/inventory/items/cheri_berry.tres"), preload("res://scripts/inventory/items/pamtre_berry.tres")],
-		"item": preload("res://scripts/inventory/items/spicy_jam.tres"),
+		"ingredients": [preload("res://scripts/inventory/items/berries/cheri_berry.tres"), preload("res://scripts/inventory/items/berries/custa_berry.tres")],
+		"item": preload("res://scripts/inventory/items/food/spicy_jam.tres"),
 		"description": "Really Spicy!"
 	},
 	"SweetJuice": {
-		"ingredients": [preload("res://scripts/inventory/items/durin_berry.tres"), preload("res://scripts/inventory/items/cheri_berry.tres")],
-		"item": preload("res://scripts/inventory/items/sweet_juice.tres"),
+		"ingredients": [preload("res://scripts/inventory/items/berries/durin_berry.tres"), preload("res://scripts/inventory/items/berries/cheri_berry.tres")],
+		"item": preload("res://scripts/inventory/items/food/sweet_juice.tres"),
 		"description": "Really Sweet!"
-	}
+	},
+	"LeafBites": {
+		"ingredients": [preload("res://scripts/inventory/items/berries/durin_berry.tres"), preload("res://scripts/inventory/items/berries/pamtre_berry.tres")],
+		"item": preload("res://scripts/inventory/items/food/leaf_bites.tres"),
+		"description": "Really Smelly!"
+	}, 
+	"AquaEssence": {
+		"ingredients": [preload("res://scripts/inventory/items/berries/yache_berry.tres"), preload("res://scripts/inventory/items/berries/yache_berry.tres")],
+		"item": preload("res://scripts/inventory/items/food/aqua_essence.tres"),
+		"description": "Really Moist!"
+	}, 
 }
 
 func find_matching_recipe(ingredients: Array[InvItem]) -> String:
@@ -58,3 +68,14 @@ func find_matching_recipe(ingredients: Array[InvItem]) -> String:
 			return recipe_name
 	
 	return ""
+
+#enum PetStatus { Normal, Super_Growth, Mating, Pregnant }
+#func check_food_effect(pet_food: String, pokemon_rarity: String, pokemon_element):
+	#var status: PetStatus
+	#var days_of_effect: int
+	#
+	#
+	#return {
+		#"status": status, 
+		#"days_of_effect": days_of_effect
+		#}

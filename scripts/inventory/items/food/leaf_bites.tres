@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PetFood" load_steps=3 format=3 uid="uid://c8i83w8idfadu"]
+
+[ext_resource type="Script" uid="uid://duh47xclnnv37" path="res://scripts/inventory/pet_food.gd" id="1_lw057"]
+[ext_resource type="Texture2D" uid="uid://dr5204fy35yxt" path="res://pokemon-assets/Graphics/Items/ZINC.png" id="2_7lt48"]
+
+[resource]
+script = ExtResource("1_lw057")
+type = "Growth"
+element = "Grass"
+rarity = "Common"
+name = "Leaf Bites"
+texture = ExtResource("2_7lt48")
+metadata/_custom_type_script = "uid://duh47xclnnv37"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dxhcqrt76hxfo"]
+
+[ext_resource type="Script" uid="uid://srnaalrlc73j" path="res://scripts/inventory/inventory_item.gd" id="1_qokh3"]
+[ext_resource type="Texture2D" uid="uid://c7g6f2vvram1u" path="res://pokemon-assets/Graphics/Items/CUSTAPBERRY.png" id="2_u3gmm"]
+
+[resource]
+script = ExtResource("1_qokh3")
+name = "CustaBerry"
+texture = ExtResource("2_u3gmm")
+metadata/_custom_type_script = "uid://srnaalrlc73j"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://8vcju64q8d68"]
+
+[ext_resource type="Script" uid="uid://srnaalrlc73j" path="res://scripts/inventory/inventory_item.gd" id="1_yd611"]
+[ext_resource type="Texture2D" uid="uid://ccy7pyuss3kue" path="res://pokemon-assets/Graphics/Items/YACHEBERRY.png" id="2_mh77x"]
+
+[resource]
+script = ExtResource("1_yd611")
+name = "YacheBerry"
+texture = ExtResource("2_mh77x")
+metadata/_custom_type_script = "uid://srnaalrlc73j"
