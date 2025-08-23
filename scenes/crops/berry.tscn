@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvj88ye74yc0c"]
+[gd_scene load_steps=9 format=3 uid="uid://bvj88ye74yc0c"]
 
 [ext_resource type="Texture2D" uid="uid://calld0wyo8oky" path="res://pokemon-assets/Graphics/Characters/berrytree_CHERIBERRY.png" id="1_n8qlo"]
 [ext_resource type="Script" uid="uid://j3mjtuxv4amv" path="res://scenes/crops/berry.gd" id="1_wmgse"]
 [ext_resource type="PackedScene" uid="uid://bbt04cvqw6sjg" path="res://scenes/crops/watering_particles.tscn" id="2_r2vmc"]
+[ext_resource type="Resource" uid="uid://dn8gujxm2mlfp" path="res://scripts/inventory/items/berries/cheri_berry.tres" id="2_sv1uy"]
 [ext_resource type="PackedScene" uid="uid://c2vb7n7vmwxn2" path="res://scenes/crops/flowering_particles.tscn" id="3_n20s4"]
 [ext_resource type="PackedScene" uid="uid://30ayb03hl4mi" path="res://scenes/crops/growth_cycle_component.tscn" id="5_sv1uy"]
 [ext_resource type="PackedScene" uid="uid://cln3rkgqe2581" path="res://scenes/component/hurt_component.tscn" id="6_k6kri"]
@@ -12,6 +13,7 @@ size = Vector2(13, 10)
 
 [node name="Berry" type="Node2D"]
 script = ExtResource("1_wmgse")
+harvest_item = ExtResource("2_sv1uy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -11)

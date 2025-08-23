@@ -7,7 +7,8 @@ extends Node2D
 @onready var hurt_component: HurtComponent = $HurtComponent
 
 var growth_state: DataTypes.GrowthStates = DataTypes.GrowthStates.Seed
-var berry_harvest_scene = preload("res://scenes/crops/berry_harvest.tscn")
+@export var harvest_item: InvItem
+const harvest_scene := preload("res://scenes/crops/harvest.tscn")
 
 func _ready() -> void:
 	watering_particles.emitting = false
@@ -41,7 +42,11 @@ func on_crop_maturity() -> void:
 
 
 func on_crop_harvesting() -> void:
-	var corn_harvest_instance = berry_harvest_scene.instantiate() as Node2D
-	corn_harvest_instance.global_position = global_position
-	get_parent().add_child(corn_harvest_instance)
+	#var corn_harvest_instance = harvest_scene.instantiate() as Node2D
+	#corn_harvest_instance.global_position = global_position
+	#get_parent().add_child(corn_harvest_instance)
+	var harvest = harvest_scene.instantiate()
+	harvest.global_position = global_position
+	harvest.item = harvest_item
+	get_parent().add_child(harvest)
 	queue_free()
