@@ -8,10 +8,12 @@ extends CharacterBody2D
 @export var min_walk_cycle: int = 2
 @export var max_walk_cycle: int = 6
 
+signal attributes_changed
+
 var walk_cycles: int
 var current_walk_cycle: int
 
-enum PetStatus { Normal, Super_Growth, Mating, Pregnant }
+enum PetStatus { Normal, Super_Growth, Mating, Pregnant, Maxed }
 
 # Pokemon attributes
 var evolution: int = 1
@@ -20,7 +22,7 @@ var exp: int = 0
 var rarity:String = "Common"
 var growth_rate: float = 1.0
 var element:String = "None"
-var status: Array[PetStatus] = [PetStatus.Normal]
+var status: Array[PetStatus] = [PetStatus.Maxed, PetStatus.Super_Growth]
 
 
 const GROWTH_RATES := {
@@ -42,10 +44,11 @@ func _ready() -> void:
 	DayAndNightCycleManager.time_tick_day.connect(Callable(self, "_on_new_day"))
 
 func gain_exp(amount: int):
+	exp+=amount*growth_rate
 	if level>=10:
 		exp = min(exp, exp_to_next_level()-1)
-		return
-	exp+=amount*growth_rate
+		if exp == exp_to_next_level()-1: 
+			status.append(PetStatus.Maxed)
 	while exp >= exp_to_next_level() and level<10:
 		level_up()
 		
@@ -53,20 +56,19 @@ func exp_to_next_level():
 	return evolution*level*10
 	
 func level_up():
-	if level<10:
-		exp-=exp_to_next_level()
-		level+=1
-		print("Level up! Now at level %d (Evolution %d)" % [level, evolution])
-		
-	elif level == 10:
-		print("Max level reached for Evolution %d. Needs pet food to evolve!" % evolution)
+	exp-=exp_to_next_level()
+	level+=1
+	attributes_changed.emit()
+	print("Level up! Now at level %d (Evolution %d)" % [level, evolution])
 		
 func evolve() -> void:
 	if level == 10:
+		status.erase(PetStatus.Maxed)
 		evolution += 1
 		level = 1  # reset to level 1 of next evolution
 		exp = 0
 		print("Evolved to Evolution %d!" % evolution)
+		attributes_changed.emit()
 	else:
 		print("Cannot evolve yet. Must reach level 10 first.")
 
@@ -74,4 +76,12 @@ func _on_new_day(day):
 	gain_exp(5)
 
 func consume_pet_food(pet_food: PetFood):
-	RecipeManager.check_food_effect(pet_food.name, rarity, element)
+	var effect = RecipeManager.check_food_effect(pet_food, rarity, element)
+	if effect["status"]!=PetStatus.Normal and effect["days_of_effect"] != 0:
+		if effect["status"] == PetStatus.Maxed:
+			evolve()
+		elif not status.has(effect["status"]):
+			status.append(effect["status"])
+		else:
+			print("Already eaten before, food wasted!")
+		attributes_changed.emit()

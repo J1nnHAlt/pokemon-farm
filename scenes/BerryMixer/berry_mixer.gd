@@ -16,3 +16,4 @@ func show_craft_popup(recipe_name: String):
 	var popup = popup_scene.instantiate()
 	add_child(popup)
 	popup.set_display(recipe_name, message)  # create this method inside your popup script
+	GameData.save_game()

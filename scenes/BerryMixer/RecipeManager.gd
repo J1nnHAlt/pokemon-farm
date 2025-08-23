@@ -69,13 +69,27 @@ func find_matching_recipe(ingredients: Array[InvItem]) -> String:
 	
 	return ""
 
-#enum PetStatus { Normal, Super_Growth, Mating, Pregnant }
-#func check_food_effect(pet_food: String, pokemon_rarity: String, pokemon_element):
-	#var status: PetStatus
-	#var days_of_effect: int
-	#
-	#
-	#return {
-		#"status": status, 
-		#"days_of_effect": days_of_effect
-		#}
+enum PetStatus { Normal, Super_Growth, Mating, Pregnant, Maxed }
+const effect = {
+	"Growth": PetStatus.Super_Growth, 
+	"Breed": PetStatus.Mating, 
+	"Evolve": PetStatus.Maxed, 
+}
+const rarity = ["Common", "Rare", "Epic", "Legendary"]
+func check_food_effect(pet_food: PetFood, pokemon_rarity: String, pokemon_element):
+	var status: PetStatus = PetStatus.Normal
+	var days_of_effect: int = 0
+	
+	if pet_food.type == "Growth" and pet_food.element != pokemon_element:
+		print("Wrong element")
+	else: 
+		var food_rarity_index = rarity.find(pet_food.rarity)
+		var poke_rarity_index = rarity.find(pokemon_rarity)
+		if food_rarity_index>=poke_rarity_index:
+			status = effect[pet_food.type]
+			days_of_effect += 1 + food_rarity_index-poke_rarity_index
+	
+	return {
+		"status": status, 
+		"days_of_effect": days_of_effect
+		}

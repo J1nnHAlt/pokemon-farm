@@ -1,10 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://cv2pon43imfed"]
+[gd_scene load_steps=18 format=3 uid="uid://cv2pon43imfed"]
 
 [ext_resource type="Script" uid="uid://ctggxhfyjanpo" path="res://scenes/characters/dark_pokemon/arbok.gd" id="1_eospf"]
 [ext_resource type="Texture2D" uid="uid://do36uqi4ymoqs" path="res://scenes/characters/dark_pokemon/arbok.png" id="1_epl2t"]
 [ext_resource type="Script" uid="uid://bm540rrfyyxui" path="res://scripts/state_machine/node_state_machine.gd" id="2_3hwl6"]
 [ext_resource type="Script" uid="uid://cc4otw7ic1qd2" path="res://scenes/characters/dark_pokemon/idle_state.gd" id="3_vvl6o"]
 [ext_resource type="Script" uid="uid://de4ahex1jocnn" path="res://scenes/characters/dark_pokemon/walk_state.gd" id="4_wmr00"]
+[ext_resource type="Texture2D" uid="uid://ck0ckqha1cykp" path="res://assets/pokemon_status/growth.png" id="6_p40lm"]
+[ext_resource type="Texture2D" uid="uid://b24c0siinrgux" path="res://assets/pokemon_status/mating.png" id="7_5tv5f"]
+[ext_resource type="Texture2D" uid="uid://dkwpfpnp3ahi" path="res://assets/pokemon_status/pregnant.png" id="8_lccnr"]
+[ext_resource type="Texture2D" uid="uid://diwjx2lr3erwm" path="res://assets/pokemon_status/maxed.png" id="9_oops1"]
+[ext_resource type="Script" uid="uid://d1b7qp1yqklru" path="res://scenes/BerryMixer/player_berry_list.gd" id="10_5tv5f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3hwl6"]
 atlas = ExtResource("1_epl2t")
@@ -50,6 +55,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_4gkuy"]
 radius = 7.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vydy"]
+size = Vector2(40, 48)
+
 [node name="Arbok" type="CharacterBody2D"]
 collision_layer = 8704
 script = ExtResource("1_eospf")
@@ -57,9 +65,8 @@ script = ExtResource("1_eospf")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -14)
 sprite_frames = SubResource("SpriteFrames_wmr00")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
-frame_progress = 0.609743
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -9)
@@ -116,3 +123,98 @@ offset_bottom = 34.0
 scale = Vector2(0.1, 0.1)
 size_flags_vertical = 1
 text = "Exp"
+
+[node name="Status" type="HBoxContainer" parent="Node2D"]
+custom_minimum_size = Vector2(300, 80)
+offset_left = -15.0
+offset_top = -38.0
+offset_right = 285.0
+offset_bottom = 42.0
+scale = Vector2(0.1, 0.1)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="Super_Growth" type="TextureRect" parent="Node2D/Status"]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+texture = ExtResource("6_p40lm")
+expand_mode = 5
+
+[node name="Mating" type="TextureRect" parent="Node2D/Status"]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+texture = ExtResource("7_5tv5f")
+expand_mode = 5
+
+[node name="Pregnant" type="TextureRect" parent="Node2D/Status"]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+texture = ExtResource("8_lccnr")
+expand_mode = 5
+
+[node name="Maxed" type="TextureRect" parent="Node2D/Status"]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+texture = ExtResource("9_oops1")
+expand_mode = 5
+
+[node name="InventoryPanel" type="Panel" parent="Node2D"]
+custom_minimum_size = Vector2(400, 0)
+anchors_preset = -1
+anchor_left = 0.08
+anchor_right = 0.08
+offset_left = 25.0
+offset_top = -35.0
+offset_right = 425.0
+offset_bottom = 365.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+
+[node name="Label" type="Label" parent="Node2D/InventoryPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 26.0
+grow_horizontal = 2
+text = "Pet Food"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Node2D/InventoryPanel"]
+clip_contents = false
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.08
+anchor_right = 1.0
+anchor_bottom = 0.8
+offset_left = 0.000133514
+offset_top = 45.2
+offset_right = 0.00012207
+offset_bottom = 45.2
+grow_horizontal = 2
+grow_vertical = 2
+localize_numeral_system = false
+horizontal_scroll_mode = 0
+
+[node name="PlayerFoodList" type="GridContainer" parent="Node2D/InventoryPanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+localize_numeral_system = false
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 20
+columns = 3
+script = ExtResource("10_5tv5f")
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = -1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_1vydy")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

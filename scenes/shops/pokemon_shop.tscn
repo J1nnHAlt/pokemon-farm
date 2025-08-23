@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://c2pjo27juf5" path="res://scenes/zones/fade_area.tscn" id="2_sj1xl"]
 [ext_resource type="PackedScene" uid="uid://dq0x68l6h0d18" path="res://scenes/characters/seller/seller.tscn" id="2_w5ikm"]
 [ext_resource type="PackedScene" uid="uid://cwrwntq7ufv6k" path="res://scenes/zones/hide_area.tscn" id="3_w5ikm"]
-[ext_resource type="AudioStream" uid="uid://dhsdlmtt2ciji" path="res://pokemon-assets/Audio/SE/Door enter.ogg" id="5_5d57x"]
-[ext_resource type="AudioStream" uid="uid://c8adkbdwy0vk2" path="res://pokemon-assets/Audio/SE/Door exit.ogg" id="6_senfp"]
+[ext_resource type="AudioStream" uid="uid://d1p33npag4dpi" path="res://pokemon-assets/Audio/SE/Door enter.ogg" id="5_5d57x"]
+[ext_resource type="AudioStream" uid="uid://plpg3vt1wupo" path="res://pokemon-assets/Audio/SE/Door exit.ogg" id="6_senfp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sj1xl"]
 size = Vector2(247, 222.5)
