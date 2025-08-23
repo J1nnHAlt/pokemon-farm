@@ -10,6 +10,7 @@ var inventory: Inv
 var player_direction: Vector2
 
 func _ready() -> void:
+	add_to_group("player")
 	set_inventory()
 	GameData.inventory_loaded.connect(set_inventory)
 
@@ -24,7 +25,6 @@ func _process(delta):
 		throw_pokeball()
 #to be called when collecting item
 func collect(item):
-	print("Collected: %s" % item)
 	return inventory.insert(item)
 
 func set_inventory():
