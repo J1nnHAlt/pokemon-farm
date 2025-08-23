@@ -8,5 +8,7 @@ signal hurt
 func _on_area_entered(area: Area2D) -> void:
 	var hit_component = area as HitComponent
 	print("Something entered hurt component:", area)
+	print("HurtComponent tool:", tool, " | HitComponent tool:", hit_component.current_tool)
 	if tool == hit_component.current_tool:
+		print("Tool matches! Emitting hurt.")
 		hurt.emit(hit_component.hit_damage)

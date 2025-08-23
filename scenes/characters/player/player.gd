@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @export var pokeball_scene = preload("res://scenes/pokeball/pokeball.tscn")
 @onready var sfx_throw_pokeball: AudioStreamPlayer = $sfx_throw_pokeball
-
+@onready var hit_component: HitComponent = $HitComponent
 @export var current_tool: DataTypes.Tools = DataTypes.Tools.None
 var inventory: Inv
 
@@ -17,12 +17,14 @@ func _ready() -> void:
 func _process(delta):
 	if Input.is_action_just_pressed("watering"):
 		current_tool = DataTypes.Tools.WaterCrops
+		$HitComponent.current_tool = current_tool
 		print("Tool changed to: ", current_tool)
 		
 	if Input.is_action_just_pressed("throw_pokeball"):
 		throw_pokeball()
 #to be called when collecting item
 func collect(item):
+	print("Collected: %s" % item)
 	return inventory.insert(item)
 
 func set_inventory():

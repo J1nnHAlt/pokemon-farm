@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://y1cptyoh6upy"]
+
+[ext_resource type="Texture2D" uid="uid://cjk0c71x0m33t" path="res://pokemon-assets/Graphics/Items/CHERIBERRY.png" id="1_qkdxr"]
+[ext_resource type="Script" uid="uid://cls8os3t74ool" path="res://scenes/crops/berry_harvest.gd" id="2_x7jyq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nx7wv"]
+size = Vector2(12, 13)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("2_x7jyq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.291667, 0.291667)
+texture = ExtResource("1_qkdxr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_nx7wv")

@@ -5,7 +5,7 @@ extends Control
 
 @export var normal_speed: float = 1.0
 @export var fast_speed: float = 5.0
-@export var cheetah_speed: float = 20.0
+@export var cheetah_speed: float = 200.0
 
 func _ready() -> void:
 	DayAndNightCycleManager.time_tick.connect(on_time_tick)

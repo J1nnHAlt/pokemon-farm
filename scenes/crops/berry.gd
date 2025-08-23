@@ -1,7 +1,5 @@
 extends Node2D
 
-#var berry_harvest_scene = preload("res://pokemon-assets/")
-
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var watering_particles: GPUParticles2D = $WateringParticles
 @onready var flowering_particles: GPUParticles2D = $FloweringParticles
@@ -9,7 +7,7 @@ extends Node2D
 @onready var hurt_component: HurtComponent = $HurtComponent
 
 var growth_state: DataTypes.GrowthStates = DataTypes.GrowthStates.Seed
-
+var berry_harvest_scene = preload("res://scenes/crops/berry_harvest.tscn")
 
 func _ready() -> void:
 	watering_particles.emitting = false
@@ -22,7 +20,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	growth_state = growth_cycle_component.get_current_growth_state()
-	sprite_2d.frame = growth_state
+	var col = 0
+	var row = growth_state
+	sprite_2d.frame = row * sprite_2d.hframes + col
 	
 	if growth_state == DataTypes.GrowthStates.Maturity:
 		flowering_particles.emitting = true
@@ -41,7 +41,7 @@ func on_crop_maturity() -> void:
 
 
 func on_crop_harvesting() -> void:
-	#var corn_harvest_instance = corn_harvest_scene.instantiate() as Node2D
-	#corn_harvest_instance.global_position = global_position
-	#get_parent().add_child(corn_harvest_instance)
+	var corn_harvest_instance = berry_harvest_scene.instantiate() as Node2D
+	corn_harvest_instance.global_position = global_position
+	get_parent().add_child(corn_harvest_instance)
 	queue_free()
