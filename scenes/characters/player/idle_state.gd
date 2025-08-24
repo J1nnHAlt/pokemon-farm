@@ -3,10 +3,17 @@ extends NodeState
 @export var player: Player
 @export var animated_sprite_2d: AnimatedSprite2D
 
+var interactButton: Control = null
+
 func _on_process(_delta : float) -> void:
 	pass
 
 func _on_physics_process(_delta : float) -> void:
+	if player.is_water_in_front():
+		interactButton.visible = true
+	else:
+		interactButton.visible = false
+	
 	if player.player_direction == Vector2.UP:
 		animated_sprite_2d.play("idle_back")
 	elif player.player_direction == Vector2.RIGHT:
@@ -20,6 +27,14 @@ func _on_physics_process(_delta : float) -> void:
 
 func _on_next_transitions() -> void:
 	GameInputEvents.movement_input()
+	
+	if GameInputEvents.is_interact_input() and player.is_water_in_front():
+		# Move player slightly forward into water
+		player.collision_mask &= ~((1 << 1) | (1 << 6))
+		player.global_position += player.player_direction * 20
+		transition.emit("Surf")
+		return
+	
 	if GameInputEvents.is_cycle_toggle():
 		transition.emit("CycleIdle")
 	elif GameInputEvents.is_movement_input():
@@ -29,7 +44,7 @@ func _on_next_transitions() -> void:
 
 
 func _on_enter() -> void:
-	pass
+	interactButton = player.get_node("FButton")
 
 
 func _on_exit() -> void:

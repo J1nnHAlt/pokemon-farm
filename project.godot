@@ -115,6 +115,7 @@ throw_pokeball={
 2d_physics/layer_4="Player"
 2d_physics/layer_5="Tool"
 2d_physics/layer_6="Object"
+2d_physics/layer_7="Land_edges"
 2d_physics/layer_10="NPC"
 
 [rendering]

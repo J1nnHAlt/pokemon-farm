@@ -10,6 +10,7 @@ static var can_walk = true
 static var walk_timer = 0.0
 const WALK_COOLDOWN_TIME = 0.1  # Adjust as needed
 
+var interactButton: Control = null
 
 func _on_process(_delta : float) -> void:
 	pass
@@ -17,6 +18,11 @@ func _on_process(_delta : float) -> void:
 
 func _on_physics_process(_delta : float) -> void:
 	var direction: Vector2 = GameInputEvents.movement_input()
+	
+	if player.is_water_in_front():
+		interactButton.visible = true
+	else:
+		interactButton.visible = false
 	
 	if not WalkState.can_walk:
 		WalkState.walk_timer += _delta
@@ -53,6 +59,13 @@ func _on_next_transitions() -> void:
 		# While waiting for cooldown, block other transitions
 		return
 
+	if GameInputEvents.is_interact_input() and player.is_water_in_front():
+		# Move player slightly forward into water
+		player.collision_mask &= ~((1 << 1) | (1 << 6))
+		player.global_position += player.player_direction * 20
+		transition.emit("Surf")
+		return
+
 	if !GameInputEvents.is_movement_input():
 		transition.emit("Idle")
 	elif GameInputEvents.is_run_pressed():
@@ -61,6 +74,7 @@ func _on_next_transitions() -> void:
 
 
 func _on_enter() -> void:
+	interactButton = player.get_node("FButton")
 	CycleIdleState.cooldown_used_once = false
 	CycleIdleState.can_cycle = false
 	CycleIdleState.cycle_timer = 0.0

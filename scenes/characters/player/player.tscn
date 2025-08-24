@@ -1,22 +1,28 @@
-[gd_scene load_steps=97 format=3 uid="uid://dheba8g1u8uj8"]
+[gd_scene load_steps=129 format=3 uid="uid://dheba8g1u8uj8"]
 
 [ext_resource type="Script" uid="uid://dkxajelubqv35" path="res://scenes/characters/player/player.gd" id="1_hss88"]
-[ext_resource type="Texture2D" uid="uid://cctky85hpksb6" path="res://assets/characters/girl_cycling_spritesheet.png" id="2_42irl"]
+[ext_resource type="Texture2D" uid="uid://cvpxdgalmrwf3" path="res://assets/characters/girl_cycling_spritesheet.png" id="2_42irl"]
 [ext_resource type="Script" uid="uid://bm540rrfyyxui" path="res://scripts/state_machine/node_state_machine.gd" id="2_686vu"]
-[ext_resource type="Texture2D" uid="uid://iruowrac3l8a" path="res://assets/characters/girl_fishing_front_back.png" id="2_xuses"]
-[ext_resource type="Texture2D" uid="uid://b3daab6k1s1ao" path="res://assets/characters/girl_fishing_left_right.png" id="3_42irl"]
+[ext_resource type="Texture2D" uid="uid://f8vad2bgfbtk" path="res://assets/characters/girl_fishing_front_back.png" id="2_xuses"]
+[ext_resource type="Texture2D" uid="uid://bimbcss7ghlo2" path="res://assets/characters/girl_call_pokemon.png" id="3_8y75b"]
+[ext_resource type="Texture2D" uid="uid://dlbu1paw2ljtl" path="res://assets/characters/girl_fishing_left_right.png" id="3_42irl"]
 [ext_resource type="Script" uid="uid://wxadvdscqr3r" path="res://scenes/characters/player/idle_state.gd" id="3_hss88"]
-[ext_resource type="Texture2D" uid="uid://bamoeg0fbyp73" path="res://assets/characters/girl_running_spritesheet.png" id="3_mk55u"]
-[ext_resource type="Texture2D" uid="uid://dc2swh4sekvxj" path="res://assets/characters/girl_walking_spritesheet.png" id="4_xuses"]
+[ext_resource type="Texture2D" uid="uid://cwcvelar5iu08" path="res://assets/characters/girl_running_spritesheet.png" id="3_mk55u"]
+[ext_resource type="Texture2D" uid="uid://cyoouv2qlovah" path="res://assets/characters/girl_bicycle_call_pokemon.png" id="4_tebod"]
+[ext_resource type="Texture2D" uid="uid://cv3j2ynige1g" path="res://assets/characters/girl_walking_spritesheet.png" id="4_xuses"]
 [ext_resource type="Script" uid="uid://puwqwjq1engw" path="res://scenes/characters/player/walk_state.gd" id="5_qd3e3"]
-[ext_resource type="Texture2D" uid="uid://c2pcu0bwsmf2f" path="res://assets/characters/girl_watering.png" id="8_i1nod"]
+[ext_resource type="Texture2D" uid="uid://bg4p3shrg4dax" path="res://assets/characters/girl_surf.png" id="7_svuau"]
+[ext_resource type="Texture2D" uid="uid://17ryxkvofcns" path="res://assets/characters/girl_watering.png" id="8_i1nod"]
 [ext_resource type="Script" uid="uid://bjqc82igcwnl" path="res://scenes/characters/player/run_state.gd" id="10_3xnwo"]
 [ext_resource type="Script" uid="uid://dquodglxcms2b" path="res://scenes/characters/player/cycle_state.gd" id="11_djydg"]
 [ext_resource type="Script" uid="uid://cl2otscl5yubc" path="res://scenes/characters/player/cycle_idle_state.gd" id="12_bsn6e"]
 [ext_resource type="Script" uid="uid://ckqwbiflu14eh" path="res://scenes/characters/player/watering_state.gd" id="15_4kqyw"]
 [ext_resource type="PackedScene" uid="uid://brqy6oueap7di" path="res://scenes/characters/player/F button/f_button.tscn" id="15_ykrpk"]
-[ext_resource type="AudioStream" uid="uid://c0ukcsombius" path="res://pokemon-assets/Audio/SE/Anim/throw.ogg" id="18_ndqgd"]
+[ext_resource type="AudioStream" uid="uid://t2mpkjjet0gx" path="res://pokemon-assets/Audio/SE/Anim/throw.ogg" id="18_ndqgd"]
 [ext_resource type="PackedScene" uid="uid://bd87pm5k565w2" path="res://scenes/component/hit_component.tscn" id="18_svuau"]
+[ext_resource type="Script" uid="uid://77hs4743a630" path="res://scenes/characters/player/surf_state.gd" id="18_tebod"]
+[ext_resource type="AudioStream" uid="uid://c63pm8jayuui5" path="res://pokemon-assets/Audio/BGM/Surfing.ogg" id="22_6nfx3"]
+[ext_resource type="AudioStream" uid="uid://1ssgbqdfso2x" path="res://pokemon-assets/Audio/BGM/Bicycle.ogg" id="23_3hnlq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_35rnk"]
 atlas = ExtResource("2_42irl")
@@ -65,6 +71,54 @@ region = Rect2(33, 129, 32, 42)
 [sub_resource type="AtlasTexture" id="AtlasTexture_chajt"]
 atlas = ExtResource("2_42irl")
 region = Rect2(66, 129, 32, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2bp6"]
+atlas = ExtResource("3_8y75b")
+region = Rect2(0, 0, 16, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo5cs"]
+atlas = ExtResource("3_8y75b")
+region = Rect2(17, 0, 16, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t088"]
+atlas = ExtResource("3_8y75b")
+region = Rect2(34, 0, 16, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdftx"]
+atlas = ExtResource("3_8y75b")
+region = Rect2(51, 0, 16, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxksx"]
+atlas = ExtResource("3_8y75b")
+region = Rect2(68, 0, 16, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6jpv"]
+atlas = ExtResource("3_8y75b")
+region = Rect2(85, 0, 16, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68585"]
+atlas = ExtResource("4_tebod")
+region = Rect2(0, 0, 32, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqpui"]
+atlas = ExtResource("4_tebod")
+region = Rect2(33, 0, 32, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0hi6"]
+atlas = ExtResource("4_tebod")
+region = Rect2(66, 0, 32, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dd42"]
+atlas = ExtResource("4_tebod")
+region = Rect2(99, 0, 32, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmkxd"]
+atlas = ExtResource("4_tebod")
+region = Rect2(132, 0, 32, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6ud1"]
+atlas = ExtResource("4_tebod")
+region = Rect2(165, 0, 32, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pbtrp"]
 atlas = ExtResource("2_xuses")
@@ -129,6 +183,26 @@ region = Rect2(136, 40, 67, 39)
 [sub_resource type="AtlasTexture" id="AtlasTexture_kbkvr"]
 atlas = ExtResource("3_42irl")
 region = Rect2(204, 40, 67, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40ys4"]
+atlas = ExtResource("3_8y75b")
+region = Rect2(0, 0, 16, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cbny"]
+atlas = ExtResource("3_8y75b")
+region = Rect2(17, 0, 16, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2p8qk"]
+atlas = ExtResource("3_8y75b")
+region = Rect2(34, 0, 16, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rijnx"]
+atlas = ExtResource("3_8y75b")
+region = Rect2(51, 0, 16, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnam5"]
+atlas = ExtResource("3_8y75b")
+region = Rect2(68, 0, 16, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xuses"]
 atlas = ExtResource("4_xuses")
@@ -209,6 +283,38 @@ region = Rect2(17, 123, 16, 40)
 [sub_resource type="AtlasTexture" id="AtlasTexture_3hnlq"]
 atlas = ExtResource("3_mk55u")
 region = Rect2(34, 123, 16, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ketpa"]
+atlas = ExtResource("7_svuau")
+region = Rect2(0, 33, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2el0t"]
+atlas = ExtResource("7_svuau")
+region = Rect2(33, 33, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7s1g3"]
+atlas = ExtResource("7_svuau")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kip2f"]
+atlas = ExtResource("7_svuau")
+region = Rect2(33, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjq2h"]
+atlas = ExtResource("7_svuau")
+region = Rect2(0, 66, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwh21"]
+atlas = ExtResource("7_svuau")
+region = Rect2(33, 66, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7y1bl"]
+atlas = ExtResource("7_svuau")
+region = Rect2(0, 99, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qy81s"]
+atlas = ExtResource("7_svuau")
+region = Rect2(33, 99, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d73qs"]
 atlas = ExtResource("4_xuses")
@@ -394,6 +500,52 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_i2bp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mo5cs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6t088")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdftx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxksx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6jpv")
+}],
+"loop": false,
+"name": &"call_pokemon",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68585")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqpui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0hi6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dd42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmkxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6ud1")
+}],
+"loop": false,
+"name": &"call_pokemon_bicycle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_pbtrp")
 }, {
 "duration": 1.0,
@@ -459,6 +611,26 @@ animations = [{
 "loop": false,
 "name": &"fishing_right",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40ys4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cbny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2p8qk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rijnx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnam5")
+}],
+"loop": false,
+"name": &"get_item",
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -591,6 +763,50 @@ animations = [{
 "loop": true,
 "name": &"run_right",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ketpa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2el0t")
+}],
+"loop": true,
+"name": &"surf_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7s1g3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kip2f")
+}],
+"loop": true,
+"name": &"surf_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjq2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwh21")
+}],
+"loop": true,
+"name": &"surf_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7y1bl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qy81s")
+}],
+"loop": true,
+"name": &"surf_right",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -735,21 +951,24 @@ size = Vector2(10, 14)
 [sub_resource type="CircleShape2D" id="CircleShape2D_ro20i"]
 radius = 5.09902
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_tebod"]
+radius = 2.23607
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 30
 y_sort_enabled = true
 collision_layer = 8
-collision_mask = 7
+collision_mask = 71
 script = ExtResource("1_hss88")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_6nfx3")
-animation = &"watering_back"
+animation = &"run_front"
 autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -8)
+position = Vector2(0, -7.49204)
 shape = SubResource("RectangleShape2D_7uws0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -791,7 +1010,13 @@ player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 hit_component_collision_shape = NodePath("../../HitComponent/HitComponentCollisionShape2D")
 
+[node name="Surf" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d")]
+script = ExtResource("18_tebod")
+player = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
 [node name="FButton" parent="." instance=ExtResource("15_ykrpk")]
+z_index = 50
 offset_left = 11.0
 offset_top = -25.0
 offset_right = 11.0
@@ -806,3 +1031,22 @@ debug_color = Color(0.932998, 0.222862, 0.34393, 0.42)
 
 [node name="sfx_throw_pokeball" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_ndqgd")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="DetectWaterCollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_tebod")
+debug_color = Color(0.815583, 0.00195642, 0.975503, 0.42)
+
+[node name="SurfMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_6nfx3")
+parameters/looping = false
+
+[node name="BicycleMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_3hnlq")
+parameters/looping = false
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

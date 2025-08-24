@@ -32,3 +32,6 @@ static func is_movement_input() -> bool:
 
 static func is_watering_input() -> bool:
 	return Input.is_action_just_pressed("watering")
+
+static func is_interact_input() -> bool:
+	return Input.is_action_just_pressed("interact")

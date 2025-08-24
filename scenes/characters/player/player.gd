@@ -7,7 +7,20 @@ extends CharacterBody2D
 @export var current_tool: DataTypes.Tools = DataTypes.Tools.None
 var inventory: Inv
 
-var player_direction: Vector2
+var _is_infront_water: bool = false
+
+# Area2d that Check water is in front player
+@onready var detection_area: Area2D = $DetectionArea
+
+var _player_direction: Vector2 = Vector2.DOWN
+
+var player_direction: Vector2:
+	get:
+		return _player_direction
+	set(value):
+		if value != Vector2.ZERO:
+			_player_direction = value.normalized()
+			_update_detection_position()
 
 func _ready() -> void:
 	add_to_group("player")
@@ -23,6 +36,7 @@ func _process(delta):
 		
 	if Input.is_action_just_pressed("throw_pokeball"):
 		throw_pokeball()
+
 #to be called when collecting item
 func collect(item):
 	return inventory.insert(item)
@@ -39,3 +53,28 @@ func throw_pokeball():
 	var mouse_pos = get_global_mouse_position()
 	var dir = (mouse_pos - global_position).normalized()
 	pokeball.velocity = dir * pokeball.speed
+
+# Change the position of detection area according to player facing direction
+func _update_detection_position() -> void:
+	var offset = Vector2.ZERO
+	if _player_direction == Vector2.UP:
+		offset = Vector2(0, -22)
+	elif _player_direction == Vector2.DOWN:
+		offset = Vector2(0, 9)
+	elif _player_direction == Vector2.LEFT:
+		offset = Vector2(-15, -6)
+	elif _player_direction == Vector2.RIGHT:
+		offset = Vector2(15, -6)
+	detection_area.position = offset
+
+# check if the detection area enter collision layer 2 (water)
+func _on_detection_area_body_entered(body: Node2D) -> void:
+	_is_infront_water = true
+	print("water entered")
+
+func _on_detection_area_body_exited(body: Node2D) -> void:
+	_is_infront_water = false
+	print("water exited")
+
+func is_water_in_front() -> bool:
+	return _is_infront_water
