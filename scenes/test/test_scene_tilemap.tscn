@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://dedqjpuwgfdyg" path="res://scripts/nav_regions/victreebel_region.gd" id="6_m1qrs"]
 [ext_resource type="Script" uid="uid://bj3hh5ql136bt" path="res://scripts/nav_regions/lapras_region.gd" id="6_wyicn"]
 [ext_resource type="Script" uid="uid://bcvhn3txllies" path="res://scenes/test/dungeon_entrance.gd" id="8_qbk12"]
-[ext_resource type="AudioStream" uid="uid://cpevgk8owrwtl" path="res://pokemon-assets/Audio/SE/GUI naming tab swap start.ogg" id="12_ksdiy"]
+[ext_resource type="AudioStream" uid="uid://mw04hdv38eif" path="res://pokemon-assets/Audio/SE/GUI naming tab swap start.ogg" id="12_ksdiy"]
 [ext_resource type="PackedScene" uid="uid://c1g7wo3i0l6eg" path="res://scenes/inventory/inv_ui.tscn" id="13_l0udy"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_p0x3o"]
