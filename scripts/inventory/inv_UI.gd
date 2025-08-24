@@ -10,6 +10,7 @@ var is_open = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	visible = false
 	if GameData.inventory: 
 		print("after game inventory loaded")
 		inv.update.connect(update_slots)
