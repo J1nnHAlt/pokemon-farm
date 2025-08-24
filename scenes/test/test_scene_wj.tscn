@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://wqvmwo3lvhxm"]
+[gd_scene load_steps=9 format=4 uid="uid://du7mdwkfa28ok"]
 
 [ext_resource type="PackedScene" uid="uid://cytdne0aeypsc" path="res://scenes/day_night_ui/day_night_cycle_component.tscn" id="1_6wg1a"]
 [ext_resource type="TileSet" uid="uid://dq7x0bsl7faum" path="res://Tilesets/test_scene_tilemap.tres" id="2_2mbbx"]
