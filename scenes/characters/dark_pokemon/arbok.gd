@@ -28,3 +28,6 @@ func _on_attributes_changed():
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	$Node2D/InventoryPanel.visible = true
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	$Node2D/InventoryPanel.visible = false

@@ -95,7 +95,7 @@ position = Vector2(47, -258)
 
 [node name="Player" parent="." instance=ExtResource("3_o1akv")]
 z_as_relative = false
-position = Vector2(928, 368)
+position = Vector2(-352, 128)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." groups=["hud_layer"]]
 
