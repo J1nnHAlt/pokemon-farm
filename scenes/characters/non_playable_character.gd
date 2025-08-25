@@ -22,7 +22,7 @@ var exp: int = 0
 var rarity:String = "Common"
 var growth_rate: float = 1.0
 var element:String = "None"
-var status: Array[PetStatus] = [PetStatus.Maxed, PetStatus.Super_Growth]
+var status: Dictionary = {}
 
 
 const GROWTH_RATES := {
@@ -41,14 +41,16 @@ func _ready() -> void:
 #	is set to a random integer between min_walk_cycle and max_walk_cycle, determining how long the NPC will walk.
 	walk_cycles = rng.randi_range(min_walk_cycle, max_walk_cycle)
 	growth_rate = GROWTH_RATES.get(rarity, 1.0)
+	attributes_changed.emit()
 	DayAndNightCycleManager.time_tick_day.connect(Callable(self, "_on_new_day"))
 
 func gain_exp(amount: int):
 	exp+=amount*growth_rate
+	
 	if level>=10:
 		exp = min(exp, exp_to_next_level()-1)
 		if exp == exp_to_next_level()-1: 
-			status.append(PetStatus.Maxed)
+			status[PetStatus.Maxed]=2
 	while exp >= exp_to_next_level() and level<10:
 		level_up()
 		
@@ -73,7 +75,20 @@ func evolve() -> void:
 		print("Cannot evolve yet. Must reach level 10 first.")
 
 func _on_new_day(day):
-	gain_exp(5)
+	gain_exp(50)
+	
+	print
+	# Tick down effect durations
+	for s in status.keys():
+		status[s] -= 1
+		if status[s] <= 0:
+			print("Status %s expired" % PetStatus.keys()[s])
+			status.erase(s)
+			
+			if s == PetStatus.Super_Growth:
+				growth_rate = GROWTH_RATES.get(rarity, 1.0)
+	
+	attributes_changed.emit()
 
 func consume_pet_food(pet_food: PetFood):
 	var effect = RecipeManager.check_food_effect(pet_food, rarity, element)
@@ -81,7 +96,10 @@ func consume_pet_food(pet_food: PetFood):
 		if effect["status"] == PetStatus.Maxed:
 			evolve()
 		elif not status.has(effect["status"]):
-			status.append(effect["status"])
+			status[effect["status"]] = effect["days_of_effect"]
+			
+			if status.has(PetStatus.Super_Growth):
+				growth_rate*=2
 		else:
 			print("Already eaten before, food wasted!")
 		attributes_changed.emit()

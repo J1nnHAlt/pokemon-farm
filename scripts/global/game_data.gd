@@ -17,11 +17,22 @@ signal inventory_loaded
 signal player_entered(pokemon: NonPlayableCharacter)
 signal player_exited
 
-var cheri_berry = load("res://scripts/inventory/items/berries/cheri_berry.tres")
-var durin_berry = load("res://scripts/inventory/items/berries/durin_berry.tres")
-var pamtre_berry = load("res://scripts/inventory/items/berries/pamtre_berry.tres")
-var custa_berry = load("res://scripts/inventory/items/berries/custa_berry.tres")
-var yache_berry = load("res://scripts/inventory/items/berries/yache_berry.tres")
+var berries = [
+	preload("res://scripts/inventory/items/berries/cheri_berry.tres"), 
+	preload("res://scripts/inventory/items/berries/durin_berry.tres"), 
+	preload("res://scripts/inventory/items/berries/pamtre_berry.tres"), 
+	preload("res://scripts/inventory/items/berries/custa_berry.tres"), 
+	preload("res://scripts/inventory/items/berries/yache_berry.tres"), 
+	preload("res://scripts/inventory/items/berries/rawst_berry.tres")
+]
+
+var food = [
+	preload("res://scripts/inventory/items/food/aqua_essence.tres"), 
+	preload("res://scripts/inventory/items/food/dark_candy.tres"), 
+	preload("res://scripts/inventory/items/food/leaf_bites.tres"), 
+	preload("res://scripts/inventory/items/food/spicy_jam.tres"), 
+	preload("res://scripts/inventory/items/food/sweet_juice.tres")
+]
 
 func save_game():
 	var save_data = {
@@ -78,12 +89,13 @@ func load_game():
 			var slot = InvSlot.new()
 			slot.item = null
 			inventory.slots.append(slot)
-		for i in range(10):
-			inventory.insert(cheri_berry)
-			inventory.insert(durin_berry)
-			inventory.insert(pamtre_berry)
-			inventory.insert(custa_berry)
-			inventory.insert(yache_berry)
+		for berry in berries:
+			for i in range(10):
+				inventory.insert(berry)
+		
+		for f in food:
+			for i in range(5):
+				inventory.insert(f)
 		ResourceSaver.save(inventory, "user://inventory.tres")
 		inventory_loaded.emit()
 

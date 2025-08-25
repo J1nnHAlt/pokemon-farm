@@ -20,6 +20,15 @@ script = ExtResource("1_gf0ey")
 layout_mode = 3
 anchors_preset = 0
 
+[node name="Growth_rate" type="Label" parent="Node2D"]
+offset_left = -16.0
+offset_top = 6.0
+offset_right = 48.0
+offset_bottom = 39.0
+scale = Vector2(0.1, 0.1)
+size_flags_vertical = 1
+text = "Growth Rate: "
+
 [node name="Evo" type="Label" parent="Node2D"]
 layout_mode = 0
 offset_left = -16.0

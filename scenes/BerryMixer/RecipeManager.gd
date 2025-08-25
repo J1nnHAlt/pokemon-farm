@@ -52,6 +52,11 @@ var recipes = {
 		"item": preload("res://scripts/inventory/items/food/aqua_essence.tres"),
 		"description": "Really Moist!"
 	}, 
+	"DarkCandy": {
+		"ingredients": [preload("res://scripts/inventory/items/berries/rawst_berry.tres"), preload("res://scripts/inventory/items/berries/yache_berry.tres")],
+		"item": preload("res://scripts/inventory/items/food/dark_candy.tres"),
+		"description": "Really Dark!"
+	}
 }
 
 func find_matching_recipe(ingredients: Array[InvItem]) -> String:

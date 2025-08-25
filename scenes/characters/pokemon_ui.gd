@@ -12,13 +12,19 @@ func _ready() -> void:
 @onready var evo_label = $Node2D/Evo
 @onready var lvl_label = $Node2D/Lvl
 @onready var exp_label = $Node2D/Exp
+@onready var gro_label = $Node2D/Growth_rate
 
 @onready var pokemon = $".."
 
 func _on_attributes_changed():
 	evo_label.text = "Evo %d" % pokemon.evolution
 	lvl_label.text = "Lvl %d" % pokemon.level
-	exp_label.text = "Exp %d/%d" % [pokemon.exp, pokemon.exp_to_next_level()]	
+	exp_label.text = "Exp %d/%d" % [pokemon.exp, pokemon.exp_to_next_level()]
+	gro_label.text = "Growth %.1f" % pokemon.growth_rate
+	
+	for child in $Status.get_children():
+		child.visible = false
+	
 	for i in pokemon.status:
 		var status_name = pokemon.PetStatus.keys()[i]
 		$Status.get_node(status_name).visible = true
