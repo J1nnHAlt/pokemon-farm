@@ -1,6 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://brqy6oueap7di"]
+[gd_scene load_steps=6 format=3 uid="uid://brqy6oueap7di"]
 
 [ext_resource type="Script" uid="uid://clg1qifn7dp0l" path="res://scenes/characters/player/F button/f_button.gd" id="1_w0joo"]
+[ext_resource type="Texture2D" uid="uid://bdgi324y37dll" path="res://assets/UI/keyboard buttons/f_button.png" id="2_gyvjq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18f31"]
+atlas = ExtResource("2_gyvjq")
+region = Rect2(0, 0, 122, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8ldu"]
+atlas = ExtResource("2_gyvjq")
+region = Rect2(122, 0, 122, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w0joo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18f31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8ldu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="FButton" type="Control"]
 layout_mode = 3
@@ -11,12 +34,20 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w0joo")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5, 8)
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_w0joo")
+frame_progress = 0.0483664
+
 [node name="Panel" type="PanelContainer" parent="."]
+visible = false
 layout_mode = 1
 offset_right = 10.0
 offset_bottom = 16.0
 
 [node name="Label" type="Label" parent="Panel"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 15

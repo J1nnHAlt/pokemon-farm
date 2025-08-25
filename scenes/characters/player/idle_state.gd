@@ -3,17 +3,14 @@ extends NodeState
 @export var player: Player
 @export var animated_sprite_2d: AnimatedSprite2D
 
+var interact_active: bool = false   # track current interaction state
+
 var interactButton: Control = null
 
 func _on_process(_delta : float) -> void:
 	pass
 
 func _on_physics_process(_delta : float) -> void:
-	if player.is_water_in_front():
-		interactButton.visible = true
-	else:
-		interactButton.visible = false
-	
 	if player.player_direction == Vector2.UP:
 		animated_sprite_2d.play("idle_back")
 	elif player.player_direction == Vector2.RIGHT:
@@ -24,6 +21,15 @@ func _on_physics_process(_delta : float) -> void:
 		animated_sprite_2d.play("idle_left")
 	else:
 		animated_sprite_2d.play("idle_front")
+	
+	# Only update interaction source if state actually changes
+	var should_interact = player.is_water_in_front()
+	if should_interact != interact_active:
+		interact_active = should_interact
+		if interact_active:
+			player.set_interaction_source(self, true)
+		else:
+			player.set_interaction_source(self, false)
 
 func _on_next_transitions() -> void:
 	GameInputEvents.movement_input()

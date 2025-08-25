@@ -3,12 +3,14 @@ extends NodeState
 
 @export var player: Player
 @export var animated_sprite_2d: AnimatedSprite2D
-@export var speed: int = 80
+@export var speed: int = 100
 
 static var cooldown_used_once = true
 static var can_walk = true
 static var walk_timer = 0.0
 const WALK_COOLDOWN_TIME = 0.1  # Adjust as needed
+
+var interact_active: bool = false   # track current interaction state
 
 var interactButton: Control = null
 
@@ -19,10 +21,14 @@ func _on_process(_delta : float) -> void:
 func _on_physics_process(_delta : float) -> void:
 	var direction: Vector2 = GameInputEvents.movement_input()
 	
-	if player.is_water_in_front():
-		interactButton.visible = true
-	else:
-		interactButton.visible = false
+	# Only update interaction source if state actually changes
+	var should_interact = player.is_water_in_front()
+	if should_interact != interact_active:
+		interact_active = should_interact
+		if interact_active:
+			player.set_interaction_source(self, true)
+		else:
+			player.set_interaction_source(self, false)
 	
 	if not WalkState.can_walk:
 		WalkState.walk_timer += _delta
@@ -31,7 +37,6 @@ func _on_physics_process(_delta : float) -> void:
 		player.velocity = Vector2.ZERO
 		player.move_and_slide()
 		return
-
 	
 	if direction == Vector2.UP:
 		animated_sprite_2d.play("walk_back")

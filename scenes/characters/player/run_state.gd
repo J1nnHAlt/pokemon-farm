@@ -2,15 +2,21 @@ extends NodeState
 
 @export var player: Player
 @export var animated_sprite_2d: AnimatedSprite2D
-@export var run_speed: int = 110
+@export var run_speed: int = 140
+
+var interact_active: bool = false   # track current interaction state
 
 var interactButton: Control = null
 
 func _on_physics_process(_delta: float) -> void:
-	if player.is_water_in_front():
-		interactButton.visible = true
-	else:
-		interactButton.visible = false
+	# Only update interaction source if state actually changes
+	var should_interact = player.is_water_in_front()
+	if should_interact != interact_active:
+		interact_active = should_interact
+		if interact_active:
+			player.set_interaction_source(self, true)
+		else:
+			player.set_interaction_source(self, false)
 		
 	var direction: Vector2 = GameInputEvents.movement_input()
 

@@ -7,6 +7,9 @@ extends CharacterBody2D
 @export var current_tool: DataTypes.Tools = DataTypes.Tools.None
 var inventory: Inv
 
+@onready var interactButton: Control = $FButton
+var current_interaction_source: Node = null
+
 var _is_infront_water: bool = false
 
 # Area2d that Check water is in front player
@@ -78,3 +81,14 @@ func _on_detection_area_body_exited(body: Node2D) -> void:
 
 func is_water_in_front() -> bool:
 	return _is_infront_water
+
+# 
+func set_interaction_source(source: Node, visible: bool) -> void:
+	# If a new source registers
+	if source != null:
+		current_interaction_source = source
+		interactButton.visible = visible
+	# If source clears itself
+	elif source == current_interaction_source:
+		current_interaction_source = null
+		interactButton.visible = false

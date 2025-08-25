@@ -4,7 +4,9 @@ extends NodeState
 @export var player: Player
 @export var animated_sprite_2d: AnimatedSprite2D
 @export var surf_pokemon: AnimatedSprite2D   # the boat/surf Pokémon
-@export var speed: int = 150
+@export var speed: int = 180
+
+var interact_active: bool = false   # track current interaction state
 
 var interactButton: Control = null
 
@@ -17,11 +19,15 @@ func _on_process(_delta : float) -> void:
 func _on_physics_process(_delta : float) -> void:
 	var direction: Vector2 = GameInputEvents.movement_input()
 	
-	if !player.is_water_in_front():
-		interactButton.visible = true
-	else:
-		interactButton.visible = false
-
+	# Only update interaction source if state actually changes
+	var should_interact = !player.is_water_in_front()
+	if should_interact != interact_active:
+		interact_active = should_interact
+		if interact_active:
+			player.set_interaction_source(self, true)
+		else:
+			player.set_interaction_source(self, false)
+			
 	if direction != Vector2.ZERO:
 		# Save direction & update facing
 		player.player_direction = direction
@@ -81,6 +87,10 @@ func _on_exit() -> void:
 	animated_sprite_2d.stop()
 	if surf_pokemon:
 		surf_pokemon.stop()
+	
+	if interact_active:
+		player.set_interaction_source(self, false)
+		interact_active = false
 	
 	if not keep_music:
 		var surf_music = player.get_node("SurfMusic") as AudioStreamPlayer

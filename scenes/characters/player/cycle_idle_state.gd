@@ -9,6 +9,8 @@ static var cooldown_used_once := false
 static var cycle_timer := 0.0
 const cycle_cooldown_time := 0.1 
 
+var interact_active: bool = false   # track current interaction state
+
 var interactButton: Control = null
 
 func _on_enter() -> void:
@@ -27,11 +29,15 @@ func _on_enter() -> void:
 		bicycle_music.play()
 
 
-func _on_physics_process(delta: float) -> void:
-	if player.is_water_in_front():
-		interactButton.visible = true
-	else:
-		interactButton.visible = false
+func _on_physics_process(delta: float) -> void:	
+	# Only update interaction source if state actually changes
+	var should_interact = player.is_water_in_front()
+	if should_interact != interact_active:
+		interact_active = should_interact
+		if interact_active:
+			player.set_interaction_source(self, true)
+		else:
+			player.set_interaction_source(self, false)
 	
 	if player.player_direction == Vector2.UP:
 		animated_sprite_2d.play("idle_bicycle_back")

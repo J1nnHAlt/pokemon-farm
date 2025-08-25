@@ -1,11 +1,14 @@
 extends Control
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	visible = false
+	# Connect the signal so we know when visibility changes
+	self.connect("visibility_changed", Callable(self, "_on_visibility_changed"))
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_visibility_changed() -> void:
+	if visible:
+		animated_sprite_2d.play()
+	else:
+		animated_sprite_2d.stop()
