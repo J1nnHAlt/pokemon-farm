@@ -24,6 +24,7 @@ func spawn_pokemon(pokemon_type: String):
 	var npc = npc_scene.instantiate()
 	npc.position = get_random_point_in_region(nav_region)
 	nav_region.add_child(npc)
+	BreedingManager.register_npc(npc)
 
 func get_random_point_in_region(nav_region: NavigationRegion2D) -> Vector2:
 	var polygon: PackedVector2Array = nav_region.navigation_polygon.get_outline(0)

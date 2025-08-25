@@ -21,6 +21,7 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="Growth_rate" type="Label" parent="Node2D"]
+layout_mode = 0
 offset_left = -16.0
 offset_top = 6.0
 offset_right = 48.0

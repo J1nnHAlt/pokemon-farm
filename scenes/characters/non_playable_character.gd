@@ -87,7 +87,8 @@ func _on_new_day(day):
 			
 			if s == PetStatus.Super_Growth:
 				growth_rate = GROWTH_RATES.get(rarity, 1.0)
-	
+			elif s == PetStatus.Pregnant:
+				_give_birth()
 	attributes_changed.emit()
 
 func consume_pet_food(pet_food: PetFood):
@@ -103,3 +104,6 @@ func consume_pet_food(pet_food: PetFood):
 		else:
 			print("Already eaten before, food wasted!")
 		attributes_changed.emit()
+
+func _give_birth():
+	pass
