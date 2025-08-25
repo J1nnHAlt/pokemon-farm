@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://yvg6vobd2rc0"]
+[gd_scene load_steps=13 format=3 uid="uid://yvg6vobd2rc0"]
 
 [ext_resource type="Script" uid="uid://cioae40614b25" path="res://scenes/characters/grass_pokemon/victreebel.gd" id="1_8st00"]
 [ext_resource type="Texture2D" uid="uid://d3d5eceoahjo5" path="res://scenes/characters/grass_pokemon/Victreebel.png" id="1_g4pve"]
 [ext_resource type="Script" uid="uid://bm540rrfyyxui" path="res://scripts/state_machine/node_state_machine.gd" id="2_2t2ht"]
 [ext_resource type="Script" uid="uid://ixv5owlu806h" path="res://scenes/characters/grass_pokemon/idle_state.gd" id="3_hmlld"]
 [ext_resource type="Script" uid="uid://c26i3yr0eaqti" path="res://scenes/characters/grass_pokemon/walk_state.gd" id="4_jrimg"]
+[ext_resource type="PackedScene" uid="uid://dxkprghiro45c" path="res://scenes/characters/pokemon_ui.tscn" id="6_2f7ta"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2t2ht"]
 atlas = ExtResource("1_g4pve")
@@ -86,3 +87,5 @@ script = ExtResource("4_jrimg")
 character = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 navigation_agent_2d = NodePath("../../NavigationAgent2D")
+
+[node name="Pokemon_UI" parent="." instance=ExtResource("6_2f7ta")]

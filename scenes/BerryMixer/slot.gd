@@ -118,8 +118,10 @@ func update_display():
 
 func _gui_input(event: InputEvent):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_released():
+		print("clicked button")
 		if slot_data and slot_data.item:
 			slot_clicked.emit(slot_data, slot_index)
+			print("click signal emitted")
 			accept_event()
 			update_display()
 

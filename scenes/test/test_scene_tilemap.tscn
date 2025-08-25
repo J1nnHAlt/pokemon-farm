@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://ddn488ymhtduf"]
+[gd_scene load_steps=20 format=4 uid="uid://ddn488ymhtduf"]
 
 [ext_resource type="PackedScene" uid="uid://cytdne0aeypsc" path="res://scenes/day_night_ui/day_night_cycle_component.tscn" id="1_7apd7"]
 [ext_resource type="Script" uid="uid://chliixmnjjt78" path="res://scenes/test/test_scene_tilemap.gd" id="1_wyicn"]
@@ -12,8 +12,9 @@
 [ext_resource type="Script" uid="uid://dedqjpuwgfdyg" path="res://scripts/nav_regions/victreebel_region.gd" id="6_m1qrs"]
 [ext_resource type="Script" uid="uid://bj3hh5ql136bt" path="res://scripts/nav_regions/lapras_region.gd" id="6_wyicn"]
 [ext_resource type="Script" uid="uid://bcvhn3txllies" path="res://scenes/test/dungeon_entrance.gd" id="8_qbk12"]
-[ext_resource type="AudioStream" uid="uid://mw04hdv38eif" path="res://pokemon-assets/Audio/SE/GUI naming tab swap start.ogg" id="12_ksdiy"]
+[ext_resource type="AudioStream" uid="uid://d0nf0koleuwuk" path="res://pokemon-assets/Audio/SE/GUI naming tab swap start.ogg" id="12_ksdiy"]
 [ext_resource type="PackedScene" uid="uid://c1g7wo3i0l6eg" path="res://scenes/inventory/inv_ui.tscn" id="13_l0udy"]
+[ext_resource type="PackedScene" uid="uid://dkbqd3lx2bbxo" path="res://scenes/characters/pet_food_panel.tscn" id="14_ngwww"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_p0x3o"]
 vertices = PackedVector2Array(-110.859, 83.1563, -499.938, 89.8203, -498.047, -262.023, -106.133, -262.969)
@@ -117,6 +118,12 @@ offset_right = -34.9999
 offset_bottom = -238.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="pet_food_panel" parent="CanvasLayer" instance=ExtResource("14_ngwww")]
+offset_left = 402.0
+offset_top = 239.0
+offset_right = 402.64
+offset_bottom = 238.68
 
 [node name="sfx_enter_scene" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_ksdiy")

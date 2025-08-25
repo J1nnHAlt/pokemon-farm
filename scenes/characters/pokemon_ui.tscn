@@ -1,0 +1,102 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxkprghiro45c"]
+
+[ext_resource type="Script" uid="uid://bhnue6s8epii" path="res://scenes/characters/pokemon_ui.gd" id="1_gf0ey"]
+[ext_resource type="Texture2D" uid="uid://ck0ckqha1cykp" path="res://assets/pokemon_status/growth.png" id="1_isrl5"]
+[ext_resource type="Texture2D" uid="uid://b24c0siinrgux" path="res://assets/pokemon_status/mating.png" id="2_gf0ey"]
+[ext_resource type="Texture2D" uid="uid://dkwpfpnp3ahi" path="res://assets/pokemon_status/pregnant.png" id="3_xk7lr"]
+[ext_resource type="Texture2D" uid="uid://diwjx2lr3erwm" path="res://assets/pokemon_status/maxed.png" id="4_cauwf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vydy"]
+size = Vector2(40, 48)
+
+[node name="Pokemon_UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_gf0ey")
+
+[node name="Node2D" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Evo" type="Label" parent="Node2D"]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -29.0
+offset_right = 57.0
+offset_bottom = 4.0
+scale = Vector2(0.1, 0.1)
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 0
+text = "Evo "
+
+[node name="Lvl" type="Label" parent="Node2D"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -29.0
+offset_right = 64.0
+offset_bottom = 4.0
+scale = Vector2(0.1, 0.1)
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Lvl"
+
+[node name="Exp" type="Label" parent="Node2D"]
+layout_mode = 0
+offset_left = -16.0
+offset_top = 1.0
+offset_right = 48.0
+offset_bottom = 34.0
+scale = Vector2(0.1, 0.1)
+size_flags_vertical = 1
+text = "Exp"
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = -1
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_1vydy")
+debug_color = Color(0.972349, 0, 0.441661, 0.42)
+
+[node name="Status" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -38.0
+offset_right = 285.0
+offset_bottom = 46.0
+scale = Vector2(0.1, 0.1)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="Super_Growth" type="TextureRect" parent="Status"]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+texture = ExtResource("1_isrl5")
+expand_mode = 5
+
+[node name="Mating" type="TextureRect" parent="Status"]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+texture = ExtResource("2_gf0ey")
+expand_mode = 5
+
+[node name="Pregnant" type="TextureRect" parent="Status"]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+texture = ExtResource("3_xk7lr")
+expand_mode = 5
+
+[node name="Maxed" type="TextureRect" parent="Status"]
+custom_minimum_size = Vector2(60, 80)
+layout_mode = 2
+texture = ExtResource("4_cauwf")
+expand_mode = 5
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

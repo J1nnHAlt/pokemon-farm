@@ -79,7 +79,6 @@ const rarity = ["Common", "Rare", "Epic", "Legendary"]
 func check_food_effect(pet_food: PetFood, pokemon_rarity: String, pokemon_element):
 	var status: PetStatus = PetStatus.Normal
 	var days_of_effect: int = 0
-	
 	if pet_food.type == "Growth" and pet_food.element != pokemon_element:
 		print("Wrong element")
 	else: 

@@ -1,10 +1,18 @@
-extends GridContainer
+extends Control
 
-const SLOT_SCENE = preload("res://scenes/BerryMixer/slot.tscn") 
+const SLOT_SCENE = preload("res://scenes/BerryMixer/slot.tscn")
+@onready var grid_container = $Panel/ScrollContainer/PlayerFoodList
 var inventory: Inv
 signal pet_food_eaten
+var pokemon
 
 func _ready() -> void:
+	visible = false
+	
+	GameData.player_entered.connect(_on_player_entered)
+	print("signal connected 123")
+	GameData.player_exited.connect(_on_player_exited)
+		
 	if GameData.inventory:
 		_on_inventory_loaded()
 	else:
@@ -12,7 +20,7 @@ func _ready() -> void:
 
 func update_display():
 	# Clear existing slots
-	for child in get_children():
+	for child in grid_container.get_children():
 		child.queue_free()
 		
 	# Create slot for each item in inventory
@@ -20,22 +28,30 @@ func update_display():
 		var inv_slot: InvSlot = inventory.slots[i]
 		if inv_slot.item and inv_slot.amount > 0 and inv_slot.item is PetFood:
 			var slot = SLOT_SCENE.instantiate()
+			#slot.custom_minimum_size = Vector2(100, 100)
+			#slot.get_node("TextureRect").custom_minimum_size = Vector2(80, 80)
+			grid_container.add_child(slot)
 			
-			add_child(slot)
 
 			slot.slot_clicked.connect(_on_inventory_slot_clicked)
 			slot.set_data(inv_slot, i)
 
 func _on_inventory_slot_clicked(slot: InvSlot, index: int):
 	# Remove from main inventory
+	print("food clicked")
 	GameData.inventory.remove(index)
-	$"../../../..".consume_pet_food(slot.item)
+	pokemon.consume_pet_food(slot.item)
 	update_display()
 
 
 func _on_inventory_loaded():
 	inventory = GameData.inventory
-	print("signal received")
 	inventory.update.connect(update_display)
 	update_display()
-	print("update display called in ready")
+
+func _on_player_entered(poke):
+	visible = true
+	pokemon = poke
+
+func _on_player_exited():
+	visible = false

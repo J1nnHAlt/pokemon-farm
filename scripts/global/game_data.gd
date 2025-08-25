@@ -14,6 +14,8 @@ var next_spawn: String = ""
 signal coins_loaded
 signal volume_loaded
 signal inventory_loaded
+signal player_entered(pokemon: NonPlayableCharacter)
+signal player_exited
 
 var cheri_berry = load("res://scripts/inventory/items/berries/cheri_berry.tres")
 var durin_berry = load("res://scripts/inventory/items/berries/durin_berry.tres")

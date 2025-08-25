@@ -7,7 +7,7 @@
 script = ExtResource("1_v0rwh")
 type = "Breed"
 element = "Special"
-rarity = "Rare"
+rarity = "Legendary"
 name = "Spicy Jam"
 texture = ExtResource("2_kmsw4")
 metadata/_custom_type_script = "uid://duh47xclnnv37"

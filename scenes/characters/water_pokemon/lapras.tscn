@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://cruirr1gmx6cc"]
+[gd_scene load_steps=13 format=3 uid="uid://cruirr1gmx6cc"]
 
 [ext_resource type="Script" uid="uid://dk4auj3egk5ub" path="res://scenes/characters/water_pokemon/lapras.gd" id="1_byxnj"]
 [ext_resource type="Texture2D" uid="uid://dxnjdojwgfgnj" path="res://scenes/characters/water_pokemon/lapras.png" id="1_gyyif"]
 [ext_resource type="Script" uid="uid://bm540rrfyyxui" path="res://scripts/state_machine/node_state_machine.gd" id="3_iqdg7"]
 [ext_resource type="Script" uid="uid://fewxkuu5ado4" path="res://scenes/characters/water_pokemon/idle_state.gd" id="4_xx3kd"]
 [ext_resource type="Script" uid="uid://b2whne5ncd64d" path="res://scenes/characters/water_pokemon/walk_state.gd" id="5_nh0y2"]
+[ext_resource type="PackedScene" uid="uid://dxkprghiro45c" path="res://scenes/characters/pokemon_ui.tscn" id="6_uyung"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_byxnj"]
 atlas = ExtResource("1_gyyif")
@@ -84,3 +85,5 @@ script = ExtResource("5_nh0y2")
 character = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 navigation_agent_2d = NodePath("../../NavigationAgent2D")
+
+[node name="Pokemon_UI" parent="." instance=ExtResource("6_uyung")]
