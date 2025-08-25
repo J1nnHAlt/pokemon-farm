@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://638cvws80rac"]
+[gd_scene load_steps=16 format=3 uid="uid://638cvws80rac"]
 
 [ext_resource type="Script" uid="uid://yxrex5klrjdf" path="res://scenes/shops/shop_menu.gd" id="1_crqmh"]
 [ext_resource type="Texture2D" uid="uid://b4xmm4evldail" path="res://pokemon-assets/Graphics/Items/GROUNDGEM.png" id="1_p1d6s"]
@@ -6,8 +6,11 @@
 [ext_resource type="Resource" uid="uid://dn8gujxm2mlfp" path="res://scripts/inventory/items/berries/cheri_berry.tres" id="3_pk0o2"]
 [ext_resource type="Resource" uid="uid://cc7ypp7b0xktf" path="res://scripts/inventory/items/berries/durin_berry.tres" id="4_qdhdw"]
 [ext_resource type="Resource" uid="uid://dx2ktnf5sloc0" path="res://scripts/inventory/items/berries/pamtre_berry.tres" id="5_lev3f"]
+[ext_resource type="Resource" uid="uid://dxhcqrt76hxfo" path="res://scripts/inventory/items/berries/custa_berry.tres" id="6_85ogh"]
+[ext_resource type="Resource" uid="uid://cw2n2r3bdxf7" path="res://scripts/inventory/items/berries/rawst_berry.tres" id="7_0ck7o"]
 [ext_resource type="PackedScene" uid="uid://cblx6utrafqd5" path="res://scenes/shops/shop_item_button.tscn" id="7_pk0o2"]
 [ext_resource type="AudioStream" uid="uid://cr0pnjpbc5tft" path="res://pokemon-assets/Audio/SE/Mart buy item.ogg" id="8_exaeg"]
+[ext_resource type="Resource" uid="uid://8vcju64q8d68" path="res://scripts/inventory/items/berries/yache_berry.tres" id="8_pnbjp"]
 [ext_resource type="AudioStream" uid="uid://f7k2i0n34p6a" path="res://pokemon-assets/Audio/SE/Slots stop.ogg" id="9_uf467"]
 
 [sub_resource type="Animation" id="Animation_crqmh"]
@@ -80,7 +83,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_crqmh")
-possible_items = Array[ExtResource("2_u7kvx")]([ExtResource("3_pk0o2"), ExtResource("4_qdhdw"), ExtResource("5_lev3f")])
+possible_items = Array[ExtResource("2_u7kvx")]([ExtResource("3_pk0o2"), ExtResource("4_qdhdw"), ExtResource("5_lev3f"), ExtResource("6_85ogh"), ExtResource("7_0ck7o"), ExtResource("8_pnbjp")])
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
