@@ -65,15 +65,21 @@ func _on_next_transitions() -> void:
 		player.global_position += player.player_direction * 20
 		transition.emit("Surf")
 		return
-
+	
+	if GameInputEvents.is_fishing_input() and player.is_water_in_front():
+		transition.emit("Fishing")
+		return
+		
 	if !GameInputEvents.is_movement_input():
 		transition.emit("Idle")
-	elif GameInputEvents.is_run_pressed():
+	elif GameInputEvents.is_space_pressed():
 		transition.emit("Run")
 
 
 
 func _on_enter() -> void:
+	player.set_collision_mask_value(2, true)
+	
 	interactButton = player.get_node("FButton")
 	CycleIdleState.cooldown_used_once = false
 	CycleIdleState.can_cycle = false
@@ -85,9 +91,6 @@ func _on_enter() -> void:
 		WalkState.cooldown_used_once = true
 	else:
 		WalkState.can_walk = true  # Already used once, skip cooldown
-
-
-
 
 func _on_exit() -> void:
 	animated_sprite_2d.stop()

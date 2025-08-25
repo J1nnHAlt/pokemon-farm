@@ -13,6 +13,8 @@ var current_node_state : NodeState
 var current_node_state_name : String
 #Stores the name of the parent node
 var parent_node_name: String
+#Stores the previous state
+var previous_node_state_name: String = ""
 
 func _ready() -> void:
 #	Stores the name of this node’s parent in parent_node_name
@@ -53,6 +55,12 @@ func _physics_process(delta: float) -> void:
 
 #Called when a state wants to transition to another state.
 func transition_to(node_state_name : String) -> void:
+	# ✅ NEW: allow special "_previous" transition
+	if node_state_name.to_lower() == "_previous":
+		if previous_node_state_name == "" or previous_node_state_name == current_node_state_name:
+			return  # no valid previous state
+		node_state_name = previous_node_state_name
+	
 #	Prevents transitioning to the same state.
 	if node_state_name == current_node_state.name.to_lower():
 		return
@@ -64,12 +72,18 @@ func transition_to(node_state_name : String) -> void:
 	if !new_node_state:
 		return
 	
+	# ✅ NEW: save current before switching
+	var came_from = ""
 	if current_node_state:
-#		Call the exit method of the current state.
+		came_from = current_node_state.name.to_lower()
 		current_node_state._on_exit()
+		
 #	Enter the new state.
 	new_node_state._on_enter()
 	
+	# ✅ NEW: update previous/current tracking
+	if came_from != "":
+		previous_node_state_name = came_from
 #	Update the state references.
 	current_node_state = new_node_state
 	current_node_state_name = current_node_state.name.to_lower()

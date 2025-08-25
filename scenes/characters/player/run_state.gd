@@ -42,7 +42,7 @@ func _on_next_transitions() -> void:
 		transition.emit("CycleIdle")
 	elif !GameInputEvents.is_movement_input():
 		transition.emit("Idle")
-	elif !GameInputEvents.is_run_pressed():
+	elif !GameInputEvents.is_space_pressed():
 		transition.emit("Walk")
 
 func _on_enter() -> void:

@@ -16,8 +16,11 @@ static func movement_input() -> Vector2:
 		
 	return direction
 
-static func is_run_pressed() -> bool:
-	return Input.is_action_pressed("run")
+static func is_space_pressed() -> bool:
+	return Input.is_action_pressed("space")
+
+static func is_fishing_input() -> bool:
+	return Input.is_action_pressed("fishing")
 
 static func is_cycle_toggle() -> bool:
 	return Input.is_action_just_pressed("cycle_toggle")

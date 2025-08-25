@@ -35,6 +35,10 @@ func _on_next_transitions() -> void:
 		transition.emit("Surf")
 		return
 	
+	if GameInputEvents.is_fishing_input() and player.is_water_in_front():
+		transition.emit("Fishing")
+		return
+	
 	if GameInputEvents.is_cycle_toggle():
 		transition.emit("CycleIdle")
 	elif GameInputEvents.is_movement_input():
@@ -44,6 +48,7 @@ func _on_next_transitions() -> void:
 
 
 func _on_enter() -> void:
+	player.set_collision_mask_value(2, true)
 	interactButton = player.get_node("FButton")
 
 

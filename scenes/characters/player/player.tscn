@@ -1,4 +1,4 @@
-[gd_scene load_steps=129 format=3 uid="uid://dheba8g1u8uj8"]
+[gd_scene load_steps=146 format=3 uid="uid://dheba8g1u8uj8"]
 
 [ext_resource type="Script" uid="uid://dkxajelubqv35" path="res://scenes/characters/player/player.gd" id="1_hss88"]
 [ext_resource type="Texture2D" uid="uid://cvpxdgalmrwf3" path="res://assets/characters/girl_cycling_spritesheet.png" id="2_42irl"]
@@ -11,18 +11,26 @@
 [ext_resource type="Texture2D" uid="uid://cyoouv2qlovah" path="res://assets/characters/girl_bicycle_call_pokemon.png" id="4_tebod"]
 [ext_resource type="Texture2D" uid="uid://cv3j2ynige1g" path="res://assets/characters/girl_walking_spritesheet.png" id="4_xuses"]
 [ext_resource type="Script" uid="uid://puwqwjq1engw" path="res://scenes/characters/player/walk_state.gd" id="5_qd3e3"]
-[ext_resource type="Texture2D" uid="uid://bg4p3shrg4dax" path="res://assets/characters/girl_surf.png" id="7_svuau"]
+[ext_resource type="Texture2D" uid="uid://csd502e73d61o" path="res://assets/characters/girl_surf_without_pokemon.png" id="8_b4gk5"]
 [ext_resource type="Texture2D" uid="uid://17ryxkvofcns" path="res://assets/characters/girl_watering.png" id="8_i1nod"]
 [ext_resource type="Script" uid="uid://bjqc82igcwnl" path="res://scenes/characters/player/run_state.gd" id="10_3xnwo"]
 [ext_resource type="Script" uid="uid://dquodglxcms2b" path="res://scenes/characters/player/cycle_state.gd" id="11_djydg"]
+[ext_resource type="Texture2D" uid="uid://jtk585e1ku8t" path="res://assets/characters/surf_pokemon.png" id="11_j8rto"]
 [ext_resource type="Script" uid="uid://cl2otscl5yubc" path="res://scenes/characters/player/cycle_idle_state.gd" id="12_bsn6e"]
 [ext_resource type="Script" uid="uid://ckqwbiflu14eh" path="res://scenes/characters/player/watering_state.gd" id="15_4kqyw"]
 [ext_resource type="PackedScene" uid="uid://brqy6oueap7di" path="res://scenes/characters/player/F button/f_button.tscn" id="15_ykrpk"]
 [ext_resource type="AudioStream" uid="uid://t2mpkjjet0gx" path="res://pokemon-assets/Audio/SE/Anim/throw.ogg" id="18_ndqgd"]
 [ext_resource type="PackedScene" uid="uid://bd87pm5k565w2" path="res://scenes/component/hit_component.tscn" id="18_svuau"]
 [ext_resource type="Script" uid="uid://77hs4743a630" path="res://scenes/characters/player/surf_state.gd" id="18_tebod"]
+[ext_resource type="Script" uid="uid://blr41dsrterg1" path="res://scenes/characters/player/fishing_state.gd" id="19_bxwvg"]
 [ext_resource type="AudioStream" uid="uid://c63pm8jayuui5" path="res://pokemon-assets/Audio/BGM/Surfing.ogg" id="22_6nfx3"]
 [ext_resource type="AudioStream" uid="uid://1ssgbqdfso2x" path="res://pokemon-assets/Audio/BGM/Bicycle.ogg" id="23_3hnlq"]
+[ext_resource type="Texture2D" uid="uid://cwmfaaf4pd502" path="res://assets/UI/progress_bar/healthbarUnder.png" id="24_u6wme"]
+[ext_resource type="Texture2D" uid="uid://0wehyiswo8yx" path="res://assets/UI/progress_bar/healthbarProgress.png" id="25_bxwvg"]
+[ext_resource type="Texture2D" uid="uid://30tb8ob15jm5" path="res://assets/UI/beware.png" id="27_2v4cy"]
+[ext_resource type="AudioStream" uid="uid://bs648fkxd8et7" path="res://pokemon-assets/Audio/ME/Battle capture success.ogg" id="29_b4gk5"]
+[ext_resource type="AudioStream" uid="uid://bqboeyrxshrbw" path="res://pokemon-assets/Audio/BGM/Battle wild.ogg" id="30_r0hd7"]
+[ext_resource type="AudioStream" uid="uid://b4tft1yvr60co" path="res://pokemon-assets/Audio/SE/Exclaim.ogg" id="31_gpigg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_35rnk"]
 atlas = ExtResource("2_42irl")
@@ -285,35 +293,35 @@ atlas = ExtResource("3_mk55u")
 region = Rect2(34, 123, 16, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ketpa"]
-atlas = ExtResource("7_svuau")
+atlas = ExtResource("8_b4gk5")
 region = Rect2(0, 33, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2el0t"]
-atlas = ExtResource("7_svuau")
+atlas = ExtResource("8_b4gk5")
 region = Rect2(33, 33, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7s1g3"]
-atlas = ExtResource("7_svuau")
+atlas = ExtResource("8_b4gk5")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kip2f"]
-atlas = ExtResource("7_svuau")
+atlas = ExtResource("8_b4gk5")
 region = Rect2(33, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vjq2h"]
-atlas = ExtResource("7_svuau")
+atlas = ExtResource("8_b4gk5")
 region = Rect2(0, 66, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dwh21"]
-atlas = ExtResource("7_svuau")
+atlas = ExtResource("8_b4gk5")
 region = Rect2(33, 66, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7y1bl"]
-atlas = ExtResource("7_svuau")
+atlas = ExtResource("8_b4gk5")
 region = Rect2(0, 99, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qy81s"]
-atlas = ExtResource("7_svuau")
+atlas = ExtResource("8_b4gk5")
 region = Rect2(33, 99, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d73qs"]
@@ -945,6 +953,85 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_uw224"]
+atlas = ExtResource("11_j8rto")
+region = Rect2(66, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_euaxb"]
+atlas = ExtResource("11_j8rto")
+region = Rect2(99, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2k8cp"]
+atlas = ExtResource("11_j8rto")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rv2o0"]
+atlas = ExtResource("11_j8rto")
+region = Rect2(33, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6ndh"]
+atlas = ExtResource("11_j8rto")
+region = Rect2(132, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40f32"]
+atlas = ExtResource("11_j8rto")
+region = Rect2(165, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5iwut"]
+atlas = ExtResource("11_j8rto")
+region = Rect2(198, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ic8cm"]
+atlas = ExtResource("11_j8rto")
+region = Rect2(231, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vjxq8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uw224")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_euaxb")
+}],
+"loop": true,
+"name": &"surf_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2k8cp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rv2o0")
+}],
+"loop": true,
+"name": &"surf_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6ndh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40f32")
+}],
+"loop": true,
+"name": &"surf_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5iwut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ic8cm")
+}],
+"loop": true,
+"name": &"surf_right",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7uws0"]
 size = Vector2(10, 14)
 
@@ -964,8 +1051,17 @@ script = ExtResource("1_hss88")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_6nfx3")
-animation = &"run_front"
+animation = &"bicycle_move_back"
 autoplay = "idle_front"
+frame_progress = 0.199815
+
+[node name="SurfPokemon" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(0, -11)
+sprite_frames = SubResource("SpriteFrames_vjxq8")
+animation = &"surf_right"
+frame_progress = 0.0491363
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7.49204)
@@ -1010,10 +1106,18 @@ player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 hit_component_collision_shape = NodePath("../../HitComponent/HitComponentCollisionShape2D")
 
-[node name="Surf" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d")]
+[node name="Surf" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d", "surf_pokemon")]
 script = ExtResource("18_tebod")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+surf_pokemon = NodePath("../../SurfPokemon")
+
+[node name="Fishing" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d", "fishing_bar", "fish_warning")]
+script = ExtResource("19_bxwvg")
+player = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+fishing_bar = NodePath("../../FishingBar")
+fish_warning = NodePath("../../FishWarning")
 
 [node name="FButton" parent="." instance=ExtResource("15_ykrpk")]
 z_index = 50
@@ -1047,6 +1151,37 @@ parameters/looping = false
 [node name="BicycleMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_3hnlq")
 parameters/looping = false
+
+[node name="FishingBar" type="TextureProgressBar" parent="."]
+visible = false
+offset_left = -15.0
+offset_right = 10.0
+offset_bottom = 5.0
+rotation = -1.5708
+value = 80.0
+nine_patch_stretch = true
+texture_under = ExtResource("24_u6wme")
+texture_progress = ExtResource("25_bxwvg")
+
+[node name="FishWarning" type="TextureRect" parent="."]
+visible = false
+z_index = 50
+offset_left = -6.0
+offset_top = -34.0
+offset_right = 7.0
+offset_bottom = -22.0
+texture = ExtResource("27_2v4cy")
+stretch_mode = 5
+
+[node name="CaptureMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("29_b4gk5")
+
+[node name="EncounterMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("30_r0hd7")
+parameters/looping = false
+
+[node name="sfx_exclaim" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("31_gpigg")
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
