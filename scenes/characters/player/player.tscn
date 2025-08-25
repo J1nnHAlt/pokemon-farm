@@ -1051,9 +1051,10 @@ script = ExtResource("1_hss88")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_6nfx3")
-animation = &"bicycle_move_back"
+animation = &"fishing_front"
 autoplay = "idle_front"
-frame_progress = 0.52357
+frame = 3
+frame_progress = 1.0
 
 [node name="SurfPokemon" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -1154,9 +1155,10 @@ parameters/looping = false
 
 [node name="FishingBar" type="TextureProgressBar" parent="."]
 visible = false
-offset_left = -15.0
-offset_right = 10.0
-offset_bottom = 5.0
+offset_left = -20.0
+offset_top = -3.0
+offset_right = 14.0
+offset_bottom = 6.0
 rotation = -1.5708
 value = 80.0
 nine_patch_stretch = true
