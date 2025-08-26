@@ -1226,7 +1226,7 @@ position = Vector2(0, 16)
 scale = Vector2(0.13, 0.13)
 sprite_frames = SubResource("SpriteFrames_voohj")
 animation = &"press_spacebar"
-frame_progress = 0.0793982
+frame_progress = 0.240629
 
 [node name="pokeball_cd" type="Timer" parent="."]
 
