@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://c1g7wo3i0l6eg"]
 
 [ext_resource type="Script" uid="uid://b2gcexhao7lpt" path="res://scripts/inventory/inv_UI.gd" id="1_celo0"]
-[ext_resource type="Texture2D" uid="uid://ghfaq7mkc2bj" path="res://assets/UI/inventory-background.png" id="2_hbvie"]
+[ext_resource type="Texture2D" uid="uid://chq3poky2trnf" path="res://assets/UI/inventory-background.png" id="2_hbvie"]
 [ext_resource type="PackedScene" uid="uid://ck5twm5n4m0tt" path="res://scenes/inventory/inv_ui_slot.tscn" id="3_fuqkw"]
-[ext_resource type="AudioStream" uid="uid://ck4r1ddyc1ao5" path="res://pokemon-assets/Audio/GUI menu open.ogg" id="4_ggs6h"]
-[ext_resource type="AudioStream" uid="uid://d182hm67shkbj" path="res://pokemon-assets/Audio/GUI menu close.ogg" id="5_rm0ga"]
+[ext_resource type="AudioStream" uid="uid://rsnbvi15p33m" path="res://pokemon-assets/Audio/GUI menu open.ogg" id="4_ggs6h"]
+[ext_resource type="AudioStream" uid="uid://b16s3e0hnn02x" path="res://pokemon-assets/Audio/GUI menu close.ogg" id="5_rm0ga"]
 
 [node name="Inv_UI" type="Control"]
 z_index = 15

@@ -24,6 +24,7 @@ Coin="*res://scripts/global/coin.gd"
 PetSpawnerInFarm="*res://scripts/global/PetSpawnerInFarm.gd"
 GameData="*res://scripts/global/game_data.gd"
 BreedingManager="*res://scripts/global/BreedingManager.gd"
+LegendaryManager="*res://scenes/legendary_pokemon/legendary_manager.gd"
 
 [display]
 

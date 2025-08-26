@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://52gv6yq52ufh"]
 
-[ext_resource type="Texture2D" uid="uid://cgm0gdr65bvrb" path="res://scenes/characters/grass_pokemon/Victreebel.png" id="1_luwdl"]
+[ext_resource type="Texture2D" uid="uid://bvum314ujswfp" path="res://scenes/characters/grass_pokemon/Victreebel.png" id="1_luwdl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lverg"]
 atlas = ExtResource("1_luwdl")

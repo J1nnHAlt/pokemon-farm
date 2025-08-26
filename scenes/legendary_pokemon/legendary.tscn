@@ -1,23 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwdyimux03d47"]
+[gd_scene load_steps=7 format=3 uid="uid://dwdyimux03d47"]
 
-[ext_resource type="Texture2D" uid="uid://uy8ivo146fk0" path="res://scenes/characters/water_pokemon/lapras.png" id="1_2nt4f"]
+[ext_resource type="Script" uid="uid://bee6mmgyxeea0" path="res://scenes/legendary_pokemon/legendary_manager.gd" id="1_5c450"]
+[ext_resource type="Texture2D" uid="uid://cdtvathgnqyle" path="res://pokemon-assets/Graphics/DS _ DSi - Pokemon HeartGold _ SoulSilver - Overworld - Pokemon (2nd Generation, Overworld).png" id="1_j1037"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lexwb"]
-atlas = ExtResource("1_2nt4f")
-region = Rect2(0, 62, 31, 31)
+[sub_resource type="AtlasTexture" id="AtlasTexture_5c450"]
+atlas = ExtResource("1_j1037")
+region = Rect2(260, 1566, 65, 58)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7lqlo"]
-atlas = ExtResource("1_2nt4f")
-region = Rect2(0, 93, 31, 31)
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpii7"]
+atlas = ExtResource("1_j1037")
+region = Rect2(260, 1624, 65, 58)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u7kk6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lexwb")
+"texture": SubResource("AtlasTexture_5c450")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7lqlo")
+"texture": SubResource("AtlasTexture_gpii7")
 }],
 "loop": true,
 "name": &"default",
@@ -26,12 +27,15 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ee54e"]
 
-[node name="WildLapras" type="CharacterBody2D"]
+[node name="Lugia" type="CharacterBody2D"]
+script = ExtResource("1_5c450")
+legendary_scene = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_u7kk6")
 autoplay = "default"
-frame_progress = 0.525775
+frame = 1
+frame_progress = 0.177965
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)

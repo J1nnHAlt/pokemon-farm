@@ -28,11 +28,18 @@ func update(slot: InvSlot, index: int):
 
 func _gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
-		sfx_remove_item.play()
-		Coin.add_coins(1)
-		GameData.inventory.remove(slot_index) # or decrease amount
-		GameData.save_game()
+		if slot_data and slot_data.item:
+			var was_berry := slot_data.item.name.to_lower().contains("berry")
 
+			sfx_remove_item.play()
+			Coin.add_coins(1)
+
+			GameData.inventory.remove(slot_index) # decrease amount/remove
+			GameData.save_game()
+
+			# Trigger LegendaryManager if it was a berry
+			if was_berry:
+				LegendaryManager.on_berry_sold()
 
 
 # Called when the node enters the scene tree for the first time.
