@@ -71,11 +71,9 @@ func update_display():
 			slot.set_data(inv_slot, i)
 
 func _on_inventory_slot_clicked(slot: InvSlot, index: int):
-	# Remove from main inventory
-	GameData.inventory.remove(index)
-	# Add to mixer
 	get_node("/root/BerryMixer/HBoxContainer/MixerPanel/PanelContainer/MixerContent").add_item(slot.item)
 	print("slot.item: ", slot.item)
+	GameData.inventory.remove(index)
 	update_display()
 
 

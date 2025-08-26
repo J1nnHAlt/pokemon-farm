@@ -37,10 +37,9 @@ func update_display():
 			slot.set_data(inv_slot, i)
 
 func _on_inventory_slot_clicked(slot: InvSlot, index: int):
-	# Remove from main inventory
 	print("food clicked")
-	GameData.inventory.remove(index)
 	pokemon.consume_pet_food(slot.item)
+	GameData.inventory.remove(index)
 	update_display()
 
 
