@@ -66,6 +66,7 @@ visible = false
 collision_layer = 256
 collision_mask = 0
 script = ExtResource("1_bj4ed")
+target_scene = "res://scenes/Buildings/interior/building1_interior.tscn"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x2lb4")
