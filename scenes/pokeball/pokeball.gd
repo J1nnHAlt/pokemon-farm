@@ -36,6 +36,8 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 				GameData.pet_victreebel_amt += 1
 			"WildLapras":
 				GameData.pet_lapras_amt += 1
+			"LegendaryLugia":
+				GameData.pet_lugia_amt += 1
 			_:
 				print("Unknown Pokémon:", target_pokemon.name)
 		

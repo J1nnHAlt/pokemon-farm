@@ -7,6 +7,7 @@ var default_volume: float
 var pet_arbok_amt: int = 0
 var pet_victreebel_amt: int = 0
 var pet_lapras_amt: int = 0
+var pet_lugia_amt: int = 0
 
 var next_spawn: String = ""
 
@@ -40,7 +41,8 @@ func save_game():
 		"volume": default_volume,
 		"pet_arbok_amt": pet_arbok_amt,
 		"pet_victreebel_amt": pet_victreebel_amt,
-		"pet_lapras_amt": pet_lapras_amt
+		"pet_lapras_amt": pet_lapras_amt,
+		"pet_lugia_amt" : pet_lugia_amt
 		# Later: add more data here like "pokemons": [], "player_pos": Vector2()
 	}
 	# C:\Users\<YourUsername>\AppData\Roaming\Godot\app_userdata\<YourGameName>\savegame.json
@@ -65,6 +67,7 @@ func load_game():
 			pet_arbok_amt = data.get("pet_arbok_amt", 0)
 			pet_lapras_amt = data.get("pet_lapras_amt", 0)
 			pet_victreebel_amt = data.get("pet_victreebel", 0)
+			pet_lugia_amt = data.get("pet_victreebel", 0)
 			emit_signal("coins_loaded")
 			emit_signal("volume_loaded")
 			

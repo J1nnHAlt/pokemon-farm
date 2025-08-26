@@ -1,23 +1,23 @@
 [gd_scene load_steps=6 format=3 uid="uid://dwdyimux03d47"]
 
-[ext_resource type="Texture2D" uid="uid://cdtvathgnqyle" path="res://pokemon-assets/Graphics/DS _ DSi - Pokemon HeartGold _ SoulSilver - Overworld - Pokemon (2nd Generation, Overworld).png" id="1_j1037"]
+[ext_resource type="Texture2D" uid="uid://2xxbhwle2r26" path="res://assets/pokemon_overworld/second_gen/Lugia.png" id="1_j1037"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1037"]
+atlas = ExtResource("1_j1037")
+region = Rect2(65, 0, 65, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5c450"]
 atlas = ExtResource("1_j1037")
-region = Rect2(260, 1566, 65, 58)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gpii7"]
-atlas = ExtResource("1_j1037")
-region = Rect2(260, 1624, 65, 58)
+region = Rect2(65, 64, 65, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u7kk6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5c450")
+"texture": SubResource("AtlasTexture_j1037")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gpii7")
+"texture": SubResource("AtlasTexture_5c450")
 }],
 "loop": true,
 "name": &"default",
@@ -27,7 +27,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ee54e"]
 
 [node name="Legendary" type="CharacterBody2D"]
-z_index = 10
+z_index = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_u7kk6")
