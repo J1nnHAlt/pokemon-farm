@@ -25,7 +25,6 @@ func remove(index: int):
 	if index >= 0 and index < slots.size():
 		if slots[index].amount > 0:
 			slots[index].amount -= 1
-		else:
-			slots[index].item = null
-			slots[index].amount = 0
+			if slots[index].amount == 0:
+				slots[index].item = null
 		update.emit()

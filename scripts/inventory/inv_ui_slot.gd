@@ -22,9 +22,10 @@ func update(slot: InvSlot, index: int):
 		item_visual.texture = slot.item.texture
 		if slot.amount > 1:
 			amount_text.visible = true
+		else:
+			amount_text.visible = false
 		amount_text.text = str(slot.amount)
 		
-
 
 func _gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
