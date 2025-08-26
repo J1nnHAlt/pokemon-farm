@@ -3,7 +3,7 @@ class_name Door
 
 @export var target_scene: String   # res://scenes/buildings/BuildingInterior.tscn
 @export var target_spawn_name: String = "entrance_point" 
-@export var building_id: String = "1"
+@export var door_id: String = "1"
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 

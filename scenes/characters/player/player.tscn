@@ -1062,8 +1062,8 @@ animations = [{
 "texture": SubResource("AtlasTexture_2ti6t")
 }],
 "loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"press_spacebar",
+"speed": 8.0
 }]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
@@ -1142,10 +1142,11 @@ player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 surf_pokemon = NodePath("../../SurfPokemon")
 
-[node name="Fishing" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d", "fishing_bar", "fish_warning")]
+[node name="Fishing" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d", "spacebar", "fishing_bar", "fish_warning")]
 script = ExtResource("19_bxwvg")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+spacebar = NodePath("../../Spacebar")
 fishing_bar = NodePath("../../FishingBar")
 fish_warning = NodePath("../../FishWarning")
 
@@ -1224,11 +1225,12 @@ visible = false
 position = Vector2(0, 16)
 scale = Vector2(0.13, 0.13)
 sprite_frames = SubResource("SpriteFrames_voohj")
-frame_progress = 0.20741
+animation = &"press_spacebar"
+frame_progress = 0.0793982
 
 [node name="pokeball_cd" type="Timer" parent="."]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="sfx_door_enter" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("34_pbtrp")
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

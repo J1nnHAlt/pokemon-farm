@@ -30,9 +30,14 @@ func _on_enter() -> void:
 func _physics_process(delta: float) -> void:
 	if not moving:
 		return
-
+	
+	var door_enter_sfx = player.get_node("sfx_door_enter") as AudioStreamPlayer
+	
 	if target_door.has_node("AnimatedSprite2D"):
+		if door_enter_sfx and !door_enter_sfx.playing:
+			door_enter_sfx.play()
 		target_door.open_door()
+		
 	
 	# Move by speed * delta each frame
 	var step = move_speed * delta
@@ -62,22 +67,70 @@ func teleport_to_door_target(door: Door) -> void:
 	var old_scene = tree.current_scene
 	var interior_scene = load(door.target_scene).instantiate()
 
-	# 1. Detach player before freeing old scene
 	old_scene.remove_child(player)
-
-	# 2. Add new scene
 	tree.root.add_child(interior_scene)
 	tree.current_scene = interior_scene
-
-	# 3. Free old scene AFTER new scene is set
 	old_scene.queue_free()
 
-	# 4. Add player into the new scene
 	interior_scene.add_child(player)
 
-	# 5. Teleport player to spawn point
+	# Spawn inside
 	var spawn_point = interior_scene.get_node_or_null(door.target_spawn_name)
 	if spawn_point:
 		player.global_position = spawn_point.global_position
 	else:
 		push_warning("Spawn point not found: %s" % door.target_spawn_name)
+
+	# 👇 Connect exit handling
+	for child in interior_scene.get_children():
+		if child is EntrancePoint and child.linked_door_id == door.door_id:
+			print("@Entrance: Connecting _on_exit_point_entered for door_id =", door.door_id)
+			child.player_entered.connect(Callable(self, "_on_exit_point_entered").bind(door))
+
+
+func _on_exit_point_entered(body: Node2D, door: Door) -> void:
+	if body != player:
+		print("@Entrance: Ignored, body is not player")
+		return
+
+	print("@Entrance: Player triggered exit for door_id =", door.door_id)
+
+	var tree = get_tree()
+	var old_scene = tree.current_scene
+	print("@Entrance: Current scene =", old_scene.name)
+
+	# Load outside world
+	var outside_scene_path = "res://scenes/test/test_scene_tilemap.tscn"
+	print("@Entrance: Loading outside scene from", outside_scene_path)
+	var outside_scene = load(outside_scene_path).instantiate()
+
+	# Move player out of old scene
+	old_scene.remove_child(player)
+	print("@Entrance: Removed player from old scene")
+
+	# Switch scene
+	tree.root.add_child(outside_scene)
+	tree.current_scene = outside_scene
+	print("@Entrance: Outside scene added, switched to", outside_scene.name)
+
+	old_scene.queue_free()
+	print("@Entrance: Freed old interior scene")
+
+	# Add player into new scene
+	outside_scene.add_child(player)
+	print("@Entrance: Player added into outside scene")
+
+	# Find door in the new outside scene that matches door_id
+	var outside_door: Door = null
+	for child in outside_scene.get_children():
+		if child is Door:
+			print("@Entrance: Found door candidate id =", child.door_id)
+			if child.door_id == door.door_id:
+				outside_door = child
+				break
+
+	if outside_door:
+		player.global_position = outside_door.global_position + Vector2(0, 16)
+		print("@Entrance: Player teleported outside to", player.global_position)
+	else:
+		push_warning("@Entrance: Could not find matching outside door with id: %s" % door.door_id)

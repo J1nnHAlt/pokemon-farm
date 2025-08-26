@@ -3,8 +3,10 @@ extends NodeState
 
 @export var player: Player
 @export var animated_sprite_2d: AnimatedSprite2D
+@export var spacebar: AnimatedSprite2D
 @export var fishing_bar: TextureProgressBar
 @export var fish_warning: TextureRect
+
 
 var is_fishing: bool = false
 var bar_value: int = 0
@@ -68,8 +70,9 @@ func _on_fish_bite() -> void:
 	await get_tree().create_timer(1.5).timeout
 	fish_warning.visible = false
 	
-		
+	
 	fishing_bar.visible = true
+	spacebar.visible = true
 	bar_value = 50
 	fishing_bar.value = bar_value
 	
@@ -86,7 +89,7 @@ func _on_bar_decrease() -> void:
 	bar_value -= 5
 	fishing_bar.value = bar_value
 	if bar_value <= 0:
-		print("@Fishing: Fish escaped!")
+		print("@Fishing: Pokemon escaped!")
 		if encounter_music.playing:
 			encounter_music.stop()
 		if entered_from == "surf" and surf_music:
@@ -94,12 +97,15 @@ func _on_bar_decrease() -> void:
 		transition.emit("_previous")  # return to Surf or Walk automatically
 
 func _input(_event: InputEvent) -> void:
-	if is_fishing and fishing_bar.visible:
+	if is_fishing and fishing_bar.visible and spacebar.visible:
+		spacebar.play("press_spacebar")
 		if GameInputEvents.is_space_pressed():
 			bar_value += 3
 			fishing_bar.value = bar_value
 			if bar_value >= 100:
-				print("@Fishing: Caught the fish!")
+				spacebar.stop()
+				spacebar.visible = false
+				print("@Fishing: Caught the pokemon!")
 				if encounter_music.playing:
 					encounter_music.stop()
 				if capture_music and not capture_music.playing:

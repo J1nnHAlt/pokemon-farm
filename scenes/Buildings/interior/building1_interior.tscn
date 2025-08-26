@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=4 uid="uid://bn1gkyjs6nhon"]
+[gd_scene load_steps=3 format=4 uid="uid://bn1gkyjs6nhon"]
 
 [ext_resource type="TileSet" uid="uid://dhumcm3r6lj5a" path="res://scenes/Buildings/interior/building_interior_tileset.tres" id="1_bbamf"]
+[ext_resource type="PackedScene" uid="uid://dcrccp0kua4oc" path="res://scenes/Buildings/entrance_point.tscn" id="2_dfivk"]
 
 [node name="Building1Interior" type="Node2D"]
 y_sort_enabled = true
@@ -22,7 +23,7 @@ tile_set = ExtResource("1_bbamf")
 
 [node name="mat" type="TileMapLayer" parent="InteriorMap"]
 z_index = 2
-tile_map_data = PackedByteArray("AAD9/wMABAAFAAwAAAD9//7/BAAAAAQAAAD9////BAAAAAQAAAD9/wAABAAAAAUAAAD+//7/BAABAAQAAAD+////BAABAAQAAAD+/wAABAABAAUAAAD///7/BAABAAQAAAD/////BAABAAQAAAD//wAABAABAAUAAAAAAP7/BAABAAQAAAAAAP//BAABAAQAAAAAAAAABAABAAUAAAABAP7/BAABAAQAAAABAP//BAABAAQAAAABAAAABAABAAUAAAACAP7/BAACAAQAAAACAP//BAACAAQAAAACAAAABAACAAUAAAACAP3/BAACAAMAAAABAP3/BAABAAMAAAAAAP3/BAABAAMAAAD///3/BAABAAMAAAD+//3/BAABAAMAAAD9//3/BAAAAAMAAAA=")
+tile_map_data = PackedByteArray("AAD9//7/BAAAAAQAAAD9////BAAAAAQAAAD9/wAABAAAAAUAAAD+//7/BAABAAQAAAD+////BAABAAQAAAD+/wAABAABAAUAAAD///7/BAABAAQAAAD/////BAABAAQAAAD//wAABAABAAUAAAAAAP7/BAABAAQAAAAAAP//BAABAAQAAAAAAAAABAABAAUAAAABAP7/BAABAAQAAAABAP//BAABAAQAAAABAAAABAABAAUAAAACAP7/BAACAAQAAAACAP//BAACAAQAAAACAAAABAACAAUAAAACAP3/BAACAAMAAAABAP3/BAABAAMAAAAAAP3/BAABAAMAAAD///3/BAABAAMAAAD+//3/BAABAAMAAAD9//3/BAAAAAMAAAA=")
 tile_set = ExtResource("1_bbamf")
 
 [node name="Decoration" type="TileMapLayer" parent="InteriorMap" groups=["navigation_polygon_source_geometry_group"]]
@@ -31,5 +32,9 @@ y_sort_enabled = true
 tile_map_data = PackedByteArray("AAD6/wEABgACAAIAAAAFAAEABgACAAIAAAD///z/DAAAAAEAAAD6//z/DgADAAgAAAD8//z/DgACAAMAAAD+//7/DQACAAQAAAD+////DQACAAQAAAABAP7/DQADAAQAAAABAP//DQADAAQAAAD/////DwADAAIAAAAAAP//DwAFAAIAAAABAPv/CgADAAUAAAADAPv/CgAAAAAAAAA=")
 tile_set = ExtResource("1_bbamf")
 
-[node name="entrance_point" type="Node2D" parent="."]
+[node name="entrance_point" parent="." instance=ExtResource("2_dfivk")]
+z_index = 20
 position = Vector2(-40, 48)
+linked_door_id = "house_1_door"
+
+[connection signal="body_entered" from="entrance_point" to="entrance_point" method="_on_body_entered"]
