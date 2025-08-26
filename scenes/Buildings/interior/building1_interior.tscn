@@ -35,6 +35,6 @@ tile_set = ExtResource("1_bbamf")
 [node name="entrance_point" parent="." instance=ExtResource("2_dfivk")]
 z_index = 20
 position = Vector2(-40, 48)
-linked_door_id = "house_1_door"
+target_spawn = "HouseExitSpawn"
 
 [connection signal="body_entered" from="entrance_point" to="entrance_point" method="_on_body_entered"]

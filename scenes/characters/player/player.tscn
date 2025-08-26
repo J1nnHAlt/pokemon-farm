@@ -1076,8 +1076,9 @@ script = ExtResource("1_hss88")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_6nfx3")
-animation = &"idle_back"
+animation = &"walk_back"
 autoplay = "idle_front"
+frame_progress = 0.999185
 
 [node name="SurfPokemon" type="AnimatedSprite2D" parent="."]
 visible = false

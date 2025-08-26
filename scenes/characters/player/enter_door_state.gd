@@ -66,57 +66,9 @@ func teleport_to_door_target(door: Door) -> void:
 	print("@Teleport: Preparing to change scene...")
 
 	# 🚀 Store where player should spawn next
-	GameData.next_spawn = door.target_spawn_name
+	GameData.next_spawn = door.target_spawn
 	print("@Teleport: Setting GameData.next_spawn =", GameData.next_spawn)
 
 	# 🚀 Change to target scene (Godot handles unloading old one)
 	get_tree().change_scene_to_file(door.target_scene)
 	print("@Teleport: Scene changed to", door.target_scene)
-
-
-func _on_exit_point_entered(body: Node2D, door: Door) -> void:
-	if body != player:
-		print("@Entrance: Ignored, body is not player")
-		return
-
-	print("@Entrance: Player triggered exit for door_id =", door.door_id)
-
-	var tree = get_tree()
-	var old_scene = tree.current_scene
-	print("@Entrance: Current scene =", old_scene.name)
-
-	# Load outside world
-	var outside_scene_path = "res://scenes/test/test_scene_tilemap.tscn"
-	print("@Entrance: Loading outside scene from", outside_scene_path)
-	var outside_scene = load(outside_scene_path).instantiate()
-
-	# Move player out of old scene
-	old_scene.remove_child(player)
-	print("@Entrance: Removed player from old scene")
-
-	# Switch scene
-	tree.root.add_child(outside_scene)
-	tree.current_scene = outside_scene
-	print("@Entrance: Outside scene added, switched to", outside_scene.name)
-
-	old_scene.queue_free()
-	print("@Entrance: Freed old interior scene")
-
-	# Add player into new scene
-	outside_scene.add_child(player)
-	print("@Entrance: Player added into outside scene")
-
-	# Find door in the new outside scene that matches door_id
-	var outside_door: Door = null
-	for child in outside_scene.get_children():
-		if child is Door:
-			print("@Entrance: Found door candidate id =", child.door_id)
-			if child.door_id == door.door_id:
-				outside_door = child
-				break
-
-	if outside_door:
-		player.global_position = outside_door.global_position + Vector2(0, 16)
-		print("@Entrance: Player teleported outside to", player.global_position)
-	else:
-		push_warning("@Entrance: Could not find matching outside door with id: %s" % door.door_id)

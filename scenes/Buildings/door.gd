@@ -1,7 +1,8 @@
 extends Area2D
 class_name Door
 
-@export var target_scene: String   # res://scenes/buildings/BuildingInterior.tscn
+@export_file("*.tscn") var target_scene: String   # Scene this door leads to
+@export var target_spawn: String = ""             # 👈 Name of spawn point node inside target scene
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 

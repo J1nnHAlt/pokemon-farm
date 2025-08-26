@@ -1,13 +1,21 @@
-[gd_resource type="TileSet" load_steps=17 format=3 uid="uid://dq7x0bsl7faum"]
+[gd_resource type="TileSet" load_steps=19 format=3 uid="uid://dq7x0bsl7faum"]
 
-[ext_resource type="Texture2D" uid="uid://bop5lydppt4oc" path="res://assets/tilesets/Outside/Land/basic_grass_flower_small_tree.png" id="2_rsiuj"]
-[ext_resource type="Texture2D" uid="uid://cvp1brk3yp8y8" path="res://assets/tilesets/Outside/Land/fences.png" id="3_esjam"]
-[ext_resource type="Texture2D" uid="uid://bcrl4jqdyi44h" path="res://pokemon-assets/Graphics/Tilesets/Outside.png" id="3_vww44"]
-[ext_resource type="Texture2D" uid="uid://c3hw51tm4n3bo" path="res://assets/tilesets/sea_animated_tileset.png" id="4_0u6eo"]
-[ext_resource type="Texture2D" uid="uid://64fvxvckayjc" path="res://assets/tilesets/Outside/Land/hill_and_stair.png" id="5_glu6w"]
-[ext_resource type="Texture2D" uid="uid://deelyld3wlybs" path="res://assets/tilesets/Outside/Land/ledge.png" id="8_64fg8"]
-[ext_resource type="Texture2D" uid="uid://brir67sdo157k" path="res://assets/tilesets/Outside/Land/grass-series.png" id="9_ui57o"]
-[ext_resource type="Texture2D" uid="uid://bgg8cbkohcqlg" path="res://pokemon-assets/Graphics/Tilesets/Dungeon cave.png" id="10_k28d2"]
+[ext_resource type="Texture2D" uid="uid://dm6ly5c663ti2" path="res://assets/tilesets/Outside/Land/Dungeon forest.png" id="1_ui57o"]
+[ext_resource type="Texture2D" uid="uid://cbhalrxhuvplr" path="res://assets/tilesets/Outside/Land/basic_grass_flower_small_tree.png" id="2_rsiuj"]
+[ext_resource type="Texture2D" uid="uid://dk18nkb64d1qu" path="res://assets/tilesets/Outside/Land/fences.png" id="3_esjam"]
+[ext_resource type="Texture2D" uid="uid://c1u8s26fxuk5b" path="res://pokemon-assets/Graphics/Tilesets/Outside.png" id="3_vww44"]
+[ext_resource type="Texture2D" uid="uid://bt8ci0nwb1u8o" path="res://assets/tilesets/sea_animated_tileset.png" id="4_0u6eo"]
+[ext_resource type="Texture2D" uid="uid://b5jyvfwfg522h" path="res://assets/tilesets/Outside/Land/hill_and_stair.png" id="5_glu6w"]
+[ext_resource type="Texture2D" uid="uid://diw0yuvddojc0" path="res://assets/tilesets/Outside/Land/ledge.png" id="8_64fg8"]
+[ext_resource type="Texture2D" uid="uid://b7r4klilu1scx" path="res://assets/tilesets/Outside/Land/grass-series.png" id="9_ui57o"]
+[ext_resource type="Texture2D" uid="uid://bj6tealymn1tl" path="res://pokemon-assets/Graphics/Tilesets/Dungeon cave.png" id="10_k28d2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vww44"]
+texture = ExtResource("1_ui57o")
+4:0/size_in_atlas = Vector2i(2, 3)
+4:0/0 = 0
+4:0/0/texture_origin = Vector2i(8, 16)
+4:0/0/physics_layer_4/polygon_0/points = PackedVector2Array(-23, -8, 7, -8, 7, 8, -23, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_glu6w"]
 texture = ExtResource("2_rsiuj")
@@ -24,231 +32,174 @@ separation = Vector2i(1, 1)
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3hiqg"]
 texture = ExtResource("3_esjam")
 0:0/0 = 0
-0:0/0/z_index = 10
 0:0/0/y_sort_origin = 4
 0:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(0, -2, 8, -2, 8, 8, 0, 8)
 1:0/0 = 0
-1:0/0/z_index = 10
 1:0/0/y_sort_origin = 4
 1:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-2, -2, -8, -2, -8, 8, -2, 8)
 1:1/0 = 0
-1:1/0/z_index = 10
 1:1/0/y_sort_origin = 4
 1:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(0, -8, -8, -8, -8, 8, 0, 8)
 0:1/0 = 0
-0:1/0/z_index = 10
 0:1/0/y_sort_origin = 4
 0:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(0, -8, 8, -8, 8, 8, 0, 8)
 0:2/0 = 0
-0:2/0/z_index = 10
 0:2/0/y_sort_origin = 4
 0:2/0/physics_layer_1/polygon_0/points = PackedVector2Array(0, -8, 8, -8, 8, 6, 0, 6)
 1:2/0 = 0
-1:2/0/z_index = 10
 1:2/0/y_sort_origin = 4
 1:2/0/physics_layer_1/polygon_0/points = PackedVector2Array(0, -8, -8, -8, -8, 6, 0, 6)
 2:0/0 = 0
-2:0/0/z_index = 10
 2:0/0/y_sort_origin = 4
 2:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(0, -2, 8, -2, 8, 8, 0, 8)
 2:1/0 = 0
-2:1/0/z_index = 10
 2:1/0/y_sort_origin = 4
 2:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(0, -8, 8, -8, 8, 8, 0, 8)
 2:2/0 = 0
-2:2/0/z_index = 10
 2:2/0/y_sort_origin = 4
 2:2/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -8, 0, -8, 0, 6, 8, 6)
 3:0/0 = 0
-3:0/0/z_index = 10
 3:0/0/y_sort_origin = 4
 3:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -2, -8, -2, -8, 8, -2, 8, -2, 6, 8, 6)
 3:1/0 = 0
-3:1/0/z_index = 10
 3:1/0/y_sort_origin = 4
 3:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -2, -2, -2, -2, -8, -8, -8, -8, 8, -2, 8, -2, 6, 8, 6)
 3:2/0 = 0
-3:2/0/z_index = 10
 3:2/0/y_sort_origin = 4
 3:2/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -2, -2, -2, -2, -8, -8, -8, -8, 6, 8, 6)
 4:0/0 = 0
-4:0/0/z_index = 10
 4:0/0/y_sort_origin = 4
 4:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -2, 8, -2, 8, 8, -8, 8)
 4:1/0 = 0
-4:1/0/z_index = 10
 4:1/0/y_sort_origin = 4
 4:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -8, 0, -8, 0, -2, -8, -2, -8, 6, 0, 6, 0, 8, 8, 8)
 4:2/0 = 0
-4:2/0/z_index = 10
 4:2/0/y_sort_origin = 4
 4:2/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -8, 0, -8, 0, -2, -8, -2, -8, 6, 8, 6)
 5:2/0 = 0
-5:2/0/z_index = 10
 5:2/0/y_sort_origin = 4
 5:2/0/physics_layer_1/polygon_0/points = PackedVector2Array(0, -8, -8, -8, -8, 6, 0, 6)
 5:1/0 = 0
-5:1/0/z_index = 10
 5:1/0/y_sort_origin = 4
 5:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(0, -8, -8, -8, -8, 8, 0, 8)
 5:0/0 = 0
-5:0/0/z_index = 10
 5:0/0/y_sort_origin = 4
 5:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(0, -2, -8, -2, -8, 8, 0, 8)
 6:0/0 = 0
-6:0/0/z_index = 10
 6:0/0/y_sort_origin = 4
 6:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -2, 8, -2, 8, 8, -8, 8)
 7:0/0 = 0
-7:0/0/z_index = 10
 7:0/0/y_sort_origin = 4
 7:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -2, 8, -2, 8, 8, -8, 8)
 7:1/0 = 0
-7:1/0/z_index = 10
 7:1/0/y_sort_origin = 4
 7:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(0, -2, 0, -8, 8, -8, 8, -2, 8, 8, 0, 8, 0, 6, -8, 6, -8, -2)
 6:1/0 = 0
-6:1/0/z_index = 10
 6:1/0/y_sort_origin = 4
 6:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 0, -8, 0, -2, 8, -2, 8, 8, -8, 8)
 6:2/0 = 0
-6:2/0/z_index = 10
 6:2/0/y_sort_origin = 4
 6:2/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 0, -8, 0, -2, 8, -2, 8, 6, -8, 6)
 7:2/0 = 0
-7:2/0/z_index = 10
 7:2/0/y_sort_origin = 4
 7:2/0/physics_layer_1/polygon_0/points = PackedVector2Array(0, -2, 0, -8, 8, -8, 8, -2, 8, 6, -8, 6, -8, -2)
 0:3/0 = 0
-0:3/0/z_index = 10
 0:3/0/y_sort_origin = 4
 0:3/0/physics_layer_1/polygon_0/points = PackedVector2Array(0, -2, 8, -2, 8, 6, 0, 6, -8, 6, -8, -2)
 1:3/0 = 0
-1:3/0/z_index = 10
 1:3/0/y_sort_origin = 4
 1:3/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -2, -8, -2, -8, 6, 8, 6)
 2:3/0 = 0
-2:3/0/z_index = 10
 2:3/0/y_sort_origin = 4
 2:3/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -2, -8, -2, -8, 6, 8, 6)
 3:3/0 = 0
-3:3/0/z_index = 10
 3:3/0/y_sort_origin = 4
 3:3/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -2, -8, -2, -8, 6, 8, 6)
 4:3/0 = 0
-4:3/0/z_index = 10
 4:3/0/y_sort_origin = 4
 4:3/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -8, 0, -8, 0, -2, -8, -2, -8, 8, 0, 8, 0, 6, 8, 6)
 5:3/0 = 0
-5:3/0/z_index = 10
 5:3/0/y_sort_origin = 4
 5:3/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -8, 0, -8, 0, -2, -8, -2, -8, 8, 0, 8, 0, 6, 8, 6)
 6:3/0 = 0
-6:3/0/z_index = 10
 6:3/0/y_sort_origin = 4
 6:3/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -8, 0, -8, 0, -2, -8, -2, -8, 8, 0, 8, 0, 6, 8, 6)
 7:3/0 = 0
-7:3/0/z_index = 10
 7:3/0/y_sort_origin = 4
 7:3/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -8, 0, -8, 0, -2, -8, -2, -8, 8, 0, 8, 0, 6, 8, 6)
 7:4/0 = 0
-7:4/0/z_index = 10
 7:4/0/y_sort_origin = 4
 7:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -2, 0, -2, 0, -8, -8, -8, -8, 6, 0, 6, 0, 8, 8, 8)
 6:4/0 = 0
-6:4/0/z_index = 10
 6:4/0/y_sort_origin = 4
 6:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -2, 0, -2, 0, -8, -8, -8, -8, 6, 0, 6, 0, 8, 8, 8)
 5:4/0 = 0
-5:4/0/z_index = 10
 5:4/0/y_sort_origin = 4
 5:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -2, 0, -2, 0, -8, -8, -8, -8, 6, 0, 6, 0, 8, 8, 8)
 4:4/0 = 0
-4:4/0/z_index = 10
 4:4/0/y_sort_origin = 4
 4:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -2, 0, -2, 0, -8, -8, -8, -8, 6, 0, 6, 0, 8, 8, 8)
 2:4/0 = 0
-2:4/0/z_index = 10
 2:4/0/y_sort_origin = 4
 2:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(0, -2, 8, -2, 8, 6, 0, 6)
 3:4/0 = 0
-3:4/0/z_index = 10
 3:4/0/y_sort_origin = 4
 3:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(0, -2, -8, -2, -8, 6, 0, 6)
 1:4/0 = 0
-1:4/0/z_index = 10
 1:4/0/y_sort_origin = 4
 1:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -2, 0, -2, -8, -2, -8, 6, -0.0859632, 6, 0, 8, 8, 8)
 0:4/0 = 0
-0:4/0/z_index = 10
 0:4/0/y_sort_origin = 4
 0:4/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -2, 0, -2, -8, -2, -8, 8, 0, 8, 0, 6, 8, 6)
 0:5/0 = 0
-0:5/0/z_index = 10
 0:5/0/y_sort_origin = 4
 0:5/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -2, 0, -2, 0, -8, -8, -8, -8, 8, 0, 8, -0.0859632, 6, 8, 6)
 1:5/0 = 0
-1:5/0/z_index = 10
 1:5/0/y_sort_origin = 4
 1:5/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -8, 0, -8, 0, -2, -8, -2, -8, 6, -0.0859632, 6, 0, 8, 8, 8)
 0:6/0 = 0
-0:6/0/z_index = 10
 0:6/0/y_sort_origin = 4
 0:6/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -2, 0, -2, 0, -8, -8, -8, -8, 6, 8, 6)
 1:6/0 = 0
-1:6/0/z_index = 10
 1:6/0/y_sort_origin = 4
 1:6/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -8, 0, -8, 0, -2, -8, -2, -8, 6, 8, 6)
 3:6/0 = 0
-3:6/0/z_index = 10
 3:6/0/y_sort_origin = 4
 3:6/0/physics_layer_1/polygon_0/points = PackedVector2Array(0, -8, 8, -8, 8, 8, 0, 8)
 3:5/0 = 0
-3:5/0/z_index = 10
 3:5/0/y_sort_origin = 4
 3:5/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -2, 0, -2, 0, 8, 8, 8)
 4:5/0 = 0
-4:5/0/z_index = 10
 4:5/0/y_sort_origin = 4
 4:5/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -2, 0, -2, 0, 8, -8, 8)
 4:6/0 = 0
-4:6/0/z_index = 10
 4:6/0/y_sort_origin = 4
 4:6/0/physics_layer_1/polygon_0/points = PackedVector2Array(0, -8, -8, -8, -8, 8, 0, 8)
 3:7/0 = 0
-3:7/0/z_index = 10
 3:7/0/y_sort_origin = 4
 3:7/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -8, 0, -8, 0, 6, 8, 6)
 4:7/0 = 0
-4:7/0/z_index = 10
 4:7/0/y_sort_origin = 4
 4:7/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 0, -8, 0, 6, -8, 6)
 5:7/0 = 0
-5:7/0/z_index = 10
 5:7/0/y_sort_origin = 4
 5:7/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, 6, 8, 6, 8, -2, -8, -2)
 5:6/0 = 0
-5:6/0/z_index = 10
 5:6/0/y_sort_origin = 4
 5:6/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -2, 0, -2, 0, -8, -8, -8, -8, 6, 0, 6, 8, 6)
 5:5/0 = 0
-5:5/0/z_index = 10
 5:5/0/y_sort_origin = 4
 5:5/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -2, -8, -2, -8, 8, 0, 8, 0, 6, 8, 6)
 6:5/0 = 0
-6:5/0/z_index = 10
 6:5/0/y_sort_origin = 4
 6:5/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -2, -8, -2, -8, 6, 0, 6, 0, 8, 8, 8)
 6:6/0 = 0
-6:6/0/z_index = 10
 6:6/0/y_sort_origin = 4
 6:6/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -2, 8, -8, 0, -8, 0, -2, -8, -2, -8, 6, 0, 6, 8, 6)
 7:6/0 = 0
-7:6/0/z_index = 10
 7:6/0/y_sort_origin = 4
 7:6/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -2, 0, -2, 0, -8, -8, -8, -8, 6, 0, 6, 0, 8, 8, 8)
 7:7/0 = 0
-7:7/0/z_index = 10
 7:7/0/y_sort_origin = 4
 7:7/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -2, 8, -8, 0, -8, 0, -2, -8, -2, -8, 8, 0, 8, 0, 6, 8, 6)
 
@@ -884,6 +835,8 @@ physics_layer_1/collision_mask = 0
 physics_layer_2/collision_layer = 1
 physics_layer_3/collision_layer = 64
 physics_layer_3/collision_mask = 0
+physics_layer_4/collision_layer = 128
+physics_layer_4/collision_mask = 0
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "grass_terrain"
 terrain_set_0/terrain_0/color = Color(0.711437, 0, 0.298233, 1)
@@ -901,3 +854,4 @@ sources/9 = SubResource("TileSetAtlasSource_esjam")
 sources/11 = SubResource("TileSetAtlasSource_qs02o")
 sources/8 = SubResource("TileSetAtlasSource_dw4ee")
 sources/10 = SubResource("TileSetAtlasSource_3hiqg")
+sources/0 = SubResource("TileSetAtlasSource_vww44")
