@@ -1,13 +1,13 @@
 [gd_resource type="TileSet" load_steps=17 format=3 uid="uid://dq7x0bsl7faum"]
 
-[ext_resource type="Texture2D" uid="uid://xsnx47k4rg25" path="res://assets/tilesets/Outside/Land/basic_grass_flower_small_tree.png" id="2_rsiuj"]
-[ext_resource type="Texture2D" uid="uid://dm87gxm08kn4v" path="res://assets/tilesets/Outside/Land/fences.png" id="3_esjam"]
-[ext_resource type="Texture2D" uid="uid://c1ibijtubddqp" path="res://pokemon-assets/Graphics/Tilesets/Outside.png" id="3_vww44"]
-[ext_resource type="Texture2D" uid="uid://dhuty3u00wlrl" path="res://assets/tilesets/sea_animated_tileset.png" id="4_0u6eo"]
-[ext_resource type="Texture2D" uid="uid://dmgj3q7jqinak" path="res://assets/tilesets/Outside/Land/hill_and_stair.png" id="5_glu6w"]
-[ext_resource type="Texture2D" uid="uid://saklx2ued7jv" path="res://assets/tilesets/Outside/Land/ledge.png" id="8_64fg8"]
-[ext_resource type="Texture2D" uid="uid://dij18hgykk0ly" path="res://assets/tilesets/Outside/Land/grass-series.png" id="9_ui57o"]
-[ext_resource type="Texture2D" uid="uid://ip8e53iisxfs" path="res://pokemon-assets/Graphics/Tilesets/Dungeon cave.png" id="10_k28d2"]
+[ext_resource type="Texture2D" uid="uid://cbhalrxhuvplr" path="res://assets/tilesets/Outside/Land/basic_grass_flower_small_tree.png" id="2_rsiuj"]
+[ext_resource type="Texture2D" uid="uid://dk18nkb64d1qu" path="res://assets/tilesets/Outside/Land/fences.png" id="3_esjam"]
+[ext_resource type="Texture2D" uid="uid://c1u8s26fxuk5b" path="res://pokemon-assets/Graphics/Tilesets/Outside.png" id="3_vww44"]
+[ext_resource type="Texture2D" uid="uid://bt8ci0nwb1u8o" path="res://assets/tilesets/sea_animated_tileset.png" id="4_0u6eo"]
+[ext_resource type="Texture2D" uid="uid://b5jyvfwfg522h" path="res://assets/tilesets/Outside/Land/hill_and_stair.png" id="5_glu6w"]
+[ext_resource type="Texture2D" uid="uid://diw0yuvddojc0" path="res://assets/tilesets/Outside/Land/ledge.png" id="8_64fg8"]
+[ext_resource type="Texture2D" uid="uid://b7r4klilu1scx" path="res://assets/tilesets/Outside/Land/grass-series.png" id="9_ui57o"]
+[ext_resource type="Texture2D" uid="uid://bj6tealymn1tl" path="res://pokemon-assets/Graphics/Tilesets/Dungeon cave.png" id="10_k28d2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_glu6w"]
 texture = ExtResource("2_rsiuj")
