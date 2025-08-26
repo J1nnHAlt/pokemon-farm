@@ -10,6 +10,8 @@ var shop_item_button_scene = preload("res://scenes/shops/shop_item_button.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	possible_items.append(preload("res://scripts/inventory/items/seeds/cheri_seed.tres"))
+	possible_items.append(preload("res://scripts/inventory/items/seeds/custa_seed.tres"))
 	visible = false
 	refresh_balance()
 	_refresh_ui()
@@ -37,7 +39,11 @@ func restock_shop():
 	shop_inv.slots.clear() # Empty the shop
 	for i in range(3): # Give the shop 3 random items
 		var random_item = possible_items.pick_random()
-		var random_price = round(randf_range(10, 100))
+		var random_price: int
+		if random_item is SeedItem:
+			random_price = round(randf_range(1, 10))
+		else:
+			random_price = round(randf_range(10, 100)) 
 		var random_amount = randi_range(1, 5)
 		shop_inv.add_item(random_item, random_price, random_amount)
 

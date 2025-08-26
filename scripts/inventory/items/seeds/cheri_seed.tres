@@ -11,6 +11,6 @@ region = Rect2(131.21, 321.848, 25.8091, 26.765)
 [resource]
 script = ExtResource("1_ndf7h")
 crop_scene = ExtResource("1_3wbtt")
-name = ""
+name = "CheriSeed"
 texture = SubResource("AtlasTexture_2vqeg")
 metadata/_custom_type_script = "uid://c3mtqwb5xdx73"
