@@ -1,23 +1,24 @@
 extends Area2D
+class_name Door
+
+@export var target_position: Vector2
+@export var building_id: String = ""
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
-
-#@export var exit_position: NodePath   # optional teleport target (inside building)
 
 var is_opening := false
 
 func open_door():
 	if not is_opening:
 		is_opening = true
+		visible = true  # make sure door is visible
 		anim.play("open_door")
+		await anim.animation_finished
+		is_opening = false   # reset so door can be opened again
+		visible = false
 
 func close_door():
-	is_opening = false
+	visible = true  # always visible while closing
 	anim.play("close_door")
-
-#func get_exit_position() -> Vector2:
-	#if exit_position != NodePath():
-		#var node = get_node(exit_position)
-		#if node:
-			#return node.global_position
-	#return global_position  # fallback: teleport to door itself
+	await anim.animation_finished
+	visible = true  # keep visible after closed

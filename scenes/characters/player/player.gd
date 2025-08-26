@@ -117,20 +117,11 @@ func detect_door() -> Node:
 				return hit
 	return null
 
-# Try entering the door (called by states)
-func try_enter_door():
-	var door = detect_door()
-	if door:
-		# Disable collisions with door + building
-		set_collision_mask_value(8, false) # Building
-		set_collision_mask_value(9, false) # Door
-		# Snap player to just below door
-		var door_pos: Vector2 = door.global_position
-		global_position.x = door_pos.x   # align horizontally with door
-		global_position.y = door_pos.y + 16 # just below door
-
-		# Animate or move inside
-		global_position.y -= 8   # move inside one tile
-		print("@Door: Door Entered")
-		if door.has_method("open_door"):
-			door.open_door()
+# This fucntion will check if the raycast2d collide with Door or not, if yes then return the Door object
+func get_door_in_front() -> Door:
+	if interaction_ray.is_colliding():
+		var collider = interaction_ray.get_collider()
+		if collider is Door:
+			print("@Door: get_door_in_front triggered")
+			return collider
+	return null

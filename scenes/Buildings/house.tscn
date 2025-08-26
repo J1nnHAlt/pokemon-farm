@@ -22,6 +22,5 @@ position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_yoh81")
 
 [node name="Door" parent="." instance=ExtResource("2_yoh81")]
-visible = true
 y_sort_enabled = true
 position = Vector2(-16, 31)

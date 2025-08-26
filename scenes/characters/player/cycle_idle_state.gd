@@ -61,7 +61,20 @@ func _on_physics_process(delta: float) -> void:
 
 
 func _on_next_transitions() -> void:
-	GameInputEvents.movement_input()
+	var direction = GameInputEvents.movement_input()
+	
+	# Update the raycast based on facing direction
+	if direction != Vector2.ZERO:
+		player.player_direction = direction
+		player.update_interaction_ray()
+	
+	# Check if player is in front of a door
+	var door = player.get_door_in_front()
+	# if player is in front of a door, when move up will enter to the building
+	if door and direction == Vector2.UP:
+		print("@Door: EnterDoor triggered")
+		transition.emit("EnterDoor")
+		return
 	
 	if GameInputEvents.is_interact_input() and player.is_water_in_front():
 		# stop the music before enter surf state
