@@ -22,7 +22,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.name == "Player" or body.is_in_group("player"):
 		player_nearby = false
-		body.set_meta("in_seller_area", false)
 		body.set_interaction_source(self, false)  # Register seller as interaction source
 		shop_menu.visible = false
 

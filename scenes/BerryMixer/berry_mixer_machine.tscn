@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmptioj6vv8yl"]
+[gd_scene load_steps=5 format=3 uid="uid://dmptioj6vv8yl"]
 
 [ext_resource type="Texture2D" uid="uid://bln4ib6vasvar" path="res://assets/tilesets/Inside/berryBlender.png" id="1_67adh"]
+[ext_resource type="Script" uid="uid://cwu88bocjqasb" path="res://scenes/BerryMixer/berry_mixer_machine.gd" id="1_v77ry"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_67adh"]
 radius = 12.0
@@ -11,6 +12,7 @@ size = Vector2(16, 12)
 [node name="BerryMixerMachine" type="Node2D"]
 z_index = 30
 y_sort_enabled = true
+script = ExtResource("1_v77ry")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
@@ -31,3 +33,6 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_67adh")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
