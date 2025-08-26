@@ -63,29 +63,15 @@ func _on_exit() -> void:
 	player.visible = true  
 
 func teleport_to_door_target(door: Door) -> void:
-	var tree = get_tree()
-	var old_scene = tree.current_scene
-	var interior_scene = load(door.target_scene).instantiate()
+	print("@Teleport: Preparing to change scene...")
 
-	old_scene.remove_child(player)
-	tree.root.add_child(interior_scene)
-	tree.current_scene = interior_scene
-	old_scene.queue_free()
+	# 🚀 Store where player should spawn next
+	GameData.next_spawn = door.target_spawn_name
+	print("@Teleport: Setting GameData.next_spawn =", GameData.next_spawn)
 
-	interior_scene.add_child(player)
-
-	# Spawn inside
-	var spawn_point = interior_scene.get_node_or_null(door.target_spawn_name)
-	if spawn_point:
-		player.global_position = spawn_point.global_position
-	else:
-		push_warning("Spawn point not found: %s" % door.target_spawn_name)
-
-	# 👇 Connect exit handling
-	for child in interior_scene.get_children():
-		if child is EntrancePoint and child.linked_door_id == door.door_id:
-			print("@Entrance: Connecting _on_exit_point_entered for door_id =", door.door_id)
-			child.player_entered.connect(Callable(self, "_on_exit_point_entered").bind(door))
+	# 🚀 Change to target scene (Godot handles unloading old one)
+	get_tree().change_scene_to_file(door.target_scene)
+	print("@Teleport: Scene changed to", door.target_scene)
 
 
 func _on_exit_point_entered(body: Node2D, door: Door) -> void:

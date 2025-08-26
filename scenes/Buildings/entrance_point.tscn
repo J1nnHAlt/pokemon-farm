@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcrccp0kua4oc"]
+[gd_scene load_steps=6 format=3 uid="uid://dcrccp0kua4oc"]
 
 [ext_resource type="Texture2D" uid="uid://8icmb7c4352j" path="res://assets/tilesets/Inside/mat.png" id="1_8ivnv"]
 [ext_resource type="Script" uid="uid://dao8wdlw3xiap" path="res://scenes/Buildings/EntrancePoint.gd" id="1_qi3qj"]
+[ext_resource type="PackedScene" uid="uid://dheba8g1u8uj8" path="res://scenes/characters/player/player.tscn" id="3_v4320"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qi3qj"]
 size = Vector2(48, 16)
@@ -25,3 +26,5 @@ debug_color = Color(0.966491, 0.122128, 0.351539, 0.42)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 2)
 texture = SubResource("AtlasTexture_v4320")
+
+[node name="Player" parent="." instance=ExtResource("3_v4320")]
