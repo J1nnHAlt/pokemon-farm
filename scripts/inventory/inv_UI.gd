@@ -29,8 +29,14 @@ func _ready() -> void:
 func update_slots():
 #	loop through all slots and update them
 		for i in range(min(inv.slots.size(), slots.size())):
+			var slot_node = slots[i]
 			slots[i].update(inv.slots[i], i)
-
+			
+			var player_node = get_tree().get_first_node_in_group("player")
+			if player_node:
+				var callable = Callable(player_node, "set_selected_seed")
+				if not slot_node.seed_selected.is_connected(callable):
+					slot_node.seed_selected.connect(callable)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_inventory"):

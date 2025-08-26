@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var hit_component: HitComponent = $HitComponent
 @export var current_tool: DataTypes.Tools = DataTypes.Tools.None
 var inventory: Inv
+var selected_seed: PackedScene = null
 var pokeball_cd: bool = false
 
 @onready var interaction_ray: RayCast2D = $DoorDetector
@@ -144,3 +145,19 @@ func get_door_in_front() -> Door:
 
 func _on_pokeball_cd_timeout() -> void:
 	pokeball_cd = false
+	
+func set_selected_seed(seed_scene: PackedScene):
+	selected_seed = seed_scene
+	print("Selected seed:", selected_seed)
+	
+
+func plant_seed(seed: SeedItem, slot_index: int):
+	if not seed or not seed.crop_scene:
+		return
+
+	var crop = seed.crop_scene.instantiate()
+	get_parent().add_child(crop)
+	crop.global_position = global_position
+	GameData.inventory.remove(slot_index)
+	GameData.save_game()
+	print("Planted ", seed.name, " at ", global_position)

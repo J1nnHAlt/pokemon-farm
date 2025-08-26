@@ -6,6 +6,10 @@ extends Panel
 @onready var amount_text: Label = $CenterContainer/Panel/Label
 @onready var sfx_remove_item: AudioStreamPlayer = $sfx_remove_item
 
+
+const SeedItem = preload("res://scripts/inventory/seed_item.gd")
+signal seed_selected(seed_scene: PackedScene)
+
 var slot_index: int
 var slot_data: InvSlot
 
@@ -43,6 +47,11 @@ func _gui_input(event):
 				print("Berry sold, calling LegendaryManager")
 				LegendaryManager.on_berry_sold()
 
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if slot_data and slot_data.item and slot_data.item is SeedItem:
+			var player = get_tree().get_first_node_in_group("player")
+			if player:
+				player.plant_seed(slot_data.item, slot_index)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

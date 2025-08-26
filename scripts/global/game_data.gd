@@ -21,10 +21,10 @@ signal player_exited
 var berries = [
 	preload("res://scripts/inventory/items/berries/cheri_berry.tres"), 
 	preload("res://scripts/inventory/items/berries/durin_berry.tres"), 
-	preload("res://scripts/inventory/items/berries/pamtre_berry.tres"), 
-	preload("res://scripts/inventory/items/berries/custa_berry.tres"), 
-	preload("res://scripts/inventory/items/berries/yache_berry.tres"), 
-	preload("res://scripts/inventory/items/berries/rawst_berry.tres")
+	#preload("res://scripts/inventory/items/berries/pamtre_berry.tres"), 
+	#preload("res://scripts/inventory/items/berries/custa_berry.tres"), 
+	#preload("res://scripts/inventory/items/berries/yache_berry.tres"), 
+	#preload("res://scripts/inventory/items/berries/rawst_berry.tres")
 ]
 
 var food = [
@@ -33,6 +33,12 @@ var food = [
 	preload("res://scripts/inventory/items/food/leaf_bites.tres"), 
 	preload("res://scripts/inventory/items/food/spicy_jam.tres"), 
 	preload("res://scripts/inventory/items/food/sweet_juice.tres")
+]
+
+var seeds = [
+	preload("res://scripts/inventory/items/seeds/cheri_seed.tres"),
+	preload("res://scripts/inventory/items/seeds/custa_seed.tres"),
+	#preload("res://scripts/inventory/items/seeds/tomato_seed.tres")
 ]
 
 func save_game():
@@ -101,6 +107,10 @@ func load_game():
 				inventory.insert(f)
 		ResourceSaver.save(inventory, "user://inventory.tres")
 		inventory_loaded.emit()
+		
+		for seed in seeds:
+			for i in range(10):
+				inventory.insert(seed)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
