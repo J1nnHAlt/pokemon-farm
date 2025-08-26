@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" load_steps=9 format=3 uid="uid://bo3w4v0fvsd4w"]
 
-[ext_resource type="Texture2D" uid="uid://c4hlohxwiiqd1" path="res://scenes/test/test_enter_room/Mart interior.png" id="1_s8scm"]
-[ext_resource type="Texture2D" uid="uid://bmm0d8op6wl4e" path="res://pokemon-assets/Graphics/Tilesets/Bike shop interior.png" id="2_dkq6l"]
-[ext_resource type="Texture2D" uid="uid://7tcyhg65x5k6" path="res://pokemon-assets/Graphics/Tilesets/Department store interior.png" id="4_prfai"]
-[ext_resource type="Texture2D" uid="uid://u8r6u3qympbr" path="res://pokemon-assets/Graphics/Tilesets/Outside.png" id="4_s8scm"]
+[ext_resource type="Texture2D" uid="uid://4ieanwa4cq85" path="res://scenes/test/test_enter_room/Mart interior.png" id="1_s8scm"]
+[ext_resource type="Texture2D" uid="uid://c61p27wcmh1wy" path="res://pokemon-assets/Graphics/Tilesets/Bike shop interior.png" id="2_dkq6l"]
+[ext_resource type="Texture2D" uid="uid://bci6v6wrseouf" path="res://pokemon-assets/Graphics/Tilesets/Department store interior.png" id="4_prfai"]
+[ext_resource type="Texture2D" uid="uid://c1u8s26fxuk5b" path="res://pokemon-assets/Graphics/Tilesets/Outside.png" id="4_s8scm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bj6us"]
 texture = ExtResource("2_dkq6l")
