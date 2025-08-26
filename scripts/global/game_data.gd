@@ -90,7 +90,7 @@ func load_game():
 			slot.item = null
 			inventory.slots.append(slot)
 		for berry in berries:
-			for i in range(10):
+			for i in range(100):
 				inventory.insert(berry)
 		
 		for f in food:

@@ -3,7 +3,7 @@ extends Node
 @export var legendary_scene: PackedScene          # assign your LegendaryPokemon.tscn in Inspector
 @export var berries_required: int = 10            # how many berries to sell
 @export var spawn_radius: float = 128.0           # how close to spawn around player
-@export var chance: float = 0.5                   # 50% chance
+@export var chance: float = 1.0                   # 50% chance
 
 var sold_berries: int = 0
 var already_spawned: bool = false
