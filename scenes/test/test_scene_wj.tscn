@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://pgyengpe3tt4"]
+[gd_scene load_steps=22 format=4 uid="uid://pgyengpe3tt4"]
 
 [ext_resource type="PackedScene" uid="uid://cytdne0aeypsc" path="res://scenes/day_night_ui/day_night_cycle_component.tscn" id="1_6wg1a"]
 [ext_resource type="Script" uid="uid://chliixmnjjt78" path="res://scenes/test/test_scene_tilemap.gd" id="1_eem4t"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dkbqd3lx2bbxo" path="res://scenes/characters/pet_food_panel.tscn" id="14_23ssm"]
 [ext_resource type="AudioStream" uid="uid://b1v4uyek0gaik" path="res://pokemon-assets/Audio/SE/GUI naming tab swap start.ogg" id="15_5aqa6"]
 [ext_resource type="PackedScene" uid="uid://dq0x68l6h0d18" path="res://scenes/characters/seller/seller.tscn" id="16_kd2tn"]
+[ext_resource type="PackedScene" uid="uid://cqkk5fgowjuws" path="res://scenes/legendary_pokemon/legendary_manager.tscn" id="17_cm2hy"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_p0x3o"]
 vertices = PackedVector2Array(-110.859, 83.1563, -499.938, 89.8203, -498.047, -262.023, -106.133, -262.969)
@@ -135,5 +136,7 @@ autoplay = true
 [node name="Seller" parent="." instance=ExtResource("16_kd2tn")]
 z_index = 10
 position = Vector2(640, -64)
+
+[node name="LegendaryManager" parent="." instance=ExtResource("17_cm2hy")]
 
 [connection signal="body_entered" from="dungeon_entrance" to="dungeon_entrance" method="_on_body_entered"]

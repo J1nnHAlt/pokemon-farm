@@ -39,6 +39,7 @@ func _gui_input(event):
 
 			# Trigger LegendaryManager if it was a berry
 			if was_berry:
+				print("Berry sold, calling LegendaryManager")
 				LegendaryManager.on_berry_sold()
 
 
