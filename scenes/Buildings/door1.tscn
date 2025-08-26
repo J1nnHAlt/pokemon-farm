@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://cqlycvl6rimj"]
+
+[ext_resource type="Script" uid="uid://4a4a3yjo4my6" path="res://scenes/Buildings/door.gd" id="1_bj4ed"]
+[ext_resource type="Texture2D" uid="uid://wcae1j22bwm1" path="res://assets/tilesets/Outside/Buildings/Doors/doors5.png" id="1_g8sc5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bj4ed"]
+atlas = ExtResource("1_g8sc5")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3e64"]
+atlas = ExtResource("1_g8sc5")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55i3i"]
+atlas = ExtResource("1_g8sc5")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0kik"]
+atlas = ExtResource("1_g8sc5")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1x1k"]
+atlas = ExtResource("1_g8sc5")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6aaj"]
+atlas = ExtResource("1_g8sc5")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x2lb4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bj4ed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3e64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55i3i")
+}],
+"loop": false,
+"name": &"close_door",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0kik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1x1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6aaj")
+}],
+"loop": false,
+"name": &"open_door",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75kqr"]
+size = Vector2(16, 16)
+
+[node name="Door" type="Area2D"]
+visible = false
+collision_layer = 256
+collision_mask = 0
+script = ExtResource("1_bj4ed")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_x2lb4")
+animation = &"close_door"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_75kqr")
+debug_color = Color(0.516784, 0.575727, 0, 0.42)

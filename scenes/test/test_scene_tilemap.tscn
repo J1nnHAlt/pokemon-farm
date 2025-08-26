@@ -5,6 +5,7 @@
 [ext_resource type="TileSet" uid="uid://dq7x0bsl7faum" path="res://Tilesets/test_scene_tilemap.tres" id="2_j2mka"]
 [ext_resource type="PackedScene" uid="uid://c7mvvd3ocvl7d" path="res://scenes/shops/pokemon_shop.tscn" id="3_inwy8"]
 [ext_resource type="PackedScene" uid="uid://dheba8g1u8uj8" path="res://scenes/characters/player/player.tscn" id="3_o1akv"]
+[ext_resource type="PackedScene" uid="uid://du17qilklxdsy" path="res://scenes/Buildings/house.tscn" id="3_oqvvc"]
 [ext_resource type="PackedScene" uid="uid://32pfkefqd0i2" path="res://scenes/menus/pause_menu.tscn" id="4_inwy8"]
 [ext_resource type="Script" uid="uid://cse1n331uhrke" path="res://scripts/nav_regions/arbok_region.gd" id="4_m1qrs"]
 [ext_resource type="PackedScene" uid="uid://d2j5os108d655" path="res://scenes/global/coin.tscn" id="5_6k3gh"]
@@ -15,7 +16,6 @@
 [ext_resource type="AudioStream" uid="uid://mw04hdv38eif" path="res://pokemon-assets/Audio/SE/GUI naming tab swap start.ogg" id="12_ksdiy"]
 [ext_resource type="PackedScene" uid="uid://c1g7wo3i0l6eg" path="res://scenes/inventory/inv_ui.tscn" id="13_l0udy"]
 [ext_resource type="PackedScene" uid="uid://dkbqd3lx2bbxo" path="res://scenes/characters/pet_food_panel.tscn" id="14_ngwww"]
-[ext_resource type="PackedScene" uid="uid://dq0x68l6h0d18" path="res://scenes/characters/seller/seller.tscn" id="16_ngwww"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_p0x3o"]
 vertices = PackedVector2Array(-110.859, 83.1563, -499.938, 89.8203, -498.047, -262.023, -106.133, -262.969)
@@ -43,6 +43,9 @@ y_sort_enabled = true
 script = ExtResource("1_wyicn")
 
 [node name="DayNightCycleComponent" parent="." instance=ExtResource("1_7apd7")]
+
+[node name="House" parent="." instance=ExtResource("3_oqvvc")]
+position = Vector2(736, -176)
 
 [node name="GameTileMap" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -131,9 +134,5 @@ stream = ExtResource("12_ksdiy")
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 autoplay = true
-
-[node name="Seller" parent="." instance=ExtResource("16_ngwww")]
-z_index = 10
-position = Vector2(640, -64)
 
 [connection signal="body_entered" from="dungeon_entrance" to="dungeon_entrance" method="_on_body_entered"]

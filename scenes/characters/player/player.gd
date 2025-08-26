@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var current_tool: DataTypes.Tools = DataTypes.Tools.None
 var inventory: Inv
 
+@onready var interaction_ray: RayCast2D = $DoorDetector
 @onready var interactButton: Control = $FButton
 var current_interaction_source: Node = null
 
@@ -92,3 +93,44 @@ func set_interaction_source(source: Node, visible: bool) -> void:
 	elif source == current_interaction_source:
 		current_interaction_source = null
 		interactButton.visible = false
+
+# Update ray direction based on player_direction
+func update_interaction_ray():
+	match player_direction:
+		Vector2.UP:
+			interaction_ray.target_position = Vector2(0, -8)
+		Vector2.DOWN:
+			interaction_ray.target_position = Vector2(0, 8)
+		Vector2.LEFT:
+			interaction_ray.target_position = Vector2(-8, 0)
+		Vector2.RIGHT:
+			interaction_ray.target_position = Vector2(8, 0)
+
+# Detect if door is in front of player
+func detect_door() -> Node:
+	if interaction_ray.is_colliding():
+		var hit = interaction_ray.get_collider()
+		if hit and hit is CollisionObject2D:
+			# Check if collider is on physics layer 11
+			if hit.get_collision_layer_value(9):
+				print("@Door: Door detected")
+				return hit
+	return null
+
+# Try entering the door (called by states)
+func try_enter_door():
+	var door = detect_door()
+	if door:
+		# Disable collisions with door + building
+		set_collision_mask_value(8, false) # Building
+		set_collision_mask_value(9, false) # Door
+		# Snap player to just below door
+		var door_pos: Vector2 = door.global_position
+		global_position.x = door_pos.x   # align horizontally with door
+		global_position.y = door_pos.y + 16 # just below door
+
+		# Animate or move inside
+		global_position.y -= 8   # move inside one tile
+		print("@Door: Door Entered")
+		if door.has_method("open_door"):
+			door.open_door()

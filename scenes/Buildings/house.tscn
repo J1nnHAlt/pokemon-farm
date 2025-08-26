@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://du17qilklxdsy"]
+
+[ext_resource type="Texture2D" uid="uid://bpknv5o0rtnca" path="res://assets/tilesets/Outside/Buildings/building_1.png" id="1_7pnrs"]
+[ext_resource type="PackedScene" uid="uid://cqlycvl6rimj" path="res://scenes/Buildings/door1.tscn" id="2_yoh81"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yoh81"]
+size = Vector2(80, 64)
+
+[node name="House" type="StaticBody2D"]
+z_index = 30
+y_sort_enabled = true
+collision_layer = 128
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = ExtResource("1_7pnrs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(1, 8)
+shape = SubResource("RectangleShape2D_yoh81")
+
+[node name="Door" parent="." instance=ExtResource("2_yoh81")]
+position = Vector2(-16, 31)

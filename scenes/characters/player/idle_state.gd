@@ -34,6 +34,10 @@ func _on_physics_process(_delta : float) -> void:
 func _on_next_transitions() -> void:
 	GameInputEvents.movement_input()
 	
+	if GameInputEvents.is_movement_input():
+		player.update_interaction_ray()
+		player.try_enter_door()
+	
 	if GameInputEvents.is_interact_input() and player.is_water_in_front():
 		# Move player slightly forward into water
 		player.collision_mask &= ~((1 << 1) | (1 << 6))

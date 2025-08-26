@@ -1068,16 +1068,14 @@ animations = [{
 z_index = 30
 y_sort_enabled = true
 collision_layer = 520
-collision_mask = 71
+collision_mask = 199
 script = ExtResource("1_hss88")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_6nfx3")
-animation = &"fishing_front"
+animation = &"idle_back"
 autoplay = "idle_front"
-frame = 3
-frame_progress = 1.0
 
 [node name="SurfPokemon" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -1094,6 +1092,11 @@ shape = SubResource("RectangleShape2D_7uws0")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -8)
 zoom = Vector2(3.8, 3.8)
+
+[node name="DoorDetector" type="RayCast2D" parent="."]
+position = Vector2(0, -8)
+collision_mask = 256
+collide_with_areas = true
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
 script = ExtResource("2_686vu")
@@ -1191,9 +1194,9 @@ texture_progress = ExtResource("25_bxwvg")
 [node name="FishWarning" type="TextureRect" parent="."]
 visible = false
 z_index = 50
-offset_left = -6.0
-offset_top = -34.0
-offset_right = 7.0
+offset_left = -8.0
+offset_top = -38.0
+offset_right = 8.0
 offset_bottom = -22.0
 texture = ExtResource("27_2v4cy")
 stretch_mode = 5
@@ -1213,7 +1216,7 @@ visible = false
 position = Vector2(0, 16)
 scale = Vector2(0.13, 0.13)
 sprite_frames = SubResource("SpriteFrames_voohj")
-frame_progress = 0.217525
+frame_progress = 0.20741
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
