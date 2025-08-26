@@ -1,4 +1,4 @@
-[gd_scene load_steps=146 format=3 uid="uid://dheba8g1u8uj8"]
+[gd_scene load_steps=150 format=3 uid="uid://dheba8g1u8uj8"]
 
 [ext_resource type="Script" uid="uid://dkxajelubqv35" path="res://scenes/characters/player/player.gd" id="1_hss88"]
 [ext_resource type="Texture2D" uid="uid://cvpxdgalmrwf3" path="res://assets/characters/girl_cycling_spritesheet.png" id="2_42irl"]
@@ -31,6 +31,7 @@
 [ext_resource type="AudioStream" uid="uid://bs648fkxd8et7" path="res://pokemon-assets/Audio/ME/Battle capture success.ogg" id="29_b4gk5"]
 [ext_resource type="AudioStream" uid="uid://bqboeyrxshrbw" path="res://pokemon-assets/Audio/BGM/Battle wild.ogg" id="30_r0hd7"]
 [ext_resource type="AudioStream" uid="uid://b4tft1yvr60co" path="res://pokemon-assets/Audio/SE/Exclaim.ogg" id="31_gpigg"]
+[ext_resource type="Texture2D" uid="uid://cd358ometej6g" path="res://assets/UI/keyboard buttons/space_button.png" id="32_nt8su"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_35rnk"]
 atlas = ExtResource("2_42irl")
@@ -1041,6 +1042,28 @@ radius = 5.09902
 [sub_resource type="CircleShape2D" id="CircleShape2D_tebod"]
 radius = 2.23607
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjxq8"]
+atlas = ExtResource("32_nt8su")
+region = Rect2(0, 0, 415, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ti6t"]
+atlas = ExtResource("32_nt8su")
+region = Rect2(415, 0, 415, 112)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_voohj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjxq8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ti6t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 30
 y_sort_enabled = true
@@ -1184,6 +1207,13 @@ parameters/looping = false
 
 [node name="sfx_exclaim" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("31_gpigg")
+
+[node name="Spacebar" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, 16)
+scale = Vector2(0.13, 0.13)
+sprite_frames = SubResource("SpriteFrames_voohj")
+frame_progress = 0.217525
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
