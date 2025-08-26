@@ -63,12 +63,6 @@ func _on_exit() -> void:
 	player.visible = true  
 
 func teleport_to_door_target(door: Door) -> void:
-	print("@Teleport: Preparing to change scene...")
-
-	# 🚀 Store where player should spawn next
-	GameData.next_spawn = door.target_spawn
-	print("@Teleport: Setting GameData.next_spawn =", GameData.next_spawn)
-
-	# 🚀 Change to target scene (Godot handles unloading old one)
+	# Change to target scene (Godot handles unloading old one)
 	get_tree().change_scene_to_file(door.target_scene)
 	print("@Teleport: Scene changed to", door.target_scene)
