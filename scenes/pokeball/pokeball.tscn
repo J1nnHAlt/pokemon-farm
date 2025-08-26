@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://dihw6ynkxt4hh"]
 
-[ext_resource type="Texture2D" uid="uid://dr54su7oqdtgm" path="res://pokemon-assets/Graphics/Battle animations/ball_POKEBALL.png" id="1_5ml1e"]
+[ext_resource type="Texture2D" uid="uid://bs5p5qgmdu2jv" path="res://pokemon-assets/Graphics/Battle animations/ball_POKEBALL.png" id="1_5ml1e"]
 [ext_resource type="Script" uid="uid://bfc1avr1yk11v" path="res://scenes/pokeball/pokeball.gd" id="1_gbj38"]
-[ext_resource type="Texture2D" uid="uid://blkkr5cnr4anf" path="res://pokemon-assets/Graphics/Battle animations/ball_BEASTBALL_open.png" id="2_y5gs6"]
-[ext_resource type="AudioStream" uid="uid://uxr63i6kaiuk" path="res://pokemon-assets/Audio/SE/Battle ball hit.ogg" id="4_t6mka"]
+[ext_resource type="Texture2D" uid="uid://6mqakxuilych" path="res://pokemon-assets/Graphics/Battle animations/ball_BEASTBALL_open.png" id="2_y5gs6"]
+[ext_resource type="AudioStream" uid="uid://dmywakoyfardt" path="res://pokemon-assets/Audio/SE/Battle ball hit.ogg" id="4_t6mka"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gbj38"]
 atlas = ExtResource("1_5ml1e")

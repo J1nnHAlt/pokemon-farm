@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var hit_component: HitComponent = $HitComponent
 @export var current_tool: DataTypes.Tools = DataTypes.Tools.None
 var inventory: Inv
+var pokeball_cd: bool = false
 
 @onready var interaction_ray: RayCast2D = $DoorDetector
 @onready var interactButton: Control = $FButton
@@ -37,9 +38,10 @@ func _process(delta):
 		current_tool = DataTypes.Tools.WaterCrops
 		$HitComponent.current_tool = current_tool
 		print("Tool changed to: ", current_tool)
-		
-	if Input.is_action_just_pressed("throw_pokeball"):
-		throw_pokeball()
+	
+	if get_parent().name == 'dungeon':
+		if Input.is_action_just_pressed("throw_pokeball") and !pokeball_cd:
+			throw_pokeball()
 
 #to be called when collecting item
 func collect(item):
@@ -57,6 +59,8 @@ func throw_pokeball():
 	var mouse_pos = get_global_mouse_position()
 	var dir = (mouse_pos - global_position).normalized()
 	pokeball.velocity = dir * pokeball.speed
+	$pokeball_cd.start(1.5)
+	pokeball_cd = true
 
 # Change the position of detection area according to player facing direction
 func _update_detection_position() -> void:
@@ -125,3 +129,7 @@ func get_door_in_front() -> Door:
 			print("@Door: get_door_in_front triggered")
 			return collider
 	return null
+
+
+func _on_pokeball_cd_timeout() -> void:
+	pokeball_cd = false
