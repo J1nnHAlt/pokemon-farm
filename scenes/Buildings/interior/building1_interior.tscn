@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://bn1gkyjs6nhon"]
+[gd_scene load_steps=3 format=3 uid="uid://bn1gkyjs6nhon"]
+
+[ext_resource type="TileSet" uid="uid://dq7x0bsl7faum" path="res://Tilesets/test_scene_tilemap.tres" id="1_bbamf"]
+
+[sub_resource type="TileSet" id="TileSet_dfivk"]
 
 [node name="Building1Interior" type="Node2D"]
+
+[node name="GameTileMap" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="wall&floor" type="TileMapLayer" parent="GameTileMap"]
+tile_set = SubResource("TileSet_dfivk")
+
+[node name="Decoration" type="TileMapLayer" parent="GameTileMap" groups=["navigation_polygon_source_geometry_group"]]
+z_index = 20
+y_sort_enabled = true
+tile_set = ExtResource("1_bbamf")
