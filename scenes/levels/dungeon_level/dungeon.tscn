@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://cob1q3vvthx7q"]
+[gd_scene load_steps=26 format=4 uid="uid://cob1q3vvthx7q"]
 
 [ext_resource type="PackedScene" uid="uid://dheba8g1u8uj8" path="res://scenes/characters/player/player.tscn" id="1_jew4h"]
 [ext_resource type="Texture2D" uid="uid://ckct4u2wv5f15" path="res://pokemon-assets/Graphics/Autotiles/Blue cave floor.png" id="1_qmsn3"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cnsbf2wm8bxel" path="res://scenes/wild_pokemon_spawner/wild_arbok_spawner.tscn" id="10_7410j"]
 [ext_resource type="PackedScene" uid="uid://dhwu5lbvocbys" path="res://scenes/wild_pokemon/wild_arbok/wild_arbok.tscn" id="11_fhrc8"]
 [ext_resource type="AudioStream" uid="uid://dk612t4p5o662" path="res://pokemon-assets/Audio/BGM/Battle wild.ogg" id="13_25mab"]
+[ext_resource type="PackedScene" uid="uid://c1g7wo3i0l6eg" path="res://scenes/inventory/inv_ui.tscn" id="14_h7yji"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p2khw"]
 texture = ExtResource("1_qmsn3")
@@ -847,6 +848,12 @@ position = Vector2(122, 16)
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("9_fhrc8")]
 
 [node name="DayNightPanel" parent="CanvasLayer" instance=ExtResource("10_3yp5a")]
+
+[node name="Inv_UI" parent="CanvasLayer" instance=ExtResource("14_h7yji")]
+offset_left = 507.0
+offset_top = 209.0
+offset_right = 590.0
+offset_bottom = 272.0
 
 [node name="Night" type="CanvasModulate" parent="."]
 color = Color(0.2, 0.678431, 0.909804, 0.921569)
