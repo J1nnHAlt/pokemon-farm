@@ -26,6 +26,10 @@ func pause():
 	day_night_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE  # disable
 
 func testEsc():
+	for action in ["esc", "throw_pokeball"]:
+		if Input.is_action_just_pressed(action):
+			print("Pressed:", action)
+	
 	if Input.is_action_just_pressed("esc") and get_tree().paused == false:
 		print("ESC pressed")
 		sfx_open_menu.play()
