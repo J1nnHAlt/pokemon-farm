@@ -1,7 +1,7 @@
 extends Control
 
 @onready var mix_button = $HBoxContainer/MixerPanel/MixButton
-@onready var popup_scene = preload("res://scenes/BerryMixer/popup.tscn")  # your popup scene
+@onready var popup_scene = preload("res://scenes/BerryMixer/popup.tscn")  
 
 @export var target_spawn: String = "MixerExitSpawn"
 @export var main_scene = "res://scenes/test/test_scene_tilemap.tscn"
@@ -17,7 +17,7 @@ func show_craft_popup(recipe_name: String):
 	
 	var popup = popup_scene.instantiate()
 	add_child(popup)
-	popup.set_display(recipe_name, message)  # create this method inside your popup script
+	popup.set_display(recipe_name, message) 
 	GameData.save_game()
 
 func _on_exit_pressed() -> void:

@@ -62,7 +62,7 @@ func _apply_legendary_buff() -> void:
 	for crop in crops:
 		var growth := crop.get_node_or_null("GrowthCycleComponent") # adjust path if needed
 		if growth:
-			growth.days_until_harvest = 5
+			growth.days_until_harvest = 3
 			print("Buff applied to:", crop.name)
 
 func _show_message(text: String) -> void:

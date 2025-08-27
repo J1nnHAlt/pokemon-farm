@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dmptioj6vv8yl"]
 
-[ext_resource type="Texture2D" uid="uid://bln4ib6vasvar" path="res://assets/tilesets/Inside/berryBlender.png" id="1_67adh"]
+[ext_resource type="Texture2D" uid="uid://v0neoyo0dxlq" path="res://assets/tilesets/Inside/berryBlender.png" id="1_67adh"]
 [ext_resource type="Script" uid="uid://cwu88bocjqasb" path="res://scenes/BerryMixer/berry_mixer_machine.gd" id="1_v77ry"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_67adh"]
