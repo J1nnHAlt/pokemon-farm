@@ -21,7 +21,7 @@ signal player_exited
 var berries = [
 	preload("res://scripts/inventory/items/berries/cheri_berry.tres"), 
 	preload("res://scripts/inventory/items/berries/durin_berry.tres"), 
-	#preload("res://scripts/inventory/items/berries/pamtre_berry.tres"), 
+	preload("res://scripts/inventory/items/berries/pamtre_berry.tres"), 
 	#preload("res://scripts/inventory/items/berries/custa_berry.tres"), 
 	#preload("res://scripts/inventory/items/berries/yache_berry.tres"), 
 	#preload("res://scripts/inventory/items/berries/rawst_berry.tres")
@@ -105,12 +105,14 @@ func load_game():
 		for f in food:
 			for i in range(5):
 				inventory.insert(f)
+				
+		for seed in seeds:
+			for i in range(10):
+				inventory.insert(seed)		
+				
 		ResourceSaver.save(inventory, "user://inventory.tres")
 		inventory_loaded.emit()
 		
-		for seed in seeds:
-			for i in range(10):
-				inventory.insert(seed)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
