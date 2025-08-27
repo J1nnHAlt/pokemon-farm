@@ -3,7 +3,7 @@ extends Control
 @onready var mix_button = $HBoxContainer/MixerPanel/MixButton
 @onready var popup_scene = preload("res://scenes/BerryMixer/popup.tscn")  # your popup scene
 
-@export var target_spawn: String = "DungeonExitSpawn"
+@export var target_spawn: String = "MixerExitSpawn"
 @export var main_scene = "res://scenes/test/test_scene_tilemap.tscn"
 func _ready():
 	mix_button.recipe_result.connect(show_craft_popup)

@@ -2,7 +2,7 @@ extends Node2D
 var player_nearby := false
 
 @export var mixer_ui_scene: PackedScene = preload("res://scenes/BerryMixer/berry_mixer.tscn")
-
+@export var mixer_scene = "res://scenes/BerryMixer/berry_mixer.tscn"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -11,9 +11,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if player_nearby and Input.is_action_just_pressed("interact"):
-		var ui = mixer_ui_scene.instantiate()
-		get_tree().root.add_child(ui)  # add to UI layer (root or a CanvasLayer)
-		ui.visible = true
+		get_tree().change_scene_to_file(mixer_scene)
 
 
 
