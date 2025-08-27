@@ -1,9 +1,9 @@
 [gd_resource type="Theme" load_steps=21 format=3 uid="uid://bjs7wtt6ir1xs"]
 
-[ext_resource type="FontFile" uid="uid://bho7xlvagd2fl" path="res://pokemon-assets/Fonts/power clear bold.ttf" id="1_8df5g"]
-[ext_resource type="FontFile" uid="uid://c82ft22gusl5n" path="res://pokemon-assets/Fonts/power green.ttf" id="1_8u0ir"]
-[ext_resource type="Texture2D" uid="uid://b5hffmo42b5pf" path="res://scenes/day_night_ui/Sprite sheet for Basic Pack.png" id="1_sujxv"]
-[ext_resource type="FontFile" uid="uid://m6y4beunco4o" path="res://pokemon-assets/Fonts/pixelFont-7-8x14-sproutLands.ttf" id="2_dkgt5"]
+[ext_resource type="FontFile" uid="uid://dabmgysakl1au" path="res://pokemon-assets/Fonts/power clear bold.ttf" id="1_8df5g"]
+[ext_resource type="FontFile" uid="uid://dm7rsnbeactck" path="res://pokemon-assets/Fonts/power green.ttf" id="1_8u0ir"]
+[ext_resource type="Texture2D" uid="uid://cw3jmhsp7ugcl" path="res://scenes/day_night_ui/Sprite sheet for Basic Pack.png" id="1_sujxv"]
+[ext_resource type="FontFile" uid="uid://do1dhs58b7r66" path="res://pokemon-assets/Fonts/pixelFont-7-8x14-sproutLands.ttf" id="2_dkgt5"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dkgt5"]
 

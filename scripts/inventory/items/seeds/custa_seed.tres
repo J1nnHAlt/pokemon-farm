@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cpml44yu5qudr" path="res://scenes/crops/custa_berry.tscn" id="1_i2cej"]
 [ext_resource type="Script" uid="uid://c3mtqwb5xdx73" path="res://scripts/inventory/seed_item.gd" id="2_21ktl"]
-[ext_resource type="Texture2D" uid="uid://beyy4spxxna4b" path="res://scripts/inventory/items/seeds/icons32.png" id="3_i2cej"]
+[ext_resource type="Texture2D" uid="uid://biu25bgmnyqtk" path="res://scripts/inventory/items/seeds/icons32.png" id="3_i2cej"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2vqeg"]
 atlas = ExtResource("3_i2cej")

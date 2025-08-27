@@ -55,7 +55,7 @@ func _physics_process(delta: float) -> void:
 
 #Called when a state wants to transition to another state.
 func transition_to(node_state_name : String) -> void:
-	# ✅ NEW: allow special "_previous" transition
+	# allow special "_previous" transition
 	if node_state_name.to_lower() == "_previous":
 		if previous_node_state_name == "" or previous_node_state_name == current_node_state_name:
 			return  # no valid previous state
@@ -72,7 +72,7 @@ func transition_to(node_state_name : String) -> void:
 	if !new_node_state:
 		return
 	
-	# ✅ NEW: save current before switching
+	# save current before switching
 	var came_from = ""
 	if current_node_state:
 		came_from = current_node_state.name.to_lower()
@@ -81,7 +81,7 @@ func transition_to(node_state_name : String) -> void:
 #	Enter the new state.
 	new_node_state._on_enter()
 	
-	# ✅ NEW: update previous/current tracking
+	# update previous/current tracking
 	if came_from != "":
 		previous_node_state_name = came_from
 #	Update the state references.
