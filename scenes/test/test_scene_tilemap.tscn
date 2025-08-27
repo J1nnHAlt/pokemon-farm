@@ -45,10 +45,6 @@ script = ExtResource("1_wyicn")
 
 [node name="DayNightCycleComponent" parent="." instance=ExtResource("1_7apd7")]
 
-[node name="HouseExitSpawn" type="Marker2D" parent="."]
-z_index = 40
-position = Vector2(720, -120)
-
 [node name="House" parent="." instance=ExtResource("3_oqvvc")]
 position = Vector2(736, -176)
 
@@ -107,7 +103,12 @@ shape = SubResource("RectangleShape2D_ksdiy")
 y_sort_enabled = true
 
 [node name="DungeonExitSpawn" type="Marker2D" parent="Spawns"]
+z_index = 40
 position = Vector2(47, -258)
+
+[node name="HouseExitSpawn" type="Marker2D" parent="Spawns"]
+z_index = 40
+position = Vector2(720, -130)
 
 [node name="Player" parent="." instance=ExtResource("3_o1akv")]
 z_as_relative = false
