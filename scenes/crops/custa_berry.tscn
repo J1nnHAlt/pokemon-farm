@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://j3mjtuxv4amv" path="res://scenes/crops/berry.gd" id="1_u65aj"]
 [ext_resource type="Resource" uid="uid://dxhcqrt76hxfo" path="res://scripts/inventory/items/berries/custa_berry.tres" id="2_bh1hu"]
-[ext_resource type="Texture2D" uid="uid://eml32j5ek383" path="res://pokemon-assets/Graphics/Characters/berrytree_CUSTAPBERRY.png" id="2_u65aj"]
+[ext_resource type="Texture2D" uid="uid://dlvxd4ov0l1s6" path="res://pokemon-assets/Graphics/Characters/berrytree_CUSTAPBERRY.png" id="2_u65aj"]
 [ext_resource type="PackedScene" uid="uid://bbt04cvqw6sjg" path="res://scenes/crops/watering_particles.tscn" id="3_couqs"]
 [ext_resource type="PackedScene" uid="uid://c2vb7n7vmwxn2" path="res://scenes/crops/flowering_particles.tscn" id="4_nqwn5"]
 [ext_resource type="PackedScene" uid="uid://30ayb03hl4mi" path="res://scenes/crops/growth_cycle_component.tscn" id="5_minpi"]
@@ -11,7 +11,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e6ik6"]
 size = Vector2(13, 10)
 
-[node name="Berry" type="Node2D"]
+[node name="Berry" type="Node2D" groups=["crops"]]
 script = ExtResource("1_u65aj")
 harvest_item = ExtResource("2_bh1hu")
 

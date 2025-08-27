@@ -11,7 +11,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e6ik6"]
 size = Vector2(13, 10)
 
-[node name="Berry" type="Node2D"]
+[node name="Berry" type="Node2D" groups=["crops"]]
 script = ExtResource("1_wmgse")
 harvest_item = ExtResource("2_sv1uy")
 

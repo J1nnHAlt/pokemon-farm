@@ -1,14 +1,14 @@
 [gd_resource type="TileSet" load_steps=19 format=3 uid="uid://dq7x0bsl7faum"]
 
-[ext_resource type="Texture2D" uid="uid://dqk15xs325o24" path="res://assets/tilesets/Outside/Land/Dungeon forest.png" id="1_ui57o"]
-[ext_resource type="Texture2D" uid="uid://bop5lydppt4oc" path="res://assets/tilesets/Outside/Land/basic_grass_flower_small_tree.png" id="2_rsiuj"]
-[ext_resource type="Texture2D" uid="uid://cvp1brk3yp8y8" path="res://assets/tilesets/Outside/Land/fences.png" id="3_esjam"]
-[ext_resource type="Texture2D" uid="uid://bcrl4jqdyi44h" path="res://pokemon-assets/Graphics/Tilesets/Outside.png" id="3_vww44"]
-[ext_resource type="Texture2D" uid="uid://c3hw51tm4n3bo" path="res://assets/tilesets/sea_animated_tileset.png" id="4_0u6eo"]
-[ext_resource type="Texture2D" uid="uid://64fvxvckayjc" path="res://assets/tilesets/Outside/Land/hill_and_stair.png" id="5_glu6w"]
-[ext_resource type="Texture2D" uid="uid://deelyld3wlybs" path="res://assets/tilesets/Outside/Land/ledge.png" id="8_64fg8"]
-[ext_resource type="Texture2D" uid="uid://brir67sdo157k" path="res://assets/tilesets/Outside/Land/grass-series.png" id="9_ui57o"]
-[ext_resource type="Texture2D" uid="uid://bgg8cbkohcqlg" path="res://pokemon-assets/Graphics/Tilesets/Dungeon cave.png" id="10_k28d2"]
+[ext_resource type="Texture2D" uid="uid://be50ng1y8cwx2" path="res://assets/tilesets/Outside/Land/Dungeon forest.png" id="1_ui57o"]
+[ext_resource type="Texture2D" uid="uid://3131gaf4mqyp" path="res://assets/tilesets/Outside/Land/basic_grass_flower_small_tree.png" id="2_rsiuj"]
+[ext_resource type="Texture2D" uid="uid://clhki2t0v3stw" path="res://assets/tilesets/Outside/Land/fences.png" id="3_esjam"]
+[ext_resource type="Texture2D" uid="uid://bnta5ar58egbn" path="res://pokemon-assets/Graphics/Tilesets/Outside.png" id="3_vww44"]
+[ext_resource type="Texture2D" uid="uid://dt0wxtr0eohhd" path="res://assets/tilesets/sea_animated_tileset.png" id="4_0u6eo"]
+[ext_resource type="Texture2D" uid="uid://ckvu0s3p8jqrc" path="res://assets/tilesets/Outside/Land/hill_and_stair.png" id="5_glu6w"]
+[ext_resource type="Texture2D" uid="uid://dglbu56bwq5wb" path="res://assets/tilesets/Outside/Land/ledge.png" id="8_64fg8"]
+[ext_resource type="Texture2D" uid="uid://cues4o0nhrisc" path="res://assets/tilesets/Outside/Land/grass-series.png" id="9_ui57o"]
+[ext_resource type="Texture2D" uid="uid://cabeebhds0ve4" path="res://pokemon-assets/Graphics/Tilesets/Dungeon cave.png" id="10_k28d2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vww44"]
 texture = ExtResource("1_ui57o")

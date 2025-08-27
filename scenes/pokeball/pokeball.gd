@@ -15,7 +15,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("wild_pokemon"):
+	if body.is_in_group("wild_pokemon") or body.is_in_group("legendary_pokemon"):
 #		make it not everytime success
 		animated_sprite_2d.play("hit")
 		sfx_hit.play()

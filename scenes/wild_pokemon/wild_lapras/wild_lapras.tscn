@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cjbocodjujkhf"]
 
-[ext_resource type="Texture2D" uid="uid://c8m05qq5u2eoc" path="res://scenes/characters/water_pokemon/lapras.png" id="1_ee54e"]
+[ext_resource type="Texture2D" uid="uid://cljydunw52i0n" path="res://scenes/characters/water_pokemon/lapras.png" id="1_ee54e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lexwb"]
 atlas = ExtResource("1_ee54e")

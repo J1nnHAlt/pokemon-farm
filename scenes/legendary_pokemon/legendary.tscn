@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dwdyimux03d47"]
 
-[ext_resource type="Texture2D" uid="uid://b0v0x2td1tqf8" path="res://scenes/characters/legendary_pokemon/Lugia.png" id="1_j1037"]
+[ext_resource type="Texture2D" uid="uid://d0q52ikfx0ehi" path="res://scenes/characters/legendary_pokemon/Lugia.png" id="1_j1037"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5c450"]
 atlas = ExtResource("1_j1037")
@@ -26,7 +26,7 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ee54e"]
 
-[node name="Legendary" type="CharacterBody2D"]
+[node name="Legendary" type="CharacterBody2D" groups=["legendary_pokemon"]]
 z_index = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

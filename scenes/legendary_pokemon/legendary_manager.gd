@@ -54,7 +54,17 @@ func _spawn_legendary() -> void:
 
 	already_spawned = true
 	_show_message("A Legendary Pokémon has appeared nearby!")
+	_apply_legendary_buff()
+
+
+func _apply_legendary_buff() -> void:
+	var crops := get_tree().get_nodes_in_group("crops") # <-- add your crops to this group in the editor
+	for crop in crops:
+		var growth := crop.get_node_or_null("GrowthCycleComponent") # adjust path if needed
+		if growth:
+			growth.days_until_harvest = 5
+			print("Buff applied to:", crop.name)
 
 func _show_message(text: String) -> void:
-	# TODO: Replace with your own UI system
+	#implement UI system
 	print(text)
