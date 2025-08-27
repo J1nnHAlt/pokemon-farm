@@ -32,18 +32,6 @@ func _ready() -> void:
 	add_to_group("player")
 	set_inventory()
 	GameData.inventory_loaded.connect(set_inventory)
-	
-	#if GameData.next_spawn != "":
-		#var spawn_point = get_tree().current_scene.get_node_or_null(GameData.next_spawn)
-		#print("@Exit: GameData Spawn ", GameData.next_spawn)
-		#if spawn_point:
-			#global_position = spawn_point.global_position
-			#print("@Spawn: Player placed at", global_position)
-		#else:
-			#push_warning("@Spawn: Could not find spawn point: %s" % GameData.next_spawn)
-#
-		## Clear it so it doesn’t keep reusing
-		#GameData.next_spawn = ""
 
 	
 func _process(delta):
