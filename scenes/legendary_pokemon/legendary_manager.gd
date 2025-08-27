@@ -1,9 +1,9 @@
 extends Node
 
-var legendary_scene: PackedScene = preload("res://scenes/legendary_pokemon/legendary.tscn")         # assign your LegendaryPokemon.tscn in Inspector
-@export var berries_required: int = 10            # how many berries to sell
-@export var spawn_radius: float = 128.0           # how close to spawn around player
-@export var chance: float = 1.0                   # 100% chance right now (set to 0.5 for 50%)
+var legendary_scene: PackedScene = preload("res://scenes/legendary_pokemon/legendary.tscn")
+@export var berries_required: int = 10
+@export var spawn_radius: float = 128.0
+@export var chance: float = 1.0
 
 var sold_berries: int = 0
 var already_spawned: bool = false
