@@ -43,7 +43,7 @@ func _process(delta):
 	if get_parent().name == 'dungeon':
 		if Input.is_action_just_pressed("throw_pokeball") and !pokeball_cd:
 			throw_pokeball()
-
+	$pokeball_cd_bar.value = $pokeball_cd.time_left
 #to be called when collecting item
 func collect(item):
 	return inventory.insert(item)
@@ -62,6 +62,7 @@ func throw_pokeball():
 	pokeball.velocity = dir * pokeball.speed
 	$pokeball_cd.start(1.5)
 	pokeball_cd = true
+	$pokeball_cd_bar.visible = true
 
 # Change the position of detection area according to player facing direction
 func _update_detection_position() -> void:
@@ -134,6 +135,7 @@ func get_door_in_front() -> Door:
 
 func _on_pokeball_cd_timeout() -> void:
 	pokeball_cd = false
+	$pokeball_cd_bar.visible = false
 	
 func set_selected_seed(seed_scene: PackedScene):
 	selected_seed = seed_scene
