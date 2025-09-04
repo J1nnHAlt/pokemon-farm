@@ -70,7 +70,7 @@ func play_captured_sfx():
 	
 func play_failed_sfx():
 	var sound = AudioStreamPlayer.new()
-	sound.stream = preload("res://pokemon-assets/Audio/SE/Battle flee.ogg")
+	sound.stream = preload("res://pokemon-assets/Audio/SE/Fly.ogg")
 	sound.autoplay = true
 	get_tree().current_scene.add_child(sound)  # attach to scene, not this node
 	sound.connect("finished", sound.queue_free) 

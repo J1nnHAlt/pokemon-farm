@@ -17,4 +17,4 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") or body.name == "Player":
 		GameData.next_spawn = target_spawn
 		print("@Exit: GameData.next_spawn =", GameData.next_spawn)
-		get_tree().change_scene_to_file(main_scene)
+		get_tree().call_deferred("change_scene_to_file", main_scene)

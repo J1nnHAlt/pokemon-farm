@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 DayAndNightCycleManager="*res://scripts/day_night/day_and_night_cycle_manager.gd"
-InventoryManager="*res://scripts/inventory/inventory_manager.gd"
 RecipeManager="*res://scenes/BerryMixer/RecipeManager.gd"
 Coin="*res://scripts/global/coin.gd"
 PetSpawnerInFarm="*res://scripts/global/PetSpawnerInFarm.gd"

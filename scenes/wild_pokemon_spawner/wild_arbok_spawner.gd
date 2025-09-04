@@ -13,9 +13,6 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	#var wild_arbok = wild_arbok_scene.instantiate()
-	#get_parent().get_node("WildArboksHandler").add_child(wild_arbok)
-	print("Timeout")
 	spawn_near_player()
 	
 
