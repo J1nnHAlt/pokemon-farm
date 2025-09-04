@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dhwu5lbvocbys"]
 
-[ext_resource type="Texture2D" uid="uid://bb6de30ruoag3" path="res://scenes/characters/dark_pokemon/arbok.png" id="1_c41jk"]
+[ext_resource type="Texture2D" uid="uid://ujfbot3qw7ui" path="res://scenes/characters/dark_pokemon/arbok.png" id="1_c41jk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ltijh"]
 atlas = ExtResource("1_c41jk")
@@ -25,15 +25,17 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ud1nh"]
+radius = 7.0
 
 [node name="WildArbok" type="CharacterBody2D" groups=["wild_pokemon"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_48cij")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.474605
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
+position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_ud1nh")

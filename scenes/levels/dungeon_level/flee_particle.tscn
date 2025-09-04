@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7n4g3crty2l6"]
+
+[ext_resource type="Texture2D" uid="uid://dxcwt01s0wpd5" path="res://pokemon-assets/Graphics/Fogs/smoke.png" id="1_eqvca"]
+
+[sub_resource type="Curve" id="Curve_eqvca"]
+_data = [Vector2(0, 0.157527), 0.0, 0.0, 0, 0, Vector2(1, 0.131605), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_eqvca"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[node name="flee_particle" type="CPUParticles2D"]
+emitting = false
+amount = 5
+texture = ExtResource("1_eqvca")
+lifetime = 0.3
+one_shot = true
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 80.0
+initial_velocity_max = 150.0
+damping_min = 1.0
+damping_max = 1.0
+scale_amount_curve = SubResource("Curve_eqvca")
+color_ramp = SubResource("Gradient_eqvca")

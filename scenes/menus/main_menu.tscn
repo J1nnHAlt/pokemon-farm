@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://28dg4xqw1xgm"]
 
 [ext_resource type="Script" uid="uid://cm5oagimebn12" path="res://scripts/menus/main_menu.gd" id="1_2o76q"]
-[ext_resource type="Texture2D" uid="uid://d08fwjl7utb3f" path="res://pokemon-assets/Graphics/UI/Load/bg.png" id="1_xqga4"]
-[ext_resource type="Texture2D" uid="uid://y1wywj6ff1yu" path="res://pokemon-assets/Graphics/Pokemon/Front/PIKACHU_female.png" id="2_ovrgc"]
-[ext_resource type="AudioStream" uid="uid://d3d6p7lp4aaok" path="res://pokemon-assets/Audio/BGM/Title.ogg" id="4_6bivr"]
+[ext_resource type="Texture2D" uid="uid://eddkk5n2bloc" path="res://pokemon-assets/Graphics/UI/Load/bg.png" id="1_xqga4"]
+[ext_resource type="Texture2D" uid="uid://6tn4x7y7bg7" path="res://pokemon-assets/Graphics/Pokemon/Front/PIKACHU_female.png" id="2_ovrgc"]
+[ext_resource type="AudioStream" uid="uid://d2u3yuy7r7dk6" path="res://pokemon-assets/Audio/BGM/Title.ogg" id="4_6bivr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ovrgc"]
 texture = ExtResource("1_xqga4")

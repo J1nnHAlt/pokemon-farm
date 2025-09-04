@@ -15,13 +15,30 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
+	var prob = 0.2
 	if body.is_in_group("wild_pokemon") or body.is_in_group("legendary_pokemon"):
-#		make it not everytime success
-		animated_sprite_2d.play("hit")
-		sfx_hit.play()
-		Coin.add_coins(1)
 		velocity = Vector2.ZERO
 		target_pokemon = body
+		if prob > 0.5: # success
+			animated_sprite_2d.play("hit")
+			sfx_hit.play()
+			play_captured_sfx()
+			Coin.add_coins(1)
+		else: # failed
+			play_failed_sfx()
+			var fled_label = get_parent().get_node("fled_label")
+			get_parent().get_node("flee_particle").global_position = target_pokemon.global_position
+			get_parent().get_node("flee_particle").restart()
+			fled_label.visible = true
+			fled_label.modulate.a = 1.0
+			fled_label.global_position = target_pokemon.global_position + Vector2(0, -20) 
+			# Tween: move up 30 pixels while fading out over 1 second
+			var tween = get_parent().create_tween()
+			tween.tween_property(fled_label, "position:y", fled_label.position.y - 30, 1.0)
+			tween.parallel().tween_property(fled_label, "modulate:a", 0, 1.0)
+			target_pokemon.queue_free()
+			queue_free()
+		
 	else:
 #		for hitting environment
 		queue_free()
@@ -43,3 +60,17 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		
 		target_pokemon.queue_free()
 		queue_free()
+
+func play_captured_sfx():
+	var sound = AudioStreamPlayer.new()
+	sound.stream = preload("res://pokemon-assets/Audio/ME/Voltorb Flip win.ogg")
+	sound.autoplay = true
+	get_tree().current_scene.add_child(sound)  # attach to scene, not this node
+	sound.connect("finished", sound.queue_free)
+	
+func play_failed_sfx():
+	var sound = AudioStreamPlayer.new()
+	sound.stream = preload("res://pokemon-assets/Audio/SE/Battle flee.ogg")
+	sound.autoplay = true
+	get_tree().current_scene.add_child(sound)  # attach to scene, not this node
+	sound.connect("finished", sound.queue_free) 

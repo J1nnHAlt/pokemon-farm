@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://cob1q3vvthx7q"]
+[gd_scene load_steps=27 format=4 uid="uid://cob1q3vvthx7q"]
 
 [ext_resource type="PackedScene" uid="uid://dheba8g1u8uj8" path="res://scenes/characters/player/player.tscn" id="1_jew4h"]
 [ext_resource type="Texture2D" uid="uid://ckct4u2wv5f15" path="res://pokemon-assets/Graphics/Autotiles/Blue cave floor.png" id="1_qmsn3"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dhwu5lbvocbys" path="res://scenes/wild_pokemon/wild_arbok/wild_arbok.tscn" id="11_fhrc8"]
 [ext_resource type="AudioStream" uid="uid://dk612t4p5o662" path="res://pokemon-assets/Audio/BGM/Battle wild.ogg" id="13_25mab"]
 [ext_resource type="PackedScene" uid="uid://c1g7wo3i0l6eg" path="res://scenes/inventory/inv_ui.tscn" id="14_h7yji"]
+[ext_resource type="PackedScene" uid="uid://c7n4g3crty2l6" path="res://scenes/levels/dungeon_level/flee_particle.tscn" id="16_llxqq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p2khw"]
 texture = ExtResource("1_qmsn3")
@@ -856,10 +857,21 @@ offset_right = 590.0
 offset_bottom = 272.0
 
 [node name="Night" type="CanvasModulate" parent="."]
-color = Color(0.2, 0.678431, 0.909804, 0.921569)
+color = Color(0.420943, 0.621316, 1, 0.921569)
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_25mab")
+volume_db = -13.255
 autoplay = true
+
+[node name="flee_particle" parent="." instance=ExtResource("16_llxqq")]
+
+[node name="fled_label" type="Label" parent="."]
+visible = false
+offset_left = 2.0
+offset_right = 55.0
+offset_bottom = 13.0
+theme_override_font_sizes/font_size = 10
+text = "fled!"
 
 [connection signal="body_entered" from="exit_dungeon" to="exit_dungeon" method="_on_body_entered"]

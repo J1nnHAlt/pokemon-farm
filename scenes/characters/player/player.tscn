@@ -1238,6 +1238,7 @@ wait_time = 1.5
 stream = ExtResource("34_pbtrp")
 
 [node name="pokeball_cd_bar" type="ProgressBar" parent="."]
+visible = false
 offset_left = -11.0
 offset_top = -27.0
 offset_right = 10.0
