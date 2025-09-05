@@ -48,6 +48,7 @@ func _game_end():
 		play_captured_sfx()
 		GameData.pet_arbok_amt += 1
 		GameData.wild_arbok_amt -= 1
+		Coin.add_coins(1)
 		get_tree().current_scene.get_node("caught_particle").global_position = target_pokemon.global_position
 		get_tree().current_scene.get_node("caught_particle").restart()
 		set_label("caught!")

@@ -3,7 +3,7 @@ extends Area2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var sfx_hit: AudioStreamPlayer = $sfx_hit
 
-@export var speed: float = 400.0
+@export var speed: float = 100.0
 var velocity: Vector2
 var target_pokemon: CharacterBody2D
 
@@ -22,8 +22,9 @@ func _on_body_entered(body: Node2D) -> void:
 		if prob > 0.5: # success
 			animated_sprite_2d.play("hit")
 			sfx_hit.play()
+			call_deferred("play_mini_game")
 			#play_captured_sfx()
-			#Coin.add_coins(1)
+			
 		else: # pokemon flee away
 			play_failed_sfx()
 			GameData.wild_arbok_amt -= 1
@@ -46,23 +47,23 @@ func _on_body_entered(body: Node2D) -> void:
 		queue_free()
 
 
-func _on_animated_sprite_2d_animation_finished() -> void:
-	if animated_sprite_2d.animation == "hit" and target_pokemon and is_instance_valid(target_pokemon):
-		match target_pokemon.name:
-			"WildArbok":
-				play_mini_game()
-				#GameData.pet_arbok_amt += 1
-			"WildVictreebel":
-				GameData.pet_victreebel_amt += 1
-			"WildLapras":
-				GameData.pet_lapras_amt += 1
-			"LegendaryLugia":
-				GameData.pet_lugia_amt += 1
-			_:
-				print("Unknown Pokémon:", target_pokemon.name)
-		
-		#target_pokemon.queue_free()
-		#queue_free()
+#func _on_animated_sprite_2d_animation_finished() -> void:
+	#if animated_sprite_2d.animation == "hit" and target_pokemon and is_instance_valid(target_pokemon):
+		#match target_pokemon.name:
+			#"WildArbok":
+				#play_mini_game()
+				##GameData.pet_arbok_amt += 1
+			#"WildVictreebel":
+				#GameData.pet_victreebel_amt += 1
+			#"WildLapras":
+				#GameData.pet_lapras_amt += 1
+			#"LegendaryLugia":
+				#GameData.pet_lugia_amt += 1
+			#_:
+				#print("Unknown Pokémon:", target_pokemon.name)
+		#
+		##target_pokemon.queue_free()
+		##queue_free()
 
 
 	

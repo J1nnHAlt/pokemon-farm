@@ -51,7 +51,7 @@ func _physics_process(delta: float) -> void:
 #		Lets the state evaluate whether it should transition to another state.
 		current_node_state._on_next_transitions()
 #		Debug print: shows which state the parent node (NPC/character/etc.) is currently in.
-		print(parent_node_name, " Current state: ", current_node_state_name)
+		#print(parent_node_name, " Current state: ", current_node_state_name)
 
 #Called when a state wants to transition to another state.
 func transition_to(node_state_name : String) -> void:
