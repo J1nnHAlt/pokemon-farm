@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://mgca30do2xee"]
+[gd_scene load_steps=13 format=3 uid="uid://mgca30do2xee"]
 
 [ext_resource type="Texture2D" uid="uid://bt5oey25issjl" path="res://pokemon-assets/Graphics/Battlebacks/cave1_bg.png" id="1_2kehk"]
 [ext_resource type="Script" uid="uid://b0fi1cgspynp" path="res://scenes/levels/dungeon_level/catching_game/catching_game.gd" id="1_qso77"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c1pqf5mf60e11" path="res://pokemon-assets/Graphics/Battlebacks/cave2_base1.png" id="4_v1rig"]
 [ext_resource type="PackedScene" uid="uid://clbfbvdjco8xi" path="res://scenes/wild_pokemon/wild_arbok/wild_arbok_in_game.tscn" id="5_v1rig"]
 [ext_resource type="PackedScene" uid="uid://cu085juwbprub" path="res://scenes/levels/dungeon_level/catching_game/target.tscn" id="7_ftcv3"]
+[ext_resource type="AudioStream" uid="uid://bxyxhr6rblyku" path="res://assets/audio/mixkit-game-level-music-689.ogg" id="8_ftcv3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ahr6n"]
 texture = ExtResource("1_2kehk")
@@ -89,6 +90,9 @@ position = Vector2(181, 142.5)
 wait_time = 6.0
 one_shot = true
 autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CatchingGame"]
+stream = ExtResource("8_ftcv3")
 
 [connection signal="target_entered" from="CatchingGame/target" to="CatchingGame" method="_on_target_target_entered"]
 [connection signal="target_exited" from="CatchingGame/target" to="CatchingGame" method="_on_target_target_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://cob1q3vvthx7q"]
+[gd_scene load_steps=29 format=4 uid="uid://cob1q3vvthx7q"]
 
 [ext_resource type="PackedScene" uid="uid://dheba8g1u8uj8" path="res://scenes/characters/player/player.tscn" id="1_jew4h"]
 [ext_resource type="Texture2D" uid="uid://ckct4u2wv5f15" path="res://pokemon-assets/Graphics/Autotiles/Blue cave floor.png" id="1_qmsn3"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://c1g7wo3i0l6eg" path="res://scenes/inventory/inv_ui.tscn" id="14_h7yji"]
 [ext_resource type="PackedScene" uid="uid://c7n4g3crty2l6" path="res://scenes/levels/dungeon_level/flee_particle.tscn" id="16_llxqq"]
 [ext_resource type="PackedScene" uid="uid://d2bh5jgkjuf7v" path="res://scenes/levels/dungeon_level/dodge_particle.tscn" id="17_gfnxw"]
+[ext_resource type="PackedScene" uid="uid://c5xr0avfeiam" path="res://scenes/levels/dungeon_level/caught_particle.tscn" id="18_xwf7l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p2khw"]
 texture = ExtResource("1_qmsn3")
@@ -875,5 +876,7 @@ offset_bottom = 13.0
 theme_override_font_sizes/font_size = 10
 
 [node name="dodge_particle" parent="." instance=ExtResource("17_gfnxw")]
+
+[node name="caught_particle" parent="." instance=ExtResource("18_xwf7l")]
 
 [connection signal="body_entered" from="exit_dungeon" to="exit_dungeon" method="_on_body_entered"]

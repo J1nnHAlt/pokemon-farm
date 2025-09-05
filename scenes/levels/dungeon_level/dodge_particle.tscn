@@ -7,7 +7,7 @@ point_count = 2
 [node name="DodgeParticle" type="CPUParticles2D"]
 emitting = false
 amount = 2000
-lifetime = 0.3
+lifetime = 0.5
 one_shot = true
 explosiveness = 1.0
 spread = 180.0

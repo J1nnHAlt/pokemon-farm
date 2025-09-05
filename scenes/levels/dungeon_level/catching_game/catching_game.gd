@@ -13,8 +13,9 @@ var target_pokemon
 var target_pokeball
 
 func _ready() -> void:
-	timer.start()
-
+	timer.start(randf_range(3.0, 10.0))
+	$AudioStreamPlayer.play()
+	
 func _physics_process(delta: float) -> void:
 	print("Timer: ", timer.time_left)
 	if on_catch: catching_value += catch_speed
@@ -46,10 +47,13 @@ func _game_end():
 	if caught:	
 		play_captured_sfx()
 		GameData.pet_arbok_amt += 1
+		get_tree().current_scene.get_node("caught_particle").global_position = target_pokemon.global_position
+		get_tree().current_scene.get_node("caught_particle").restart()
 		set_label("caught!")
 		queue_free()
 	else:
 #		pokemon dodged it
+		play_dodged_sfx()
 		get_tree().current_scene.get_node("dodge_particle").global_position = target_pokemon.global_position
 		get_tree().current_scene.get_node("dodge_particle").restart()
 		set_label("dodged!")
@@ -77,7 +81,7 @@ func play_captured_sfx():
 
 func play_dodged_sfx():
 	var sound = AudioStreamPlayer.new()
-	sound.stream = preload("res://pokemon-assets/Audio/ME/Voltorb Flip win.ogg")
+	sound.stream = preload("res://assets/audio/mixkit-player-losing-or-failing-2042.ogg")
 	sound.autoplay = true
 	get_tree().current_scene.add_child(sound)  # attach to scene, not this node
 	sound.connect("finished", sound.queue_free)
