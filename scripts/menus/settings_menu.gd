@@ -19,13 +19,20 @@ func _on_mute_toggled(toggled_on: bool) -> void:
 	AudioServer.set_bus_mute(0,toggled_on)
 
 func _on_resolutions_item_selected(index: int) -> void:
+	
 	match index:
 		0:
-			DisplayServer.window_set_size(Vector2i(1920,1080))
+			get_window().set_size(Vector2i(1920,1080))
 		1:
-			DisplayServer.window_set_size(Vector2i(1600,900))
+			get_window().set_size(Vector2i(1600,900))
 		2:
-			DisplayServer.window_set_size(Vector2i(1280,960))
+			get_window().set_size(Vector2i(1280,960))
+	center_window()
+
+func center_window():
+	var screen_center = DisplayServer.screen_get_position() + DisplayServer.screen_get_size() / 2
+	var window_size = get_window().get_size_with_decorations()
+	get_window().set_position(screen_center - window_size / 2)
 
 
 func _on_volume_value_changed(value: float) -> void:
