@@ -15,7 +15,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	var prob = 0.6
+	var prob = randf_range(0.0, 1.0)
 	if body.is_in_group("wild_pokemon") or body.is_in_group("legendary_pokemon"):
 		velocity = Vector2.ZERO
 		target_pokemon = body
@@ -26,7 +26,8 @@ func _on_body_entered(body: Node2D) -> void:
 			#Coin.add_coins(1)
 		else: # failed
 			play_failed_sfx()
-			var fled_label = get_parent().get_node("fled_label")
+			var fled_label = get_parent().get_node("label")
+			fled_label.text = "fled!"
 			get_parent().get_node("flee_particle").global_position = target_pokemon.global_position
 			get_parent().get_node("flee_particle").restart()
 			fled_label.visible = true
