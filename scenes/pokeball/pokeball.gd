@@ -52,7 +52,7 @@ func _on_body_entered(body: Node2D) -> void:
 		#match target_pokemon.name:
 			#"WildArbok":
 				#play_mini_game()
-				##GameData.pet_arbok_amt += 1
+				#GameData.pet_arbok_amt += 1
 			#"WildVictreebel":
 				#GameData.pet_victreebel_amt += 1
 			#"WildLapras":

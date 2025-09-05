@@ -16,9 +16,14 @@ func _physics_process(delta: float) -> void:
 
 func _check_on_arbok():
 	var bodies := get_overlapping_bodies()
-	if bodies.is_empty() and on_arbok:
+		# Filter out mountains
+	var arbok_bodies := []
+	for body in bodies:
+		if body.name == "WildArbokInGame":
+			arbok_bodies.append(body)
+	if arbok_bodies.is_empty() and on_arbok:
 		on_arbok = false
 		target_exited.emit()
-	elif not bodies.is_empty() and not on_arbok:
+	elif not arbok_bodies.is_empty() and not on_arbok:
 		on_arbok = true
 		target_entered.emit()

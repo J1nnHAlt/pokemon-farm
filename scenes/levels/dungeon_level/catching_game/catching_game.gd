@@ -17,7 +17,6 @@ func _ready() -> void:
 	$AudioStreamPlayer.play()
 	
 func _physics_process(delta: float) -> void:
-	print("Timer: ", timer.time_left)
 	if on_catch: catching_value += catch_speed
 	else: catching_value -= catch_speed
 	
