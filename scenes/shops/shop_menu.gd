@@ -10,8 +10,6 @@ var shop_item_button_scene = preload("res://scenes/shops/shop_item_button.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	possible_items.append(preload("res://scripts/inventory/items/seeds/cheri_seed.tres"))
-	possible_items.append(preload("res://scripts/inventory/items/seeds/custa_seed.tres"))
 	visible = false
 	refresh_balance()
 	_refresh_ui()

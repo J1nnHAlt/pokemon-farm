@@ -96,7 +96,7 @@ func load_game():
 	else:
 		print("No inventory save found, creating new inventory")
 		inventory = Inv.new()
-		for i in range(12):
+		for i in range(20):
 			var slot = InvSlot.new()
 			slot.item = null
 			inventory.slots.append(slot)

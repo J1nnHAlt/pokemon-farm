@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://cob1q3vvthx7q"]
+[gd_scene load_steps=30 format=4 uid="uid://cob1q3vvthx7q"]
 
 [ext_resource type="PackedScene" uid="uid://dheba8g1u8uj8" path="res://scenes/characters/player/player.tscn" id="1_jew4h"]
 [ext_resource type="Texture2D" uid="uid://ckct4u2wv5f15" path="res://pokemon-assets/Graphics/Autotiles/Blue cave floor.png" id="1_qmsn3"]
@@ -813,6 +813,12 @@ sources/0 = SubResource("TileSetAtlasSource_qmsn3")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fhrc8"]
 size = Vector2(29.5, 28)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfnxw"]
+size = Vector2(197, 1024)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwf7l"]
+size = Vector2(2000, 128)
+
 [node name="dungeon" type="Node2D"]
 
 [node name="dungeon_tilemap" type="Node2D" parent="."]
@@ -835,6 +841,13 @@ shape = SubResource("RectangleShape2D_fhrc8")
 
 [node name="Player" parent="." instance=ExtResource("1_jew4h")]
 position = Vector2(-31, -9)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(3.8, 3.8)
+limit_left = -784
+limit_top = -528
+limit_right = 816
+limit_bottom = 496
 
 [node name="WildArboksHandler" type="Node2D" parent="."]
 
@@ -874,5 +887,33 @@ theme_override_font_sizes/font_size = 10
 [node name="dodge_particle" parent="." instance=ExtResource("17_gfnxw")]
 
 [node name="caught_particle" parent="." instance=ExtResource("18_xwf7l")]
+
+[node name="Left" type="StaticBody2D" parent="."]
+position = Vector2(-829, -154)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
+position = Vector2(-53.5, 138)
+shape = SubResource("RectangleShape2D_gfnxw")
+
+[node name="Right" type="StaticBody2D" parent="."]
+position = Vector2(968, -154)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
+position = Vector2(-53.5, 138)
+shape = SubResource("RectangleShape2D_gfnxw")
+
+[node name="Bottom" type="StaticBody2D" parent="."]
+position = Vector2(-306, 641)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
+position = Vector2(320, -81)
+shape = SubResource("RectangleShape2D_xwf7l")
+
+[node name="Top" type="StaticBody2D" parent="."]
+position = Vector2(-310, -511)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top"]
+position = Vector2(320, -81)
+shape = SubResource("RectangleShape2D_xwf7l")
 
 [connection signal="body_entered" from="exit_dungeon" to="exit_dungeon" method="_on_body_entered"]

@@ -30,57 +30,84 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -39.0
-offset_top = -29.5
-offset_right = 39.0
-offset_bottom = 29.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect/MarginContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_vertical = 0
 mouse_filter = 2
 columns = 4
 
-[node name="inv_ui_slot1" parent="NinePatchRect/GridContainer" instance=ExtResource("3_fuqkw")]
+[node name="inv_ui_slot1" parent="NinePatchRect/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("3_fuqkw")]
 z_index = 10
 layout_mode = 2
 
-[node name="inv_ui_slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_fuqkw")]
+[node name="inv_ui_slot2" parent="NinePatchRect/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("3_fuqkw")]
 layout_mode = 2
 
-[node name="inv_ui_slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_fuqkw")]
+[node name="inv_ui_slot3" parent="NinePatchRect/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("3_fuqkw")]
 layout_mode = 2
 
-[node name="inv_ui_slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_fuqkw")]
+[node name="inv_ui_slot4" parent="NinePatchRect/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("3_fuqkw")]
 layout_mode = 2
 
-[node name="inv_ui_slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_fuqkw")]
+[node name="inv_ui_slot5" parent="NinePatchRect/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("3_fuqkw")]
 layout_mode = 2
 
-[node name="inv_ui_slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_fuqkw")]
+[node name="inv_ui_slot6" parent="NinePatchRect/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("3_fuqkw")]
 layout_mode = 2
 
-[node name="inv_ui_slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_fuqkw")]
+[node name="inv_ui_slot7" parent="NinePatchRect/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("3_fuqkw")]
 layout_mode = 2
 
-[node name="inv_ui_slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_fuqkw")]
+[node name="inv_ui_slot8" parent="NinePatchRect/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("3_fuqkw")]
 layout_mode = 2
 
-[node name="inv_ui_slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("3_fuqkw")]
+[node name="inv_ui_slot9" parent="NinePatchRect/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("3_fuqkw")]
 layout_mode = 2
 
-[node name="inv_ui_slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("3_fuqkw")]
+[node name="inv_ui_slot10" parent="NinePatchRect/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("3_fuqkw")]
 layout_mode = 2
 
-[node name="inv_ui_slot11" parent="NinePatchRect/GridContainer" instance=ExtResource("3_fuqkw")]
+[node name="inv_ui_slot11" parent="NinePatchRect/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("3_fuqkw")]
 layout_mode = 2
 
-[node name="inv_ui_slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_fuqkw")]
+[node name="inv_ui_slot12" parent="NinePatchRect/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("3_fuqkw")]
+layout_mode = 2
+
+[node name="inv_ui_slot13" parent="NinePatchRect/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("3_fuqkw")]
+layout_mode = 2
+
+[node name="inv_ui_slot14" parent="NinePatchRect/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("3_fuqkw")]
+layout_mode = 2
+
+[node name="inv_ui_slot15" parent="NinePatchRect/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("3_fuqkw")]
+layout_mode = 2
+
+[node name="inv_ui_slot16" parent="NinePatchRect/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("3_fuqkw")]
+layout_mode = 2
+
+[node name="inv_ui_slot17" parent="NinePatchRect/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("3_fuqkw")]
+layout_mode = 2
+
+[node name="inv_ui_slot18" parent="NinePatchRect/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("3_fuqkw")]
+layout_mode = 2
+
+[node name="inv_ui_slot19" parent="NinePatchRect/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("3_fuqkw")]
+layout_mode = 2
+
+[node name="inv_ui_slot20" parent="NinePatchRect/MarginContainer/ScrollContainer/GridContainer" instance=ExtResource("3_fuqkw")]
 layout_mode = 2
 
 [node name="sfx_open_menu" type="AudioStreamPlayer" parent="."]

@@ -1094,10 +1094,6 @@ frame_progress = 0.0491363
 position = Vector2(0, -7.49204)
 shape = SubResource("RectangleShape2D_7uws0")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -8)
-zoom = Vector2(3.8, 3.8)
-
 [node name="DoorDetector" type="RayCast2D" parent="."]
 position = Vector2(0, -8)
 target_position = Vector2(0, 9)

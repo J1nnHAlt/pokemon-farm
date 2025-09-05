@@ -117,6 +117,9 @@ position = Vector2(704, -60)
 z_as_relative = false
 position = Vector2(752, -48)
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(3.8, 3.8)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." groups=["hud_layer"]]
 
 [node name="coins" parent="CanvasLayer" instance=ExtResource("5_6k3gh")]

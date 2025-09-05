@@ -2,7 +2,7 @@ extends Control
 
 #@onready var inv: Inv = preload("res://scripts/inventory/player_inv.tres")
 @onready var inv: Inv = GameData.inventory
-@onready var slots: Array = $NinePatchRect/GridContainer.get_children()
+@onready var slots: Array = $NinePatchRect/MarginContainer/ScrollContainer/GridContainer.get_children()
 @onready var sfx_open_menu: AudioStreamPlayer = $sfx_open_menu
 @onready var sfx_close_menu: AudioStreamPlayer = $sfx_close_menu
 
@@ -28,7 +28,7 @@ func _ready() -> void:
 
 func update_slots():
 #	loop through all slots and update them
-		for i in range(min(inv.slots.size(), slots.size())):
+		for i in range(slots.size()):
 			var slot_node = slots[i]
 			slots[i].update(inv.slots[i], i)
 			

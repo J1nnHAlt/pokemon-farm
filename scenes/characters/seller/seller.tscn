@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://dq0x68l6h0d18"]
 
 [ext_resource type="Script" uid="uid://bwxbmupbwm8vj" path="res://scenes/characters/seller/seller.gd" id="1_1lemv"]
-[ext_resource type="Texture2D" uid="uid://didfbwyjaodsi" path="res://pokemon-assets/Graphics/Characters/NPC 16.png" id="1_d4fv4"]
+[ext_resource type="Texture2D" uid="uid://c2fa3dgv3jyqt" path="res://pokemon-assets/Graphics/Characters/NPC 16.png" id="1_d4fv4"]
 [ext_resource type="PackedScene" uid="uid://638cvws80rac" path="res://scenes/shops/shop_menu.tscn" id="3_5d4gj"]
-[ext_resource type="AudioStream" uid="uid://cthevt86bxnm2" path="res://pokemon-assets/Audio/GUI menu open.ogg" id="4_ectr7"]
-[ext_resource type="AudioStream" uid="uid://btl8xbt0ovkix" path="res://pokemon-assets/Audio/GUI menu close.ogg" id="5_l78w7"]
+[ext_resource type="AudioStream" uid="uid://d2lqgwnjsun0i" path="res://pokemon-assets/Audio/GUI menu open.ogg" id="4_ectr7"]
+[ext_resource type="AudioStream" uid="uid://mbxv03llwug5" path="res://pokemon-assets/Audio/GUI menu close.ogg" id="5_l78w7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1lemv"]
 atlas = ExtResource("1_d4fv4")
