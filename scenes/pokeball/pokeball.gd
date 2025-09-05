@@ -20,9 +20,8 @@ func _on_body_entered(body: Node2D) -> void:
 		velocity = Vector2.ZERO
 		target_pokemon = body
 		if prob > 0.5: # success
-			play_mini_game()
-			#animated_sprite_2d.play("hit")
-			#sfx_hit.play()
+			animated_sprite_2d.play("hit")
+			sfx_hit.play()
 			#play_captured_sfx()
 			#Coin.add_coins(1)
 		else: # failed
@@ -45,29 +44,25 @@ func _on_body_entered(body: Node2D) -> void:
 		queue_free()
 
 
-#func _on_animated_sprite_2d_animation_finished() -> void:
-	#if animated_sprite_2d.animation == "hit" and target_pokemon and is_instance_valid(target_pokemon):
-		#match target_pokemon.name:
-			#"WildArbok":
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if animated_sprite_2d.animation == "hit" and target_pokemon and is_instance_valid(target_pokemon):
+		match target_pokemon.name:
+			"WildArbok":
+				play_mini_game()
 				#GameData.pet_arbok_amt += 1
-			#"WildVictreebel":
-				#GameData.pet_victreebel_amt += 1
-			#"WildLapras":
-				#GameData.pet_lapras_amt += 1
-			#"LegendaryLugia":
-				#GameData.pet_lugia_amt += 1
-			#_:
-				#print("Unknown Pokémon:", target_pokemon.name)
-		#
+			"WildVictreebel":
+				GameData.pet_victreebel_amt += 1
+			"WildLapras":
+				GameData.pet_lapras_amt += 1
+			"LegendaryLugia":
+				GameData.pet_lugia_amt += 1
+			_:
+				print("Unknown Pokémon:", target_pokemon.name)
+		
 		#target_pokemon.queue_free()
 		#queue_free()
 
-func play_captured_sfx():
-	var sound = AudioStreamPlayer.new()
-	sound.stream = preload("res://pokemon-assets/Audio/ME/Voltorb Flip win.ogg")
-	sound.autoplay = true
-	get_tree().current_scene.add_child(sound)  # attach to scene, not this node
-	sound.connect("finished", sound.queue_free)
+
 	
 func play_failed_sfx():
 	var sound = AudioStreamPlayer.new()
@@ -80,5 +75,8 @@ func play_mini_game():
 	get_tree().paused = true
 	PhysicsServer2D.set_active(true) # make the area2D work during pause
 	var catching_game = preload("res://scenes/levels/dungeon_level/catching_game/catching_game.tscn").instantiate()
+	var catching_game_ui = catching_game.get_node("CatchingGame")
+	catching_game_ui.target_pokemon = target_pokemon
+	catching_game_ui.target_pokeball = self
 	get_tree().current_scene.add_child(catching_game)
 	
