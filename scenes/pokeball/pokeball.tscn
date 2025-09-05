@@ -1,13 +1,46 @@
-[gd_scene load_steps=9 format=3 uid="uid://dihw6ynkxt4hh"]
+[gd_scene load_steps=18 format=3 uid="uid://dihw6ynkxt4hh"]
 
 [ext_resource type="Texture2D" uid="uid://bs5p5qgmdu2jv" path="res://pokemon-assets/Graphics/Battle animations/ball_POKEBALL.png" id="1_5ml1e"]
 [ext_resource type="Script" uid="uid://bfc1avr1yk11v" path="res://scenes/pokeball/pokeball.gd" id="1_gbj38"]
 [ext_resource type="Texture2D" uid="uid://6mqakxuilych" path="res://pokemon-assets/Graphics/Battle animations/ball_BEASTBALL_open.png" id="2_y5gs6"]
+[ext_resource type="Texture2D" uid="uid://dydilprh1iheh" path="res://pokemon-assets/Graphics/Battle animations/ball_BEASTBALL.png" id="3_tfita"]
 [ext_resource type="AudioStream" uid="uid://dmywakoyfardt" path="res://pokemon-assets/Audio/SE/Battle ball hit.ogg" id="4_t6mka"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gbj38"]
 atlas = ExtResource("1_5ml1e")
 region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3bmh"]
+atlas = ExtResource("3_tfita")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7il8k"]
+atlas = ExtResource("3_tfita")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmpv3"]
+atlas = ExtResource("3_tfita")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uhoo"]
+atlas = ExtResource("3_tfita")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rc3fl"]
+atlas = ExtResource("3_tfita")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqabq"]
+atlas = ExtResource("3_tfita")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cm1t"]
+atlas = ExtResource("3_tfita")
+region = Rect2(192, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7udn"]
+atlas = ExtResource("3_tfita")
+region = Rect2(224, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t6mka"]
 atlas = ExtResource("2_y5gs6")
@@ -18,10 +51,34 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gbj38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3bmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7il8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmpv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7uhoo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rc3fl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqabq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cm1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7udn")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -42,8 +99,8 @@ script = ExtResource("1_gbj38")
 position = Vector2(0, -1)
 scale = Vector2(0.375, 0.28125)
 sprite_frames = SubResource("SpriteFrames_y5gs6")
-animation = &"hit"
 autoplay = "default"
+frame_progress = 0.374234
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_gbj38")

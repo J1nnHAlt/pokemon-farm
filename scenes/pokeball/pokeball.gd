@@ -24,8 +24,9 @@ func _on_body_entered(body: Node2D) -> void:
 			sfx_hit.play()
 			#play_captured_sfx()
 			#Coin.add_coins(1)
-		else: # failed
+		else: # pokemon flee away
 			play_failed_sfx()
+			GameData.wild_arbok_amt -= 1
 			var fled_label = get_parent().get_node("label")
 			fled_label.text = "fled!"
 			get_parent().get_node("flee_particle").global_position = target_pokemon.global_position

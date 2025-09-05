@@ -2,6 +2,7 @@ extends Node2D
 
 @export var wild_arbok_scene = preload("res://scenes/wild_pokemon/wild_arbok/wild_arbok.tscn")
 var max_attempts: int = 10
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -13,7 +14,8 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	spawn_near_player()
+	if GameData.wild_arbok_amt < 2:
+		spawn_near_player()
 	
 
 func spawn_near_player():
@@ -29,6 +31,7 @@ func spawn_near_player():
 			var wild_arbok = wild_arbok_scene.instantiate()
 			wild_arbok.global_position = pos
 			get_parent().get_node("WildArboksHandler").add_child(wild_arbok)
+			GameData.wild_arbok_amt += 1
 			return
 	
 	print("⚠ Could not find valid spawn position after", max_attempts, "tries")

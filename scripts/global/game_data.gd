@@ -9,6 +9,8 @@ var pet_victreebel_amt: int = 0
 var pet_lapras_amt: int = 0
 var pet_lugia_amt: int = 0
 
+var wild_arbok_amt: int = 0 # used in dungeon for limit number of arboks
+
 var next_spawn: String = ""
 
 

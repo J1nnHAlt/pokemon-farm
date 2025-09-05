@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://cob1q3vvthx7q"]
+[gd_scene load_steps=28 format=4 uid="uid://cob1q3vvthx7q"]
 
 [ext_resource type="PackedScene" uid="uid://dheba8g1u8uj8" path="res://scenes/characters/player/player.tscn" id="1_jew4h"]
 [ext_resource type="Texture2D" uid="uid://ckct4u2wv5f15" path="res://pokemon-assets/Graphics/Autotiles/Blue cave floor.png" id="1_qmsn3"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://32pfkefqd0i2" path="res://scenes/menus/pause_menu.tscn" id="9_fhrc8"]
 [ext_resource type="PackedScene" uid="uid://bsg4dgrfuedqn" path="res://scenes/day_night_ui/day_night_panel.tscn" id="10_3yp5a"]
 [ext_resource type="PackedScene" uid="uid://cnsbf2wm8bxel" path="res://scenes/wild_pokemon_spawner/wild_arbok_spawner.tscn" id="10_7410j"]
-[ext_resource type="PackedScene" uid="uid://dhwu5lbvocbys" path="res://scenes/wild_pokemon/wild_arbok/wild_arbok.tscn" id="11_fhrc8"]
 [ext_resource type="AudioStream" uid="uid://dk612t4p5o662" path="res://pokemon-assets/Audio/BGM/Battle wild.ogg" id="13_25mab"]
 [ext_resource type="PackedScene" uid="uid://c1g7wo3i0l6eg" path="res://scenes/inventory/inv_ui.tscn" id="14_h7yji"]
 [ext_resource type="PackedScene" uid="uid://c7n4g3crty2l6" path="res://scenes/levels/dungeon_level/flee_particle.tscn" id="16_llxqq"]
@@ -838,9 +837,6 @@ shape = SubResource("RectangleShape2D_fhrc8")
 position = Vector2(-31, -9)
 
 [node name="WildArboksHandler" type="Node2D" parent="."]
-
-[node name="WildArbok" parent="WildArboksHandler" instance=ExtResource("11_fhrc8")]
-position = Vector2(122, 16)
 
 [node name="WildArbokSpawner" parent="." instance=ExtResource("10_7410j")]
 

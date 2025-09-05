@@ -47,6 +47,7 @@ func _game_end():
 	if caught:	
 		play_captured_sfx()
 		GameData.pet_arbok_amt += 1
+		GameData.wild_arbok_amt -= 1
 		get_tree().current_scene.get_node("caught_particle").global_position = target_pokemon.global_position
 		get_tree().current_scene.get_node("caught_particle").restart()
 		set_label("caught!")
@@ -54,6 +55,7 @@ func _game_end():
 	else:
 #		pokemon dodged it
 		play_dodged_sfx()
+		GameData.wild_arbok_amt -= 1
 		get_tree().current_scene.get_node("dodge_particle").global_position = target_pokemon.global_position
 		get_tree().current_scene.get_node("dodge_particle").restart()
 		set_label("dodged!")
