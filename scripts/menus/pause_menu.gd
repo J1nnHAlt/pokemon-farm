@@ -27,11 +27,9 @@ func pause():
 
 func testEsc():	
 	if Input.is_action_just_pressed("esc") and get_tree().paused == false:
-		print("ESC pressed")
 		sfx_open_menu.play()
 		pause()
 	elif Input.is_action_just_pressed("esc") and get_tree().paused == true:
-		print("ESC pressed")
 		sfx_close_menu.play()
 		sfx_close_menu.finished.connect(resume, CONNECT_ONE_SHOT)
 

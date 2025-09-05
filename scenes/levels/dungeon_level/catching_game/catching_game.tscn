@@ -1,0 +1,94 @@
+[gd_scene load_steps=12 format=3 uid="uid://mgca30do2xee"]
+
+[ext_resource type="Texture2D" uid="uid://bt5oey25issjl" path="res://pokemon-assets/Graphics/Battlebacks/cave1_bg.png" id="1_2kehk"]
+[ext_resource type="Script" uid="uid://b0fi1cgspynp" path="res://scenes/levels/dungeon_level/catching_game/catching_game.gd" id="1_qso77"]
+[ext_resource type="Texture2D" uid="uid://fv6bn2adc6a5" path="res://assets/UI/progress_bar/healthbarUnder.png" id="2_urfdj"]
+[ext_resource type="Texture2D" uid="uid://bmlrsajwxcvuv" path="res://assets/UI/progress_bar/healthbarProgress.png" id="3_v1rig"]
+[ext_resource type="Texture2D" uid="uid://c1pqf5mf60e11" path="res://pokemon-assets/Graphics/Battlebacks/cave2_base1.png" id="4_v1rig"]
+[ext_resource type="PackedScene" uid="uid://clbfbvdjco8xi" path="res://scenes/wild_pokemon/wild_arbok/wild_arbok_in_game.tscn" id="5_v1rig"]
+[ext_resource type="PackedScene" uid="uid://cu085juwbprub" path="res://scenes/levels/dungeon_level/catching_game/target.tscn" id="7_ftcv3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ahr6n"]
+texture = ExtResource("1_2kehk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yooj4"]
+texture = ExtResource("2_urfdj")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qso77"]
+texture = ExtResource("3_v1rig")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_04sua"]
+texture = ExtResource("4_v1rig")
+texture_margin_bottom = 130.0
+
+[node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
+
+[node name="CatchingGame" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -295.0
+offset_top = -274.5
+offset_right = 295.0
+offset_bottom = 274.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qso77")
+
+[node name="PanelContainer" type="PanelContainer" parent="CatchingGame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ahr6n")
+
+[node name="MarginContainer" type="MarginContainer" parent="CatchingGame/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CatchingGame/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CatchingGame/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CatchingBar" type="ProgressBar" parent="CatchingGame/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxTexture_yooj4")
+theme_override_styles/fill = SubResource("StyleBoxTexture_qso77")
+value = 50.0
+
+[node name="ArbokBase" type="PanelContainer" parent="CatchingGame/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_04sua")
+
+[node name="WildArbokInGame" parent="CatchingGame" node_paths=PackedStringArray("arbok_base") instance=ExtResource("5_v1rig")]
+position = Vector2(178, 135.5)
+arbok_base = NodePath("../PanelContainer/MarginContainer/VBoxContainer/ArbokBase")
+
+[node name="target" parent="CatchingGame" instance=ExtResource("7_ftcv3")]
+position = Vector2(181, 142.5)
+
+[node name="Timer" type="Timer" parent="CatchingGame"]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="target_entered" from="CatchingGame/target" to="CatchingGame" method="_on_target_target_entered"]
+[connection signal="target_exited" from="CatchingGame/target" to="CatchingGame" method="_on_target_target_exited"]
+[connection signal="timeout" from="CatchingGame/Timer" to="CatchingGame" method="_on_timer_timeout"]

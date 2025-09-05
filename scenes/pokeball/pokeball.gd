@@ -15,15 +15,16 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	var prob = 0.2
+	var prob = 0.6
 	if body.is_in_group("wild_pokemon") or body.is_in_group("legendary_pokemon"):
 		velocity = Vector2.ZERO
 		target_pokemon = body
 		if prob > 0.5: # success
-			animated_sprite_2d.play("hit")
-			sfx_hit.play()
-			play_captured_sfx()
-			Coin.add_coins(1)
+			play_mini_game()
+			#animated_sprite_2d.play("hit")
+			#sfx_hit.play()
+			#play_captured_sfx()
+			#Coin.add_coins(1)
 		else: # failed
 			play_failed_sfx()
 			var fled_label = get_parent().get_node("fled_label")
@@ -44,22 +45,22 @@ func _on_body_entered(body: Node2D) -> void:
 		queue_free()
 
 
-func _on_animated_sprite_2d_animation_finished() -> void:
-	if animated_sprite_2d.animation == "hit" and target_pokemon and is_instance_valid(target_pokemon):
-		match target_pokemon.name:
-			"WildArbok":
-				GameData.pet_arbok_amt += 1
-			"WildVictreebel":
-				GameData.pet_victreebel_amt += 1
-			"WildLapras":
-				GameData.pet_lapras_amt += 1
-			"LegendaryLugia":
-				GameData.pet_lugia_amt += 1
-			_:
-				print("Unknown Pokémon:", target_pokemon.name)
-		
-		target_pokemon.queue_free()
-		queue_free()
+#func _on_animated_sprite_2d_animation_finished() -> void:
+	#if animated_sprite_2d.animation == "hit" and target_pokemon and is_instance_valid(target_pokemon):
+		#match target_pokemon.name:
+			#"WildArbok":
+				#GameData.pet_arbok_amt += 1
+			#"WildVictreebel":
+				#GameData.pet_victreebel_amt += 1
+			#"WildLapras":
+				#GameData.pet_lapras_amt += 1
+			#"LegendaryLugia":
+				#GameData.pet_lugia_amt += 1
+			#_:
+				#print("Unknown Pokémon:", target_pokemon.name)
+		#
+		#target_pokemon.queue_free()
+		#queue_free()
 
 func play_captured_sfx():
 	var sound = AudioStreamPlayer.new()
@@ -74,3 +75,10 @@ func play_failed_sfx():
 	sound.autoplay = true
 	get_tree().current_scene.add_child(sound)  # attach to scene, not this node
 	sound.connect("finished", sound.queue_free) 
+
+func play_mini_game():
+	get_tree().paused = true
+	PhysicsServer2D.set_active(true) # make the area2D work during pause
+	var catching_game = preload("res://scenes/levels/dungeon_level/catching_game/catching_game.tscn").instantiate()
+	get_tree().current_scene.add_child(catching_game)
+	
