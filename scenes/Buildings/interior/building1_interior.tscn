@@ -37,4 +37,7 @@ z_index = 20
 position = Vector2(-40, 48)
 target_spawn = "HouseExitSpawn"
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3.8, 3.8)
+
 [connection signal="body_entered" from="entrance_point" to="entrance_point" method="_on_body_entered"]
