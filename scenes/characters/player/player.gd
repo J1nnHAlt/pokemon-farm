@@ -42,7 +42,9 @@ func _process(delta):
 	
 	if get_parent().name == 'dungeon':
 		if Input.is_action_just_pressed("throw_pokeball") and !pokeball_cd:
-			throw_pokeball()
+			if inventory.checkAmount("Pokeball") > 0:
+				throw_pokeball()
+				inventory.remove(inventory.search("Pokeball"))
 	$pokeball_cd_bar.value = $pokeball_cd.time_left
 #to be called when collecting item
 func collect(item):

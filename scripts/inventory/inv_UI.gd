@@ -61,7 +61,6 @@ func close():
 	#if hud_layer:
 		#hud_layer.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		#hud_layer.visible = true
-	print("close")
 	set_hud_input(true)
 	visible = false
 	is_open = false

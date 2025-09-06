@@ -13,6 +13,7 @@ var target_pokemon
 var target_pokeball
 
 func _ready() -> void:
+	get_tree().current_scene.get_node("CanvasLayer").visible = false
 	timer.start(randf_range(3.0, 10.0))
 	$AudioStreamPlayer.play()
 	
@@ -64,6 +65,7 @@ func _game_end():
 
 func _closing_game_ui():
 	get_tree().paused = false
+	get_tree().current_scene.get_node("CanvasLayer").visible = true
 	var tween = get_tree().create_tween()
 	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_property(self, "global_position", global_position + Vector2(0,700), 0.5)

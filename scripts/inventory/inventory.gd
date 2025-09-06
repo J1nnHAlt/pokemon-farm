@@ -28,3 +28,15 @@ func remove(index: int):
 			if slots[index].amount == 0:
 				slots[index].item = null
 		update.emit()
+
+func search(name: String):
+	for i in range(slots.size()):
+		if slots[i].item != null and slots[i].item.name == name:
+			return i
+	return -1 # not found
+
+func checkAmount(name: String):
+	for i in range(slots.size()):
+		if slots[i].item != null and slots[i].item.name == name:
+			return slots[i].amount
+	return -1 # not found

@@ -43,6 +43,10 @@ var seeds = [
 	#preload("res://scripts/inventory/items/seeds/tomato_seed.tres")
 ]
 
+var pokeballs = [
+	preload("res://scripts/inventory/items/pokeballs/pokeball.tres")
+]
+
 func save_game():
 	var save_data = {
 		"coins": coins,
@@ -111,7 +115,11 @@ func load_game():
 		for seed in seeds:
 			for i in range(10):
 				inventory.insert(seed)		
-				
+		
+		for pokeball in pokeballs:
+			for i in range(50):
+				inventory.insert(pokeball)
+
 		ResourceSaver.save(inventory, "user://inventory.tres")
 		inventory_loaded.emit()
 		
