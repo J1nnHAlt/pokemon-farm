@@ -13,8 +13,6 @@ func _ready() -> void:
 	rng.randomize()
 
 func on_berry_sold() -> void:
-	if already_spawned:
-		return
 
 	sold_berries += 1
 
@@ -52,7 +50,6 @@ func _spawn_legendary() -> void:
 	get_tree().current_scene.add_child(scene)
 	print("Legendary spawned at:", scene.global_position)
 
-	already_spawned = true
 	_show_message("A Legendary Pokémon has appeared nearby!")
 	_apply_legendary_buff()
 

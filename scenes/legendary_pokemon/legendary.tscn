@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dwdyimux03d47"]
 
-[ext_resource type="Texture2D" uid="uid://d0q52ikfx0ehi" path="res://scenes/characters/legendary_pokemon/Lugia.png" id="1_j1037"]
+[ext_resource type="Texture2D" uid="uid://bg6rcc2gb5t7f" path="res://scenes/characters/legendary_pokemon/Lugia.png" id="1_j1037"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5c450"]
 atlas = ExtResource("1_j1037")

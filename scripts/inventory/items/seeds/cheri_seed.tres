@@ -2,13 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://bvj88ye74yc0c" path="res://scenes/crops/berry.tscn" id="1_3wbtt"]
 [ext_resource type="Script" uid="uid://c3mtqwb5xdx73" path="res://scripts/inventory/seed_item.gd" id="1_ndf7h"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2vqeg"]
-region = Rect2(131.21, 321.848, 25.8091, 26.765)
+[ext_resource type="Texture2D" uid="uid://gdh57h8htldb" path="res://assets/seed_pack/cheri_seed.png" id="3_f34dn"]
 
 [resource]
 script = ExtResource("1_ndf7h")
 crop_scene = ExtResource("1_3wbtt")
 name = "CheriSeed"
-texture = SubResource("AtlasTexture_2vqeg")
+texture = ExtResource("3_f34dn")
 metadata/_custom_type_script = "uid://c3mtqwb5xdx73"

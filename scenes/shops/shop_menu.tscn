@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://638cvws80rac"]
 
 [ext_resource type="Script" uid="uid://yxrex5klrjdf" path="res://scenes/shops/shop_menu.gd" id="1_crqmh"]
-[ext_resource type="Texture2D" uid="uid://yf4l5863twa7" path="res://pokemon-assets/Graphics/Items/GROUNDGEM.png" id="1_p1d6s"]
+[ext_resource type="Texture2D" uid="uid://b8lbgqbvj6o51" path="res://pokemon-assets/Graphics/Items/GROUNDGEM.png" id="1_p1d6s"]
 [ext_resource type="Script" uid="uid://srnaalrlc73j" path="res://scripts/inventory/inventory_item.gd" id="2_u7kvx"]
 [ext_resource type="Resource" uid="uid://dn8gujxm2mlfp" path="res://scripts/inventory/items/berries/cheri_berry.tres" id="3_pk0o2"]
 [ext_resource type="Resource" uid="uid://cc7ypp7b0xktf" path="res://scripts/inventory/items/berries/durin_berry.tres" id="4_qdhdw"]
@@ -9,10 +9,10 @@
 [ext_resource type="Resource" uid="uid://dxhcqrt76hxfo" path="res://scripts/inventory/items/berries/custa_berry.tres" id="6_85ogh"]
 [ext_resource type="Resource" uid="uid://cw2n2r3bdxf7" path="res://scripts/inventory/items/berries/rawst_berry.tres" id="7_0ck7o"]
 [ext_resource type="PackedScene" uid="uid://cblx6utrafqd5" path="res://scenes/shops/shop_item_button.tscn" id="7_pk0o2"]
-[ext_resource type="AudioStream" uid="uid://bcpvnm60d317a" path="res://pokemon-assets/Audio/SE/Mart buy item.ogg" id="8_exaeg"]
+[ext_resource type="AudioStream" uid="uid://gs51u06hmykc" path="res://pokemon-assets/Audio/SE/Mart buy item.ogg" id="8_exaeg"]
 [ext_resource type="Resource" uid="uid://8vcju64q8d68" path="res://scripts/inventory/items/berries/yache_berry.tres" id="8_pnbjp"]
 [ext_resource type="Resource" uid="uid://cr1k3dv31f8v2" path="res://scripts/inventory/items/seeds/cheri_seed.tres" id="9_pnbjp"]
-[ext_resource type="AudioStream" uid="uid://dhm33h0qliid5" path="res://pokemon-assets/Audio/SE/Slots stop.ogg" id="9_uf467"]
+[ext_resource type="AudioStream" uid="uid://c2nc1t8hmmwam" path="res://pokemon-assets/Audio/SE/Slots stop.ogg" id="9_uf467"]
 [ext_resource type="Resource" uid="uid://dq0fnh3ur7dep" path="res://scripts/inventory/items/seeds/custa_seed.tres" id="10_buga8"]
 [ext_resource type="Resource" uid="uid://c3elen3k8vwg1" path="res://scripts/inventory/items/pokeballs/pokeball.tres" id="11_buga8"]
 
