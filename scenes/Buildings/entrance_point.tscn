@@ -24,6 +24,7 @@ shape = SubResource("RectangleShape2D_qi3qj")
 debug_color = Color(0.966491, 0.122128, 0.351539, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 10
 position = Vector2(0, 2)
 texture = SubResource("AtlasTexture_v4320")
 

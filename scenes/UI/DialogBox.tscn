@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8kp81bq2qhas"]
+
+[ext_resource type="Texture2D" uid="uid://42qu0rmexc3h" path="res://assets/UI/dialog/speech dp 1.png" id="1_bikte"]
+[ext_resource type="FontFile" uid="uid://bvahfh0if4q5q" path="res://pokemon-assets/Fonts/power clear.ttf" id="2_4336f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4d8dq"]
+line_spacing = 20.0
+paragraph_spacing = 10.0
+font = ExtResource("2_4336f")
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+
+[node name="DialogBox" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = -609.5
+offset_top = 244.0
+offset_right = 649.5
+offset_bottom = 485.0
+texture = ExtResource("1_bikte")
+patch_margin_left = 24
+patch_margin_top = 12
+patch_margin_right = 46
+patch_margin_bottom = 24
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -572.0
+offset_top = 276.0
+offset_right = 548.0
+offset_bottom = 452.0
+text = "Nigga 1, Nigga 2, Nigga 3, Nigga 4, Nigga 1, Nigga 2, Nigga 3, Nigga 4Nigga 1, Nigga 2, Nigga 3, Nigga 4Nigga 1, Nigga 2, Nigga 3, Nigga 4Nigga 1, Nigga 2, Nigga 3, Nigga 4"
+label_settings = SubResource("LabelSettings_4d8dq")
+autowrap_mode = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
