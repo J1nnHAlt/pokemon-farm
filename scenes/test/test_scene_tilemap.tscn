@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://ddn488ymhtduf"]
+[gd_scene load_steps=25 format=4 uid="uid://ddn488ymhtduf"]
 
 [ext_resource type="PackedScene" uid="uid://cytdne0aeypsc" path="res://scenes/day_night_ui/day_night_cycle_component.tscn" id="1_7apd7"]
 [ext_resource type="Script" uid="uid://chliixmnjjt78" path="res://scenes/test/test_scene_tilemap.gd" id="1_wyicn"]
@@ -18,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://c1g7wo3i0l6eg" path="res://scenes/inventory/inv_ui.tscn" id="13_l0udy"]
 [ext_resource type="PackedScene" uid="uid://dkbqd3lx2bbxo" path="res://scenes/characters/pet_food_panel.tscn" id="14_ngwww"]
 [ext_resource type="PackedScene" uid="uid://dmptioj6vv8yl" path="res://scenes/BerryMixer/berry_mixer_machine.tscn" id="17_oqvvc"]
+[ext_resource type="Script" uid="uid://c8yb4u8jgd52f" path="res://scenes/test/DialogManager.gd" id="17_xox3c"]
+[ext_resource type="PackedScene" uid="uid://d2bcbjoav72v4" path="res://scenes/characters/npc/villager_1.tscn" id="20_nq12n"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_p0x3o"]
 vertices = PackedVector2Array(-110.859, 83.1563, -499.938, 89.8203, -498.047, -262.023, -106.133, -262.969)
@@ -150,6 +152,9 @@ offset_top = 239.0
 offset_right = 402.64
 offset_bottom = 238.68
 
+[node name="DialogManager" type="Node" parent="CanvasLayer"]
+script = ExtResource("17_xox3c")
+
 [node name="sfx_enter_scene" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_ksdiy")
 
@@ -158,5 +163,8 @@ autoplay = true
 
 [node name="BerryMixerMachine" parent="." instance=ExtResource("17_oqvvc")]
 position = Vector2(704, -80)
+
+[node name="NpcBase" parent="." instance=ExtResource("20_nq12n")]
+position = Vector2(740, -25)
 
 [connection signal="body_entered" from="dungeon_entrance" to="dungeon_entrance" method="_on_body_entered"]

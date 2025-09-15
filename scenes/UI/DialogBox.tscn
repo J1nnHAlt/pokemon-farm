@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8kp81bq2qhas"]
+[gd_scene load_steps=11 format=3 uid="uid://c8kp81bq2qhas"]
 
+[ext_resource type="Script" uid="uid://bjo7tj5ua8ql4" path="res://scenes/UI/DialogBox.gd" id="1_4d8dq"]
 [ext_resource type="Texture2D" uid="uid://42qu0rmexc3h" path="res://assets/UI/dialog/speech dp 1.png" id="1_bikte"]
 [ext_resource type="FontFile" uid="uid://bvahfh0if4q5q" path="res://pokemon-assets/Fonts/power clear.ttf" id="2_4336f"]
+[ext_resource type="Texture2D" uid="uid://cssxx4xeo0l5q" path="res://assets/UI/dialog/Window.png" id="4_m2jbv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4d8dq"]
 line_spacing = 20.0
@@ -9,6 +11,42 @@ paragraph_spacing = 10.0
 font = ExtResource("2_4336f")
 font_size = 48
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpq37"]
+atlas = ExtResource("4_m2jbv")
+region = Rect2(96, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mf4l"]
+atlas = ExtResource("4_m2jbv")
+region = Rect2(112, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apiix"]
+atlas = ExtResource("4_m2jbv")
+region = Rect2(96, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dn4mi"]
+atlas = ExtResource("4_m2jbv")
+region = Rect2(112, 80, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7w3oo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpq37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mf4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apiix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dn4mi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="DialogBox" type="Control"]
 layout_mode = 3
@@ -23,6 +61,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_4d8dq")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
@@ -40,12 +79,16 @@ patch_margin_bottom = 24
 layout_mode = 0
 offset_left = -572.0
 offset_top = 276.0
-offset_right = 548.0
+offset_right = 532.0
 offset_bottom = 452.0
 text = "Nigga 1, Nigga 2, Nigga 3, Nigga 4, Nigga 1, Nigga 2, Nigga 3, Nigga 4Nigga 1, Nigga 2, Nigga 3, Nigga 4Nigga 1, Nigga 2, Nigga 3, Nigga 4Nigga 1, Nigga 2, Nigga 3, Nigga 4"
 label_settings = SubResource("LabelSettings_4d8dq")
 autowrap_mode = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Arrow" type="AnimatedSprite2D" parent="."]
+position = Vector2(564, 420)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_7w3oo")
+frame_progress = 0.85315
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
