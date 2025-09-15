@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://b87vo5iflck41"]
+
+[ext_resource type="PackedScene" uid="uid://ccdoqvus57g7b" path="res://scenes/characters/npc/npc_base.tscn" id="1_u1hys"]
+[ext_resource type="Texture2D" uid="uid://c641edtcjlso0" path="res://assets/characters/npc/prof_oak.png" id="2_2h65r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txxy1"]
+atlas = ExtResource("2_2h65r")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38d77"]
+atlas = ExtResource("2_2h65r")
+region = Rect2(0, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqvne"]
+atlas = ExtResource("2_2h65r")
+region = Rect2(0, 48, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05s3y"]
+atlas = ExtResource("2_2h65r")
+region = Rect2(0, 72, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mxrtu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txxy1")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38d77")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqvne")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05s3y")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}]
+
+[node name="professor_oak" instance=ExtResource("1_u1hys")]
+npc_id = "professor_oak"
+npc_sprite_frames = SubResource("SpriteFrames_mxrtu")

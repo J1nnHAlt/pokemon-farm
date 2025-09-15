@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://ddn488ymhtduf"]
+[gd_scene load_steps=28 format=4 uid="uid://ddn488ymhtduf"]
 
 [ext_resource type="PackedScene" uid="uid://cytdne0aeypsc" path="res://scenes/day_night_ui/day_night_cycle_component.tscn" id="1_7apd7"]
 [ext_resource type="Script" uid="uid://chliixmnjjt78" path="res://scenes/test/test_scene_tilemap.gd" id="1_wyicn"]
@@ -20,6 +20,9 @@
 [ext_resource type="PackedScene" uid="uid://cpfhqb5dr4uqm" path="res://scenes/characters/npc/pikachu.tscn" id="17_jhv08"]
 [ext_resource type="PackedScene" uid="uid://dmptioj6vv8yl" path="res://scenes/BerryMixer/berry_mixer_machine.tscn" id="17_oqvvc"]
 [ext_resource type="PackedScene" uid="uid://d2bcbjoav72v4" path="res://scenes/characters/npc/villager_1.tscn" id="20_nq12n"]
+[ext_resource type="PackedScene" uid="uid://d3fk5yymo58l0" path="res://scenes/characters/npc/villager_2.tscn" id="21_jhv08"]
+[ext_resource type="PackedScene" uid="uid://bhbnugqq8nvbq" path="res://scenes/characters/npc/villager_3.tscn" id="22_cx70f"]
+[ext_resource type="PackedScene" uid="uid://b87vo5iflck41" path="res://scenes/characters/npc/professor_oak.tscn" id="23_0opjm"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_p0x3o"]
 vertices = PackedVector2Array(-110.859, 83.1563, -499.938, 89.8203, -498.047, -262.023, -106.133, -262.969)
@@ -167,6 +170,18 @@ position = Vector2(704, -80)
 
 [node name="Villager_1" parent="." instance=ExtResource("20_nq12n")]
 position = Vector2(688, -32)
+dialog_manager = NodePath("../CanvasLayer/DialogManager")
+
+[node name="Villager_2" parent="." instance=ExtResource("21_jhv08")]
+position = Vector2(608, 16)
+dialog_manager = NodePath("../CanvasLayer/DialogManager")
+
+[node name="Villager_3" parent="." instance=ExtResource("22_cx70f")]
+position = Vector2(592, -64)
+dialog_manager = NodePath("../CanvasLayer/DialogManager")
+
+[node name="professor_oak" parent="." instance=ExtResource("23_0opjm")]
+position = Vector2(784, -112)
 dialog_manager = NodePath("../CanvasLayer/DialogManager")
 
 [connection signal="body_entered" from="dungeon_entrance" to="dungeon_entrance" method="_on_body_entered"]

@@ -7,9 +7,38 @@ var dialogs := {
 		"Nice weather today, right?",
 		"Be careful out there!"
 	],
+	"villager_2": [
+		"Good day to you!",
+		"Have you seen the blacksmith today?",
+		"Stay safe on your journey!"
+	],
+	"villager_3": [
+		"Welcome to our village!",
+		"The market is full of fresh goods.",
+		"I heard there are strange noises in the forest."
+	],
+	"villager_4": [
+		"Hey there! Fancy meeting you here.",
+		"Watch your step, the road is slippery.",
+		"Don't forget to greet the elder when you pass by."
+	],
+	"villager_5": [
+		"Greetings, stranger!",
+		"I love the sunrise here every morning.",
+		"Many travelers have passed through recently."
+	],
 	"pikachu": [
-		"I'm too busy to talk."
-	]
+		"I'm too busy to talk.",
+		"Nigga, Nigga",
+		"Reli Nigga?"
+	],
+	"professor_oak": [
+		"Hello there! Ready for your journey?",
+		"Choose your first Pokémon wisely.",
+		"Remember to care for your Pokémon.",
+		"The Pokédex will help you learn about them.",
+		"Come back and tell me what you discover!"
+	],
 }
 
 func get_dialog(npc_id: String, index: int) -> String:
