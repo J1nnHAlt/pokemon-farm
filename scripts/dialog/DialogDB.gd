@@ -1,25 +1,23 @@
+# DialogDB.gd
 extends Node
 
-# Simple dictionary to store dialogs
-# Keys = NPC ID, Values = Array of pages (multi-page dialog)
 var dialogs := {
 	"villager_1": [
-		"Hello there!\n\nIt’s a nice day, isn’t it?",
-		"Be careful, I saw some wild monsters in the grass."
+		"Hello traveler!",
+		"Nice weather today, right?",
+		"Be careful out there!"
 	],
-	"professor_oak": [
-		"Welcome to the world of Pokémon!",
-		"My name is Oak, and people call me the Pokémon Professor."
-	],
-	"shopkeeper": [
-		"Hello! Want to buy something?",
-		"Come back anytime."
+	"pikachu": [
+		"I'm too busy to talk."
 	]
 }
 
-func get_dialog(npc_id: String, index: int = 0) -> String:
-	if dialogs.has(npc_id):
-		var pages = dialogs[npc_id]
-		if index >= 0 and index < pages.size():
-			return pages[index]
+func get_dialog(npc_id: String, index: int) -> String:
+	if npc_id in dialogs and index < dialogs[npc_id].size():
+		return dialogs[npc_id][index]
 	return ""
+
+func get_dialog_count(npc_id: String) -> int:
+	if npc_id in dialogs:
+		return dialogs[npc_id].size()
+	return 0

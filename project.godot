@@ -24,7 +24,7 @@ PetSpawnerInFarm="*res://scripts/global/PetSpawnerInFarm.gd"
 GameData="*res://scripts/global/game_data.gd"
 BreedingManager="*res://scripts/global/BreedingManager.gd"
 LegendaryManager="*res://scenes/legendary_pokemon/legendary_manager.gd"
-DialogDb="*res://scripts/dialog/DialogDB.gd"
+DialogDB="*res://scripts/dialog/DialogDB.gd"
 
 [display]
 

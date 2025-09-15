@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://c8kp81bq2qhas"]
+[gd_scene load_steps=15 format=3 uid="uid://c8kp81bq2qhas"]
 
-[ext_resource type="Script" uid="uid://bjo7tj5ua8ql4" path="res://scenes/UI/DialogBox.gd" id="1_4d8dq"]
+[ext_resource type="Script" uid="uid://bjo7tj5ua8ql4" path="res://scenes/UI/DialogManager.gd" id="1_4d8dq"]
 [ext_resource type="Texture2D" uid="uid://42qu0rmexc3h" path="res://assets/UI/dialog/speech dp 1.png" id="1_bikte"]
 [ext_resource type="FontFile" uid="uid://bvahfh0if4q5q" path="res://pokemon-assets/Fonts/power clear.ttf" id="2_4336f"]
 [ext_resource type="Texture2D" uid="uid://cssxx4xeo0l5q" path="res://assets/UI/dialog/Window.png" id="4_m2jbv"]
+[ext_resource type="Texture2D" uid="uid://cf6ma187kgkqg" path="res://assets/UI/keyboard buttons/enter_button.png" id="5_rplki"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4d8dq"]
 line_spacing = 20.0
@@ -48,7 +49,30 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="DialogBox" type="Control"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6x3tb"]
+atlas = ExtResource("5_rplki")
+region = Rect2(0, 0, 192, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnj5w"]
+atlas = ExtResource("5_rplki")
+region = Rect2(192, 0, 192, 112)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o82na"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6x3tb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnj5w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="DialogManager" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -81,7 +105,7 @@ offset_left = -572.0
 offset_top = 276.0
 offset_right = 532.0
 offset_bottom = 452.0
-text = "Nigga 1, Nigga 2, Nigga 3, Nigga 4, Nigga 1, Nigga 2, Nigga 3, Nigga 4Nigga 1, Nigga 2, Nigga 3, Nigga 4Nigga 1, Nigga 2, Nigga 3, Nigga 4Nigga 1, Nigga 2, Nigga 3, Nigga 4"
+text = "TEST1, TEST2, test3, test4, TEST1, TEST2, test3, test4, TEST1, TEST2, test3, test4, TEST1, TEST2, test3, test4, TEST1, TEST2, test3, test4, TEST1, TEST2, test3, test4, "
 label_settings = SubResource("LabelSettings_4d8dq")
 autowrap_mode = 3
 
@@ -89,6 +113,10 @@ autowrap_mode = 3
 position = Vector2(564, 420)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_7w3oo")
-frame_progress = 0.85315
+frame_progress = 0.685775
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="Enter_button" type="AnimatedSprite2D" parent="."]
+position = Vector2(564, 372)
+scale = Vector2(0.392857, 0.392857)
+sprite_frames = SubResource("SpriteFrames_o82na")
+frame_progress = 0.494848

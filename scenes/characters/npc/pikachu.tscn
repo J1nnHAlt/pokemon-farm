@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://cpfhqb5dr4uqm"]
+
+[ext_resource type="PackedScene" uid="uid://ccdoqvus57g7b" path="res://scenes/characters/npc/npc_base.tscn" id="1_rg2cd"]
+[ext_resource type="Texture2D" uid="uid://jg3h4hg2ofn" path="res://assets/pokemon_overworld/first_gen/Pikachu.png" id="2_r6b0n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbdxs"]
+atlas = ExtResource("2_r6b0n")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rg2cd"]
+atlas = ExtResource("2_r6b0n")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6b0n"]
+atlas = ExtResource("2_r6b0n")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lg8m"]
+atlas = ExtResource("2_r6b0n")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3lg8m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbdxs")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rg2cd")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6b0n")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lg8m")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}]
+
+[node name="Pikachu" instance=ExtResource("1_rg2cd")]
+npc_id = "pikachu"
+npc_sprite_frames = SubResource("SpriteFrames_3lg8m")

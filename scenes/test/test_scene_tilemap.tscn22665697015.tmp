@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://ddn488ymhtduf"]
+[gd_scene load_steps=28 format=4 uid="uid://ddn488ymhtduf"]
 
 [ext_resource type="PackedScene" uid="uid://cytdne0aeypsc" path="res://scenes/day_night_ui/day_night_cycle_component.tscn" id="1_7apd7"]
 [ext_resource type="Script" uid="uid://chliixmnjjt78" path="res://scenes/test/test_scene_tilemap.gd" id="1_wyicn"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cpfhqb5dr4uqm" path="res://scenes/characters/npc/pikachu.tscn" id="17_jhv08"]
 [ext_resource type="PackedScene" uid="uid://dmptioj6vv8yl" path="res://scenes/BerryMixer/berry_mixer_machine.tscn" id="17_oqvvc"]
 [ext_resource type="PackedScene" uid="uid://d2bcbjoav72v4" path="res://scenes/characters/npc/villager_1.tscn" id="20_nq12n"]
+[ext_resource type="Texture2D" uid="uid://dkmm4excykyoi" path="res://assets/characters/npc/NPC 06.png" id="21_jhv08"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_p0x3o"]
 vertices = PackedVector2Array(-110.859, 83.1563, -499.938, 89.8203, -498.047, -262.023, -106.133, -262.969)
@@ -41,6 +42,21 @@ source_geometry_mode = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ksdiy"]
 size = Vector2(34.75, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nq12n"]
+atlas = ExtResource("21_jhv08")
+region = Rect2(0, 24, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jhv08"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nq12n")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}]
 
 [node name="TestSceneTilemap" type="Node2D"]
 y_sort_enabled = true
@@ -166,7 +182,8 @@ dialog_manager = NodePath("../CanvasLayer/DialogManager")
 position = Vector2(704, -80)
 
 [node name="Villager_1" parent="." instance=ExtResource("20_nq12n")]
-position = Vector2(688, -32)
+position = Vector2(704, -16)
 dialog_manager = NodePath("../CanvasLayer/DialogManager")
+npc_sprite_frames = SubResource("SpriteFrames_jhv08")
 
 [connection signal="body_entered" from="dungeon_entrance" to="dungeon_entrance" method="_on_body_entered"]

@@ -40,12 +40,19 @@ func _process(delta):
 		$HitComponent.current_tool = current_tool
 		print("Tool changed to: ", current_tool)
 	
+	if Input.is_action_just_pressed("interact") and current_interaction_source:
+		if current_interaction_source.has_method("start_dialog"):
+			var dialog_manager = get_tree().get_first_node_in_group("dialog_manager")
+			if dialog_manager and not dialog_manager.visible:
+				current_interaction_source.start_dialog()
+
 	if get_parent().name == 'dungeon':
 		if Input.is_action_just_pressed("throw_pokeball") and !pokeball_cd:
 			if inventory.checkAmount("Pokeball") > 0:
 				throw_pokeball()
 				inventory.remove(inventory.search("Pokeball"))
 	$pokeball_cd_bar.value = $pokeball_cd.time_left
+
 #to be called when collecting item
 func collect(item):
 	return inventory.insert(item)

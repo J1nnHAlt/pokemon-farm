@@ -29,10 +29,12 @@ z_index = 30
 script = ExtResource("1_lm0p7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -10)
 sprite_frames = SubResource("SpriteFrames_2htdl")
 animation = &"idle_down"
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(9.53674e-07, -9.98917)
 collision_layer = 0
 collision_mask = 8
 
@@ -40,6 +42,7 @@ collision_mask = 8
 shape = SubResource("CircleShape2D_ssadv")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(9.53674e-07, -9.98917)
 collision_layer = 512
 collision_mask = 0
 

@@ -1,5 +1,62 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2bcbjoav72v4"]
+[gd_scene load_steps=8 format=3 uid="uid://d2bcbjoav72v4"]
 
 [ext_resource type="PackedScene" uid="uid://ccdoqvus57g7b" path="res://scenes/characters/npc/npc_base.tscn" id="1_b7fys"]
+[ext_resource type="Texture2D" uid="uid://dkmm4excykyoi" path="res://assets/characters/npc/NPC 06.png" id="2_sscak"]
 
-[node name="NpcBase" instance=ExtResource("1_b7fys")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3itt"]
+atlas = ExtResource("2_sscak")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sscak"]
+atlas = ExtResource("2_sscak")
+region = Rect2(0, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pkfb"]
+atlas = ExtResource("2_sscak")
+region = Rect2(0, 48, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ypiu"]
+atlas = ExtResource("2_sscak")
+region = Rect2(0, 72, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3pkfb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3itt")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sscak")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pkfb")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ypiu")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}]
+
+[node name="Villager_1" instance=ExtResource("1_b7fys")]
+npc_id = "villager_1"
+npc_sprite_frames = SubResource("SpriteFrames_3pkfb")
+
+[node name="CollisionShape2D" parent="CharacterBody2D" index="0"]
+debug_color = Color(0.964881, 1.92523e-06, 0.490083, 0.42)
