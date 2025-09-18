@@ -81,6 +81,7 @@ position = Vector2(413, -58)
 [node name="Arbok" type="Node2D" parent="."]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="Arbok"]
+z_index = 5
 navigation_polygon = SubResource("NavigationPolygon_p0x3o")
 script = ExtResource("4_m1qrs")
 

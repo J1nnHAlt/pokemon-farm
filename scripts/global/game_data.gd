@@ -13,6 +13,7 @@ var wild_arbok_amt: int = 0 # used in dungeon for limit number of arboks
 
 var next_spawn: String = ""
 
+var planted_crops: Array = [] # each entry: {pos = Vector2i, seed_name = String, growth_stage = int}
 
 signal coins_loaded
 signal volume_loaded
@@ -123,12 +124,26 @@ func load_game():
 		ResourceSaver.save(inventory, "user://inventory.tres")
 		inventory_loaded.emit()
 		
+	#var tilemap: TileMapLayer = get_node("../GameTileMap/Land&Sea")
+	#for crop_data in GameData.planted_crops:
+		#var crop_scene = GameData.get_seed_scene(crop_data.seed) # you need a way to map seed name → scene
+		#if crop_scene:
+			#var crop = crop_scene.instantiate()
+			#add_child(crop)
+			#var tile_center = tilemap.map_to_local(crop_data.pos) + Vector2(tilemap.tile_set.tile_size) / 2
+			#crop.global_position = tilemap.to_global(tile_center)
+			## Optionally set growth stage here
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	load_game()
 	volume_loaded.connect(set_volume)
 	pass
+
+#func save_crop(cell: Vector2i, seed_name: String, growth_stage: int = 0):
+	## Remove any existing crop at this cell
+	#planted_crops = planted_crops.filter(func(c): return c.pos != cell)
+	#planted_crops.append({ "pos": cell, "seed": seed_name, "stage": growth_stage })
 
 func set_volume():
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(default_volume/10))

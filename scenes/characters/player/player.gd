@@ -150,87 +150,27 @@ func set_selected_seed(seed_scene: PackedScene):
 	selected_seed = seed_scene
 	print("Selected seed:", selected_seed)
 	
-#func plant_seed(seed: SeedItem, slot_index: int):
-	#if not seed or not seed.crop_scene:
-		#return
-#
-	#var tilemap = get_parent().get_node("GameTileMap/Land&Sea")
-	#if tilemap == null:
-		#print("Tilemap not found!")
-		#return
-#
-	## Convert player position to cell coordinates
-	#var cell = tilemap.local_to_map(tilemap.to_local(global_position))
-#
-	## Get the tile's source ID
-	#var tile_id = tilemap.get_cell_source_id(cell)
-	#if tile_id == -1:
-		#print("No tile here")
-		#return
-#
-	## ✅ Plant
-	#var tile_data = tilemap.get_cell_tile_data(cell)
-	#if tile_data == null:
-		#print("No tile data found")
-		#return
-	#if tile_data and tile_data.get_custom_data("plantable"):
-		#var crop = seed.crop_scene.instantiate()
-		#get_parent().add_child(crop)
-		#crop.global_position = tilemap.map_to_local(cell) + Vector2(tilemap.tile_set.tile_size) / 2
-#
-	#GameData.inventory.remove(slot_index)
-	#GameData.save_game()
-	#print("Planted ", seed.name, " at ", cell)
-
 func plant_seed(seed: SeedItem, slot_index: int):
 	if not seed or not seed.crop_scene:
 		return
 
-	# Get your TileMapLayer node
-	var tilemap: TileMapLayer = get_node("../GameTileMap/Land&Sea") # adjust path if needed
+	var tilemap: TileMapLayer = get_node("../GameTileMap/Land&Sea")
 	if tilemap == null:
-		print("Tilemap not found!")
 		return
 
-	# Convert player position to tile coordinates
-	var cell: Vector2i = tilemap.local_to_map(tilemap.to_local(global_position))
-	var world_pos: Vector2 = tilemap.map_to_local(cell) + Vector2(tilemap.tile_set.tile_size) / 2
-	# Get the tile's data
-	var tile_data: TileData = tilemap.get_cell_tile_data(cell)
-	if tile_data == null:
-		print("No tile here")
-		return
+	# Get the detection area's global position (already offset in front of player)
+	var target_cell: Vector2i = tilemap.local_to_map(tilemap.to_local(detection_area.global_position))
 
-	# Check your custom property
-	var plantable: bool = tile_data.get_custom_data("plantable")
-	if not plantable:
-		print("You can't plant here!")
-		return
+	var tile_data: TileData = tilemap.get_cell_tile_data(target_cell)
+	if tile_data and tile_data.get_custom_data("plantable"):
+		var crop = seed.crop_scene.instantiate()
+		get_parent().add_child(crop)
 
-	# ✅ Plant the crop
-	var crop = seed.crop_scene.instantiate()
-	get_parent().add_child(crop)
+		var tile_center_local = tilemap.map_to_local(target_cell) + Vector2(tilemap.tile_set.tile_size) / 2
+		crop.global_position = tilemap.to_global(tile_center_local)
 
-	# Snap crop to the center of the tile
-	crop.global_position = tilemap.map_to_local(cell) + Vector2(tilemap.tile_set.tile_size) / 2
-
-	# Update inventory and save
-	GameData.inventory.remove(slot_index)
-	GameData.save_game()
-	print("Player global: ", global_position)
-	print("Cell: ", cell)
-	print("Planted ", seed.name, " at ", cell)
-
-
-
-
-#func plant_seed(seed: SeedItem, slot_index: int):
-	#if not seed or not seed.crop_scene:
-		#return
-#
-	#var crop = seed.crop_scene.instantiate()
-	#get_parent().add_child(crop)
-	#crop.global_position = global_position
-	#GameData.inventory.remove(slot_index)
-	#GameData.save_game()
-	#print("Planted ", seed.name, " at ", global_position)
+		GameData.inventory.remove(slot_index)
+		GameData.save_game()
+		print("Planted ", seed.name, " at ", target_cell)
+	else:
+		print("Can't plant here")
