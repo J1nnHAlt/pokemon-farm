@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://dsi0x48hs2yhu"]
+
+[ext_resource type="Script" uid="uid://4a4a3yjo4my6" path="res://scenes/Buildings/door.gd" id="1_6j6oh"]
+[ext_resource type="Texture2D" uid="uid://brsc27j7uu4cc" path="res://assets/tilesets/Outside/Buildings/Doors/doors4.png" id="3_nvt5m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6j6oh"]
+atlas = ExtResource("3_nvt5m")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87de0"]
+atlas = ExtResource("3_nvt5m")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aom2v"]
+atlas = ExtResource("3_nvt5m")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8mlv"]
+atlas = ExtResource("3_nvt5m")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x2lb4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6j6oh")
+}],
+"loop": false,
+"name": &"close_door",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87de0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aom2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8mlv")
+}],
+"loop": false,
+"name": &"open_door",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75kqr"]
+size = Vector2(16, 16)
+
+[node name="FishingShopDoor" type="Area2D"]
+collision_layer = 256
+collision_mask = 0
+script = ExtResource("1_6j6oh")
+target_scene = "uid://bsm02l2mrr2t3"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_x2lb4")
+animation = &"close_door"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_75kqr")
+debug_color = Color(0.516784, 0.575727, 0, 0.42)

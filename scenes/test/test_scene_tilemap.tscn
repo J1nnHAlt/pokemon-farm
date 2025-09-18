@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://ddn488ymhtduf"]
+[gd_scene load_steps=30 format=4 uid="uid://ddn488ymhtduf"]
 
 [ext_resource type="PackedScene" uid="uid://cytdne0aeypsc" path="res://scenes/day_night_ui/day_night_cycle_component.tscn" id="1_7apd7"]
 [ext_resource type="Script" uid="uid://chliixmnjjt78" path="res://scenes/test/test_scene_tilemap.gd" id="1_wyicn"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://du17qilklxdsy" path="res://scenes/Buildings/house.tscn" id="3_oqvvc"]
 [ext_resource type="PackedScene" uid="uid://32pfkefqd0i2" path="res://scenes/menus/pause_menu.tscn" id="4_inwy8"]
 [ext_resource type="Script" uid="uid://cse1n331uhrke" path="res://scripts/nav_regions/arbok_region.gd" id="4_m1qrs"]
+[ext_resource type="PackedScene" uid="uid://dyvrjniarhqde" path="res://scenes/Buildings/fishing_shop.tscn" id="4_t64bh"]
 [ext_resource type="PackedScene" uid="uid://d2j5os108d655" path="res://scenes/global/coin.tscn" id="5_6k3gh"]
 [ext_resource type="PackedScene" uid="uid://bsg4dgrfuedqn" path="res://scenes/day_night_ui/day_night_panel.tscn" id="6_l1rk5"]
 [ext_resource type="Script" uid="uid://dedqjpuwgfdyg" path="res://scripts/nav_regions/victreebel_region.gd" id="6_m1qrs"]
@@ -54,6 +55,9 @@ script = ExtResource("1_wyicn")
 
 [node name="House" parent="." instance=ExtResource("3_oqvvc")]
 position = Vector2(736, -176)
+
+[node name="Fishing_Shop" parent="." instance=ExtResource("4_t64bh")]
+position = Vector2(992, -172)
 
 [node name="GameTileMap" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -109,6 +113,10 @@ shape = SubResource("RectangleShape2D_ksdiy")
 
 [node name="Spawns" type="Node2D" parent="."]
 y_sort_enabled = true
+
+[node name="FishingShopExitSpawn" type="Marker2D" parent="Spawns"]
+z_index = 40
+position = Vector2(984, -138)
 
 [node name="DungeonExitSpawn" type="Marker2D" parent="Spawns"]
 z_index = 40

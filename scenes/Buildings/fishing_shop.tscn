@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyvrjniarhqde"]
+
+[ext_resource type="Texture2D" uid="uid://dkfvv3kltdxpu" path="res://assets/tilesets/Outside/Buildings/building_2.png" id="1_1olee"]
+[ext_resource type="PackedScene" uid="uid://dsi0x48hs2yhu" path="res://scenes/Buildings/fishing_shop_door.tscn" id="2_1olee"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yoh81"]
+size = Vector2(64, 52)
+
+[node name="Fishing_Shop" type="StaticBody2D"]
+z_index = 30
+y_sort_enabled = true
+collision_layer = 128
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = ExtResource("1_1olee")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_yoh81")
+
+[node name="FishingShopDoor" parent="." instance=ExtResource("2_1olee")]
+position = Vector2(-8, 20)

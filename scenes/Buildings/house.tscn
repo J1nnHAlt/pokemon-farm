@@ -25,4 +25,3 @@ shape = SubResource("RectangleShape2D_yoh81")
 visible = false
 y_sort_enabled = true
 position = Vector2(-16, 31)
-target_spawn = "HouseExitSpawn"
