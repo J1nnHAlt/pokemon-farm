@@ -78,6 +78,10 @@ func _on_enter() -> void:
 	interactButton = player.get_node("FButton")
 	interactButton.visible = false
 	
+	var bicycle_music = player.get_node("BicycleMusic") as AudioStreamPlayer
+	if bicycle_music and bicycle_music.playing:
+		bicycle_music.stop()
+	
 	var surf_music = player.get_node("SurfMusic") as AudioStreamPlayer
 	if surf_music and not surf_music.playing:
 		surf_music.play()

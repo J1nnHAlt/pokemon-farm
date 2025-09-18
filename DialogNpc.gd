@@ -7,7 +7,6 @@ extends Node2D
 @export var default_animation: String = "idle_down"
 
 var player: Node2D = null
-var dialog_index := 0
 var is_talking := false
 var player_nearby := false
 
@@ -40,6 +39,13 @@ func _on_area_body_exited(body: Node2D) -> void:
 		player = null
 		$AnimatedSprite2D.play(default_animation)  # return to default
 
+		# force close dialog if active
+		var dm = get_node(dialog_manager)
+		if dm:
+			dm.hide()                     # close the dialog box
+			dm.typing_session_id += 1     # cancel typing
+		is_talking = false               # reset state
+
 func start_dialog():
 	if is_talking:
 		return
@@ -48,6 +54,7 @@ func start_dialog():
 		if dm and dm.has_method("start_dialog"):
 			is_talking = true
 			_face_player()  # NPC faces player immediately
+
 			# Explicitly cast the result to Array[String]
 			var raw_lines: Array = DialogDB.dialogs.get(npc_id, [])
 			var lines: Array[String] = []
@@ -73,7 +80,5 @@ func _face_player() -> void:
 		else:
 			$AnimatedSprite2D.play("idle_up")
 
-
 func _on_dialog_done():
 	is_talking = false
-	# reset so next F press starts from beginning

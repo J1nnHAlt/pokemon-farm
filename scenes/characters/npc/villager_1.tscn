@@ -57,6 +57,3 @@ animations = [{
 [node name="Villager_1" instance=ExtResource("1_b7fys")]
 npc_id = "villager_1"
 npc_sprite_frames = SubResource("SpriteFrames_3pkfb")
-
-[node name="CollisionShape2D" parent="CharacterBody2D" index="0"]
-debug_color = Color(0.964881, 1.92523e-06, 0.490083, 0.42)

@@ -4,6 +4,7 @@ signal dialog_done
 @onready var label: Label = $Label
 @onready var arrow = $Arrow
 @onready var enter_button = $Enter_button
+@onready var sfx_enter: AudioStreamPlayer2D = $sfx_enter
 
 var text_speed := 0.03
 var pages: Array[String] = []
@@ -76,6 +77,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			if enter_button and enter_button.has_method("play"):
 				enter_button.play("default")
 		else:
+			if sfx_enter:
+				sfx_enter.play()
 			# go to next page or end
 			current_page += 1
 			if current_page < pages.size():

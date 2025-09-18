@@ -141,6 +141,13 @@ func get_door_in_front() -> Door:
 			return collider
 	return null
 
+func play_surf_overlay():
+		# Load the overlay scene
+	var overlay = preload("res://scenes/UI/surf_overlay.tscn").instantiate()
+	# Add overlay to the current scene (to the top level, not as a child of player)
+	get_tree().current_scene.add_child(overlay)
+	# Start playing animation
+	overlay.play_overlay()
 
 func _on_pokeball_cd_timeout() -> void:
 	pokeball_cd = false
