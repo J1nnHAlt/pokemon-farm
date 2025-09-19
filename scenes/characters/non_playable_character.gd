@@ -78,7 +78,6 @@ func evolve() -> void:
 func _on_new_day(day):
 	gain_exp(50)
 	
-	print
 	# Tick down effect durations
 	for s in status.keys():
 		status[s] -= 1
@@ -110,13 +109,8 @@ const EggScene := preload("res://scenes/characters/egg.tscn")
 func _give_birth():
 	print("%s gave birth to an egg!" % name)
 
-	# Create a new egg instance
 	var new_egg: egg = EggScene.instantiate()
-	
-	print("@egg: parent rarity: ", rarity)
-	# Pass THIS NPC (self) into the egg constructor
 	new_egg.setup(self, rarity, element)
-	print("@egg: new egg rarity: ", new_egg.pokemon.rarity)
 
 	# Add the egg to the same parent
 	if get_parent():
