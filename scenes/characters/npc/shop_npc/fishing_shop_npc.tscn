@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfpmrmcxhfdu1"]
+
+[ext_resource type="PackedScene" uid="uid://ccdoqvus57g7b" path="res://scenes/characters/npc/npc_base.tscn" id="1_ykxio"]
+[ext_resource type="Script" uid="uid://bswdxgsblvefa" path="res://scenes/characters/npc/shop_npc/fishing_shop_npc.gd" id="2_ykxio"]
+
+[node name="FishingShopOwner" instance=ExtResource("1_ykxio")]
+script = ExtResource("2_ykxio")

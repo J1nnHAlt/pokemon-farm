@@ -28,6 +28,7 @@ func _on_enter() -> void:
 	capture_music = player.get_node("CaptureMusic") as AudioStreamPlayer
 	exclaim_sfx = player.get_node("sfx_exclaim") as AudioStreamPlayer
 
+	_test_catch_rates(10000)
 	# Play fishing animation based on direction
 	match player.player_direction:
 		Vector2.UP:
@@ -140,3 +141,21 @@ func _determine_catch() -> String:
 			return pokemon
 	
 	return "Magikarp"
+
+func _test_catch_rates(trials: int = 10000) -> void:
+	var rod_level = player.fishing_rod_level
+	var results := {
+		"Magikarp": 0,
+		"Seaking": 0,
+		"Gyarados": 0,
+		"Kyogre": 0,
+	}
+	
+	for i in range(trials):
+		var caught = _determine_catch()
+		results[caught] += 1
+	
+	print("--- Fishing Rod Level:", rod_level, "---")
+	for name in results.keys():
+		var percent = float(results[name]) / trials * 100.0
+		print(name, ": ", percent, "%")

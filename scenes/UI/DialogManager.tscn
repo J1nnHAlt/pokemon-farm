@@ -124,3 +124,32 @@ frame_progress = 0.494848
 
 [node name="sfx_enter" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_6x3tb")
+
+[node name="YesNoMenu" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 71.0
+offset_right = 651.0
+offset_bottom = 236.0
+texture = ExtResource("1_bikte")
+patch_margin_left = 24
+patch_margin_top = 12
+patch_margin_right = 46
+patch_margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="YesNoMenu"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 43.0
+offset_right = 112.0
+offset_bottom = 119.0
+
+[node name="YES" type="Label" parent="YesNoMenu/VBoxContainer"]
+layout_mode = 2
+text = "Yes"
+label_settings = SubResource("LabelSettings_4d8dq")
+
+[node name="NO" type="Label" parent="YesNoMenu/VBoxContainer"]
+layout_mode = 2
+text = "No"
+label_settings = SubResource("LabelSettings_4d8dq")
