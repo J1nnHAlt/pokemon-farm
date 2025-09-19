@@ -105,5 +105,29 @@ func consume_pet_food(pet_food: PetFood):
 			print("Already eaten before, food wasted!")
 		attributes_changed.emit()
 
+const EggScene := preload("res://scenes/characters/egg.tscn")
 func _give_birth():
-	pass
+	print("%s gave birth to an egg!" % name)
+
+	# Create a new egg instance
+	var new_egg: egg = EggScene.instantiate()
+	
+	print("@egg: parent rarity: ", rarity)
+	# Pass THIS NPC (self) into the egg constructor
+	new_egg.setup(self, rarity, element)
+	print("@egg: new egg rarity: ", new_egg.pokemon.rarity)
+
+	# Add the egg to the same parent
+	if get_parent():
+		get_parent().add_child(new_egg)
+		new_egg.position = position + Vector2(16, 0) # offset a bit so it's not overlapping
+
+	# Clear pregnant status after giving birth
+	status.erase(PetStatus.Pregnant)
+	attributes_changed.emit()
+
+func _reset():
+	evolution = 1
+	level = 1
+	exp = 0
+	status = {}
