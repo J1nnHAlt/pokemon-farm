@@ -8,7 +8,6 @@ signal choice_active(is_active: bool)
 @onready var arrow = $Arrow
 @onready var enter_button = $Enter_button
 @onready var sfx_enter: AudioStreamPlayer = $sfx_enter
-@onready var sfx_upgrade: AudioStreamPlayer = $sfx_upgrade
 @onready var yes_no_menu: NinePatchRect = $YesNoMenu
 @onready var yes_label: Label = $YesNoMenu/VBoxContainer/YES
 @onready var no_label: Label = $YesNoMenu/VBoxContainer/NO
@@ -145,8 +144,6 @@ func _unhandled_input(event: InputEvent) -> void:
 				sfx_enter.play()
 			yes_no_menu.visible = false
 			if yes_no_index == 0:
-				if sfx_upgrade:
-					sfx_upgrade.play()
 				emit_signal("yes_selected")
 			else:
 				emit_signal("no_selected")

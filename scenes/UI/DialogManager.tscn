@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c8kp81bq2qhas"]
+[gd_scene load_steps=17 format=3 uid="uid://c8kp81bq2qhas"]
 
 [ext_resource type="Script" uid="uid://bjo7tj5ua8ql4" path="res://scenes/UI/DialogManager.gd" id="1_4d8dq"]
 [ext_resource type="Texture2D" uid="uid://42qu0rmexc3h" path="res://assets/UI/dialog/speech dp 1.png" id="1_bikte"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://cf6ma187kgkqg" path="res://assets/UI/keyboard buttons/enter_button.png" id="5_rplki"]
 [ext_resource type="AudioStream" uid="uid://bu6ro5i4wqc67" path="res://assets/audio/sfx/GUI sel cursor.ogg" id="6_6x3tb"]
 [ext_resource type="FontFile" uid="uid://u3cb6y3ic6xj" path="res://assets/font/power red and green.ttf" id="7_fnj5w"]
-[ext_resource type="AudioStream" uid="uid://om61k22p56mp" path="res://assets/audio/sfx/Pkmn level up.ogg" id="7_o82na"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4d8dq"]
 line_spacing = 20.0
@@ -125,9 +124,6 @@ frame_progress = 0.494848
 
 [node name="sfx_enter" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_6x3tb")
-
-[node name="sfx_upgrade" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_o82na")
 
 [node name="YesNoMenu" type="NinePatchRect" parent="."]
 layout_mode = 0

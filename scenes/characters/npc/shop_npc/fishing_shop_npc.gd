@@ -12,6 +12,13 @@ var asking_upgrade := false
 
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+# Upgrade requirements: rod_level → {pokemon: amount}
+var upgrade_requirements := {
+	0: {"magikarp": 3},   # upgrade from level 0 → 1
+	1: {"seaking": 2},    # upgrade from level 1 → 2
+	2: {"gyarados": 1},   # upgrade from level 2 → 3
+}
+
 func _ready() -> void:
 	if npc_sprite_frames:
 		anim_sprite.sprite_frames = npc_sprite_frames
@@ -65,14 +72,21 @@ func start_dialog():
 
 	# Check fishing rod level
 	if player.fishing_rod_level < 3:
+		var reqs = upgrade_requirements.get(player.fishing_rod_level, {})
+		var req_text := "To upgrade, you need:\n"
+		for name in reqs.keys():
+			req_text += "- %d %s\n" % [reqs[name], name]
+
 		dm.start_dialog([
 			"Your fishing rod is level %d." % player.fishing_rod_level,
+			req_text,
 			"Do you want to upgrade it?"
 		])
 		asking_upgrade = true
 	else:
 		dm.start_dialog(["Your fishing rod is already max level (3)."])
 		asking_upgrade = false
+
 
 func _face_player() -> void:
 	if not player or not npc_sprite_frames:
@@ -95,11 +109,39 @@ func _on_dialog_done():
 		is_talking = false
 
 func _on_choice_made_yes():
-	player.upgrade_fishing_rod()
+	var current_level = player.fishing_rod_level
+	var reqs = upgrade_requirements.get(current_level, {})
+
+	# Check GameData against requirements
+	var has_all := true
+	for name in reqs.keys():
+		var count = GameData.get("pet_%s_amt" % name.to_lower())
+		if count < reqs[name]:
+			has_all = false
+			break
+
 	var dm = get_node(dialog_manager)
-	if dm:
+	if not dm:
+		return
+
+	if has_all:
+		# Deduct Pokémon
+		for name in reqs.keys():
+			var key = "pet_%s_amt" % name.to_lower()
+			GameData.set(key, GameData.get(key) - reqs[name])
+
+		# Upgrade rod
+		player.upgrade_fishing_rod()
 		dm.start_dialog(["Your fishing rod has been upgraded to level %d!" % player.fishing_rod_level])
+	else:
+		var missing_text := "You don’t have enough Pokémon.\nYou need:\n"
+		for name in reqs.keys():
+			var count = GameData.get("pet_%s_amt" % name.to_lower())
+			missing_text += "- %d %s (you have %d)\n" % [reqs[name], name, count]
+		dm.start_dialog([missing_text])
+
 	asking_upgrade = false
+
 
 func _on_choice_made_no():
 	var dm = get_node(dialog_manager)

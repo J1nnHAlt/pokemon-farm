@@ -50,7 +50,7 @@ visible = false
 position = Vector2(3, -20)
 dialog_manager = NodePath("../CanvasLayer/DialogManager")
 
-[node name="FishingShopOwner2" parent="." instance=ExtResource("6_i3afn")]
+[node name="FishingShopOwner" parent="." instance=ExtResource("6_i3afn")]
 position = Vector2(-59, -4)
 dialog_manager = NodePath("../CanvasLayer/DialogManager")
 

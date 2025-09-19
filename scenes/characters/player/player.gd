@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @export var pokeball_scene = preload("res://scenes/pokeball/pokeball.tscn")
 @onready var sfx_throw_pokeball: AudioStreamPlayer = $sfx_throw_pokeball
+@onready var sfx_upgrade: AudioStreamPlayer = $sfx_upgrade
 @onready var hit_component: HitComponent = $HitComponent
 @export var current_tool: DataTypes.Tools = DataTypes.Tools.None
 var inventory: Inv
@@ -162,6 +163,8 @@ func upgrade_fishing_rod():
 	if fishing_rod_level < 3:
 		fishing_rod_level += 1
 		GameData.fishing_rod_level = fishing_rod_level
+		if sfx_upgrade:
+			sfx_upgrade.play()
 
 func _on_choice_active(active: bool) -> void:
 	if active:
