@@ -5,12 +5,16 @@ extends Node2D
 @onready var flowering_particles: GPUParticles2D = $FloweringParticles
 @onready var growth_cycle_component: GrowthCycleComponent = $GrowthCycleComponent
 @onready var hurt_component: HurtComponent = $HurtComponent
+var tilemap: TileMapLayer
+var seed_name: String
 
 var growth_state: DataTypes.GrowthStates = DataTypes.GrowthStates.Seed
 @export var harvest_item: InvItem
 const harvest_scene := preload("res://scenes/crops/harvest.tscn")
 
 func _ready() -> void:
+	z_index = 10  # higher than tilemap
+	print("Berry ready:", seed_name, "at", global_position)
 	watering_particles.emitting = false
 	flowering_particles.emitting = false
 	
@@ -35,6 +39,7 @@ func on_hurt(hit_damage: int) -> void:
 		await get_tree().create_timer(5.0).timeout
 		watering_particles.emitting = false
 		growth_cycle_component.is_watered = true
+		growth_cycle_component.save_crop_state()
 
 
 func on_crop_maturity() -> void:

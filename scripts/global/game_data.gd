@@ -54,8 +54,8 @@ var pokeballs = [
 ]
 
 var seed_registry: Dictionary = {
-	"Cheri": preload("res://scenes/crops/berry.tscn"),
-	"Custa": preload("res://scenes/crops/custa_berry.tscn"),
+	"CheriSeed": preload("res://scenes/crops/berry.tscn"),
+	"CustaSeed": preload("res://scenes/crops/custa_berry.tscn"),
 	#"Durin": preload("res://scenes/crops/durin_crop.tscn")
 	# Add more seed → crop scene mappings here
 }
@@ -73,6 +73,9 @@ func save_game():
 		"pet_seaking_amt": pet_seaking_amt,
 		"pet_gyarados_amt": pet_gyarados_amt,
 		"pet_kyogre_amt": pet_kyogre_amt,
+		"current_day": DayAndNightCycleManager.current_day,
+		"planted_crops": planted_crops,
+
 		# Later: add more data here like "pokemons": [], "player_pos": Vector2()
 	}
 	# C:\Users\<YourUsername>\AppData\Roaming\Godot\app_userdata\<YourGameName>\savegame.json
@@ -100,8 +103,10 @@ func load_game():
 			pet_magikarp_amt = data.get("pet_magikarp_amt", 0)
 			pet_seaking_amt = data.get("pet_seaking_amt", 0)
 			pet_gyarados_amt = data.get("pet_gyarados_amt", 0)
-			pet_kyogre_amt = data.get("pet_kyogre_amt")
+			pet_kyogre_amt = data.get("pet_kyogre_amt", 0)
 			pet_lugia_amt = data.get("pet_victreebel", 0)
+			planted_crops = data.get("planted_crops", [])
+			DayAndNightCycleManager.current_day = int(data.get("current_day", DayAndNightCycleManager.current_day))
 			emit_signal("coins_loaded")
 			emit_signal("volume_loaded")
 			
@@ -152,20 +157,32 @@ func _ready() -> void:
 	pass
 	
 func save_crop(pos: Vector2i, seed_name: String, growth_state: int, is_watered: bool, starting_day: int):
-	# Remove any existing crop at this position
-	planted_crops = planted_crops.filter(func(c): return c.pos != pos)
+	var pos_array = [int(pos.x), int(pos.y)]  # force ints
+	# Remove any existing crop at this position 
+	planted_crops = planted_crops.filter(func(c): return c["pos"] != pos_array)
 	planted_crops.append({
-		"pos": pos,
+		"pos": pos_array,
 		"seed_name": seed_name,
 		"growth_state": growth_state,
 		"is_watered": is_watered,
 		"starting_day": starting_day
 	})
 
+	
+func get_crops_parent(scene_root: Node) -> Node:
+	var crops_parent = scene_root.get_node_or_null("Crops")
+	if crops_parent == null:
+		crops_parent = Node2D.new()
+		crops_parent.name = "Crops"
+		scene_root.add_child(crops_parent)
+	return crops_parent
+
 func get_seed_scene(seed_name: String) -> PackedScene:
+	print("Looking up seed: '" + seed_name + "' in registry keys: ", seed_registry.keys())
 	if seed_registry.has(seed_name):
 		return seed_registry[seed_name]
 	return null
+
 
 func set_volume():
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(default_volume/10))

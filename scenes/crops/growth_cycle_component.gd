@@ -21,6 +21,7 @@ func on_time_tick_day(day: int) -> void:
 		
 		growth_states(starting_day, day)
 		harvest_state(starting_day, day)
+		save_crop_state()
 
 
 func growth_states(starting_day: int, current_day: int) -> void:
@@ -48,6 +49,7 @@ func harvest_state(starting_day: int, current_day: int) -> void:
 	
 	if days_passed == days_until_harvest - 1:
 		current_growth_state = DataTypes.GrowthStates.Harvesting
+		save_crop_state()
 		crop_harvesting.emit()
 
 func get_current_growth_state() -> DataTypes.GrowthStates:
@@ -56,12 +58,15 @@ func get_current_growth_state() -> DataTypes.GrowthStates:
 
 func save_crop_state():
 	var crop_node = get_parent()
-	var tilemap = crop_node.get_parent().get_node("../GameTileMap/Land&Sea")
+	var tilemap = crop_node.tilemap
+	if tilemap == null:
+		print("Tilemap missing on crop; skip save")
+		return
 	var cell = tilemap.local_to_map(tilemap.to_local(crop_node.global_position))
 
 	GameData.save_crop(
 		cell,
-		crop_node.name, # or crop_node.harvest_item.name
+		crop_node.seed_name,
 		current_growth_state,
 		is_watered,
 		starting_day

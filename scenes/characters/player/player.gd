@@ -182,6 +182,7 @@ func set_selected_seed(seed_scene: PackedScene):
 	selected_seed = seed_scene
 	print("Selected seed:", selected_seed)
 	
+
 func plant_seed(seed: SeedItem, slot_index: int):
 	if not seed or not seed.crop_scene:
 		return
@@ -196,7 +197,10 @@ func plant_seed(seed: SeedItem, slot_index: int):
 	var tile_data: TileData = tilemap.get_cell_tile_data(target_cell)
 	if tile_data and tile_data.get_custom_data("plantable"):
 		var crop = seed.crop_scene.instantiate()
-		get_parent().add_child(crop)
+		crop.tilemap = tilemap
+		crop.seed_name = seed.name
+		var crops_parent = GameData.get_crops_parent(get_tree().current_scene)
+		crops_parent.add_child(crop)
 
 		var tile_center_local = tilemap.map_to_local(target_cell) + Vector2(tilemap.tile_set.tile_size) / 2
 		crop.global_position = tilemap.to_global(tile_center_local)
