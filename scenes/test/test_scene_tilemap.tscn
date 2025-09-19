@@ -30,8 +30,8 @@
 [ext_resource type="PackedScene" uid="uid://b87vo5iflck41" path="res://scenes/characters/npc/professor_oak.tscn" id="23_0opjm"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_p0x3o"]
-vertices = PackedVector2Array(-110.859, 83.1563, -499.938, 89.8203, -498.047, -262.023, -106.133, -262.969)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+vertices = PackedVector2Array(-218.43, -121.469, -144.367, 28, -288, 28, -499.938, 89.8203, -498.078, -256.117, -352, 60, -288, 60, -352, 87.2813)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 0, 2, 5), PackedInt32Array(2, 6, 5), PackedInt32Array(3, 5, 7)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-508, -272, -96, -273, -101, 93, -510, 100)])
 source_geometry_mode = 2
 
@@ -42,9 +42,9 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-954, -269, -583, -268,
 source_geometry_mode = 2
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_m1qrs"]
-vertices = PackedVector2Array(683, 540, 543, 540, 543, 448, 683, 448)
+vertices = PackedVector2Array(675, 537.922, 555.391, 537.07, 558.609, 455.922, 675, 455.07)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(526, 411, 702, 413, 703, 561, 526, 562)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(549, 446, 685, 445, 685, 548, 545, 547)])
 source_geometry_mode = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ksdiy"]
@@ -125,7 +125,7 @@ script = ExtResource("11_1rtwt")
 [node name="Magikarp" type="Node2D" parent="."]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="Magikarp"]
-position = Vector2(750, -216)
+position = Vector2(167, -4)
 navigation_polygon = SubResource("NavigationPolygon_m1qrs")
 navigation_layers = 8
 script = ExtResource("12_wfiq6")
@@ -170,6 +170,10 @@ zoom = Vector2(3.8, 3.8)
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_inwy8")]
 
 [node name="DayNightPanel" parent="CanvasLayer" instance=ExtResource("6_l1rk5")]
+offset_left = 0.0
+offset_top = 12.0
+offset_right = 26.0
+offset_bottom = 35.0
 
 [node name="Inv_UI" parent="CanvasLayer" instance=ExtResource("13_l0udy")]
 anchors_preset = 8

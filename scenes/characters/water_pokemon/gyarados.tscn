@@ -58,8 +58,9 @@ script = ExtResource("1_k0q2v")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_uyung")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
+frame_progress = 0.404093
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
@@ -67,7 +68,7 @@ shape = SubResource("CircleShape2D_gyyif")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_desired_distance = 10.0
-navigation_layers = 4
+navigation_layers = 32
 path_postprocessing = 1
 debug_enabled = true
 
