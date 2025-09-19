@@ -3,12 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://dc4vwmngm4ft6" path="res://pokemon-assets/Graphics/Battlebacks/city_night_bg.png" id="1_cnjmm"]
 [ext_resource type="Script" uid="uid://kkj704dtlanh" path="res://scenes/BerryMixer/berry_mixer.gd" id="1_ruapb"]
 [ext_resource type="Script" uid="uid://ctdhuwcn0gnjv" path="res://scenes/BerryMixer/mixer_content.gd" id="3_7vft3"]
-[ext_resource type="Texture2D" uid="uid://c2qxu3s7tjh3u" path="res://pokemon-assets/Graphics/Items/blender.png" id="3_lh7vl"]
 [ext_resource type="PackedScene" uid="uid://brirrwysfjclq" path="res://scenes/BerryMixer/RecipeCard.tscn" id="3_sld21"]
 [ext_resource type="Script" uid="uid://dnu0tdt5ntqsa" path="res://scenes/BerryMixer/receipe_list.gd" id="3_vffg1"]
 [ext_resource type="Script" uid="uid://d1b7qp1yqklru" path="res://scenes/BerryMixer/player_berry_list.gd" id="4_cdewq"]
 [ext_resource type="PackedScene" uid="uid://m2d3g74p375v" path="res://scenes/BerryMixer/slot.tscn" id="4_lh7vl"]
 [ext_resource type="Script" uid="uid://r1fdyor1fjyv" path="res://scenes/BerryMixer/mix_button.gd" id="5_7vft3"]
+[ext_resource type="Texture2D" uid="uid://rhbenj2had8y" path="res://assets/berry_mixer/blender.png" id="5_vffg1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7vft3"]
 
@@ -128,7 +128,7 @@ offset_left = -249.5
 offset_right = 249.5
 offset_bottom = 499.0
 grow_horizontal = 2
-texture = ExtResource("3_lh7vl")
+texture = ExtResource("5_vffg1")
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/MixerPanel"]
 custom_minimum_size = Vector2(420, 200)

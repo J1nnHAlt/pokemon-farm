@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PetFood" load_steps=3 format=3 uid="uid://brhhog2xoryqu"]
 
 [ext_resource type="Script" uid="uid://duh47xclnnv37" path="res://scripts/inventory/pet_food.gd" id="1_6xawc"]
-[ext_resource type="Texture2D" uid="uid://hycg8i28i0sd" path="res://pokemon-assets/Graphics/Items/RARECANDY.png" id="2_57xw2"]
+[ext_resource type="Texture2D" uid="uid://ci8nskt0tswj4" path="res://assets/pet_food/DARK_CANDY.png" id="2_57xw2"]
 
 [resource]
 script = ExtResource("1_6xawc")

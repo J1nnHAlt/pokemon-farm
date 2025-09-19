@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://brirrwysfjclq"]
 
-[ext_resource type="Texture2D" uid="uid://bg7qqtwbbs0xv" path="res://pokemon-assets/Graphics/Items/000.png" id="1_y5inv"]
+[ext_resource type="Texture2D" uid="uid://2k3u6dq5vhk6" path="res://assets/UI/default_image.png" id="1_y5inv"]
 
 [node name="RecipeCard" type="Control"]
 custom_minimum_size = Vector2(380, 200)

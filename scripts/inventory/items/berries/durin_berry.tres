@@ -1,11 +1,10 @@
 [gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://cc7ypp7b0xktf"]
 
 [ext_resource type="Script" uid="uid://srnaalrlc73j" path="res://scripts/inventory/inventory_item.gd" id="1_jk0pr"]
-[ext_resource type="Texture2D" uid="uid://b3vwj7o8lfhe5" path="res://pokemon-assets/Graphics/Items/DURINBERRY.png" id="2_o7q8c"]
+[ext_resource type="Texture2D" uid="uid://blros0d1fevky" path="res://assets/berries/DURINBERRY.png" id="2_jv2et"]
 
 [resource]
 script = ExtResource("1_jk0pr")
 name = "DurinBerry"
-texture = ExtResource("2_o7q8c")
-price = 20.0
+texture = ExtResource("2_jv2et")
 metadata/_custom_type_script = "uid://srnaalrlc73j"
