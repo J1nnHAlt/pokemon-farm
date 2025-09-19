@@ -123,10 +123,10 @@ scale = Vector2(0.392857, 0.392857)
 sprite_frames = SubResource("SpriteFrames_o82na")
 frame_progress = 0.494848
 
-[node name="sfx_enter" type="AudioStreamPlayer2D" parent="."]
+[node name="sfx_enter" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_6x3tb")
 
-[node name="sfx_upgrade" type="AudioStreamPlayer2D" parent="."]
+[node name="sfx_upgrade" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_o82na")
 
 [node name="YesNoMenu" type="NinePatchRect" parent="."]

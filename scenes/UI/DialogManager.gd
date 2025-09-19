@@ -7,8 +7,8 @@ signal choice_active(is_active: bool)
 @onready var label: Label = $Label
 @onready var arrow = $Arrow
 @onready var enter_button = $Enter_button
-@onready var sfx_enter: AudioStreamPlayer2D = $sfx_enter
-@onready var sfx_upgrade: AudioStreamPlayer2D = $sfx_upgrade
+@onready var sfx_enter: AudioStreamPlayer = $sfx_enter
+@onready var sfx_upgrade: AudioStreamPlayer = $sfx_upgrade
 @onready var yes_no_menu: NinePatchRect = $YesNoMenu
 @onready var yes_label: Label = $YesNoMenu/VBoxContainer/YES
 @onready var no_label: Label = $YesNoMenu/VBoxContainer/NO

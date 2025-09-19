@@ -32,32 +32,34 @@ func _on_physics_process(_delta: float) -> void:
 	if direction != Vector2.ZERO:
 		player.player_direction = direction
 	
-	player.velocity = direction * run_speed
-	player.move_and_slide()
+	if player.can_move:
+		player.velocity = direction * run_speed
+		player.move_and_slide()
 
 
 func _on_next_transitions() -> void:
-	if GameInputEvents.is_interact_input() and player.is_water_in_front():
-#		play the overlay summoning animation
-		var overlay = get_tree().current_scene.get_node("CanvasLayer/SurfOverlay")
-		overlay.play_overlay()
-		
-#		wait the animation finish to perform transition logic
-		var t = get_tree().create_timer(1.4)
-		t.timeout.connect(func(): 
-			# Move player slightly forward into water
-			player.collision_mask &= ~((1 << 1) | (1 << 6))
-			player.global_position += player.player_direction * 20
-			transition.emit("Surf")
-		)
-		return
-		
-	if GameInputEvents.is_cycle_toggle():
-		transition.emit("CycleIdle")
-	elif !GameInputEvents.is_movement_input():
-		transition.emit("Idle")
-	elif !GameInputEvents.is_space_pressed():
-		transition.emit("Walk")
+	if player.can_move:
+		if GameInputEvents.is_interact_input() and player.is_water_in_front():
+	#		play the overlay summoning animation
+			var overlay = get_tree().current_scene.get_node("CanvasLayer/SurfOverlay")
+			overlay.play_overlay()
+			
+	#		wait the animation finish to perform transition logic
+			var t = get_tree().create_timer(1.4)
+			t.timeout.connect(func(): 
+				# Move player slightly forward into water
+				player.collision_mask &= ~((1 << 1) | (1 << 6))
+				player.global_position += player.player_direction * 20
+				transition.emit("Surf")
+			)
+			return
+			
+		if GameInputEvents.is_cycle_toggle():
+			transition.emit("CycleIdle")
+		elif !GameInputEvents.is_movement_input():
+			transition.emit("Idle")
+		elif !GameInputEvents.is_space_pressed():
+			transition.emit("Walk")
 
 func _on_enter() -> void:
 	interactButton = player.get_node("FButton")

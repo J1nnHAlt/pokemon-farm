@@ -34,51 +34,53 @@ func _on_physics_process(_delta: float) -> void:
 	if direction != Vector2.ZERO:
 		player.player_direction = direction
 
-	player.velocity = direction * cycle_speed
-	player.move_and_slide()
+	if player.can_move:
+		player.velocity = direction * cycle_speed
+		player.move_and_slide()
 
 func _on_next_transitions() -> void:
 	var direction = GameInputEvents.movement_input()
 	
-	# Update the raycast based on facing direction
-	if direction != Vector2.ZERO:
-		player.player_direction = direction
-		player.update_interaction_ray()
-	
-	# Check if player is in front of a door
-	var door = player.get_door_in_front()
-	# if player is in front of a door, when move up will enter to the building
-	if door and direction == Vector2.UP:
-		print("@Door: EnterDoor triggered")
-		transition.emit("EnterDoor")
-		return
-	
-	if GameInputEvents.is_interact_input() and player.is_water_in_front():
-#		play the overlay summoning animation
-		var overlay = get_tree().current_scene.get_node("CanvasLayer/SurfOverlay")
-		overlay.play_overlay()
+	if player.can_move:
+		# Update the raycast based on facing direction
+		if direction != Vector2.ZERO:
+			player.player_direction = direction
+			player.update_interaction_ray()
 		
-#		wait the animation finish to perform transition logic
-		var t = get_tree().create_timer(1.4)
-		t.timeout.connect(func(): 
-			# Move player slightly forward into water
-			player.collision_mask &= ~((1 << 1) | (1 << 6))
-			player.global_position += player.player_direction * 20
-			transition.emit("Surf")
-		)
-		return
+		# Check if player is in front of a door
+		var door = player.get_door_in_front()
+		# if player is in front of a door, when move up will enter to the building
+		if door and direction == Vector2.UP:
+			print("@Door: EnterDoor triggered")
+			transition.emit("EnterDoor")
+			return
 		
-	if GameInputEvents.is_cycle_toggle():
-		# Reset cooldown so walking requires pause
-		WalkState.cooldown_used_once = false
-		WalkState.can_walk = false
-		WalkState.walk_timer = 0.0
-		
-		if bicycle_music and bicycle_music.playing:
-			bicycle_music.stop()
-		transition.emit("Idle")
-	elif !GameInputEvents.is_movement_input():
-		transition.emit("CycleIdle") # Stop moving on bike
+		if GameInputEvents.is_interact_input() and player.is_water_in_front():
+	#		play the overlay summoning animation
+			var overlay = get_tree().current_scene.get_node("CanvasLayer/SurfOverlay")
+			overlay.play_overlay()
+			
+	#		wait the animation finish to perform transition logic
+			var t = get_tree().create_timer(1.4)
+			t.timeout.connect(func(): 
+				# Move player slightly forward into water
+				player.collision_mask &= ~((1 << 1) | (1 << 6))
+				player.global_position += player.player_direction * 20
+				transition.emit("Surf")
+			)
+			return
+			
+		if GameInputEvents.is_cycle_toggle():
+			# Reset cooldown so walking requires pause
+			WalkState.cooldown_used_once = false
+			WalkState.can_walk = false
+			WalkState.walk_timer = 0.0
+			
+			if bicycle_music and bicycle_music.playing:
+				bicycle_music.stop()
+			transition.emit("Idle")
+		elif !GameInputEvents.is_movement_input():
+			transition.emit("CycleIdle") # Stop moving on bike
 
 func _on_enter() -> void:
 	bicycle_music = player.get_node("BicycleMusic") as AudioStreamPlayer
