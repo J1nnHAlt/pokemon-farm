@@ -17,7 +17,7 @@ func update_display():
 	# Create slot for each item in inventory
 	for i in inventory.slots.size():
 		var inv_slot: InvSlot = inventory.slots[i]
-		if inv_slot.item and inv_slot.amount > 0 and inv_slot.item is not PetFood and inv_slot.item is not SeedItem:
+		if inv_slot.item and inv_slot.amount > 0 and inv_slot.item is not PetFood and inv_slot.item is not SeedItem and inv_slot.item.name != "Pokeball":
 			var slot = SLOT_SCENE.instantiate()
 			add_child(slot)
 

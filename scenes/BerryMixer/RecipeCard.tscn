@@ -1,0 +1,111 @@
+[gd_scene load_steps=2 format=3 uid="uid://brirrwysfjclq"]
+
+[ext_resource type="Texture2D" uid="uid://bg7qqtwbbs0xv" path="res://pokemon-assets/Graphics/Items/000.png" id="1_y5inv"]
+
+[node name="RecipeCard" type="Control"]
+custom_minimum_size = Vector2(380, 200)
+layout_mode = 3
+anchor_right = 0.297
+anchor_bottom = 0.208
+offset_right = -0.160034
+offset_bottom = 0.319992
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(380, 180)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.0
+offset_top = -90.0
+offset_right = 190.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("1_y5inv")
+
+[node name="Name" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_right = 0.3
+offset_right = 266.0
+offset_bottom = 33.0
+text = "Name"
+text_overrun_behavior = 3
+
+[node name="Description" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.214
+anchor_right = 0.3
+anchor_bottom = 0.214
+offset_top = 0.200001
+offset_right = 266.0
+offset_bottom = 54.2
+theme_override_font_sizes/font_size = 20
+text = "Descriptiongh adf asdsf asdsf asddf asdf asdf"
+autowrap_mode = 3
+text_overrun_behavior = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.6
+anchor_right = 0.02
+anchor_bottom = 0.6
+theme_override_constants/separation = 9
+
+[node name="TypeLabel" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 15
+text = "Type: "
+
+[node name="ElementLabel" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 15
+text = "Element: "
+
+[node name="RarityLabel" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 15
+text = "Rarity: "
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.446
+anchor_top = 0.6
+anchor_right = 0.446
+anchor_bottom = 0.6
+theme_override_font_sizes/font_size = 15
+text = "Ingredients: "
+
+[node name="GridContainer" type="GridContainer" parent="Panel"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45
+anchor_top = 0.7
+anchor_right = 0.45
+anchor_bottom = 0.714
+offset_right = 200.0
+offset_bottom = 47.48
+columns = 4
