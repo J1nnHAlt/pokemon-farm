@@ -1036,7 +1036,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7uws0"]
-size = Vector2(10, 14)
+size = Vector2(10, 10)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ro20i"]
 radius = 5.09902
@@ -1090,7 +1090,7 @@ animation = &"surf_right"
 frame_progress = 0.0491363
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -7.49204)
+position = Vector2(0, -5.54349)
 shape = SubResource("RectangleShape2D_7uws0")
 
 [node name="DoorDetector" type="RayCast2D" parent="."]

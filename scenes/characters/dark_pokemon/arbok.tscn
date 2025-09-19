@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://cv2pon43imfed"]
 
 [ext_resource type="Script" uid="uid://ctggxhfyjanpo" path="res://scenes/characters/dark_pokemon/arbok.gd" id="1_eospf"]
-[ext_resource type="Texture2D" uid="uid://compllg2yys60" path="res://scenes/characters/dark_pokemon/arbok.png" id="1_epl2t"]
+[ext_resource type="Texture2D" uid="uid://he7nbcxecldi" path="res://scenes/characters/dark_pokemon/arbok.png" id="1_epl2t"]
 [ext_resource type="Script" uid="uid://bm540rrfyyxui" path="res://scripts/state_machine/node_state_machine.gd" id="2_3hwl6"]
 [ext_resource type="Script" uid="uid://cc4otw7ic1qd2" path="res://scenes/characters/dark_pokemon/idle_state.gd" id="3_vvl6o"]
 [ext_resource type="Script" uid="uid://de4ahex1jocnn" path="res://scenes/characters/dark_pokemon/walk_state.gd" id="4_wmr00"]

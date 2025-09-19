@@ -9,6 +9,10 @@ var pet_arbok_amt: int = 0
 var pet_victreebel_amt: int = 0
 var pet_lapras_amt: int = 0
 var pet_lugia_amt: int = 0
+var pet_magikarp_amt: int = 0
+var pet_seaking_amt: int = 0
+var pet_gyarados_amt: int = 0
+var pet_kyogre_amt: int = 0
 
 var wild_arbok_amt: int = 0 # used in dungeon for limit number of arboks
 
@@ -64,7 +68,11 @@ func save_game():
 		"pet_arbok_amt": pet_arbok_amt,
 		"pet_victreebel_amt": pet_victreebel_amt,
 		"pet_lapras_amt": pet_lapras_amt,
-		"pet_lugia_amt" : pet_lugia_amt
+		"pet_lugia_amt" : pet_lugia_amt,
+		"pet_magikarp_amt": pet_magikarp_amt,
+		"pet_seaking_amt": pet_seaking_amt,
+		"pet_gyarados_amt": pet_gyarados_amt,
+		"pet_kyogre_amt": pet_kyogre_amt,
 		# Later: add more data here like "pokemons": [], "player_pos": Vector2()
 	}
 	# C:\Users\<YourUsername>\AppData\Roaming\Godot\app_userdata\<YourGameName>\savegame.json
