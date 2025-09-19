@@ -1,0 +1,89 @@
+[gd_scene load_steps=13 format=3 uid="uid://d4lg5bu2ljx1"]
+
+[ext_resource type="Script" uid="uid://dk4auj3egk5ub" path="res://scenes/characters/water_pokemon/lapras.gd" id="1_k0q2v"]
+[ext_resource type="Texture2D" uid="uid://75onp63ps31o" path="res://assets/pokemon_overworld/first_gen/Gyarados.png" id="2_k0q2v"]
+[ext_resource type="Script" uid="uid://bm540rrfyyxui" path="res://scripts/state_machine/node_state_machine.gd" id="3_nfasl"]
+[ext_resource type="Script" uid="uid://fewxkuu5ado4" path="res://scenes/characters/water_pokemon/idle_state.gd" id="4_67oxe"]
+[ext_resource type="Script" uid="uid://b2whne5ncd64d" path="res://scenes/characters/water_pokemon/walk_state.gd" id="5_piihr"]
+[ext_resource type="PackedScene" uid="uid://dxkprghiro45c" path="res://scenes/characters/pokemon_ui.tscn" id="6_queeb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0g6m"]
+atlas = ExtResource("2_k0q2v")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfasl"]
+atlas = ExtResource("2_k0q2v")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67oxe"]
+atlas = ExtResource("2_k0q2v")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_piihr"]
+atlas = ExtResource("2_k0q2v")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uyung"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0g6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfasl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67oxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_piihr")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gyyif"]
+radius = 8.0
+
+[node name="Gyarados" type="CharacterBody2D"]
+collision_layer = 512
+script = ExtResource("1_k0q2v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_uyung")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_gyyif")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 10.0
+navigation_layers = 4
+path_postprocessing = 1
+debug_enabled = true
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("3_nfasl")
+initial_node_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("character", "animated_sprite_2d")]
+script = ExtResource("4_67oxe")
+character = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="Walk" type="Node" parent="StateMachine" node_paths=PackedStringArray("character", "animated_sprite_2d", "navigation_agent_2d")]
+script = ExtResource("5_piihr")
+character = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+navigation_agent_2d = NodePath("../../NavigationAgent2D")
+
+[node name="Pokemon_UI" parent="." instance=ExtResource("6_queeb")]
