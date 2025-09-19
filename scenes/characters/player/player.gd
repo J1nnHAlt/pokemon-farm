@@ -151,6 +151,10 @@ func play_surf_overlay():
 	# Start playing animation
 	overlay.play_overlay()
 
+func upgrade_fishing_rod():
+	if fishing_rod_level < 3:
+		fishing_rod_level += 1
+
 func _on_pokeball_cd_timeout() -> void:
 	pokeball_cd = false
 	$pokeball_cd_bar.visible = false

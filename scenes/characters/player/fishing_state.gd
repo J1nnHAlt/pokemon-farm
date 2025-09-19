@@ -120,13 +120,23 @@ func _input(_event: InputEvent) -> void:
 
 # the fishing rate
 func _determine_catch() -> String:
-	var roll = randi() % 100
+	var rod_level = player.fishing_rod_level
 	
-	if roll < 60:
-		return "Magikarp"      # 0–59 → 60%
-	elif roll < 85:
-		return "Seaking"       # 60–84 → 25%
-	elif roll < 95:
-		return "Gyarados"      # 85–94 → 10%
-	else:
-		return "Kyogre"        # 95–99 → 5%
+	# Define catch rates by rod level
+	var rates = {
+		0: { "Magikarp": 60, "Seaking": 25, "Gyarados": 10, "Kyogre": 5 },
+		1: { "Magikarp": 50, "Seaking": 30, "Gyarados": 15, "Kyogre": 5 },
+		2: { "Magikarp": 40, "Seaking": 30, "Gyarados": 20, "Kyogre": 10 },
+		3: { "Magikarp": 30, "Seaking": 30, "Gyarados": 25, "Kyogre": 15 },
+	}
+	
+	var dist = rates.get(rod_level, rates[0]) # default rate is lvl 0
+	var roll = randi() % 100
+	var cumulative = 0
+	
+	for pokemon in dist.keys():
+		cumulative += dist[pokemon]
+		if roll < cumulative:
+			return pokemon
+	
+	return "Magikarp"
