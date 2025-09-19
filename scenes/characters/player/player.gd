@@ -9,6 +9,8 @@ var inventory: Inv
 var selected_seed: PackedScene = null
 var pokeball_cd: bool = false
 
+@export var fishing_rod_level: int = 0 # starts at 0, can upgrade to 1–3
+
 @onready var interaction_ray: RayCast2D = $DoorDetector
 @onready var interactButton: Control = $FButton
 var current_interaction_source: Node = null
