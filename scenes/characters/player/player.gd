@@ -16,6 +16,7 @@ var pokeball_cd: bool = false
 var current_interaction_source: Node = null
 
 var _is_infront_water: bool = false
+var can_move: bool = true
 
 # Area2d that Check water is in front player
 @onready var detection_area: Area2D = $DetectionArea
@@ -34,6 +35,11 @@ func _ready() -> void:
 	add_to_group("player")
 	set_inventory()
 	GameData.inventory_loaded.connect(set_inventory)
+	
+	# Connect to dialog manager
+	var dm = get_tree().get_first_node_in_group("dialog_manager")
+	if dm:
+		dm.choice_active.connect(_on_choice_active)
 
 	
 func _process(delta):
@@ -154,6 +160,14 @@ func play_surf_overlay():
 func upgrade_fishing_rod():
 	if fishing_rod_level < 3:
 		fishing_rod_level += 1
+
+func _on_choice_active(active: bool) -> void:
+	if active:
+		can_move = false
+		print("@Dialog: Player Disabled movement because dialog choice is active")
+	else:
+		can_move = true
+		print("@Dialog: Player Re-enabled movement after dialog choice")
 
 func _on_pokeball_cd_timeout() -> void:
 	pokeball_cd = false

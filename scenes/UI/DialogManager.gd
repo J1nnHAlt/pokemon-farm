@@ -2,11 +2,13 @@ extends Control
 signal dialog_done
 signal yes_selected
 signal no_selected
+signal choice_active(is_active: bool)
 
 @onready var label: Label = $Label
 @onready var arrow = $Arrow
 @onready var enter_button = $Enter_button
 @onready var sfx_enter: AudioStreamPlayer2D = $sfx_enter
+@onready var sfx_upgrade: AudioStreamPlayer2D = $sfx_upgrade
 @onready var yes_no_menu: NinePatchRect = $YesNoMenu
 @onready var yes_label: Label = $YesNoMenu/VBoxContainer/YES
 @onready var no_label: Label = $YesNoMenu/VBoxContainer/NO
@@ -41,6 +43,7 @@ func start_dialog(pages_in: Array) -> void:
 	pages = pages_in.duplicate()
 	current_page = 0
 	show()
+	emit_signal("choice_active", true)  # disable player movement
 	_show_page()
 
 func _show_page() -> void:
@@ -56,8 +59,6 @@ func _show_page() -> void:
 	is_typing = true
 	arrow.visible = false
 	enter_button.visible = false
-	# hide yes/no while typing
-	#yes_no_menu.visible = false
 
 	_type_next_char(session)
 
@@ -95,11 +96,14 @@ func show_yes_no() -> void:
 	# show choice box above dialog, reset selection
 	yes_no_menu.visible = true
 	yes_no_index = 0
+	print("@Dialog: show_yes_no called")
 	_update_yes_no_selection()
+	emit_signal("choice_active", true)  # disable player movement
 
 func hide_yes_no() -> void:
 	yes_no_menu.visible = false
 	yes_no_index = 0
+	print("@Dialog: hide_yes_no called")
 	_update_yes_no_selection()
 
 # safe dialog hide that cancels typing
@@ -111,15 +115,19 @@ func hide_dialog() -> void:
 	arrow.visible = false
 	enter_button.visible = false
 	hide_yes_no()
+	
+	print("@Dialog: hide_dialog called")
 
 func _update_yes_no_selection() -> void:
 	# color the selected label (use theme override so it respects fonts)
 	if yes_no_index == 0:
-		yes_label.add_theme_color_override("font_color", Color(1.0, 1.0, 0.0)) # yellow
-		no_label.add_theme_color_override("font_color", Color(1.0, 1.0, 1.0))  # white
+		yes_label.add_theme_color_override("font_color", Color(1.0, 0.0, 0.0)) # yellow
+		no_label.add_theme_color_override("font_color", Color(0.0, 0.0, 0.0))  # white
+		print("@Dialog: yes selected from update_yes_no_selection")
 	else:
-		yes_label.add_theme_color_override("font_color", Color(1.0, 1.0, 1.0))
-		no_label.add_theme_color_override("font_color", Color(1.0, 1.0, 0.0))
+		yes_label.add_theme_color_override("font_color", Color(0.0, 0.0, 0.0))
+		no_label.add_theme_color_override("font_color", Color(1.0, 0.0, 0.0))
+		print("@Dialog: no selected from update_yes_no_selection")
 
 # ------------------------------------------------
 # Input handling
@@ -137,6 +145,8 @@ func _unhandled_input(event: InputEvent) -> void:
 				sfx_enter.play()
 			yes_no_menu.visible = false
 			if yes_no_index == 0:
+				if sfx_upgrade:
+					sfx_upgrade.play()
 				emit_signal("yes_selected")
 			else:
 				emit_signal("no_selected")
@@ -167,8 +177,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			if current_page < pages.size():
 				_show_page()
 			else:
-				if not yes_no_menu.visible:
-					hide()
+				print("@Dialog: hide() called from unhandled_input")
+				hide()
 				arrow.visible = false
 				enter_button.visible = false
+				emit_signal("choice_active", false)  # enable player movement
 				emit_signal("dialog_done")

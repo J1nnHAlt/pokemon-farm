@@ -164,6 +164,7 @@ offset_right = 402.64
 offset_bottom = 238.68
 
 [node name="DialogManager" parent="CanvasLayer" groups=["dialog_manager"] instance=ExtResource("11_r0wom")]
+visible = false
 
 [node name="SurfOverlay" parent="CanvasLayer" instance=ExtResource("17_3k0hw")]
 visible = false

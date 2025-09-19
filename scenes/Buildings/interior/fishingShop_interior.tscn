@@ -44,6 +44,7 @@ zoom = Vector2(3.8, 3.8)
 [node name="CanvasLayer" type="CanvasLayer" parent="." groups=["hud_layer"]]
 
 [node name="DialogManager" parent="CanvasLayer" groups=["dialog_manager"] instance=ExtResource("4_ck4t2")]
+visible = false
 
 [node name="Pikachu" parent="." instance=ExtResource("5_vp3p0")]
 position = Vector2(3, -20)

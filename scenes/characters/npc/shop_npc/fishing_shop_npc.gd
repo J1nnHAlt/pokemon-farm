@@ -88,7 +88,9 @@ func _on_dialog_done():
 	if asking_upgrade:
 		var dm = get_node(dialog_manager)
 		if dm:
+			dm.show()
 			dm.show_yes_no()
+			print("@Dialog: call show_yes_no from fishing npc")
 	else:
 		is_talking = false
 

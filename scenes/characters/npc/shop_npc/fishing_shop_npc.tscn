@@ -1,10 +1,62 @@
-[gd_scene load_steps=7 format=3 uid="uid://kwwmf3lyn6db"]
+[gd_scene load_steps=13 format=3 uid="uid://kwwmf3lyn6db"]
 
-[ext_resource type="Texture2D" uid="uid://dkmm4excykyoi" path="res://assets/characters/npc/NPC 06.png" id="2_i2hd5"]
+[ext_resource type="Texture2D" uid="uid://dx1oep128ssuh" path="res://assets/characters/npc/trainer_FISHERMAN.png" id="2_i2hd5"]
 [ext_resource type="Script" uid="uid://bswdxgsblvefa" path="res://scenes/characters/npc/shop_npc/fishing_shop_npc.gd" id="2_ykxio"]
+[ext_resource type="Texture2D" uid="uid://dkmm4excykyoi" path="res://assets/characters/npc/NPC 06.png" id="3_i2hd5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qufrx"]
+atlas = ExtResource("2_i2hd5")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aepfe"]
+atlas = ExtResource("2_i2hd5")
+region = Rect2(0, 24, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpdj6"]
+atlas = ExtResource("2_i2hd5")
+region = Rect2(0, 48, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7slb"]
+atlas = ExtResource("2_i2hd5")
+region = Rect2(0, 72, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2bo6j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qufrx")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aepfe")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpdj6")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7slb")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_41mar"]
-atlas = ExtResource("2_i2hd5")
+atlas = ExtResource("3_i2hd5")
 region = Rect2(0, 0, 16, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2htdl"]
@@ -19,7 +71,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ssadv"]
-radius = 28.0175
+radius = 24.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ssadv"]
 size = Vector2(14, 15)
@@ -27,6 +79,7 @@ size = Vector2(14, 15)
 [node name="FishingShopOwner" type="Node2D"]
 z_index = 30
 script = ExtResource("2_ykxio")
+npc_sprite_frames = SubResource("SpriteFrames_2bo6j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -10)
@@ -39,7 +92,7 @@ collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(7, 10.9892)
+position = Vector2(9, 12.9892)
 shape = SubResource("CircleShape2D_ssadv")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
