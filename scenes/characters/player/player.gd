@@ -35,6 +35,7 @@ func _ready() -> void:
 	add_to_group("player")
 	set_inventory()
 	GameData.inventory_loaded.connect(set_inventory)
+	fishing_rod_level = GameData.fishing_rod_level
 	
 	# Connect to dialog manager
 	var dm = get_tree().get_first_node_in_group("dialog_manager")
@@ -160,6 +161,7 @@ func play_surf_overlay():
 func upgrade_fishing_rod():
 	if fishing_rod_level < 3:
 		fishing_rod_level += 1
+		GameData.fishing_rod_level = fishing_rod_level
 
 func _on_choice_active(active: bool) -> void:
 	if active:

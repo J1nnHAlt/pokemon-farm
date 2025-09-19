@@ -1,5 +1,6 @@
 extends Node
 
+var fishing_rod_level: int = 0
 var coins: int = 0
 var inventory: Inv
 var default_volume: float
