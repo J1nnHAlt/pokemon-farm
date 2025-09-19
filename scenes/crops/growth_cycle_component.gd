@@ -50,6 +50,19 @@ func harvest_state(starting_day: int, current_day: int) -> void:
 		current_growth_state = DataTypes.GrowthStates.Harvesting
 		crop_harvesting.emit()
 
-
 func get_current_growth_state() -> DataTypes.GrowthStates:
 	return current_growth_state
+
+
+func save_crop_state():
+	var crop_node = get_parent()
+	var tilemap = crop_node.get_parent().get_node("../GameTileMap/Land&Sea")
+	var cell = tilemap.local_to_map(tilemap.to_local(crop_node.global_position))
+
+	GameData.save_crop(
+		cell,
+		crop_node.name, # or crop_node.harvest_item.name
+		current_growth_state,
+		is_watered,
+		starting_day
+	)

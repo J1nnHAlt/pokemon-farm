@@ -48,6 +48,14 @@ var pokeballs = [
 	preload("res://scripts/inventory/items/pokeballs/pokeball.tres")
 ]
 
+var seed_registry: Dictionary = {
+	"Cheri": preload("res://scenes/crops/berry.tscn"),
+	"Custa": preload("res://scenes/crops/custa_berry.tscn"),
+	#"Durin": preload("res://scenes/crops/durin_crop.tscn")
+	# Add more seed → crop scene mappings here
+}
+
+
 func save_game():
 	var save_data = {
 		"coins": coins,
@@ -124,26 +132,27 @@ func load_game():
 		ResourceSaver.save(inventory, "user://inventory.tres")
 		inventory_loaded.emit()
 		
-	#var tilemap: TileMapLayer = get_node("../GameTileMap/Land&Sea")
-	#for crop_data in GameData.planted_crops:
-		#var crop_scene = GameData.get_seed_scene(crop_data.seed) # you need a way to map seed name → scene
-		#if crop_scene:
-			#var crop = crop_scene.instantiate()
-			#add_child(crop)
-			#var tile_center = tilemap.map_to_local(crop_data.pos) + Vector2(tilemap.tile_set.tile_size) / 2
-			#crop.global_position = tilemap.to_global(tile_center)
-			## Optionally set growth stage here
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	load_game()
 	volume_loaded.connect(set_volume)
 	pass
+	
+func save_crop(pos: Vector2i, seed_name: String, growth_state: int, is_watered: bool, starting_day: int):
+	# Remove any existing crop at this position
+	planted_crops = planted_crops.filter(func(c): return c.pos != pos)
+	planted_crops.append({
+		"pos": pos,
+		"seed_name": seed_name,
+		"growth_state": growth_state,
+		"is_watered": is_watered,
+		"starting_day": starting_day
+	})
 
-#func save_crop(cell: Vector2i, seed_name: String, growth_stage: int = 0):
-	## Remove any existing crop at this cell
-	#planted_crops = planted_crops.filter(func(c): return c.pos != cell)
-	#planted_crops.append({ "pos": cell, "seed": seed_name, "stage": growth_stage })
+func get_seed_scene(seed_name: String) -> PackedScene:
+	if seed_registry.has(seed_name):
+		return seed_registry[seed_name]
+	return null
 
 func set_volume():
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(default_volume/10))

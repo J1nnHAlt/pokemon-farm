@@ -177,7 +177,13 @@ func plant_seed(seed: SeedItem, slot_index: int):
 
 		var tile_center_local = tilemap.map_to_local(target_cell) + Vector2(tilemap.tile_set.tile_size) / 2
 		crop.global_position = tilemap.to_global(tile_center_local)
-
+		GameData.save_crop(
+			target_cell,                            # tile position
+			seed.name,                              # seed name
+			DataTypes.GrowthStates.Seed,            # initial growth state
+			false,                                  # not watered yet
+			DayAndNightCycleManager.current_day     # starting day
+		)
 		GameData.inventory.remove(slot_index)
 		GameData.save_game()
 		print("Planted ", seed.name, " at ", target_cell)
