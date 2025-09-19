@@ -26,7 +26,7 @@ func _breed(npc1: NonPlayableCharacter, npc2: NonPlayableCharacter):
 	npc1.status.erase(npc1.PetStatus.Mating)
 	npc2.status.erase(npc2.PetStatus.Mating)
 	
-	chosen.status[chosen.PetStatus.Pregnant] = 5  
+	chosen.status[chosen.PetStatus.Pregnant] = 1
 	print("%s is now pregnant!" % chosen.name)
 	
 	npc1.attributes_changed.emit()
