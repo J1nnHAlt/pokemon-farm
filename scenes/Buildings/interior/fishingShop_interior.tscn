@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=4 uid="uid://bsm02l2mrr2t3"]
+[gd_scene load_steps=6 format=4 uid="uid://bsm02l2mrr2t3"]
 
 [ext_resource type="TileSet" uid="uid://dhumcm3r6lj5a" path="res://scenes/Buildings/interior/building_interior_tileset.tres" id="1_4nlm4"]
 [ext_resource type="PackedScene" uid="uid://dcrccp0kua4oc" path="res://scenes/Buildings/entrance_point.tscn" id="2_56chx"]
+[ext_resource type="PackedScene" uid="uid://c8kp81bq2qhas" path="res://scenes/UI/DialogManager.tscn" id="4_ck4t2"]
+[ext_resource type="PackedScene" uid="uid://cpfhqb5dr4uqm" path="res://scenes/characters/npc/pikachu.tscn" id="5_vp3p0"]
+[ext_resource type="PackedScene" uid="uid://kwwmf3lyn6db" path="res://scenes/characters/npc/shop_npc/fishing_shop_npc.tscn" id="6_i3afn"]
 
 [node name="FishingShopInterior" type="Node2D"]
 y_sort_enabled = true
@@ -37,5 +40,17 @@ target_spawn = "FishingShopExitSpawn"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3.8, 3.8)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." groups=["hud_layer"]]
+
+[node name="DialogManager" parent="CanvasLayer" groups=["dialog_manager"] instance=ExtResource("4_ck4t2")]
+
+[node name="Pikachu" parent="." instance=ExtResource("5_vp3p0")]
+position = Vector2(3, -20)
+dialog_manager = NodePath("../CanvasLayer/DialogManager")
+
+[node name="FishingShopOwner2" parent="." instance=ExtResource("6_i3afn")]
+position = Vector2(-59, -4)
+dialog_manager = NodePath("../CanvasLayer/DialogManager")
 
 [connection signal="body_entered" from="entrance_point" to="entrance_point" method="_on_body_entered"]

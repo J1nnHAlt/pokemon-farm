@@ -8,7 +8,7 @@ extends Node2D
 var player: Node2D = null
 var is_talking := false
 var player_nearby := false
-var asking_upgrade := false  # track if NPC is in yes/no state
+var asking_upgrade := false
 
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -24,6 +24,14 @@ func _ready() -> void:
 	var dm = get_node(dialog_manager)
 	if dm:
 		dm.dialog_done.connect(_on_dialog_done)
+
+		# Correct Godot 4 syntax with Callable
+		if not dm.is_connected("yes_selected", Callable(self, "_on_choice_made_yes")):
+			dm.connect("yes_selected", Callable(self, "_on_choice_made_yes"))
+
+		if not dm.is_connected("no_selected", Callable(self, "_on_choice_made_no")):
+			dm.connect("no_selected", Callable(self, "_on_choice_made_no"))
+
 
 func _on_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
@@ -45,9 +53,7 @@ func _on_area_body_exited(body: Node2D) -> void:
 		anim_sprite.play(default_animation)
 
 func start_dialog():
-	if is_talking:
-		return
-	if not player_nearby:
+	if is_talking or not player_nearby:
 		return
 	
 	is_talking = true
@@ -59,10 +65,11 @@ func start_dialog():
 
 	# Check fishing rod level
 	if player.fishing_rod_level < 3:
-		dm.start_dialog(["Your fishing rod is level %d." % player.fishing_rod_level,
-						 "Do you want to upgrade it?"])
+		dm.start_dialog([
+			"Your fishing rod is level %d." % player.fishing_rod_level,
+			"Do you want to upgrade it?"
+		])
 		asking_upgrade = true
-		# After the dialog ends, show yes/no
 	else:
 		dm.start_dialog(["Your fishing rod is already max level (3)."])
 		asking_upgrade = false
@@ -79,22 +86,21 @@ func _face_player() -> void:
 
 func _on_dialog_done():
 	if asking_upgrade:
-		# Show yes/no box once dialog asking is done
 		var dm = get_node(dialog_manager)
 		if dm:
-			dm.show_yes_no(_on_choice_made)
+			dm.show_yes_no()
 	else:
 		is_talking = false
 
-func _on_choice_made(choice: String) -> void:
+func _on_choice_made_yes():
+	player.upgrade_fishing_rod()
 	var dm = get_node(dialog_manager)
-	if not dm:
-		return
-	
-	if choice == "yes":
-		player.upgrade_fishing_rod()
+	if dm:
 		dm.start_dialog(["Your fishing rod has been upgraded to level %d!" % player.fishing_rod_level])
-	else:
+	asking_upgrade = false
+
+func _on_choice_made_no():
+	var dm = get_node(dialog_manager)
+	if dm:
 		dm.start_dialog(["Maybe next time."])
-	
 	asking_upgrade = false
