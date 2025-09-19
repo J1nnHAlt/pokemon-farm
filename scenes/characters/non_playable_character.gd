@@ -69,6 +69,7 @@ func evolve() -> void:
 		evolution += 1
 		level = 1  # reset to level 1 of next evolution
 		exp = 0
+		self.scale += Vector2(0.2, 0.2)
 		print("Evolved to Evolution %d!" % evolution)
 		attributes_changed.emit()
 	else:
