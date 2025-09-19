@@ -115,6 +115,17 @@ func _input(_event: InputEvent) -> void:
 				
 				# Determine which pokemon is caught by fishing rate
 				var pokemon = _determine_catch()
+				# Add to GameData counter
+				match pokemon:
+					"Magikarp":
+						GameData.pet_magikarp_amt += 1
+					"Seaking":
+						GameData.pet_seaking_amt += 1
+					"Gyarados":
+						GameData.pet_gyarados_amt += 1
+					"Kyogre":
+						GameData.pet_kyogre_amt += 1
+						
 				print("@Fishing: You caught a ", pokemon, "!")
 				
 				transition.emit("_previous")  # return to Surf or Walk automatically
