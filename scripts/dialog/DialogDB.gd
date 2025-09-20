@@ -39,6 +39,12 @@ var dialogs := {
 		"The Pokédex will help you learn about them.",
 		"Come back and tell me what you discover!"
 	],
+	"legendary_npc": [
+		"Damn, it is a fuckin Lugia",
+		"U catch it by selling berries???",
+		"WTF, u serious man?!?",
+		"How is that even possible??"
+	]
 }
 
 func get_dialog(npc_id: String, index: int) -> String:

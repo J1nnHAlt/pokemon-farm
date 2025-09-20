@@ -1,53 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cumovxn2jj2bs"]
+[gd_scene load_steps=2 format=3 uid="uid://cumovxn2jj2bs"]
 
-[ext_resource type="Script" uid="uid://c0vbiilhpfps7" path="res://scenes/characters/npc/legendary_npc/legendary_npc.gd" id="1_e2qxy"]
-[ext_resource type="Texture2D" uid="uid://cinujpqmbqsma" path="res://assets/characters/npc/NPC 06.png" id="2_6aduw"]
+[ext_resource type="PackedScene" uid="uid://ccdoqvus57g7b" path="res://scenes/characters/npc/npc_base.tscn" id="1_j87lt"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_41mar"]
-atlas = ExtResource("2_6aduw")
-region = Rect2(0, 0, 16, 24)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_2htdl"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_41mar")
-}],
-"loop": true,
-"name": &"idle_down",
-"speed": 5.0
-}]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ssadv"]
-radius = 24.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ssadv"]
-size = Vector2(14, 15)
-
-[node name="LegendaryNPC" type="Node2D"]
-z_index = 30
-script = ExtResource("1_e2qxy")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -10)
-sprite_frames = SubResource("SpriteFrames_2htdl")
-animation = &"idle_down"
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(9.53674e-07, -9.98917)
-collision_layer = 0
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(9, 12.9892)
-shape = SubResource("CircleShape2D_ssadv")
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(9.53674e-07, -9.98917)
-collision_layer = 512
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0, 3.5)
-shape = SubResource("RectangleShape2D_ssadv")
-debug_color = Color(0.964881, 1.92523e-06, 0.490083, 0.42)
+[node name="Legendary_npc" instance=ExtResource("1_j87lt")]
+npc_id = "legendary_npc"
