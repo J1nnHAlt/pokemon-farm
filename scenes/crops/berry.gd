@@ -13,7 +13,7 @@ var growth_state: DataTypes.GrowthStates = DataTypes.GrowthStates.Seed
 const harvest_scene := preload("res://scenes/crops/harvest.tscn")
 
 func _ready() -> void:
-	z_index = 10  # higher than tilemap
+	#z_index = 10  # higher than tilemap
 	print("Berry ready:", seed_name, "at", global_position)
 	watering_particles.emitting = false
 	flowering_particles.emitting = false
@@ -52,3 +52,6 @@ func on_crop_harvesting() -> void:
 	get_parent().add_child(harvest)
 	harvest.global_position = global_position  # now it's correct in world space
 	queue_free()
+
+func get_tile_pos() -> Vector2i:
+	return tilemap.local_to_map(tilemap.to_local(global_position))

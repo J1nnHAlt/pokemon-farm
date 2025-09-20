@@ -56,12 +56,17 @@ func get_current_growth_state() -> DataTypes.GrowthStates:
 	return current_growth_state
 
 
+# growth_cycle_component.gd
 func save_crop_state():
+	if GameData.is_scene_transitioning:
+		return  # skip saving during scene change
+
 	var crop_node = get_parent()
 	var tilemap = crop_node.tilemap
 	if tilemap == null:
 		print("Tilemap missing on crop; skip save")
 		return
+
 	var cell = tilemap.local_to_map(tilemap.to_local(crop_node.global_position))
 
 	GameData.save_crop(

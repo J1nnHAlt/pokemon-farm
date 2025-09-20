@@ -16,6 +16,7 @@ func _on_body_entered(body: Node2D) -> void:
 	print("body entered")
 	if body.name == "Player" or body.is_in_group("player"):
 		GameData.next_spawn = target_spawn
+		GameData.save_time()
 #		call deferred to avoid deleting physics objects whil physics is still processing
 		get_tree().call_deferred("change_scene_to_file", dungeon_scene)
 	pass # Replace with function body.

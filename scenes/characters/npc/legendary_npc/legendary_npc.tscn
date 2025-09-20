@@ -1,10 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://ccdoqvus57g7b"]
+[gd_scene load_steps=7 format=3 uid="uid://cumovxn2jj2bs"]
 
-[ext_resource type="Script" uid="uid://7eic4cwu56x" path="res://DialogNpc.gd" id="1_lm0p7"]
-[ext_resource type="Texture2D" uid="uid://cinujpqmbqsma" path="res://assets/characters/npc/NPC 06.png" id="2_ssadv"]
+[ext_resource type="Script" uid="uid://c0vbiilhpfps7" path="res://scenes/characters/npc/legendary_npc/legendary_npc.gd" id="1_e2qxy"]
+[ext_resource type="Texture2D" uid="uid://cinujpqmbqsma" path="res://assets/characters/npc/NPC 06.png" id="2_6aduw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_41mar"]
-atlas = ExtResource("2_ssadv")
+atlas = ExtResource("2_6aduw")
 region = Rect2(0, 0, 16, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2htdl"]
@@ -19,14 +19,14 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ssadv"]
-radius = 13.0
+radius = 24.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ssadv"]
 size = Vector2(14, 15)
 
-[node name="NpcBase" type="Node2D"]
+[node name="LegendaryNPC" type="Node2D"]
 z_index = 30
-script = ExtResource("1_lm0p7")
+script = ExtResource("1_e2qxy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -10)
@@ -39,6 +39,7 @@ collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(9, 12.9892)
 shape = SubResource("CircleShape2D_ssadv")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]

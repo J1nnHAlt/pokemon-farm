@@ -15,10 +15,11 @@ var pet_gyarados_amt: int = 0
 var pet_kyogre_amt: int = 0
 
 var wild_arbok_amt: int = 0 # used in dungeon for limit number of arboks
-
+var saved_time: float = 0.0
 var next_spawn: String = ""
-
+var total_berries_sold: int = 0
 var planted_crops: Array = [] # each entry: {pos = Vector2i, seed_name = String, growth_stage = int}
+var is_scene_transitioning = false
 
 signal coins_loaded
 signal volume_loaded
@@ -74,7 +75,9 @@ func save_game():
 		"pet_gyarados_amt": pet_gyarados_amt,
 		"pet_kyogre_amt": pet_kyogre_amt,
 		"current_day": DayAndNightCycleManager.current_day,
+		"current_time": DayAndNightCycleManager.time,
 		"planted_crops": planted_crops,
+		"total_berries_sold": total_berries_sold,
 
 		# Later: add more data here like "pokemons": [], "player_pos": Vector2()
 	}
@@ -87,6 +90,12 @@ func save_game():
 		ResourceSaver.save(inventory, "user://inventory.tres")
 
 	print("Save game success")
+
+func save_time():
+	saved_time = DayAndNightCycleManager.time
+
+func load_time():
+	DayAndNightCycleManager.time = saved_time
 
 func load_game():
 	# C:\Users\<YourUsername>\AppData\Roaming\Godot\app_userdata\<YourGameName>\savegame.json
@@ -106,7 +115,12 @@ func load_game():
 			pet_kyogre_amt = data.get("pet_kyogre_amt", 0)
 			pet_lugia_amt = data.get("pet_victreebel", 0)
 			planted_crops = data.get("planted_crops", [])
-			DayAndNightCycleManager.current_day = int(data.get("current_day", DayAndNightCycleManager.current_day))
+			var saved_day = int(data.get("current_day", 0))
+			var saved_time = float(data.get("current_time", 0.0))
+			DayAndNightCycleManager.init_time(saved_time, saved_day)
+			total_berries_sold = data.get("total_berries_sold", 0)
+
+
 			emit_signal("coins_loaded")
 			emit_signal("volume_loaded")
 			
@@ -149,6 +163,7 @@ func load_game():
 
 		ResourceSaver.save(inventory, "user://inventory.tres")
 		inventory_loaded.emit()
+		DayAndNightCycleManager.recalculate_time()
 		
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -156,19 +171,40 @@ func _ready() -> void:
 	volume_loaded.connect(set_volume)
 	pass
 	
+#func save_crop(pos: Vector2i, seed_name: String, growth_state: int, is_watered: bool, starting_day: int):
+	#var pos_array = [int(pos.x), int(pos.y)]  # force ints
+	## Remove any existing crop at this position 
+	#planted_crops = planted_crops.filter(func(c): return c["pos"] != pos_array)
+	#planted_crops.append({
+		#"pos": pos_array,
+		#"seed_name": seed_name,
+		#"growth_state": growth_state,
+		#"is_watered": is_watered,
+		#"starting_day": starting_day
+	#})
+
 func save_crop(pos: Vector2i, seed_name: String, growth_state: int, is_watered: bool, starting_day: int):
-	var pos_array = [int(pos.x), int(pos.y)]  # force ints
-	# Remove any existing crop at this position 
-	planted_crops = planted_crops.filter(func(c): return c["pos"] != pos_array)
+	var pos_x = int(pos.x)
+	var pos_y = int(pos.y)
+	var key = str(pos_x) + "," + str(pos_y)
+
+	# Remove existing entry
+	planted_crops = planted_crops.filter(func(c):
+		return int(c["pos"][0]) != pos_x or int(c["pos"][1]) != pos_y
+	)
+
+	# Append new state
 	planted_crops.append({
-		"pos": pos_array,
+		"pos": [pos_x, pos_y],
 		"seed_name": seed_name,
 		"growth_state": growth_state,
 		"is_watered": is_watered,
 		"starting_day": starting_day
 	})
 
-	
+	save_game() # write to disk immediately
+
+
 func get_crops_parent(scene_root: Node) -> Node:
 	var crops_parent = scene_root.get_node_or_null("Crops")
 	if crops_parent == null:
@@ -181,12 +217,11 @@ func get_seed_scene(seed_name: String) -> PackedScene:
 	print("Looking up seed: '" + seed_name + "' in registry keys: ", seed_registry.keys())
 	if seed_registry.has(seed_name):
 		return seed_registry[seed_name]
-	return null
-
+	return 
 
 func set_volume():
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(default_volume/10))
-
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

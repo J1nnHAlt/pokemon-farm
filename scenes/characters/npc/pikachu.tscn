@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cpfhqb5dr4uqm"]
 
 [ext_resource type="PackedScene" uid="uid://ccdoqvus57g7b" path="res://scenes/characters/npc/npc_base.tscn" id="1_rg2cd"]
-[ext_resource type="Texture2D" uid="uid://jg3h4hg2ofn" path="res://assets/pokemon_overworld/first_gen/Pikachu.png" id="2_r6b0n"]
+[ext_resource type="Texture2D" uid="uid://dmov6b7cw4utn" path="res://assets/pokemon_overworld/first_gen/Pikachu.png" id="2_r6b0n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wbdxs"]
 atlas = ExtResource("2_r6b0n")

@@ -17,11 +17,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-DayAndNightCycleManager="*res://scripts/day_night/day_and_night_cycle_manager.gd"
 RecipeManager="*res://scenes/BerryMixer/RecipeManager.gd"
 Coin="*res://scripts/global/coin.gd"
 PetSpawnerInFarm="*res://scripts/global/PetSpawnerInFarm.gd"
 GameData="*res://scripts/global/game_data.gd"
+DayAndNightCycleManager="*res://scripts/day_night/day_and_night_cycle_manager.gd"
 BreedingManager="*res://scripts/global/BreedingManager.gd"
 LegendaryManager="*res://scenes/legendary_pokemon/legendary_manager.gd"
 DialogDB="*res://scripts/dialog/DialogDB.gd"
