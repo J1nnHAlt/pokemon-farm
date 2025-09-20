@@ -18,17 +18,20 @@ var current_day: int = 0
 signal game_time(time: float)
 signal time_tick(day: int, hour: int, minute: int)
 signal time_tick_day(day: int)
+signal day_changed(new_day: int)
 
 func _ready() -> void:
 	# Do nothing here — GameData will initialise us
 	pass
 
-func init_time(saved_time: float, saved_day: int) -> void:
-	if saved_time > 0.0:
-		time = saved_time
+func init_time(saved_minutes_today: int, saved_day: int) -> void:
+	if saved_day > 0 or saved_minutes_today > 0:
+		time = (saved_day * MINUTES_PER_DAY) + saved_minutes_today
 	else:
 		set_initial_time()
 	recalculate_time()
+
+
 	
 func _process(delta: float) -> void:
 	time += delta * game_speed * BASE_GAME_MINUTES_PER_SECOND

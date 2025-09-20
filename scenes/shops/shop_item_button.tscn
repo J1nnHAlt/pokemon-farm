@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cblx6utrafqd5"]
 
 [ext_resource type="Script" uid="uid://l2segxy0qcav" path="res://scenes/shops/shop_item_button.gd" id="1_4aam8"]
-[ext_resource type="Texture2D" uid="uid://dlfh1q81tis30" path="res://pokemon-assets/Graphics/Items/DURINBERRY.png" id="1_r0p58"]
-[ext_resource type="Texture2D" uid="uid://b8lbgqbvj6o51" path="res://pokemon-assets/Graphics/Items/GROUNDGEM.png" id="1_ulddo"]
+[ext_resource type="Texture2D" uid="uid://ba6t2aex73n05" path="res://pokemon-assets/Graphics/Items/DURINBERRY.png" id="1_r0p58"]
+[ext_resource type="Texture2D" uid="uid://dipl3gg0sicbv" path="res://pokemon-assets/Graphics/Items/GROUNDGEM.png" id="1_ulddo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ulddo"]
 

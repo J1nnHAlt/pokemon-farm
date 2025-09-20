@@ -60,12 +60,18 @@ var pokeballs = [
 var seed_registry: Dictionary = {
 	"CheriSeed": preload("res://scenes/crops/berry.tscn"),
 	"CustaSeed": preload("res://scenes/crops/custa_berry.tscn"),
-	#"Durin": preload("res://scenes/crops/durin_crop.tscn")
+	"DurinSeed": preload("res://scenes/crops/durin_berry.tscn"),
+	"PamtreSeed": preload("res://scenes/crops/pamtre_berry.tscn"),
+	"RawstSeed": preload("res://scenes/crops/rawst_berry.tscn"),
+	"YacheSeed": preload("res://scenes/crops/yache_berry.tscn"),
 	# Add more seed → crop scene mappings here
 }
 
 
 func save_game():
+	var total_minutes: int = int(DayAndNightCycleManager.time)
+	var day: int = total_minutes / DayAndNightCycleManager.MINUTES_PER_DAY
+	var minutes_today: int = total_minutes % DayAndNightCycleManager.MINUTES_PER_DAY
 	var save_data = {
 		"coins": coins,
 		"volume": default_volume,
@@ -77,8 +83,9 @@ func save_game():
 		"pet_seaking_amt": pet_seaking_amt,
 		"pet_gyarados_amt": pet_gyarados_amt,
 		"pet_kyogre_amt": pet_kyogre_amt,
-		"current_day": DayAndNightCycleManager.current_day,
-		"current_time": DayAndNightCycleManager.time,
+		"time": DayAndNightCycleManager.time,
+		"current_day": day,
+		"current_time": minutes_today,
 		"planted_crops": planted_crops,
 		"total_berries_sold": total_berries_sold,
 
@@ -93,6 +100,7 @@ func save_game():
 		ResourceSaver.save(inventory, "user://inventory.tres")
 
 	print("Save game success")
+	print("Saved time:", DayAndNightCycleManager.time)
 
 func save_time():
 	saved_time = DayAndNightCycleManager.time
@@ -116,11 +124,20 @@ func load_game():
 			pet_seaking_amt = data.get("pet_seaking_amt", 0)
 			pet_gyarados_amt = data.get("pet_gyarados_amt", 0)
 			pet_kyogre_amt = data.get("pet_kyogre_amt", 0)
-			pet_lugia_amt = data.get("pet_victreebel", 0)
+			pet_lugia_amt = data.get("pet_lugia", 0)
 			planted_crops = data.get("planted_crops", [])
-			var saved_day = int(data.get("current_day", 0))
-			var saved_time = float(data.get("current_time", 0.0))
-			DayAndNightCycleManager.init_time(saved_time, saved_day)
+			if data.has("time"):
+				DayAndNightCycleManager.time = float(data["time"])
+				DayAndNightCycleManager.recalculate_time()
+				print("Loaded RAW float time:", DayAndNightCycleManager.time)
+			else:
+				var loaded_day = int(data.get("current_day", 0))
+				var loaded_minutes_today = int(data.get("current_time", 0))
+				DayAndNightCycleManager.init_time(loaded_minutes_today, loaded_day)
+				print("Loaded by reconstruction: day", loaded_day, "minToday", loaded_minutes_today, "→ time:", DayAndNightCycleManager.time)
+
+
+			DayAndNightCycleManager.recalculate_time()
 			total_berries_sold = data.get("total_berries_sold", 0)
 
 
@@ -128,7 +145,7 @@ func load_game():
 			emit_signal("volume_loaded")
 			
 			print("Load game success volume:", default_volume)
-			
+			print("Loaded time:", DayAndNightCycleManager.time)
 		else:
 			print("Load game failed: invalid format")
 	else:
