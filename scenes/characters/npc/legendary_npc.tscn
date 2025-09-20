@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvjjhe8v4kmei"]
+
+[ext_resource type="PackedScene" uid="uid://ccdoqvus57g7b" path="res://scenes/characters/npc/npc_base.tscn" id="1_7esvq"]
+[ext_resource type="Texture2D" uid="uid://c2lrtt0bkvh0h" path="res://pokemon-assets/Graphics/Characters/NPC 18.png" id="2_qpjts"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppqca"]
+atlas = ExtResource("2_qpjts")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7xii"]
+atlas = ExtResource("2_qpjts")
+region = Rect2(0, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qihb"]
+atlas = ExtResource("2_qpjts")
+region = Rect2(0, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhgxs"]
+atlas = ExtResource("2_qpjts")
+region = Rect2(0, 144, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fgmd0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppqca")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7xii")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qihb")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhgxs")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}]
+
+[node name="legendary_npc" instance=ExtResource("1_7esvq")]
+scale = Vector2(0.6, 0.6)
+npc_sprite_frames = SubResource("SpriteFrames_fgmd0")

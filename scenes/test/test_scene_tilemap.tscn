@@ -17,7 +17,7 @@
 [ext_resource type="Script" uid="uid://cotnx2loaoy4r" path="res://scripts/nav_regions/gyarados_region.gd" id="10_28a2p"]
 [ext_resource type="Script" uid="uid://bdhg72aiu4hsh" path="res://scripts/nav_regions/kyogre_region.gd" id="11_1rtwt"]
 [ext_resource type="PackedScene" uid="uid://c8kp81bq2qhas" path="res://scenes/UI/DialogManager.tscn" id="11_r0wom"]
-[ext_resource type="AudioStream" uid="uid://mw04hdv38eif" path="res://pokemon-assets/Audio/SE/GUI naming tab swap start.ogg" id="12_ksdiy"]
+[ext_resource type="AudioStream" uid="uid://cqu1pqn00hfwj" path="res://pokemon-assets/Audio/SE/GUI naming tab swap start.ogg" id="12_ksdiy"]
 [ext_resource type="Script" uid="uid://cxt4d02tyeiqo" path="res://scripts/nav_regions/magikarp_region.gd" id="12_wfiq6"]
 [ext_resource type="PackedScene" uid="uid://c1g7wo3i0l6eg" path="res://scenes/inventory/inv_ui.tscn" id="13_l0udy"]
 [ext_resource type="PackedScene" uid="uid://dkbqd3lx2bbxo" path="res://scenes/characters/pet_food_panel.tscn" id="14_ngwww"]
@@ -28,7 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://d3fk5yymo58l0" path="res://scenes/characters/npc/villager_2.tscn" id="21_jhv08"]
 [ext_resource type="PackedScene" uid="uid://bhbnugqq8nvbq" path="res://scenes/characters/npc/villager_3.tscn" id="22_cx70f"]
 [ext_resource type="PackedScene" uid="uid://b87vo5iflck41" path="res://scenes/characters/npc/professor_oak.tscn" id="23_0opjm"]
-[ext_resource type="PackedScene" uid="uid://cumovxn2jj2bs" path="res://scenes/characters/npc/legendary_npc/legendary_npc.tscn" id="29_28a2p"]
+[ext_resource type="PackedScene" uid="uid://cvjjhe8v4kmei" path="res://scenes/characters/npc/legendary_npc.tscn" id="29_28a2p"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_p0x3o"]
 vertices = PackedVector2Array(-218.43, -121.469, -144.367, 28, -288, 28, -499.938, 89.8203, -498.078, -256.117, -352, 60, -288, 60, -352, 87.2813)
@@ -232,8 +232,9 @@ dialog_manager = NodePath("../CanvasLayer/DialogManager")
 position = Vector2(784, -112)
 dialog_manager = NodePath("../CanvasLayer/DialogManager")
 
-[node name="Legendary_npc" parent="." instance=ExtResource("29_28a2p")]
-position = Vector2(811, -14)
+[node name="legendary_npc" parent="." instance=ExtResource("29_28a2p")]
+position = Vector2(893, -6)
+npc_id = "legendary_npc"
 dialog_manager = NodePath("../CanvasLayer/DialogManager")
 
 [connection signal="body_entered" from="dungeon_entrance" to="dungeon_entrance" method="_on_body_entered"]

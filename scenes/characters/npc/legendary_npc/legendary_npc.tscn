@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cumovxn2jj2bs"]
-
-[ext_resource type="PackedScene" uid="uid://ccdoqvus57g7b" path="res://scenes/characters/npc/npc_base.tscn" id="1_j87lt"]
-
-[node name="Legendary_npc" instance=ExtResource("1_j87lt")]
-npc_id = "legendary_npc"
