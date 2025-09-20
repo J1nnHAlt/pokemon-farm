@@ -5,7 +5,7 @@ var coins: int = 0
 var inventory: Inv
 var default_volume: float
 
-var pet_arbok_amt: int = 0
+var pet_arbok_amt: int = 2
 var pet_victreebel_amt: int = 0
 var pet_lapras_amt: int = 0
 var pet_lugia_amt: int = 0
@@ -153,7 +153,7 @@ func load_game():
 				inventory.insert(berry)
 		
 		for f in food:
-			for i in range(5):
+			for i in range(50):
 				inventory.insert(f)
 				
 		for seed in seeds:

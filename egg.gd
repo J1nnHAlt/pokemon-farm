@@ -6,10 +6,10 @@ var days_to_hatch: int
 var current_day: int
 
 const HATCHING_DAYS := {
-	"Common": 3,
-	"Rare": 5,
-	"Epic": 7,
-	"Legendary": 10
+	#"Common": 3,
+	#"Rare": 5,
+	#"Epic": 7,
+	#"Legendary": 10
 }
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -28,7 +28,7 @@ func setup(p_pokemon: NonPlayableCharacter, p_rarity, p_element) -> void:
 	pokemon = p_pokemon.duplicate()  # duplicate so egg holds its own copy
 	pokemon.rarity = p_rarity
 	pokemon.element = p_element
-	days_to_hatch = HATCHING_DAYS.get(pokemon.rarity, 5)
+	days_to_hatch = HATCHING_DAYS.get(pokemon.rarity, 3)
 	current_day = 0
 
 	

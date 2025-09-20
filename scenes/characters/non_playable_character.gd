@@ -8,7 +8,11 @@ extends CharacterBody2D
 @export var min_walk_cycle: int = 2
 @export var max_walk_cycle: int = 6
 
+@onready var navigation_agent_2d: NavigationAgent2D = $NavigationAgent2D
+@onready var state_machine: NodeStateMachine = $StateMachine
+
 signal attributes_changed
+signal reached_mating_point(npc: NonPlayableCharacter)
 
 var walk_cycles: int
 var current_walk_cycle: int

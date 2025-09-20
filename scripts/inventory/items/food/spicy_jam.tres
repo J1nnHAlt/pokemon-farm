@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PetFood" load_steps=3 format=3 uid="uid://bxh4st7pbphm1"]
 
 [ext_resource type="Script" uid="uid://duh47xclnnv37" path="res://scripts/inventory/pet_food.gd" id="1_v0rwh"]
-[ext_resource type="Texture2D" uid="uid://b81kyv7ld5yd4" path="res://assets/pet_food/SPICY_JAM.png" id="2_bmtri"]
+[ext_resource type="Texture2D" uid="uid://bn66uwqe76pnr" path="res://assets/pet_food/SPICY_JAM.png" id="2_bmtri"]
 
 [resource]
 script = ExtResource("1_v0rwh")
