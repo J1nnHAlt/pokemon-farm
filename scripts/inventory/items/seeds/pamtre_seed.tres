@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SeedItem" load_steps=4 format=3 uid="uid://dtibpn6fk71gf"]
+
+[ext_resource type="PackedScene" uid="uid://b501nt1fpo2yp" path="res://scenes/crops/pamtre_berry.tscn" id="1_w8g1m"]
+[ext_resource type="Script" uid="uid://c3mtqwb5xdx73" path="res://scripts/inventory/seed_item.gd" id="2_ljepe"]
+[ext_resource type="Texture2D" uid="uid://v15lg15w33wi" path="res://assets/seed_pack/pamtre_seed.png" id="3_ljepe"]
+
+[resource]
+script = ExtResource("2_ljepe")
+crop_scene = ExtResource("1_w8g1m")
+name = "CheriSeed"
+texture = ExtResource("3_ljepe")
+metadata/_custom_type_script = "uid://c3mtqwb5xdx73"

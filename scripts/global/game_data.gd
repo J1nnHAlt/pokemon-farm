@@ -47,7 +47,10 @@ var food = [
 var seeds = [
 	preload("res://scripts/inventory/items/seeds/cheri_seed.tres"),
 	preload("res://scripts/inventory/items/seeds/custa_seed.tres"),
-	preload("res://scripts/inventory/items/seeds/durin_seed.tres")
+	preload("res://scripts/inventory/items/seeds/durin_seed.tres"),
+	preload("res://scripts/inventory/items/seeds/pamtre_seed.tres"),
+	preload("res://scripts/inventory/items/seeds/rawst_seed.tres"),
+	preload("res://scripts/inventory/items/seeds/yache_seed.tres")
 ]
 
 var pokeballs = [

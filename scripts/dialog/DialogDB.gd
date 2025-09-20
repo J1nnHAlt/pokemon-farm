@@ -40,10 +40,10 @@ var dialogs := {
 		"Come back and tell me what you discover!"
 	],
 	"legendary_npc": [
-		"Damn, it is a fuckin Lugia",
-		"U catch it by selling berries???",
-		"WTF, u serious man?!?",
-		"How is that even possible??"
+		"Legendary pokemon can be summon using berries.",
+		"Try to sell 10 berries from your inventory.",
+		"It can buff your crops growth rate",
+		"Remember it will only stays for 15 days"
 	]
 }
 

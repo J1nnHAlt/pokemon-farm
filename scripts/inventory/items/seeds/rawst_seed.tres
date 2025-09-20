@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SeedItem" load_steps=4 format=3 uid="uid://cddos32b8vvwg"]
+
+[ext_resource type="PackedScene" uid="uid://dy4t7qd0hte3f" path="res://scenes/crops/rawst_berry.tscn" id="1_fd728"]
+[ext_resource type="Script" uid="uid://c3mtqwb5xdx73" path="res://scripts/inventory/seed_item.gd" id="2_cog4o"]
+[ext_resource type="Texture2D" uid="uid://wbgjwoqay0pg" path="res://assets/seed_pack/rawst_seed.png" id="3_fd728"]
+
+[resource]
+script = ExtResource("2_cog4o")
+crop_scene = ExtResource("1_fd728")
+name = "CheriSeed"
+texture = ExtResource("3_fd728")
+metadata/_custom_type_script = "uid://c3mtqwb5xdx73"
