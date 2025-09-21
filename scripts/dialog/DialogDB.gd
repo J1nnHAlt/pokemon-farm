@@ -28,9 +28,7 @@ var dialogs := {
 		"Many travelers have passed through recently."
 	],
 	"pikachu": [
-		"I'm too busy to talk.",
-		"Nigga, Nigga",
-		"Reli Nigga?"
+		"pika pika"
 	],
 	"professor_oak": [
 		"Hello there! Ready for your journey?",

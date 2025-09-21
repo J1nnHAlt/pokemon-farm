@@ -85,6 +85,7 @@ func save_game():
 		"time": DayAndNightCycleManager.time,
 		"current_day": day,
 		"current_time": minutes_today,
+		"fishing_rod_level": fishing_rod_level,
 
 		# Later: add more data here like "pokemons": [], "player_pos": Vector2()
 	}
@@ -122,6 +123,7 @@ func load_game():
 			pet_gyarados_amt = data.get("pet_gyarados_amt", 0)
 			pet_kyogre_amt = data.get("pet_kyogre_amt", 0)
 			pet_lugia_amt = data.get("pet_lugia", 0)
+			fishing_rod_level = data.get("fishing_rod_level", 0)
 			#planted_crops = data.get("planted_crops", [])
 			#if data.has("time"):
 				#DayAndNightCycleManager.time = float(data["time"])
