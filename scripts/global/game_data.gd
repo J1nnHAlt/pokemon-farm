@@ -17,7 +17,6 @@ var pet_kyogre_amt: int = 0
 var wild_arbok_amt: int = 0 # used in dungeon for limit number of arboks
 var saved_time: float = 0.0
 var next_spawn: String = ""
-var total_berries_sold: int = 0
 var planted_crops: Array = [] # each entry: {pos = Vector2i, seed_name = String, growth_stage = int}
 var is_scene_transitioning = false
 
@@ -86,8 +85,6 @@ func save_game():
 		"time": DayAndNightCycleManager.time,
 		"current_day": day,
 		"current_time": minutes_today,
-		"planted_crops": planted_crops,
-		"total_berries_sold": total_berries_sold,
 
 		# Later: add more data here like "pokemons": [], "player_pos": Vector2()
 	}
@@ -125,21 +122,19 @@ func load_game():
 			pet_gyarados_amt = data.get("pet_gyarados_amt", 0)
 			pet_kyogre_amt = data.get("pet_kyogre_amt", 0)
 			pet_lugia_amt = data.get("pet_lugia", 0)
-			planted_crops = data.get("planted_crops", [])
-			if data.has("time"):
-				DayAndNightCycleManager.time = float(data["time"])
-				DayAndNightCycleManager.recalculate_time()
-				print("Loaded RAW float time:", DayAndNightCycleManager.time)
-			else:
-				var loaded_day = int(data.get("current_day", 0))
-				var loaded_minutes_today = int(data.get("current_time", 0))
-				DayAndNightCycleManager.init_time(loaded_minutes_today, loaded_day)
-				print("Loaded by reconstruction: day", loaded_day, "minToday", loaded_minutes_today, "→ time:", DayAndNightCycleManager.time)
+			#planted_crops = data.get("planted_crops", [])
+			#if data.has("time"):
+				#DayAndNightCycleManager.time = float(data["time"])
+				#DayAndNightCycleManager.recalculate_time()
+				#print("Loaded RAW float time:", DayAndNightCycleManager.time)
+			#else:
+				#var loaded_day = int(data.get("current_day", 0))
+				#var loaded_minutes_today = int(data.get("current_time", 0))
+				#DayAndNightCycleManager.init_time(loaded_minutes_today, loaded_day)
+				#print("Loaded by reconstruction: day", loaded_day, "minToday", loaded_minutes_today, "→ time:", DayAndNightCycleManager.time)
 
 
-			DayAndNightCycleManager.recalculate_time()
-			total_berries_sold = data.get("total_berries_sold", 0)
-
+			#DayAndNightCycleManager.recalculate_time()
 
 			emit_signal("coins_loaded")
 			emit_signal("volume_loaded")
@@ -191,39 +186,22 @@ func _ready() -> void:
 	volume_loaded.connect(set_volume)
 	pass
 	
-#func save_crop(pos: Vector2i, seed_name: String, growth_state: int, is_watered: bool, starting_day: int):
-	#var pos_array = [int(pos.x), int(pos.y)]  # force ints
-	## Remove any existing crop at this position 
-	#planted_crops = planted_crops.filter(func(c): return c["pos"] != pos_array)
-	#planted_crops.append({
-		#"pos": pos_array,
-		#"seed_name": seed_name,
-		#"growth_state": growth_state,
-		#"is_watered": is_watered,
-		#"starting_day": starting_day
-	#})
-
-func save_crop(pos: Vector2i, seed_name: String, growth_state: int, is_watered: bool, starting_day: int):
+func save_crop(pos: Vector2i, seed_name: String):
 	var pos_x = int(pos.x)
 	var pos_y = int(pos.y)
-	var key = str(pos_x) + "," + str(pos_y)
 
-	# Remove existing entry
-	planted_crops = planted_crops.filter(func(c):
-		return int(c["pos"][0]) != pos_x or int(c["pos"][1]) != pos_y
-	)
+	# Skip if crop already exists at this position
+	for c in planted_crops:
+		var cpos = c.get("pos", [0,0])
+		if int(cpos[0]) == pos_x and int(cpos[1]) == pos_y:
+			return
 
-	# Append new state
 	planted_crops.append({
 		"pos": [pos_x, pos_y],
-		"seed_name": seed_name,
-		"growth_state": growth_state,
-		"is_watered": is_watered,
-		"starting_day": starting_day
+		"seed_name": seed_name
 	})
 
-	save_game() # write to disk immediately
-
+	save_game()
 
 func get_crops_parent(scene_root: Node) -> Node:
 	var crops_parent = scene_root.get_node_or_null("Crops")
@@ -238,6 +216,18 @@ func get_seed_scene(seed_name: String) -> PackedScene:
 	if seed_registry.has(seed_name):
 		return seed_registry[seed_name]
 	return 
+
+func remove_crop(pos: Vector2i):
+	var pos_x = int(pos.x)
+	var pos_y = int(pos.y)
+
+	planted_crops = planted_crops.filter(func(c):
+		var cpos = c.get("pos", [0,0])
+		return int(cpos[0]) != pos_x or int(cpos[1]) != pos_y
+	)
+
+	save_game()
+
 
 func set_volume():
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(default_volume/10))

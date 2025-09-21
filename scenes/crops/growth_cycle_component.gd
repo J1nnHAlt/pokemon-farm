@@ -9,10 +9,17 @@ signal crop_harvesting
 
 var is_watered: bool
 var starting_day: int
-var current_day: int
 
 func _ready() -> void:
 	DayAndNightCycleManager.time_tick_day.connect(on_time_tick_day)
+
+	var legendary_manager = get_tree().get_first_node_in_group("legendary_manager")
+	if legendary_manager:
+		legendary_manager.legendary_activated.connect(_on_legendary_activated)
+		legendary_manager.legendary_deactivated.connect(_on_legendary_deactivated)
+
+		if legendary_manager.legendary_active:
+			_on_legendary_activated()
 
 func on_time_tick_day(day: int) -> void:
 	if is_watered:
@@ -21,15 +28,21 @@ func on_time_tick_day(day: int) -> void:
 		
 		growth_states(starting_day, day)
 		harvest_state(starting_day, day)
-		save_crop_state()
 
+func _on_legendary_activated():
+	days_until_harvest = 5
+	starting_day = DayAndNightCycleManager.current_day
+	print("Legendary buff applied to crop:", get_parent().name)
+	
+func _on_legendary_deactivated() -> void:
+	days_until_harvest = 7
+	print("Legendary buff removed from:", get_parent().name)
 
 func growth_states(starting_day: int, current_day: int) -> void:
 	if current_growth_state == DataTypes.GrowthStates.Maturity:
 		return
 	
 	var num_states = 4
-	
 	var growth_days_passed = (current_day - starting_day) % num_states
 	var state_index = growth_days_passed % num_states + 1
 	
@@ -40,7 +53,6 @@ func growth_states(starting_day: int, current_day: int) -> void:
 	if current_growth_state == DataTypes.GrowthStates.Maturity:
 		crop_maturity.emit()
 
-
 func harvest_state(starting_day: int, current_day: int) -> void:
 	if current_growth_state == DataTypes.GrowthStates.Harvesting:
 		return
@@ -49,30 +61,15 @@ func harvest_state(starting_day: int, current_day: int) -> void:
 	
 	if days_passed == days_until_harvest - 1:
 		current_growth_state = DataTypes.GrowthStates.Harvesting
-		save_crop_state()
 		crop_harvesting.emit()
+		
+		# Remove the crop from GameData immediately on harvest
+		if get_parent().has_method("get_tile_pos"):
+			var tile_pos = get_parent().get_tile_pos()
+			GameData.remove_crop(tile_pos)
+
+		# Remove the node from the scene
+		get_parent().queue_free()
 
 func get_current_growth_state() -> DataTypes.GrowthStates:
 	return current_growth_state
-
-
-# growth_cycle_component.gd
-func save_crop_state():
-	if GameData.is_scene_transitioning:
-		return  # skip saving during scene change
-
-	var crop_node = get_parent()
-	var tilemap = crop_node.tilemap
-	if tilemap == null:
-		print("Tilemap missing on crop; skip save")
-		return
-
-	var cell = tilemap.local_to_map(tilemap.to_local(crop_node.global_position))
-
-	GameData.save_crop(
-		cell,
-		crop_node.seed_name,
-		current_growth_state,
-		is_watered,
-		starting_day
-	)

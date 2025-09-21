@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://638cvws80rac"]
+[gd_scene load_steps=23 format=3 uid="uid://638cvws80rac"]
 
 [ext_resource type="Script" uid="uid://yxrex5klrjdf" path="res://scenes/shops/shop_menu.gd" id="1_crqmh"]
 [ext_resource type="Texture2D" uid="uid://dipl3gg0sicbv" path="res://pokemon-assets/Graphics/Items/GROUNDGEM.png" id="1_p1d6s"]
@@ -15,6 +15,10 @@
 [ext_resource type="AudioStream" uid="uid://cc2mhfxgi848c" path="res://pokemon-assets/Audio/SE/Slots stop.ogg" id="9_uf467"]
 [ext_resource type="Resource" uid="uid://dq0fnh3ur7dep" path="res://scripts/inventory/items/seeds/custa_seed.tres" id="10_buga8"]
 [ext_resource type="Resource" uid="uid://c3elen3k8vwg1" path="res://scripts/inventory/items/pokeballs/pokeball.tres" id="11_buga8"]
+[ext_resource type="Resource" uid="uid://bdfl6ldmyfhob" path="res://scripts/inventory/items/seeds/durin_seed.tres" id="12_xl2xy"]
+[ext_resource type="Resource" uid="uid://dtibpn6fk71gf" path="res://scripts/inventory/items/seeds/pamtre_seed.tres" id="13_lijwy"]
+[ext_resource type="Resource" uid="uid://cddos32b8vvwg" path="res://scripts/inventory/items/seeds/rawst_seed.tres" id="14_rtuik"]
+[ext_resource type="Resource" uid="uid://ou5ubxkg83cl" path="res://scripts/inventory/items/seeds/yache_seed.tres" id="15_8ifgb"]
 
 [sub_resource type="Animation" id="Animation_crqmh"]
 length = 0.001
@@ -86,7 +90,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_crqmh")
-possible_items = Array[ExtResource("2_u7kvx")]([ExtResource("3_pk0o2"), ExtResource("4_qdhdw"), ExtResource("5_lev3f"), ExtResource("6_85ogh"), ExtResource("7_0ck7o"), ExtResource("8_pnbjp"), ExtResource("9_pnbjp"), ExtResource("10_buga8"), ExtResource("11_buga8")])
+possible_items = Array[ExtResource("2_u7kvx")]([ExtResource("3_pk0o2"), ExtResource("4_qdhdw"), ExtResource("5_lev3f"), ExtResource("6_85ogh"), ExtResource("7_0ck7o"), ExtResource("8_pnbjp"), ExtResource("9_pnbjp"), ExtResource("10_buga8"), ExtResource("11_buga8"), ExtResource("12_xl2xy"), ExtResource("13_lijwy"), ExtResource("14_rtuik"), ExtResource("15_8ifgb")])
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0

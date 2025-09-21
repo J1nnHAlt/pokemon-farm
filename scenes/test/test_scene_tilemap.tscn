@@ -17,7 +17,7 @@
 [ext_resource type="Script" uid="uid://cotnx2loaoy4r" path="res://scripts/nav_regions/gyarados_region.gd" id="10_28a2p"]
 [ext_resource type="Script" uid="uid://bdhg72aiu4hsh" path="res://scripts/nav_regions/kyogre_region.gd" id="11_1rtwt"]
 [ext_resource type="PackedScene" uid="uid://c8kp81bq2qhas" path="res://scenes/UI/DialogManager.tscn" id="11_r0wom"]
-[ext_resource type="AudioStream" uid="uid://d0nf0koleuwuk" path="res://pokemon-assets/Audio/SE/GUI naming tab swap start.ogg" id="12_ksdiy"]
+[ext_resource type="AudioStream" uid="uid://cqu1pqn00hfwj" path="res://pokemon-assets/Audio/SE/GUI naming tab swap start.ogg" id="12_ksdiy"]
 [ext_resource type="Script" uid="uid://cxt4d02tyeiqo" path="res://scripts/nav_regions/magikarp_region.gd" id="12_wfiq6"]
 [ext_resource type="PackedScene" uid="uid://c1g7wo3i0l6eg" path="res://scenes/inventory/inv_ui.tscn" id="13_l0udy"]
 [ext_resource type="PackedScene" uid="uid://dkbqd3lx2bbxo" path="res://scenes/characters/pet_food_panel.tscn" id="14_ngwww"]

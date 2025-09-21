@@ -39,7 +39,6 @@ func on_hurt(hit_damage: int) -> void:
 		await get_tree().create_timer(5.0).timeout
 		watering_particles.emitting = false
 		growth_cycle_component.is_watered = true
-		growth_cycle_component.save_crop_state()
 
 
 func on_crop_maturity() -> void:
@@ -50,8 +49,19 @@ func on_crop_harvesting() -> void:
 	var harvest = harvest_scene.instantiate()
 	harvest.item = harvest_item
 	get_parent().add_child(harvest)
-	harvest.global_position = global_position  # now it's correct in world space
+	harvest.global_position = global_position
+	var tile_pos = get_tile_pos()
+	GameData.remove_crop(tile_pos)
+
 	queue_free()
 
 func get_tile_pos() -> Vector2i:
+	if tilemap == null:
+		return Vector2i.ZERO
 	return tilemap.local_to_map(tilemap.to_local(global_position))
+
+
+func on_harvest():
+	var tile_pos = get_tile_pos()
+	GameData.remove_crop(tile_pos) # delete from saved data
+	queue_free()
