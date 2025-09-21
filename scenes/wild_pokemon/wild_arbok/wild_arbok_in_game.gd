@@ -80,9 +80,9 @@ func _physics_process(delta: float) -> void:
 			var collision = get_slide_collision(i)
 			print("Colliding with: ", collision.get_collider())
 	
-	if distance < 5: 
-		print("Target reached! Distance: ", distance)
-		_on_target()
+	#if distance < 5: 
+		#print("Target reached! Distance: ", distance)
+		#_on_target()
 	_set_animation()
 
 func _on_target():
