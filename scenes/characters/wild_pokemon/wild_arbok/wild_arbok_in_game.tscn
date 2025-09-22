@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://clbfbvdjco8xi"]
 
-[ext_resource type="Script" uid="uid://b7a22rjpa53y1" path="res://scenes/wild_pokemon/wild_arbok/wild_arbok_in_game.gd" id="1_605xb"]
+[ext_resource type="Script" uid="uid://b7a22rjpa53y1" path="res://scripts/characters/wild_pokemon/wild_arbok/wild_arbok_in_game.gd" id="1_605xb"]
 [ext_resource type="Texture2D" uid="uid://c78n2odo1jmto" path="res://assets/characters/pokemons/arbok.png" id="1_vvnp2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_605xb"]

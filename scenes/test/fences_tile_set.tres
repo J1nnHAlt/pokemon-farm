@@ -1,9 +1,6 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dbh60gno2fnaw"]
-
-[ext_resource type="Texture2D" uid="uid://bcrl4jqdyi44h" path="res://pokemon-assets/Graphics/Tilesets/Outside.png" id="1_ej2qn"]
+[gd_resource type="TileSet" load_steps=2 format=3 uid="uid://dbh60gno2fnaw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7xftd"]
-texture = ExtResource("1_ej2qn")
 1:318/0 = 0
 1:318/0/terrain_set = 0
 1:318/0/terrain = 0

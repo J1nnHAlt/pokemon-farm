@@ -1,13 +1,13 @@
 [gd_scene load_steps=13 format=3 uid="uid://mgca30do2xee"]
 
-[ext_resource type="Texture2D" uid="uid://bwtyhbxunb5wo" path="res://pokemon-assets/Graphics/Battlebacks/cave1_bg.png" id="1_2kehk"]
+[ext_resource type="Texture2D" uid="uid://dk52wa0oyfvqf" path="res://pokemon-assets/Graphics/Battlebacks/cave1_bg.png" id="1_2kehk"]
 [ext_resource type="Script" uid="uid://b0fi1cgspynp" path="res://scenes/levels/dungeon_level/catching_game/catching_game.gd" id="1_qso77"]
-[ext_resource type="Texture2D" uid="uid://cwmfaaf4pd502" path="res://assets/UI/progress_bar/healthbarUnder.png" id="2_urfdj"]
-[ext_resource type="Texture2D" uid="uid://0wehyiswo8yx" path="res://assets/UI/progress_bar/healthbarProgress.png" id="3_v1rig"]
-[ext_resource type="Texture2D" uid="uid://ceoi5a6apf113" path="res://pokemon-assets/Graphics/Battlebacks/cave2_base1.png" id="4_v1rig"]
-[ext_resource type="PackedScene" uid="uid://clbfbvdjco8xi" path="res://scenes/wild_pokemon/wild_arbok/wild_arbok_in_game.tscn" id="5_v1rig"]
+[ext_resource type="Texture2D" uid="uid://xrdktmscnoau" path="res://assets/UI/progress_bar/healthbarUnder.png" id="2_urfdj"]
+[ext_resource type="Texture2D" uid="uid://dxsq00rrwcj6c" path="res://assets/UI/progress_bar/healthbarProgress.png" id="3_v1rig"]
+[ext_resource type="Texture2D" uid="uid://cal465iqxrui6" path="res://pokemon-assets/Graphics/Battlebacks/cave2_base1.png" id="4_v1rig"]
+[ext_resource type="PackedScene" uid="uid://clbfbvdjco8xi" path="res://scenes/characters/wild_pokemon/wild_arbok/wild_arbok_in_game.tscn" id="5_v1rig"]
 [ext_resource type="PackedScene" uid="uid://cu085juwbprub" path="res://scenes/levels/dungeon_level/catching_game/target.tscn" id="7_ftcv3"]
-[ext_resource type="AudioStream" uid="uid://diflujcj42eho" path="res://assets/audio/mixkit-game-level-music-689.ogg" id="8_ftcv3"]
+[ext_resource type="AudioStream" uid="uid://16aoe6ei4qkf" path="res://assets/audio/mixkit-game-level-music-689.ogg" id="8_ftcv3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ahr6n"]
 texture = ExtResource("1_2kehk")

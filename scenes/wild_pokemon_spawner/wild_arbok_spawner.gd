@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var wild_arbok_scene = preload("res://scenes/wild_pokemon/wild_arbok/wild_arbok.tscn")
+@export var wild_arbok_scene = preload("res://scenes/characters/wild_pokemon/wild_arbok/wild_arbok.tscn")
 var max_attempts: int = 10
 
 # Called when the node enters the scene tree for the first time.
