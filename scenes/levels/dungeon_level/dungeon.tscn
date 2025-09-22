@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://2sew83q17mq2" path="res://assets/tilesets/cave/Gravel.png" id="5_w68ys"]
 [ext_resource type="Texture2D" uid="uid://diujhslhu6hje" path="res://assets/tilesets/cave/Red cave highlight.png" id="6_b551t"]
 [ext_resource type="PackedScene" uid="uid://d2j5os108d655" path="res://scenes/global/coin.tscn" id="8_k13yk"]
-[ext_resource type="Script" uid="uid://c6f8mvr8ti5oq" path="res://scenes/levels/dungeon_level/exit_dungeon.gd" id="9_3yp5a"]
+[ext_resource type="Script" uid="uid://c6f8mvr8ti5oq" path="res://scripts/levels/dungeon_level/exit_dungeon.gd" id="9_3yp5a"]
 [ext_resource type="PackedScene" uid="uid://32pfkefqd0i2" path="res://scenes/menus/pause_menu.tscn" id="9_fhrc8"]
 [ext_resource type="PackedScene" uid="uid://bsg4dgrfuedqn" path="res://scenes/day_night_ui/day_night_panel.tscn" id="10_3yp5a"]
 [ext_resource type="PackedScene" uid="uid://cnsbf2wm8bxel" path="res://scenes/wild_pokemon_spawner/wild_arbok_spawner.tscn" id="10_7410j"]
