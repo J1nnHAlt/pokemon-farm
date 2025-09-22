@@ -25,7 +25,7 @@ func move_pokemon_to_meet(npc1: NonPlayableCharacter, npc2: NonPlayableCharacter
 	# Calculate midpoint between both
 	var midpoint = (npc1.global_position + npc2.global_position) / 2.0
 	
-	# Offset so they don't overlap (16 px apart horizontally)
+	# Offset so they don't overlap
 	var offset = Vector2(12, 12)
 
 	# Configure NPC1 navigation
@@ -108,13 +108,13 @@ func _breed(npc1: NonPlayableCharacter, npc2: NonPlayableCharacter):
 	var chosen = npc1 if randf() < 0.5 else npc2
 	var rarity = chosen.rarity
 	var rarity_chances := {
-	#"Common": 0.8,
-	#"Rare": 0.4,
-	#"Epic": 0.2,
-	#"Legendary": 0.1
+	"Common": 0.8,
+	"Rare": 0.4,
+	"Epic": 0.2,
+	"Legendary": 0.1
 }
 
-	var chance: float = rarity_chances.get(rarity, 1)  # default fallback 50%
+	var chance: float = rarity_chances.get(rarity, 0.5)
 
 	if randf() < chance:
 		chosen.status[chosen.PetStatus.Pregnant] = 1
