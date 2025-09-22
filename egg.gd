@@ -32,7 +32,7 @@ func setup(p_pokemon: NonPlayableCharacter, p_rarity, p_element) -> void:
 	current_day = 0
 
 	
-func _on_new_day(day):
+func _on_new_day(_day):
 	print("@egg: new day called")
 	current_day += 1
 	print("@egg: day added")
@@ -55,6 +55,7 @@ func _on_new_day(day):
 func _born():
 	await _play_once(EggState.SHAKING)
 	await _play_once(EggState.BOUNCING)
+	$AudioStreamPlayer2D.play()
 	await _play_once(EggState.CRACKING)
 
 	pokemon._reset()

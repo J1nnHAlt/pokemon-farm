@@ -7,6 +7,10 @@ func _ready():
 	pressed.connect(on_mix_button_pressed)
 
 func on_mix_button_pressed():
+	var player = $AudioStreamPlayer2D
+	player.play()
+	await player.finished  # waits until sound finishes
+	
 	var result = RecipeManager.find_matching_recipe(mixer.mixer_content)
 	emit_signal("recipe_result", result)
 		

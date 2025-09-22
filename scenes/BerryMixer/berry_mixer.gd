@@ -7,6 +7,8 @@ extends Control
 @export var main_scene = "res://scenes/test/test_scene_tilemap.tscn"
 func _ready():
 	mix_button.recipe_result.connect(show_craft_popup)
+	$AudioStreamPlayer2D.stream.loop = true
+	$AudioStreamPlayer2D.play()
 
 func show_craft_popup(recipe_name: String):
 	var message

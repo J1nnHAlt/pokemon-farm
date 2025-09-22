@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bhox53ofckjdr"]
+[gd_scene load_steps=14 format=3 uid="uid://bhox53ofckjdr"]
 
 [ext_resource type="Texture2D" uid="uid://dc4vwmngm4ft6" path="res://pokemon-assets/Graphics/Battlebacks/city_night_bg.png" id="1_cnjmm"]
 [ext_resource type="Script" uid="uid://kkj704dtlanh" path="res://scenes/BerryMixer/berry_mixer.gd" id="1_ruapb"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://m2d3g74p375v" path="res://scenes/BerryMixer/slot.tscn" id="4_lh7vl"]
 [ext_resource type="Script" uid="uid://r1fdyor1fjyv" path="res://scenes/BerryMixer/mix_button.gd" id="5_7vft3"]
 [ext_resource type="Texture2D" uid="uid://rhbenj2had8y" path="res://assets/berry_mixer/blender.png" id="5_vffg1"]
+[ext_resource type="AudioStream" uid="uid://bbbb0k8yegrsy" path="res://assets/audio/sfx/Berry MIxer.mp3" id="9_dtcn0"]
+[ext_resource type="Texture2D" uid="uid://deq5nw7u0qon1" path="res://assets/berry_mixer/blender_glass.png" id="10_f6tuu"]
+[ext_resource type="AudioStream" uid="uid://cijhx2oocvy5t" path="res://assets/audio/bgm/Berry Mixer.ogg" id="11_g13pi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7vft3"]
 
@@ -195,6 +198,19 @@ theme_override_font_sizes/font_size = 40
 text = "Mix"
 script = ExtResource("5_7vft3")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="HBoxContainer/MixerPanel/MixButton"]
+stream = ExtResource("9_dtcn0")
+volume_db = 5.0
+
+[node name="MixerGlass" type="TextureRect" parent="HBoxContainer/MixerPanel"]
+z_index = 5
+layout_mode = 0
+offset_left = 167.0
+offset_top = 165.96
+offset_right = 284.0
+offset_bottom = 327.96
+texture = ExtResource("10_f6tuu")
+
 [node name="InventoryPanel" type="Panel" parent="HBoxContainer"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 1
@@ -254,5 +270,8 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 25
 text = "Exit"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_g13pi")
 
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
