@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://4dar450ig5b8" path="res://scripts/menus/pause_menu.gd" id="1_7unhi"]
 [ext_resource type="Shader" uid="uid://dt8msqev6kcnq" path="res://scenes/menus/pause_menu.gdshader" id="1_fwndu"]
-[ext_resource type="AudioStream" uid="uid://d2lqgwnjsun0i" path="res://pokemon-assets/Audio/GUI menu open.ogg" id="3_gsnt3"]
-[ext_resource type="AudioStream" uid="uid://drnefr1q1a0iq" path="res://pokemon-assets/Audio/SE/Battle catch click.ogg" id="4_2wrho"]
-[ext_resource type="AudioStream" uid="uid://mbxv03llwug5" path="res://pokemon-assets/Audio/GUI menu close.ogg" id="4_gh0u6"]
+[ext_resource type="AudioStream" uid="uid://bs3lkie5anp0i" path="res://assets/audio/sfx/GUI menu open.ogg" id="3_gh0u6"]
+[ext_resource type="AudioStream" uid="uid://tow7yextu67l" path="res://assets/audio/sfx/Battle catch click.ogg" id="4_2wrho"]
+[ext_resource type="AudioStream" uid="uid://bmqq5j4iotyw5" path="res://assets/audio/sfx/GUI menu close.ogg" id="4_eyfc8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7unhi"]
 shader = ExtResource("1_fwndu")
@@ -148,10 +148,10 @@ libraries = {
 }
 
 [node name="sfx_open_menu" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_gsnt3")
+stream = ExtResource("3_gh0u6")
 
 [node name="sfx_close_menu" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_gh0u6")
+stream = ExtResource("4_eyfc8")
 
 [node name="sfx_click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_2wrho")

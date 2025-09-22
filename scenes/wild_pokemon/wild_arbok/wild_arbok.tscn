@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dhwu5lbvocbys"]
 
-[ext_resource type="Texture2D" uid="uid://c78n2odo1jmto" path="res://scenes/characters/dark_pokemon/arbok.png" id="1_c41jk"]
+[ext_resource type="Texture2D" uid="uid://c78n2odo1jmto" path="res://assets/characters/pokemons/arbok.png" id="1_c41jk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ltijh"]
 atlas = ExtResource("1_c41jk")

@@ -17,7 +17,7 @@
 [ext_resource type="Script" uid="uid://cotnx2loaoy4r" path="res://scripts/nav_regions/gyarados_region.gd" id="10_28a2p"]
 [ext_resource type="Script" uid="uid://bdhg72aiu4hsh" path="res://scripts/nav_regions/kyogre_region.gd" id="11_1rtwt"]
 [ext_resource type="PackedScene" uid="uid://c8kp81bq2qhas" path="res://scenes/UI/DialogManager.tscn" id="11_r0wom"]
-[ext_resource type="AudioStream" uid="uid://mw04hdv38eif" path="res://pokemon-assets/Audio/SE/GUI naming tab swap start.ogg" id="12_ksdiy"]
+[ext_resource type="AudioStream" uid="uid://bmy0xm472yiul" path="res://assets/audio/sfx/GUI naming tab swap start.ogg" id="12_ksdiy"]
 [ext_resource type="Script" uid="uid://cxt4d02tyeiqo" path="res://scripts/nav_regions/magikarp_region.gd" id="12_wfiq6"]
 [ext_resource type="PackedScene" uid="uid://c1g7wo3i0l6eg" path="res://scenes/inventory/inv_ui.tscn" id="13_l0udy"]
 [ext_resource type="PackedScene" uid="uid://dkbqd3lx2bbxo" path="res://scenes/characters/pet_food_panel.tscn" id="14_ngwww"]
@@ -31,9 +31,9 @@
 [ext_resource type="PackedScene" uid="uid://cvjjhe8v4kmei" path="res://scenes/characters/npc/legendary_npc.tscn" id="29_28a2p"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_p0x3o"]
-vertices = PackedVector2Array(-218.43, -121.469, -144.367, 28, -288, 28, -499.938, 89.8203, -498.078, -256.117, -352, 60, -288, 60, -352, 87.2813)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 0, 2, 5), PackedInt32Array(2, 6, 5), PackedInt32Array(3, 5, 7)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-508, -272, -96, -273, -101, 93, -510, 100)])
+vertices = PackedVector2Array(-126, 71, -483.172, 71, -488.82, -254.047, -126, -255.938)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-499, -264, -116, -266, -116, 81, -493, 81)])
 source_geometry_mode = 2
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_xpen0"]

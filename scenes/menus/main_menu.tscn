@@ -1,12 +1,12 @@
 [gd_scene load_steps=6 format=3 uid="uid://28dg4xqw1xgm"]
 
 [ext_resource type="Script" uid="uid://cm5oagimebn12" path="res://scripts/menus/main_menu.gd" id="1_2o76q"]
-[ext_resource type="Texture2D" uid="uid://t7exkm6hh5eo" path="res://pokemon-assets/Graphics/UI/Load/bg.png" id="1_xqga4"]
-[ext_resource type="Texture2D" uid="uid://c1jluch7j0r50" path="res://pokemon-assets/Graphics/Pokemon/Front/PIKACHU_female.png" id="2_ovrgc"]
-[ext_resource type="AudioStream" uid="uid://dhsb4nbjuvek2" path="res://pokemon-assets/Audio/BGM/Title.ogg" id="4_6bivr"]
+[ext_resource type="Texture2D" uid="uid://c0qw51s4niycb" path="res://assets/UI/background/bg.png" id="2_6bivr"]
+[ext_resource type="Texture2D" uid="uid://dwwjuy5i4qtu5" path="res://assets/UI/icons/PIKACHU_female.png" id="3_imvie"]
+[ext_resource type="AudioStream" uid="uid://836ykmhp25cq" path="res://assets/audio/bgm/Title.ogg" id="4_6bivr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ovrgc"]
-texture = ExtResource("1_xqga4")
+texture = ExtResource("2_6bivr")
 modulate_color = Color(0.556953, 0.556953, 0.556953, 1)
 
 [node name="MainMenu" type="Control"]
@@ -40,7 +40,7 @@ grow_horizontal = 2
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("2_ovrgc")
+texture = ExtResource("3_imvie")
 expand_mode = 2
 
 [node name="Label" type="Label" parent="HBoxContainer"]

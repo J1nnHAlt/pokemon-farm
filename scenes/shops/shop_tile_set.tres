@@ -1,12 +1,12 @@
 [gd_resource type="TileSet" load_steps=9 format=3 uid="uid://bo3w4v0fvsd4w"]
 
-[ext_resource type="Texture2D" uid="uid://4ieanwa4cq85" path="res://scenes/test/test_enter_room/Mart interior.png" id="1_s8scm"]
-[ext_resource type="Texture2D" uid="uid://c61p27wcmh1wy" path="res://pokemon-assets/Graphics/Tilesets/Bike shop interior.png" id="2_dkq6l"]
-[ext_resource type="Texture2D" uid="uid://bci6v6wrseouf" path="res://pokemon-assets/Graphics/Tilesets/Department store interior.png" id="4_prfai"]
-[ext_resource type="Texture2D" uid="uid://c1u8s26fxuk5b" path="res://pokemon-assets/Graphics/Tilesets/Outside.png" id="4_s8scm"]
+[ext_resource type="Texture2D" uid="uid://b13ajfow70oub" path="res://assets/tilesets/Inside/Bike shop interior.png" id="1_s8scm"]
+[ext_resource type="Texture2D" uid="uid://bhxm6yu0rllta" path="res://assets/tilesets/Inside/Department store interior.png" id="2_dkq6l"]
+[ext_resource type="Texture2D" uid="uid://bpibe3cvxcrdy" path="res://assets/tilesets/Inside/Mart interior.png" id="3_aslhf"]
+[ext_resource type="Texture2D" uid="uid://cr5f3pd2vf445" path="res://assets/tilesets/Outside/Buildings/Outside.png" id="4_prfai"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bj6us"]
-texture = ExtResource("2_dkq6l")
+texture = ExtResource("1_s8scm")
 1:5/0 = 0
 1:5/0/terrain_set = 0
 1:5/0/terrain = 0
@@ -241,10 +241,10 @@ texture = ExtResource("2_dkq6l")
 4:18/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j0j0i"]
-texture = ExtResource("4_prfai")
+texture = ExtResource("2_dkq6l")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s8scm"]
-texture = ExtResource("1_s8scm")
+texture = ExtResource("3_aslhf")
 2:17/0 = 0
 2:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 2.87774, 8, 8, -4.85619, 8, -5.03605, 2.87774)
 3:17/0 = 0
@@ -505,7 +505,7 @@ texture = ExtResource("1_s8scm")
 0:32/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dkq6l"]
-texture = ExtResource("4_s8scm")
+texture = ExtResource("4_prfai")
 0:528/0 = 0
 0:528/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, -3.59717, -8, -3.59717, 8, 8, 8)
 0:529/0 = 0

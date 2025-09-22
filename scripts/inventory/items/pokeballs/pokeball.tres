@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://c3elen3k8vwg1"]
 
 [ext_resource type="Script" uid="uid://srnaalrlc73j" path="res://scripts/inventory/inventory_item.gd" id="1_8dkjy"]
-[ext_resource type="Texture2D" uid="uid://bs8i4k37i36dd" path="res://pokemon-assets/Graphics/UI/Summary/icon_ball_POKEBALL.png" id="2_7klyw"]
+[ext_resource type="Texture2D" uid="uid://3ht0rt1j12px" path="res://assets/UI/icons/icon_ball_POKEBALL.png" id="2_8dkjy"]
 
 [resource]
 script = ExtResource("1_8dkjy")
 name = "Pokeball"
-texture = ExtResource("2_7klyw")
+texture = ExtResource("2_8dkjy")
 metadata/_custom_type_script = "uid://srnaalrlc73j"

@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://bcvhn3txllies" path="res://scenes/test/dungeon_entrance.gd" id="8_3oqpa"]
 [ext_resource type="PackedScene" uid="uid://c1g7wo3i0l6eg" path="res://scenes/inventory/inv_ui.tscn" id="13_j4irh"]
 [ext_resource type="PackedScene" uid="uid://dkbqd3lx2bbxo" path="res://scenes/characters/pet_food_panel.tscn" id="14_23ssm"]
-[ext_resource type="AudioStream" uid="uid://hhevxgnss6jm" path="res://pokemon-assets/Audio/SE/GUI naming tab swap start.ogg" id="15_5aqa6"]
+[ext_resource type="AudioStream" uid="uid://bmy0xm472yiul" path="res://assets/audio/sfx/GUI naming tab swap start.ogg" id="15_5aqa6"]
 [ext_resource type="PackedScene" uid="uid://dq0x68l6h0d18" path="res://scenes/characters/seller/seller.tscn" id="16_kd2tn"]
 [ext_resource type="PackedScene" uid="uid://cqkk5fgowjuws" path="res://scenes/legendary_pokemon/legendary_manager.tscn" id="17_cm2hy"]
 [ext_resource type="PackedScene" uid="uid://bvj88ye74yc0c" path="res://scenes/crops/berry.tscn" id="18_kwxy7"]
