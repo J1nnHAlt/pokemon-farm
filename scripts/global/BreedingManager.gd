@@ -108,13 +108,13 @@ func _breed(npc1: NonPlayableCharacter, npc2: NonPlayableCharacter):
 	var chosen = npc1 if randf() < 0.5 else npc2
 	var rarity = chosen.rarity
 	var rarity_chances := {
-	#"Common": 0.8,
-	#"Rare": 0.4,
-	#"Epic": 0.2,
-	#"Legendary": 0.1
+	"Common": 0.8,
+	"Rare": 0.4,
+	"Epic": 0.2,
+	"Legendary": 0.1
 }
 
-	var chance: float = rarity_chances.get(rarity, 1)
+	var chance: float = rarity_chances.get(rarity, 0.5)
 
 	if randf() < chance:
 		chosen.status[chosen.PetStatus.Pregnant] = 1
