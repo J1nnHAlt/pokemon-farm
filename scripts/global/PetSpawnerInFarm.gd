@@ -2,7 +2,7 @@ extends Node
 
 var pokemon_scenes := {
 	"Arbok": preload("res://scenes/characters/dark_pokemon/arbok.tscn"),
-	"Victreebel": preload("res://scenes/characters/grass_pokemon/victreebel.tscn"),
+	#"Victreebel": preload("res://scenes/characters/grass_pokemon/victreebel.tscn"),
 	"Lapras": preload("res://scenes/characters/water_pokemon/lapras.tscn"),
 	"Magikarp": preload("res://scenes/characters/water_pokemon/magikarp.tscn"),
 	"Seaking": preload("res://scenes/characters/water_pokemon/seaking.tscn"),
