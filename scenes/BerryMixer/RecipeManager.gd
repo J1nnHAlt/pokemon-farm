@@ -2,28 +2,28 @@ extends Node
 
 var recipes = {
 	"SpicyJam": {
-		"ingredients": [preload("res://scripts/inventory/items/berries/cheri_berry.tres"), preload("res://scripts/inventory/items/berries/custa_berry.tres")],
-		"item": preload("res://scripts/inventory/items/food/spicy_jam.tres"),
+		"ingredients": [preload("res://Resources/items/berries/cheri_berry.tres"), preload("res://Resources/items/berries/custa_berry.tres")],
+		"item": preload("res://Resources/items/food/spicy_jam.tres"),
 		"description": "Really Spicy!"
 	},
 	"SweetJuice": {
-		"ingredients": [preload("res://scripts/inventory/items/berries/durin_berry.tres"), preload("res://scripts/inventory/items/berries/cheri_berry.tres")],
-		"item": preload("res://scripts/inventory/items/food/sweet_juice.tres"),
+		"ingredients": [preload("res://Resources/items/berries/durin_berry.tres"), preload("res://Resources/items/berries/cheri_berry.tres")],
+		"item": preload("res://Resources/items/food/sweet_juice.tres"),
 		"description": "Really Sweet!"
 	},
 	"LeafBites": {
-		"ingredients": [preload("res://scripts/inventory/items/berries/durin_berry.tres"), preload("res://scripts/inventory/items/berries/pamtre_berry.tres")],
-		"item": preload("res://scripts/inventory/items/food/leaf_bites.tres"),
+		"ingredients": [preload("res://Resources/items/berries/durin_berry.tres"), preload("res://Resources/items/berries/pamtre_berry.tres")],
+		"item": preload("res://Resources/items/food/leaf_bites.tres"),
 		"description": "Really Smelly!"
 	}, 
 	"AquaEssence": {
-		"ingredients": [preload("res://scripts/inventory/items/berries/yache_berry.tres"), preload("res://scripts/inventory/items/berries/yache_berry.tres")],
-		"item": preload("res://scripts/inventory/items/food/aqua_essence.tres"),
+		"ingredients": [preload("res://Resources/items/berries/yache_berry.tres"), preload("res://Resources/items/berries/yache_berry.tres")],
+		"item": preload("res://Resources/items/food/aqua_essence.tres"),
 		"description": "Really Moist!"
 	}, 
 	"DarkCandy": {
-		"ingredients": [preload("res://scripts/inventory/items/berries/rawst_berry.tres"), preload("res://scripts/inventory/items/berries/yache_berry.tres")],
-		"item": preload("res://scripts/inventory/items/food/dark_candy.tres"),
+		"ingredients": [preload("res://Resources/items/berries/rawst_berry.tres"), preload("res://Resources/items/berries/yache_berry.tres")],
+		"item": preload("res://Resources/items/food/dark_candy.tres"),
 		"description": "Really Dark!"
 	}
 }

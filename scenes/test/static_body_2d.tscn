@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://du5xwbltx60u5"]
 
 [ext_resource type="Script" uid="uid://ps20imsis0rt" path="res://static_body_2d.gd" id="1_d1g07"]
-[ext_resource type="Texture2D" uid="uid://bahyd5scn14m2" path="res://pokemon-assets/Graphics/Items/DURINBERRY.png" id="2_f01h1"]
-[ext_resource type="Resource" uid="uid://cc7ypp7b0xktf" path="res://scripts/inventory/items/berries/durin_berry.tres" id="2_oxmnt"]
+[ext_resource type="Texture2D" uid="uid://b3khpnbg50kqr" path="res://pokemon-assets/Graphics/Items/DURINBERRY.png" id="2_f01h1"]
+[ext_resource type="Resource" uid="uid://cc7ypp7b0xktf" path="res://Resources/items/berries/durin_berry.tres" id="2_oxmnt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oxmnt"]
 radius = 41.1096

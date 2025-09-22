@@ -27,33 +27,33 @@ signal player_entered(pokemon: NonPlayableCharacter)
 signal player_exited
 
 var berries = [
-	preload("res://scripts/inventory/items/berries/cheri_berry.tres"), 
-	preload("res://scripts/inventory/items/berries/durin_berry.tres"), 
-	preload("res://scripts/inventory/items/berries/pamtre_berry.tres"), 
+	preload("res://Resources/items/berries/cheri_berry.tres"), 
+	preload("res://Resources/items/berries/durin_berry.tres"), 
+	preload("res://Resources/items/berries/pamtre_berry.tres"), 
 	#preload("res://scripts/inventory/items/berries/custa_berry.tres"), 
 	#preload("res://scripts/inventory/items/berries/yache_berry.tres"), 
 	#preload("res://scripts/inventory/items/berries/rawst_berry.tres")
 ]
 
 var food = [
-	preload("res://scripts/inventory/items/food/aqua_essence.tres"), 
-	preload("res://scripts/inventory/items/food/dark_candy.tres"), 
-	preload("res://scripts/inventory/items/food/leaf_bites.tres"), 
-	preload("res://scripts/inventory/items/food/spicy_jam.tres"), 
-	preload("res://scripts/inventory/items/food/sweet_juice.tres")
+	preload("res://Resources/items/food/aqua_essence.tres"), 
+	preload("res://Resources/items/food/dark_candy.tres"), 
+	preload("res://Resources/items/food/leaf_bites.tres"), 
+	preload("res://Resources/items/food/spicy_jam.tres"), 
+	preload("res://Resources/items/food/sweet_juice.tres")
 ]
 
 var seeds = [
-	preload("res://scripts/inventory/items/seeds/cheri_seed.tres"),
-	preload("res://scripts/inventory/items/seeds/custa_seed.tres"),
-	preload("res://scripts/inventory/items/seeds/durin_seed.tres"),
-	preload("res://scripts/inventory/items/seeds/pamtre_seed.tres"),
-	preload("res://scripts/inventory/items/seeds/rawst_seed.tres"),
-	preload("res://scripts/inventory/items/seeds/yache_seed.tres")
+	preload("res://Resources/items/seeds/cheri_seed.tres"),
+	preload("res://Resources/items/seeds/custa_seed.tres"),
+	preload("res://Resources/items/seeds/durin_seed.tres"),
+	preload("res://Resources/items/seeds/pamtre_seed.tres"),
+	preload("res://Resources/items/seeds/rawst_seed.tres"),
+	preload("res://Resources/items/seeds/yache_seed.tres")
 ]
 
 var pokeballs = [
-	preload("res://scripts/inventory/items/pokeballs/pokeball.tres")
+	preload("res://Resources/items/pokeballs/pokeball.tres")
 ]
 
 var seed_registry: Dictionary = {
@@ -155,6 +155,8 @@ func load_game():
 			inventory = loaded_inv
 			inventory_loaded.emit()
 			print("Load inventory success")
+		else:
+			print("Load inventory failed")
 	else:
 		print("No inventory save found, creating new inventory")
 		inventory = Inv.new()

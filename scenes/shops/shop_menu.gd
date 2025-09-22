@@ -4,7 +4,7 @@ extends Control
 @export var possible_items: Array[InvItem] = []
 @onready var balance_label: Label = $Balance/MarginContainer/HBoxContainer/Label
 @onready var time_remain: Label = $Time/HBoxContainer/TimeLeft
-@onready var shop_inv: ShopInv = preload("res://scripts/inventory/shop_inventory/shop_inv.tres")
+@onready var shop_inv: ShopInv = preload("res://Resources/inventory/shop_inv.tres")
 @onready var items_container: VBoxContainer = $ShopItems/PanelContainer/MarginContainer/VBoxContainer # Or whatever container your buttons go in
 var shop_item_button_scene = preload("res://scenes/shops/shop_item_button.tscn")
 

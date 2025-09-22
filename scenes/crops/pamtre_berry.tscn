@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://b501nt1fpo2yp"]
 
 [ext_resource type="Script" uid="uid://j3mjtuxv4amv" path="res://scenes/crops/berry.gd" id="1_aca3f"]
-[ext_resource type="Resource" uid="uid://dx2ktnf5sloc0" path="res://scripts/inventory/items/berries/pamtre_berry.tres" id="2_aca3f"]
-[ext_resource type="Texture2D" uid="uid://diwsj7i7q5uim" path="res://pokemon-assets/Graphics/Characters/berrytree_PAMTREBERRY.png" id="3_aca3f"]
+[ext_resource type="Resource" uid="uid://dx2ktnf5sloc0" path="res://Resources/items/berries/pamtre_berry.tres" id="2_aca3f"]
+[ext_resource type="Texture2D" uid="uid://cbvllgwyxksv7" path="res://pokemon-assets/Graphics/Characters/berrytree_PAMTREBERRY.png" id="3_aca3f"]
 [ext_resource type="PackedScene" uid="uid://bbt04cvqw6sjg" path="res://scenes/crops/watering_particles.tscn" id="4_r6k67"]
 [ext_resource type="PackedScene" uid="uid://c2vb7n7vmwxn2" path="res://scenes/crops/flowering_particles.tscn" id="5_dyeil"]
 [ext_resource type="PackedScene" uid="uid://30ayb03hl4mi" path="res://scenes/crops/growth_cycle_component.tscn" id="6_rjegm"]

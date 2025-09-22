@@ -5,7 +5,7 @@ extends Button
 @onready var item_name: Label = $PanelContainer/VBoxContainer/HBoxContainer1/Item/ItemName
 @onready var item_price: Label = $PanelContainer/VBoxContainer/HBoxContainer1/Gem/price
 @onready var item_amount: Label = $PanelContainer/VBoxContainer/Quantity/amount
-@onready var shop_inv: ShopInv = preload("res://scripts/inventory/shop_inventory/shop_inv.tres")
+@onready var shop_inv: ShopInv = preload("res://Resources/inventory/shop_inv.tres")
 @onready var player = get_tree().get_nodes_in_group("player")[0]
 @onready var world_coin_ui = get_tree().get_nodes_in_group("world_coin_ui")[0]
 var slot
