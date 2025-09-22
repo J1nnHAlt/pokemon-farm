@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://c2pjo27juf5" path="res://scenes/zones/fade_area.tscn" id="2_sj1xl"]
 [ext_resource type="PackedScene" uid="uid://dq0x68l6h0d18" path="res://scenes/characters/seller/seller.tscn" id="2_w5ikm"]
 [ext_resource type="PackedScene" uid="uid://cwrwntq7ufv6k" path="res://scenes/zones/hide_area.tscn" id="3_w5ikm"]
-[ext_resource type="AudioStream" uid="uid://bw5an1k00jsrd" path="res://pokemon-assets/Audio/SE/Door enter.ogg" id="5_5d57x"]
-[ext_resource type="AudioStream" uid="uid://cxq1q0mhiw6jw" path="res://pokemon-assets/Audio/SE/Door exit.ogg" id="6_senfp"]
+[ext_resource type="AudioStream" uid="uid://bvs8fs7r3kllt" path="res://assets/audio/sfx/Door enter.ogg" id="5_senfp"]
+[ext_resource type="AudioStream" uid="uid://cxq1q0mhiw6jw" path="res://assets/audio/sfx/Door exit.ogg" id="6_senfp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sj1xl"]
 size = Vector2(247, 222.5)
@@ -44,7 +44,7 @@ position = Vector2(-0.5, -145.5)
 shape = SubResource("RectangleShape2D_5d57x")
 
 [node name="sfx_enter" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_5d57x")
+stream = ExtResource("5_senfp")
 
 [node name="sfx_exit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_senfp")
