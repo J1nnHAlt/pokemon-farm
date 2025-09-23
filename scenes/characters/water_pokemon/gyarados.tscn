@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://d4lg5bu2ljx1"]
 
 [ext_resource type="Script" uid="uid://dk4auj3egk5ub" path="res://scenes/characters/water_pokemon/lapras.gd" id="1_k0q2v"]
-[ext_resource type="Texture2D" uid="uid://75onp63ps31o" path="res://assets/pokemon_overworld/first_gen/Gyarados.png" id="2_k0q2v"]
+[ext_resource type="Texture2D" uid="uid://dgpbgnajtc7ue" path="res://assets/pokemon_overworld/first_gen/Gyarados.png" id="2_k0q2v"]
 [ext_resource type="Script" uid="uid://bm540rrfyyxui" path="res://scripts/state_machine/node_state_machine.gd" id="3_nfasl"]
 [ext_resource type="Script" uid="uid://fewxkuu5ado4" path="res://scenes/characters/water_pokemon/idle_state.gd" id="4_67oxe"]
 [ext_resource type="Script" uid="uid://b2whne5ncd64d" path="res://scenes/characters/water_pokemon/walk_state.gd" id="5_piihr"]
-[ext_resource type="PackedScene" uid="uid://dxkprghiro45c" path="res://scenes/characters/pokemon_ui.tscn" id="6_queeb"]
+[ext_resource type="PackedScene" uid="uid://dxkprghiro45c" path="res://scenes/characters/pokemon/pokemon_ui.tscn" id="6_queeb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e0g6m"]
 atlas = ExtResource("2_k0q2v")

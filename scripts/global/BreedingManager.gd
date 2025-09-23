@@ -1,7 +1,7 @@
 extends Node
 
 var npcs: Array = []
-var heart_cloud_scene := preload("res://scenes/characters/breed_effect.tscn")
+var heart_cloud_scene := preload("res://scenes/characters/pokemon/breed_effect.tscn")
 
 
 func register_npc(npc: NonPlayableCharacter):

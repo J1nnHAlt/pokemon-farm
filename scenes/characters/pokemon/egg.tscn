@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=3 uid="uid://cpopl1mr66wrf"]
 
-[ext_resource type="Script" uid="uid://cfqhm41a3ekho" path="res://egg.gd" id="1_hycw2"]
+[ext_resource type="Script" uid="uid://cykc5jej1g8dh" path="res://scripts/characters/pokemon/egg.gd" id="1_jqgn5"]
 [ext_resource type="Texture2D" uid="uid://dq4sjk7vwcht8" path="res://assets/egg/egg sprite sheet.png" id="2_iu16s"]
 [ext_resource type="AudioStream" uid="uid://cqpkcw3k7t6ku" path="res://assets/audio/sfx/Egg Crack.mp3" id="3_iu16s"]
 
@@ -192,7 +192,7 @@ animations = [{
 radius = 7.07107
 
 [node name="Egg" type="Node2D"]
-script = ExtResource("1_hycw2")
+script = ExtResource("1_jqgn5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mrro5")

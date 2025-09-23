@@ -1,13 +1,13 @@
 [gd_scene load_steps=15 format=3 uid="uid://cv2pon43imfed"]
 
-[ext_resource type="Script" uid="uid://ctggxhfyjanpo" path="res://scenes/characters/dark_pokemon/arbok.gd" id="1_eospf"]
-[ext_resource type="Texture2D" uid="uid://c78n2odo1jmto" path="res://assets/characters/pokemons/arbok.png" id="1_epl2t"]
+[ext_resource type="Script" uid="uid://ctggxhfyjanpo" path="res://scripts/characters/dark_pokemon/arbok.gd" id="1_eospf"]
+[ext_resource type="Texture2D" uid="uid://bysxnvotmpee5" path="res://assets/characters/pokemons/arbok.png" id="1_epl2t"]
 [ext_resource type="Script" uid="uid://bm540rrfyyxui" path="res://scripts/state_machine/node_state_machine.gd" id="2_3hwl6"]
-[ext_resource type="Script" uid="uid://cc4otw7ic1qd2" path="res://scenes/characters/dark_pokemon/idle_state.gd" id="3_vvl6o"]
-[ext_resource type="Script" uid="uid://de4ahex1jocnn" path="res://scenes/characters/dark_pokemon/walk_state.gd" id="4_wmr00"]
-[ext_resource type="PackedScene" uid="uid://dxkprghiro45c" path="res://scenes/characters/pokemon_ui.tscn" id="6_4gkuy"]
-[ext_resource type="Script" uid="uid://bd2m2hh1qsova" path="res://scenes/characters/dark_pokemon/walk_to_mate.gd" id="6_vo3fa"]
-[ext_resource type="Script" uid="uid://k7dhayq6p4eq" path="res://scenes/characters/dark_pokemon/breeding.gd" id="7_78lj3"]
+[ext_resource type="Script" uid="uid://cc4otw7ic1qd2" path="res://scripts/characters/dark_pokemon/idle_state.gd" id="3_vvl6o"]
+[ext_resource type="Script" uid="uid://de4ahex1jocnn" path="res://scripts/characters/dark_pokemon/walk_state.gd" id="4_wmr00"]
+[ext_resource type="PackedScene" uid="uid://dxkprghiro45c" path="res://scenes/characters/pokemon/pokemon_ui.tscn" id="6_4gkuy"]
+[ext_resource type="Script" uid="uid://bd2m2hh1qsova" path="res://scripts/characters/dark_pokemon/walk_to_mate.gd" id="6_vo3fa"]
+[ext_resource type="Script" uid="uid://k7dhayq6p4eq" path="res://scripts/characters/dark_pokemon/breeding.gd" id="7_78lj3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3hwl6"]
 atlas = ExtResource("1_epl2t")

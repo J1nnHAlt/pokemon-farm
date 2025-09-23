@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-RecipeManager="*res://scenes/BerryMixer/RecipeManager.gd"
+RecipeManager="*res://scripts/global/RecipeManager.gd"
 Coin="*res://scripts/global/coin.gd"
 PetSpawnerInFarm="*res://scripts/global/PetSpawnerInFarm.gd"
 GameData="*res://scripts/global/game_data.gd"

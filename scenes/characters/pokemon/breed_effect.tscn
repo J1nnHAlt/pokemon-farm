@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://caxnitmemvrmd"]
 
-[ext_resource type="Script" uid="uid://ih2jyo3y76ur" path="res://scenes/characters/breed_effect.gd" id="1_4ykdl"]
+[ext_resource type="Script" uid="uid://ih2jyo3y76ur" path="res://scripts/characters/pokemon/breed_effect.gd" id="1_4ykdl"]
 [ext_resource type="Texture2D" uid="uid://b467tfrmrsqgd" path="res://assets/effect/Cloud.png" id="1_kbmn8"]
 [ext_resource type="Texture2D" uid="uid://b24c0siinrgux" path="res://assets/pokemon_status/mating.png" id="2_xeggp"]
 [ext_resource type="AudioStream" uid="uid://c1p72abhho3r2" path="res://assets/audio/sfx/Romantic.mp3" id="4_y2dda"]

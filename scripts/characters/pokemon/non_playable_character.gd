@@ -109,7 +109,7 @@ func consume_pet_food(pet_food: PetFood):
 			print("Already eaten before, food wasted!")
 		attributes_changed.emit()
 
-const EggScene := preload("res://scenes/characters/egg.tscn")
+const EggScene := preload("res://scenes/characters/pokemon/egg.tscn")
 func _give_birth():
 	print("%s gave birth to an egg!" % name)
 

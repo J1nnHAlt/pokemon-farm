@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dkbqd3lx2bbxo"]
 
-[ext_resource type="Script" uid="uid://b2sfhn6kaeo6" path="res://scenes/characters/pet_food_panel.gd" id="1_pwmqd"]
+[ext_resource type="Script" uid="uid://b2sfhn6kaeo6" path="res://scripts/characters/pokemon/pet_food_panel.gd" id="1_pwmqd"]
 
 [node name="pet_food_panel" type="Control"]
 layout_mode = 3

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://m2d3g74p375v"]
 
-[ext_resource type="Script" uid="uid://bg80fmokvfah" path="res://scenes/BerryMixer/slot.gd" id="1_n61e3"]
+[ext_resource type="Script" uid="uid://bg80fmokvfah" path="res://scripts/berry_mixer/slot.gd" id="1_n61e3"]
 [ext_resource type="Texture2D" uid="uid://cdboajqvqsggp" path="res://assets/UI/inventory-slot.png" id="2_ujm5q"]
 
 [node name="Slot" type="Control"]

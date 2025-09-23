@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dmptioj6vv8yl"]
 
 [ext_resource type="Texture2D" uid="uid://duwh6atfxrd2x" path="res://assets/tilesets/Inside/berryBlender.png" id="1_67adh"]
-[ext_resource type="Script" uid="uid://cwu88bocjqasb" path="res://scenes/BerryMixer/berry_mixer_machine.gd" id="1_v77ry"]
+[ext_resource type="Script" uid="uid://cwu88bocjqasb" path="res://scripts/berry_mixer/berry_mixer_machine.gd" id="1_v77ry"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_67adh"]
 radius = 12.0
