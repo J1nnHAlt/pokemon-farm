@@ -8,7 +8,6 @@ var default_volume: float
 var pet_arbok_amt: int = 2
 var pet_victreebel_amt: int = 0
 var pet_lapras_amt: int = 0
-var pet_lugia_amt: int = 0
 var pet_magikarp_amt: int = 0
 var pet_seaking_amt: int = 0
 var pet_gyarados_amt: int = 0
@@ -77,7 +76,6 @@ func save_game():
 		"pet_arbok_amt": pet_arbok_amt,
 		"pet_victreebel_amt": pet_victreebel_amt,
 		"pet_lapras_amt": pet_lapras_amt,
-		"pet_lugia_amt" : pet_lugia_amt,
 		"pet_magikarp_amt": pet_magikarp_amt,
 		"pet_seaking_amt": pet_seaking_amt,
 		"pet_gyarados_amt": pet_gyarados_amt,
@@ -122,7 +120,6 @@ func load_game():
 			pet_seaking_amt = data.get("pet_seaking_amt", 0)
 			pet_gyarados_amt = data.get("pet_gyarados_amt", 0)
 			pet_kyogre_amt = data.get("pet_kyogre_amt", 0)
-			pet_lugia_amt = data.get("pet_lugia", 0)
 			fishing_rod_level = data.get("fishing_rod_level", 0)
 			#planted_crops = data.get("planted_crops", [])
 			#if data.has("time"):
