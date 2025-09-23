@@ -6,8 +6,6 @@ var inventory: Inv
 var default_volume: float
 
 var pet_arbok_amt: int = 2
-var pet_victreebel_amt: int = 0
-var pet_lapras_amt: int = 0
 var pet_magikarp_amt: int = 0
 var pet_seaking_amt: int = 0
 var pet_gyarados_amt: int = 0
@@ -74,8 +72,6 @@ func save_game():
 		"coins": coins,
 		"volume": default_volume,
 		"pet_arbok_amt": pet_arbok_amt,
-		"pet_victreebel_amt": pet_victreebel_amt,
-		"pet_lapras_amt": pet_lapras_amt,
 		"pet_magikarp_amt": pet_magikarp_amt,
 		"pet_seaking_amt": pet_seaking_amt,
 		"pet_gyarados_amt": pet_gyarados_amt,
@@ -114,8 +110,6 @@ func load_game():
 			coins = data.get("coins", 0)
 			default_volume = data.get("volume", 5.0)
 			pet_arbok_amt = data.get("pet_arbok_amt", 0)
-			pet_lapras_amt = data.get("pet_lapras_amt", 0)
-			pet_victreebel_amt = data.get("pet_victreebel", 0)
 			pet_magikarp_amt = data.get("pet_magikarp_amt", 0)
 			pet_seaking_amt = data.get("pet_seaking_amt", 0)
 			pet_gyarados_amt = data.get("pet_gyarados_amt", 0)
