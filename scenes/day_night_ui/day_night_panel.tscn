@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://bsg4dgrfuedqn"]
 
 [ext_resource type="Theme" uid="uid://bjs7wtt6ir1xs" path="res://Resources/pokemon_theme.tres" id="1_hec5c"]
-[ext_resource type="Texture2D" uid="uid://7gs376d0iqox" path="res://scenes/day_night_ui/Sprite sheet for Basic Pack.png" id="2_dqexg"]
 [ext_resource type="Script" uid="uid://dfhkpl6sgtkbk" path="res://scenes/day_night_ui/day_night_panel.gd" id="2_f4v8r"]
+[ext_resource type="Texture2D" uid="uid://cp4qp4xddal7" path="res://assets/UI/day_night/Sprite sheet for Basic Pack.png" id="3_f4v8r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c4mt0"]
-atlas = ExtResource("2_dqexg")
+atlas = ExtResource("3_f4v8r")
 region = Rect2(437, 34, 7, 12)
 
 [node name="DayNightPanel" type="Control"]
