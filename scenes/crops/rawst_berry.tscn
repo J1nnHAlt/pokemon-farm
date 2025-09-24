@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://j3mjtuxv4amv" path="res://scripts/crops/berry.gd" id="1_c6f2c"]
 [ext_resource type="Resource" uid="uid://cw2n2r3bdxf7" path="res://Resources/items/berries/rawst_berry.tres" id="2_c6f2c"]
-[ext_resource type="Texture2D" uid="uid://ct4dxwhwjh5ei" path="res://pokemon-assets/Graphics/Characters/berrytree_RAWSTBERRY.png" id="3_c6f2c"]
+[ext_resource type="Texture2D" uid="uid://ct4dxwhwjh5ei" path="res://assets/berry_tree/berrytree_RAWSTBERRY.png" id="3_c6f2c"]
 [ext_resource type="PackedScene" uid="uid://bbt04cvqw6sjg" path="res://scenes/crops/watering_particles.tscn" id="4_xi6x6"]
 [ext_resource type="PackedScene" uid="uid://c2vb7n7vmwxn2" path="res://scenes/crops/flowering_particles.tscn" id="5_xp7yh"]
 [ext_resource type="PackedScene" uid="uid://30ayb03hl4mi" path="res://scenes/crops/growth_cycle_component.tscn" id="6_p1dwu"]
