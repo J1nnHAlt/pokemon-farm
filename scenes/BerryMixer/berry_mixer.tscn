@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://bhox53ofckjdr"]
 
-[ext_resource type="Texture2D" uid="uid://dc4vwmngm4ft6" path="res://pokemon-assets/Graphics/Battlebacks/city_night_bg.png" id="1_cnjmm"]
+[ext_resource type="Texture2D" uid="uid://dude2duup88pi" path="res://assets/UI/background/city_night_bg.png" id="1_cnjmm"]
 [ext_resource type="Script" uid="uid://kkj704dtlanh" path="res://scripts/berry_mixer/berry_mixer.gd" id="1_ruapb"]
 [ext_resource type="Script" uid="uid://ctdhuwcn0gnjv" path="res://scripts/berry_mixer/mixer_content.gd" id="3_7vft3"]
 [ext_resource type="PackedScene" uid="uid://brirrwysfjclq" path="res://scenes/BerryMixer/RecipeCard.tscn" id="3_sld21"]
@@ -8,10 +8,10 @@
 [ext_resource type="Script" uid="uid://d1b7qp1yqklru" path="res://scripts/berry_mixer/player_berry_list.gd" id="4_cdewq"]
 [ext_resource type="PackedScene" uid="uid://m2d3g74p375v" path="res://scenes/BerryMixer/slot.tscn" id="4_lh7vl"]
 [ext_resource type="Script" uid="uid://r1fdyor1fjyv" path="res://scripts/berry_mixer/mix_button.gd" id="5_7vft3"]
-[ext_resource type="Texture2D" uid="uid://rhbenj2had8y" path="res://assets/berry_mixer/blender.png" id="5_vffg1"]
-[ext_resource type="AudioStream" uid="uid://bbbb0k8yegrsy" path="res://assets/audio/sfx/Berry MIxer.mp3" id="9_dtcn0"]
-[ext_resource type="Texture2D" uid="uid://deq5nw7u0qon1" path="res://assets/berry_mixer/blender_glass.png" id="10_f6tuu"]
-[ext_resource type="AudioStream" uid="uid://cijhx2oocvy5t" path="res://assets/audio/bgm/Berry Mixer.ogg" id="11_g13pi"]
+[ext_resource type="Texture2D" uid="uid://4vif42ngw84h" path="res://assets/berry_mixer/blender.png" id="5_vffg1"]
+[ext_resource type="AudioStream" uid="uid://ng3yqnxn6n6f" path="res://assets/audio/sfx/Berry MIxer.mp3" id="9_dtcn0"]
+[ext_resource type="Texture2D" uid="uid://d24cmiwmjlkmt" path="res://assets/berry_mixer/blender_glass.png" id="10_f6tuu"]
+[ext_resource type="AudioStream" uid="uid://c4h3gi0afbbnv" path="res://assets/audio/bgm/Berry Mixer.ogg" id="11_g13pi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7vft3"]
 

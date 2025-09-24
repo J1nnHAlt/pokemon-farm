@@ -78,7 +78,7 @@ func _on_timer_timeout() -> void:
 
 func play_captured_sfx():
 	var sound = AudioStreamPlayer.new()
-	sound.stream = preload("res://pokemon-assets/Audio/ME/Voltorb Flip win.ogg")
+	sound.stream = preload("res://assets/audio/sfx/Voltorb Flip win.ogg")
 	sound.autoplay = true
 	get_tree().current_scene.add_child(sound)  # attach to scene, not this node
 	sound.connect("finished", sound.queue_free)

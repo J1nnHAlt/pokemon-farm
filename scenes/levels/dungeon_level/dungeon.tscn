@@ -1,18 +1,18 @@
 [gd_scene load_steps=30 format=4 uid="uid://cob1q3vvthx7q"]
 
-[ext_resource type="Texture2D" uid="uid://c148eoica1e5x" path="res://assets/tilesets/cave/Blue cave floor.png" id="1_gfnxw"]
+[ext_resource type="Texture2D" uid="uid://bj0ll7pgn4p6r" path="res://assets/tilesets/cave/Blue cave floor.png" id="1_gfnxw"]
 [ext_resource type="PackedScene" uid="uid://dheba8g1u8uj8" path="res://scenes/characters/player/player.tscn" id="1_jew4h"]
-[ext_resource type="Texture2D" uid="uid://3k5i5f8cashm" path="res://assets/tilesets/cave/Blue cave mud.png" id="2_xwf7l"]
-[ext_resource type="Texture2D" uid="uid://dbescojs6tbt4" path="res://assets/tilesets/cave/Brown cave sand.png" id="3_y8bx1"]
-[ext_resource type="Texture2D" uid="uid://bj6tealymn1tl" path="res://pokemon-assets/Graphics/Tilesets/Dungeon cave.png" id="4_8lpd3"]
-[ext_resource type="Texture2D" uid="uid://84ij5a1cyiqi" path="res://assets/tilesets/cave/Gravel.png" id="5_w68ys"]
-[ext_resource type="Texture2D" uid="uid://c3tlrxnufj4jf" path="res://assets/tilesets/cave/Red cave highlight.png" id="6_b551t"]
+[ext_resource type="Texture2D" uid="uid://brjwwbkr8oiu2" path="res://assets/tilesets/cave/Blue cave mud.png" id="2_xwf7l"]
+[ext_resource type="Texture2D" uid="uid://b2gky1wq2gask" path="res://assets/tilesets/cave/Brown cave sand.png" id="3_y8bx1"]
+[ext_resource type="Texture2D" uid="uid://i7vi26jj5vbp" path="res://assets/tilesets/cave/Dungeon cave (2).png" id="4_8lpd3"]
+[ext_resource type="Texture2D" uid="uid://c172qiwywph3e" path="res://assets/tilesets/cave/Gravel.png" id="5_w68ys"]
+[ext_resource type="Texture2D" uid="uid://cgc843t38sp5u" path="res://assets/tilesets/cave/Red cave highlight.png" id="6_b551t"]
 [ext_resource type="PackedScene" uid="uid://d2j5os108d655" path="res://scenes/global/coin.tscn" id="8_k13yk"]
 [ext_resource type="Script" uid="uid://c6f8mvr8ti5oq" path="res://scripts/levels/dungeon_level/exit_dungeon.gd" id="9_3yp5a"]
 [ext_resource type="PackedScene" uid="uid://32pfkefqd0i2" path="res://scenes/menus/pause_menu.tscn" id="9_fhrc8"]
 [ext_resource type="PackedScene" uid="uid://bsg4dgrfuedqn" path="res://scenes/day_night_ui/day_night_panel.tscn" id="10_3yp5a"]
 [ext_resource type="PackedScene" uid="uid://cnsbf2wm8bxel" path="res://scenes/wild_pokemon_spawner/wild_arbok_spawner.tscn" id="10_7410j"]
-[ext_resource type="AudioStream" uid="uid://bqboeyrxshrbw" path="res://pokemon-assets/Audio/BGM/Battle wild.ogg" id="13_25mab"]
+[ext_resource type="AudioStream" uid="uid://c6dnlnbbekapk" path="res://assets/audio/bgm/Battle wild.ogg" id="14_gfnxw"]
 [ext_resource type="PackedScene" uid="uid://c1g7wo3i0l6eg" path="res://scenes/inventory/inv_ui.tscn" id="14_h7yji"]
 [ext_resource type="PackedScene" uid="uid://c7n4g3crty2l6" path="res://scenes/levels/dungeon_level/flee_particle.tscn" id="16_llxqq"]
 [ext_resource type="PackedScene" uid="uid://d2bh5jgkjuf7v" path="res://scenes/levels/dungeon_level/dodge_particle.tscn" id="17_gfnxw"]
@@ -875,7 +875,7 @@ offset_bottom = 272.0
 color = Color(0.420943, 0.621316, 1, 0.921569)
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_25mab")
+stream = ExtResource("14_gfnxw")
 volume_db = -13.255
 autoplay = true
 

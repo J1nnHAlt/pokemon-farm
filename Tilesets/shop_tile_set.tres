@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" load_steps=9 format=3 uid="uid://bo3w4v0fvsd4w"]
 
-[ext_resource type="Texture2D" uid="uid://rak3qwf7oai6" path="res://assets/tilesets/Inside/Bike shop interior.png" id="1_s8scm"]
-[ext_resource type="Texture2D" uid="uid://bkojxsfwdc5t6" path="res://assets/tilesets/Inside/Department store interior.png" id="2_dkq6l"]
-[ext_resource type="Texture2D" uid="uid://bntvop3tu2jas" path="res://assets/tilesets/Inside/Mart interior.png" id="3_aslhf"]
-[ext_resource type="Texture2D" uid="uid://duheh4pobemlt" path="res://assets/tilesets/Outside/Buildings/Outside.png" id="4_prfai"]
+[ext_resource type="Texture2D" uid="uid://j76ponf3leac" path="res://assets/tilesets/Inside/Bike shop interior.png" id="1_s8scm"]
+[ext_resource type="Texture2D" uid="uid://hxu60ml703hu" path="res://assets/tilesets/Inside/Department store interior.png" id="2_dkq6l"]
+[ext_resource type="Texture2D" uid="uid://v54cvw1a44df" path="res://assets/tilesets/Inside/Mart interior.png" id="3_aslhf"]
+[ext_resource type="Texture2D" uid="uid://c1fs0aipdl5sa" path="res://assets/tilesets/Outside/Buildings/Outside.png" id="4_prfai"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bj6us"]
 texture = ExtResource("1_s8scm")

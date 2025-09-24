@@ -1,9 +1,9 @@
 [gd_resource type="Theme" load_steps=21 format=3 uid="uid://bjs7wtt6ir1xs"]
 
-[ext_resource type="FontFile" uid="uid://dabmgysakl1au" path="res://pokemon-assets/Fonts/power clear bold.ttf" id="1_8df5g"]
-[ext_resource type="FontFile" uid="uid://dm7rsnbeactck" path="res://pokemon-assets/Fonts/power green.ttf" id="1_8u0ir"]
-[ext_resource type="Texture2D" uid="uid://psd2byw3fghx" path="res://assets/UI/day_night/Sprite sheet for Basic Pack.png" id="1_cdo4k"]
-[ext_resource type="FontFile" uid="uid://do1dhs58b7r66" path="res://pokemon-assets/Fonts/pixelFont-7-8x14-sproutLands.ttf" id="2_dkgt5"]
+[ext_resource type="Texture2D" uid="uid://duw4esxq0uco6" path="res://assets/UI/day_night/Sprite sheet for Basic Pack.png" id="1_cdo4k"]
+[ext_resource type="FontFile" uid="uid://ckkm8bxq1qkjh" path="res://assets/font/pixelFont-7-8x14-sproutLands.ttf" id="2_cdo4k"]
+[ext_resource type="FontFile" uid="uid://dwpessw1grvg8" path="res://assets/font/power clear bold.ttf" id="3_ewkar"]
+[ext_resource type="FontFile" uid="uid://dj5llm2tudk5t" path="res://assets/font/power green.ttf" id="4_cdo4k"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dkgt5"]
 
@@ -80,7 +80,7 @@ texture_margin_right = 2.0
 texture_margin_bottom = 3.0
 
 [resource]
-default_font = ExtResource("1_8u0ir")
+default_font = ExtResource("4_cdo4k")
 DayAndNightButton/base_type = &"Button"
 DayAndNightButton/styles/disabled = SubResource("StyleBoxTexture_e57r8")
 DayAndNightButton/styles/focus = SubResource("StyleBoxTexture_yn4n8")
@@ -91,7 +91,7 @@ DayAndNightCounterPanel/base_type = &"PanelContainer"
 DayAndNightCounterPanel/styles/panel = SubResource("StyleBoxTexture_8uown")
 DayAndNightLabel/base_type = &"Label"
 DayAndNightLabel/font_sizes/font_size = 18
-DayAndNightLabel/fonts/font = ExtResource("2_dkgt5")
+DayAndNightLabel/fonts/font = ExtResource("2_cdo4k")
 Label/font_sizes/font_size = 40
-Label/fonts/font = ExtResource("1_8df5g")
+Label/fonts/font = ExtResource("3_ewkar")
 Label/styles/normal = null

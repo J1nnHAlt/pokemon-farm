@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cu085juwbprub"]
 
 [ext_resource type="Script" uid="uid://d3qtrahg6afwx" path="res://scripts/levels/dungeon_level/catching_game/target.gd" id="1_6v416"]
-[ext_resource type="Texture2D" uid="uid://x2ympniump6w" path="res://pokemon-assets/Graphics/UI/Naming/cursor_1.png" id="1_x4nt1"]
+[ext_resource type="Texture2D" uid="uid://cfm0l000i5tbo" path="res://assets/UI/icons/cursor_1.png" id="2_6v416"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6v416"]
 size = Vector2(18, 20)
@@ -10,7 +10,7 @@ size = Vector2(18, 20)
 script = ExtResource("1_6v416")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_x4nt1")
+texture = ExtResource("2_6v416")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_6v416")
