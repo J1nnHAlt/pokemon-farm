@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://ck5twm5n4m0tt"]
 
 [ext_resource type="Script" uid="uid://djrr8ysgeybb" path="res://scripts/inventory/inv_ui_slot.gd" id="1_i5cy3"]
-[ext_resource type="Texture2D" uid="uid://dtrl0efmo1onb" path="res://assets/UI/inventory-slot.png" id="1_sr5mn"]
-[ext_resource type="AudioStream" uid="uid://oamdqo15suhi" path="res://pokemon-assets/Audio/SE/Cut.ogg" id="3_j45t4"]
+[ext_resource type="Texture2D" uid="uid://b3ks1rxnh3gyu" path="res://assets/UI/inventory-slot.png" id="1_sr5mn"]
+[ext_resource type="AudioStream" uid="uid://cs5h7wnj5bxfy" path="res://pokemon-assets/Audio/SE/Cut.ogg" id="3_j45t4"]
 
 [node name="inv_ui_slot" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cqkk5fgowjuws"]
 
-[ext_resource type="Script" uid="uid://bee6mmgyxeea0" path="res://scenes/legendary_pokemon/legendary_manager.gd" id="1_vxqvd"]
+[ext_resource type="Script" uid="uid://bee6mmgyxeea0" path="res://scripts/legendary_pokemon/legendary_manager.gd" id="1_vxqvd"]
 
 [node name="LegendaryManager" type="Node"]
 script = ExtResource("1_vxqvd")

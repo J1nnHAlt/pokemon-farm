@@ -115,19 +115,6 @@ func load_game():
 			pet_gyarados_amt = data.get("pet_gyarados_amt", 0)
 			pet_kyogre_amt = data.get("pet_kyogre_amt", 0)
 			fishing_rod_level = data.get("fishing_rod_level", 0)
-			#planted_crops = data.get("planted_crops", [])
-			#if data.has("time"):
-				#DayAndNightCycleManager.time = float(data["time"])
-				#DayAndNightCycleManager.recalculate_time()
-				#print("Loaded RAW float time:", DayAndNightCycleManager.time)
-			#else:
-				#var loaded_day = int(data.get("current_day", 0))
-				#var loaded_minutes_today = int(data.get("current_time", 0))
-				#DayAndNightCycleManager.init_time(loaded_minutes_today, loaded_day)
-				#print("Loaded by reconstruction: day", loaded_day, "minToday", loaded_minutes_today, "→ time:", DayAndNightCycleManager.time)
-
-
-			#DayAndNightCycleManager.recalculate_time()
 
 			emit_signal("coins_loaded")
 			emit_signal("volume_loaded")

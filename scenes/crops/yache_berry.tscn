@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://clirn5f0k12r5"]
 
-[ext_resource type="Script" uid="uid://j3mjtuxv4amv" path="res://scenes/crops/berry.gd" id="1_bds64"]
+[ext_resource type="Script" uid="uid://j3mjtuxv4amv" path="res://scripts/crops/berry.gd" id="1_bds64"]
 [ext_resource type="Resource" uid="uid://8vcju64q8d68" path="res://Resources/items/berries/yache_berry.tres" id="2_bds64"]
-[ext_resource type="Texture2D" uid="uid://bhnq1jvquppaa" path="res://pokemon-assets/Graphics/Characters/berrytree_YACHEBERRY.png" id="3_bds64"]
+[ext_resource type="Texture2D" uid="uid://bxr2nuxwglfw3" path="res://pokemon-assets/Graphics/Characters/berrytree_YACHEBERRY.png" id="3_bds64"]
 [ext_resource type="PackedScene" uid="uid://bbt04cvqw6sjg" path="res://scenes/crops/watering_particles.tscn" id="4_bucbq"]
 [ext_resource type="PackedScene" uid="uid://c2vb7n7vmwxn2" path="res://scenes/crops/flowering_particles.tscn" id="5_4tf0s"]
 [ext_resource type="PackedScene" uid="uid://30ayb03hl4mi" path="res://scenes/crops/growth_cycle_component.tscn" id="6_txnkk"]

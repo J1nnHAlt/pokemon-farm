@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://28dg4xqw1xgm"]
 
 [ext_resource type="Script" uid="uid://cm5oagimebn12" path="res://scripts/menus/main_menu.gd" id="1_2o76q"]
-[ext_resource type="Texture2D" uid="uid://cvc0qjkhjhi8e" path="res://assets/UI/background/bg.png" id="2_6bivr"]
-[ext_resource type="Texture2D" uid="uid://btys1pstokje8" path="res://assets/UI/icons/PIKACHU_female.png" id="3_imvie"]
-[ext_resource type="AudioStream" uid="uid://qpeig1m5188x" path="res://assets/audio/bgm/Title.ogg" id="4_6bivr"]
+[ext_resource type="Texture2D" uid="uid://cialnxo1vnmly" path="res://assets/UI/background/bg.png" id="2_6bivr"]
+[ext_resource type="Texture2D" uid="uid://8x7pmk0wi3pb" path="res://assets/UI/icons/PIKACHU_female.png" id="3_imvie"]
+[ext_resource type="AudioStream" uid="uid://dsxvy6g7xobcr" path="res://assets/audio/bgm/Title.ogg" id="4_6bivr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ovrgc"]
 texture = ExtResource("2_6bivr")

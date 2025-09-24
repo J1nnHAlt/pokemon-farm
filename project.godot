@@ -23,7 +23,7 @@ PetSpawnerInFarm="*res://scripts/global/PetSpawnerInFarm.gd"
 GameData="*res://scripts/global/game_data.gd"
 DayAndNightCycleManager="*res://scripts/day_night/day_and_night_cycle_manager.gd"
 BreedingManager="*res://scripts/global/BreedingManager.gd"
-LegendaryManager="*res://scenes/legendary_pokemon/legendary_manager.gd"
+LegendaryManager="*res://scripts/legendary_pokemon/legendary_manager.gd"
 DialogDB="*res://scripts/dialog/DialogDB.gd"
 
 [display]
