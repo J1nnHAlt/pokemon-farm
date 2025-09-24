@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://brqy6oueap7di"]
 
-[ext_resource type="Script" uid="uid://clg1qifn7dp0l" path="res://scenes/characters/player/F button/f_button.gd" id="1_w0joo"]
-[ext_resource type="Texture2D" uid="uid://bdgi324y37dll" path="res://assets/UI/keyboard buttons/f_button.png" id="2_gyvjq"]
+[ext_resource type="Script" uid="uid://clg1qifn7dp0l" path="res://scripts/characters/player/F button/f_button.gd" id="1_w0joo"]
+[ext_resource type="Texture2D" uid="uid://bunwavjrm2f4u" path="res://assets/UI/keyboard buttons/f_button.png" id="2_gyvjq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_18f31"]
 atlas = ExtResource("2_gyvjq")
