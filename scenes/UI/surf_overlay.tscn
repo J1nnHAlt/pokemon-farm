@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cgbyvfb4syohe"]
 
-[ext_resource type="Script" uid="uid://dr46igccpko88" path="res://scenes/UI/SurfOverlay.gd" id="1_3n3w1"]
+[ext_resource type="Script" uid="uid://dr46igccpko88" path="res://scripts/UI/SurfOverlay.gd" id="1_3n3w1"]
 [ext_resource type="Texture2D" uid="uid://bb6j0jpga8msv" path="res://assets/surfing_pokemon/LAPRAS.png" id="1_abtus"]
 [ext_resource type="AudioStream" uid="uid://p7isto8enq53" path="res://assets/audio/pokemon_cries/LAPRAS.ogg" id="2_3n3w1"]
 

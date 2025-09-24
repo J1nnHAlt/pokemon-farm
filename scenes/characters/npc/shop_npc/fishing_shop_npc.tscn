@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://kwwmf3lyn6db"]
 
-[ext_resource type="Texture2D" uid="uid://dn707xx5280jc" path="res://assets/characters/npc/trainer_FISHERMAN.png" id="2_i2hd5"]
-[ext_resource type="Script" uid="uid://bswdxgsblvefa" path="res://scenes/characters/npc/shop_npc/fishing_shop_npc.gd" id="2_ykxio"]
-[ext_resource type="Texture2D" uid="uid://cinujpqmbqsma" path="res://assets/characters/npc/NPC 06.png" id="3_i2hd5"]
+[ext_resource type="Texture2D" uid="uid://dx1oep128ssuh" path="res://assets/characters/npc/trainer_FISHERMAN.png" id="2_i2hd5"]
+[ext_resource type="Script" uid="uid://bswdxgsblvefa" path="res://scripts/characters/npc/shop_npc/fishing_shop_npc.gd" id="2_ykxio"]
+[ext_resource type="Texture2D" uid="uid://dkmm4excykyoi" path="res://assets/characters/npc/NPC 06.png" id="3_i2hd5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qufrx"]
 atlas = ExtResource("2_i2hd5")

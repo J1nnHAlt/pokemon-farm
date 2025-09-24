@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://c8kp81bq2qhas"]
 
-[ext_resource type="Script" uid="uid://bjo7tj5ua8ql4" path="res://scenes/UI/DialogManager.gd" id="1_4d8dq"]
+[ext_resource type="Script" uid="uid://bjo7tj5ua8ql4" path="res://scripts/UI/DialogManager.gd" id="1_4d8dq"]
 [ext_resource type="Texture2D" uid="uid://42qu0rmexc3h" path="res://assets/UI/dialog/speech dp 1.png" id="1_bikte"]
 [ext_resource type="FontFile" uid="uid://bvahfh0if4q5q" path="res://pokemon-assets/Fonts/power clear.ttf" id="2_4336f"]
 [ext_resource type="Texture2D" uid="uid://cssxx4xeo0l5q" path="res://assets/UI/dialog/Window.png" id="4_m2jbv"]
