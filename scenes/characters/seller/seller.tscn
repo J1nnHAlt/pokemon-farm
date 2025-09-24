@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://dq0x68l6h0d18"]
 
 [ext_resource type="Script" uid="uid://bwxbmupbwm8vj" path="res://scripts/characters/seller/seller.gd" id="1_1lemv"]
-[ext_resource type="Texture2D" uid="uid://d01156dn0axsv" path="res://assets/characters/npc/NPC 16.png" id="2_ectr7"]
+[ext_resource type="Texture2D" uid="uid://cqc7f15ay16uq" path="res://assets/characters/npc/NPC 16.png" id="2_ectr7"]
 [ext_resource type="PackedScene" uid="uid://638cvws80rac" path="res://scenes/shops/shop_menu.tscn" id="3_5d4gj"]
-[ext_resource type="AudioStream" uid="uid://cu88vb6xkyrp6" path="res://assets/audio/sfx/GUI menu open.ogg" id="4_ectr7"]
-[ext_resource type="AudioStream" uid="uid://btn03tccw6u6d" path="res://assets/audio/sfx/GUI menu close.ogg" id="5_l78w7"]
+[ext_resource type="AudioStream" uid="uid://bg4gbu6ukwivm" path="res://assets/audio/sfx/GUI menu open.ogg" id="4_ectr7"]
+[ext_resource type="AudioStream" uid="uid://twof1blkfwrb" path="res://assets/audio/sfx/GUI menu close.ogg" id="5_l78w7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1lemv"]
 atlas = ExtResource("2_ectr7")

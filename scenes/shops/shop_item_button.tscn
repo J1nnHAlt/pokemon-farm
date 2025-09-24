@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cblx6utrafqd5"]
 
 [ext_resource type="Script" uid="uid://l2segxy0qcav" path="res://scripts/shops/shop_item_button.gd" id="1_4aam8"]
-[ext_resource type="Texture2D" uid="uid://di8sn206ogcgj" path="res://assets/berries/DURINBERRY.png" id="1_r0p58"]
-[ext_resource type="Texture2D" uid="uid://dscqbi0ji0sdx" path="res://assets/UI/icons/GROUNDGEM.png" id="1_ulddo"]
+[ext_resource type="Texture2D" uid="uid://blros0d1fevky" path="res://assets/berries/DURINBERRY.png" id="1_r0p58"]
+[ext_resource type="Texture2D" uid="uid://dg6wlj0j3fagq" path="res://assets/UI/icons/GROUNDGEM.png" id="1_ulddo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ulddo"]
 

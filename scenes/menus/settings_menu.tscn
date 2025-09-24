@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bwueacypwd50e" path="res://scripts/menus/settings_menu.gd" id="1_hayap"]
 [ext_resource type="Shader" uid="uid://dvag5yigl0pfq" path="res://scenes/menus/settings_menu.gdshader" id="2_s2d1y"]
-[ext_resource type="AudioStream" uid="uid://bs3lkie5anp0i" path="res://assets/audio/sfx/GUI menu open.ogg" id="3_ojvp1"]
-[ext_resource type="AudioStream" uid="uid://bmqq5j4iotyw5" path="res://assets/audio/sfx/GUI menu close.ogg" id="4_da10i"]
+[ext_resource type="AudioStream" uid="uid://bg4gbu6ukwivm" path="res://assets/audio/sfx/GUI menu open.ogg" id="3_ojvp1"]
+[ext_resource type="AudioStream" uid="uid://twof1blkfwrb" path="res://assets/audio/sfx/GUI menu close.ogg" id="4_da10i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ojvp1"]
 shader = ExtResource("2_s2d1y")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d2j5os108d655"]
 
 [ext_resource type="Script" uid="uid://bduio1oo2u3i" path="res://scripts/global/coin_ui.gd" id="1_c48kv"]
-[ext_resource type="Texture2D" uid="uid://c4g4rpa3nsxc6" path="res://assets/UI/icons/GROUNDGEM.png" id="2_c48kv"]
+[ext_resource type="Texture2D" uid="uid://dg6wlj0j3fagq" path="res://assets/UI/icons/GROUNDGEM.png" id="2_c48kv"]
 
 [node name="coins" type="Control" groups=["world_coin_ui"]]
 layout_mode = 3

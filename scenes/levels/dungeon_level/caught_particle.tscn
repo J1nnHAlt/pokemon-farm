@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c5xr0avfeiam"]
 
-[ext_resource type="Texture2D" uid="uid://df5cria4txrr4" path="res://assets/effect/ballBurst_star.png" id="1_jw746"]
+[ext_resource type="Texture2D" uid="uid://b1y3ypaa37sqy" path="res://assets/effect/ballBurst_star.png" id="1_jw746"]
 
 [sub_resource type="Curve" id="Curve_5wdsr"]
 _data = [Vector2(0.00257732, 0.151047), 0.0, 0.0, 0, 0, Vector2(0.992268, 0.0603191), 0.0, 0.0, 0, 0]

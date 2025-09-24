@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://c1g7wo3i0l6eg"]
 
 [ext_resource type="Script" uid="uid://b2gcexhao7lpt" path="res://scripts/inventory/inv_UI.gd" id="1_celo0"]
-[ext_resource type="Texture2D" uid="uid://by64kt1mboue6" path="res://assets/UI/inventory-background.png" id="2_hbvie"]
+[ext_resource type="Texture2D" uid="uid://bxl5bn3r0exlo" path="res://assets/UI/inventory-background.png" id="2_hbvie"]
 [ext_resource type="PackedScene" uid="uid://ck5twm5n4m0tt" path="res://scenes/inventory/inv_ui_slot.tscn" id="3_fuqkw"]
-[ext_resource type="AudioStream" uid="uid://bhwnt8vfqrf5l" path="res://assets/audio/sfx/GUI menu open.ogg" id="4_ggs6h"]
-[ext_resource type="AudioStream" uid="uid://1eaby15yd2ch" path="res://assets/audio/sfx/GUI menu close.ogg" id="5_rm0ga"]
+[ext_resource type="AudioStream" uid="uid://bg4gbu6ukwivm" path="res://assets/audio/sfx/GUI menu open.ogg" id="4_ggs6h"]
+[ext_resource type="AudioStream" uid="uid://twof1blkfwrb" path="res://assets/audio/sfx/GUI menu close.ogg" id="5_rm0ga"]
 
 [node name="Inv_UI" type="Control"]
 z_index = 15

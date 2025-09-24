@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://bjniid16hcr8"]
 
 [ext_resource type="Script" uid="uid://dk4auj3egk5ub" path="res://scripts/characters/water_pokemon/lapras.gd" id="1_wuvp6"]
-[ext_resource type="Texture2D" uid="uid://b4r3jt7iwnsdh" path="res://assets/pokemon_overworld/third_gen/Kyogre.png" id="2_wuvp6"]
+[ext_resource type="Texture2D" uid="uid://4o2uv0nwkv3x" path="res://assets/pokemon_overworld/third_gen/Kyogre.png" id="2_wuvp6"]
 [ext_resource type="Script" uid="uid://bm540rrfyyxui" path="res://scripts/state_machine/node_state_machine.gd" id="3_apb8j"]
 [ext_resource type="Script" uid="uid://fewxkuu5ado4" path="res://scripts/characters/water_pokemon/idle_state.gd" id="4_b281c"]
 [ext_resource type="Script" uid="uid://b2whne5ncd64d" path="res://scripts/characters/water_pokemon/walk_state.gd" id="5_akdcr"]

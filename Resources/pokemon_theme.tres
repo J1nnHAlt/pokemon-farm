@@ -1,9 +1,9 @@
 [gd_resource type="Theme" load_steps=21 format=3 uid="uid://bjs7wtt6ir1xs"]
 
-[ext_resource type="Texture2D" uid="uid://duw4esxq0uco6" path="res://assets/UI/day_night/Sprite sheet for Basic Pack.png" id="1_cdo4k"]
-[ext_resource type="FontFile" uid="uid://ckkm8bxq1qkjh" path="res://assets/font/pixelFont-7-8x14-sproutLands.ttf" id="2_cdo4k"]
-[ext_resource type="FontFile" uid="uid://dwpessw1grvg8" path="res://assets/font/power clear bold.ttf" id="3_ewkar"]
-[ext_resource type="FontFile" uid="uid://dj5llm2tudk5t" path="res://assets/font/power green.ttf" id="4_cdo4k"]
+[ext_resource type="Texture2D" uid="uid://rqkdisw8drsa" path="res://assets/UI/day_night/Sprite sheet for Basic Pack.png" id="1_cdo4k"]
+[ext_resource type="FontFile" uid="uid://d1pdlqwswvtom" path="res://assets/font/pixelFont-7-8x14-sproutLands.ttf" id="2_cdo4k"]
+[ext_resource type="FontFile" uid="uid://c5l1ef1upcy37" path="res://assets/font/power clear bold.ttf" id="3_ewkar"]
+[ext_resource type="FontFile" uid="uid://1yj8y1q2kequ" path="res://assets/font/power green.ttf" id="4_cdo4k"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dkgt5"]
 
